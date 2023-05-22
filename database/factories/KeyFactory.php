@@ -17,7 +17,7 @@ class KeyFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'key' => fake()->randomAscii('*****'), //find out how to make a randomized string
         ];
     }
 }
