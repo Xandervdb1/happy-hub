@@ -4,7 +4,7 @@ export default function Index() {
         <>
             <div className="Container">
                 <div className="LogoContainer">
-                    <img className="logo" src="../logo.png
+                    <img className="logo" src="../happyhub.png
                     " alt="Happy Hub logo" />
                 </div>
             <button className="buttonLogin">Log in</button>
