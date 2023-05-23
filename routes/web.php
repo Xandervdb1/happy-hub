@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\KeyController;
+
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -57,3 +59,6 @@ Route::get('/user-dashboard', function () {
 Route::get('/wallet', function () {
     return Inertia::render('Wallet');
 });
+
+Route::post('/generate-key',  [KeyController::class, 'generateKey']);
+Route::post('/check-key', [KeyController::class, 'validateKey']);
