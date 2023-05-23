@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Key>
@@ -17,7 +18,7 @@ class KeyFactory extends Factory
     public function definition()
     {
         return [
-            'key' => fake()->randomAscii('*****'), //find out how to make a randomized string
+            'key' => Str::random(20),
         ];
     }
 }

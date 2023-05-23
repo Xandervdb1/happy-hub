@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Team;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,8 +21,8 @@ class RewardFactory extends Factory
         return [
             'name' => fake()->name(),
             'price' => fake()->randomNumber(),
-            'team_id' => fake()->randomNumber(),
-            'user_id' => fake()->randomNumber()
+            'team_id' => Team::all()->random()->id,
+            'user_id' => User::all()->random()->id,
         ];
     }
 }

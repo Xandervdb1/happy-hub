@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Company;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,7 +20,7 @@ class TeamFactory extends Factory
         return [
             'name' => fake()->name(),
             'coins' => fake()->randomNumber(),
-            'company_id' => fake()->randomNumber()
+            'company_id' => Company::all()->random()->id,
         ];
     }
 }
