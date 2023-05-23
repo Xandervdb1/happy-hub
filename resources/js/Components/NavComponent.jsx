@@ -9,7 +9,7 @@ import { Link } from "@inertiajs/react";
                 <li><Link href="/register">Register</Link></li>
                 <li><Link href="/admin-dashboard">Admin Dashboard</Link></li>
                 <li><Link href="/user-dashboard">User Dashboard</Link></li>
-            <li><Link href="/wallet">Wallet</Link></li>
+                <li><Link href="/wallet">Wallet</Link></li>
             </ul>
         </nav>
         </>

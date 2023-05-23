@@ -1,3 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.HeaderContainer{
+    display: grid;
+    grid-template-columns: repeat(12,1fr) ;
+}
+header{
+    display: grid;
+    background-color: #222831;
+    grid-column: 1/13;
+    height: 100%;
+}
+.logoHeader{
+    grid-column: 7;
+    width:100px;
+}
+.hamburgerIcon{
+    margin-top: 25px;
+    height:40px;
+    grid-column: 10;
+}
