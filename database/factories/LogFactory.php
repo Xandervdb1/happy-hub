@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\User;
-use App\Models\Team;
+use App\Models\Quest;
 use App\Models\Reward;
 
 /**
@@ -21,7 +21,7 @@ class LogFactory extends Factory
     {
         return [
             'user_id' => User::all()->random()->id,
-            'team_id' => Team::all()->random()->id,
+            'quest_id' => Quest::all()->random()->id,
             'reward_id' => Reward::all()->random()->id
         ];
     }
