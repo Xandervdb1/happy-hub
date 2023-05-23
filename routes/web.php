@@ -19,3 +19,15 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Index');
 });
+Route::get('/register', function () {
+    return Inertia::render('Register');
+});
+Route::get('/admin-dashboard', function () {
+    return Inertia::render('AdminDashboard');
+});
+Route::get('/user-dashboard', function () {
+    return Inertia::render('UserDashboard');
+});
+Route::get('/wallet', function () {
+    return Inertia::render('Wallet');
+});
