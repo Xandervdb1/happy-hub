@@ -19,6 +19,14 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Index');
 });
+
+Route::get('/generate-key', function () {
+    return Inertia::render('GenerateKey');
+});
+Route::post('/key-check', function () {
+    return Inertia::render('KeyCheck');
+});
+
 Route::get('/register', function () {
     return Inertia::render('Register');
 });
