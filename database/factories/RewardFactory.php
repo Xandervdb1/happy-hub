@@ -17,7 +17,10 @@ class RewardFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => fake()->name(),
+            'price' => fake()->randomNumber(),
+            'team_id' => fake()->randomNumber(),
+            'user_id' => fake()->randomNumber()
         ];
     }
 }
