@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('lastname');
             $table->string('username');
             $table->string('password');
+            $table->boolean('is_defaultPassword');
             $table->date('birthday');
             $table->string('function');
             $table->string('department');
