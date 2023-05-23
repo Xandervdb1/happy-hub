@@ -1,6 +1,6 @@
-import Nav from "./Index.jsx";
+import Nav from "@/Components/NavComponent.jsx"
 
-export default function Register(){
+export default function AdminDashboard(){
     return(
         <>
        <center> <b><h1>Admin Dashboard</h1></b></center>

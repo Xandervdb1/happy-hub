@@ -1,18 +1,11 @@
-import { Link } from "@inertiajs/react";
+import Nav from "@/Components/NavComponent.jsx"
 
-        export default function Nav(){
-            return (
+export default function Index() {
+    return (
         <>
-                <nav>
-                <ul>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/register">Register</Link></li>
-                <li><Link href="/admin-dashboard">Admin Dashboard</Link></li>
-                <li><Link href="/user-dashboard">User Dashboard</Link></li>
-            <li><Link href="/wallet">Wallet</Link></li>
-            </ul>
-        </nav>
-        </>
-            )
-            }
+             <center> <b><h1>Homepage</h1></b></center>
+            <Nav/>
 
+        </>
+    );
+}
