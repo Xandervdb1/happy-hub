@@ -17,7 +17,9 @@ class TeamFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => fake()->name(),
+            'coins' => fake()->randomNumber(),
+            'company_id' => fake()->randomNumber()
         ];
     }
 }
