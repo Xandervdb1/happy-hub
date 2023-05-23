@@ -1,6 +1,7 @@
-import Nav from "@/Components/NavComponent.jsx"
-import { router } from '@inertiajs/react'
-import { useState } from 'react'
+import Nav from "@/Components/NavComponent.jsx";
+import { router } from '@inertiajs/react';
+import { useState } from 'react';
+import { Link } from "@inertiajs/react";
 
 const KeyCheck = () => {
    
@@ -45,6 +46,10 @@ const KeyCheck = () => {
             </div>
 
         </form>
+        <p>Already have an account?</p>
+        <Link href="/login">Login</Link>
+        <br />
+        <br />
 
         <Nav />
         </>
