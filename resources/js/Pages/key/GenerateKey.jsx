@@ -10,7 +10,7 @@ const GenerateKey = () => {
             <Header />
             <div className="formContainer">
                 <div className="buttonContainer">
-                    <Link href="/key-check" method="post" as="button" type="button" className="generateKeyButton">Generate Key</Link>
+                    <Link href="key/key-check" method="post" as="button" type="button" className="generateKeyButton">Generate Key</Link>
                 </div>
             </div>
         </>

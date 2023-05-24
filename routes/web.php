@@ -22,20 +22,33 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// index
 Route::get('/', function () {
     return Inertia::render('Index');
 });
 
-// for admin: generate key & check key
+
+// key
 Route::get('/generate-key', function () {
-    return Inertia::render('GenerateKey');
+    return Inertia::render('key/GenerateKey');
 });
 Route::post('/key-check', function () {
-    return Inertia::render('KeyCheck');
+    return Inertia::render('key/KeyCheck');
 });
 
-// login
+
+// adminRegister
+// 'FORM 1' on Figma
+Route::get('/admin-register', function () {
+    return Inertia::render('AdminRegister');
+});
+// 'FORM 2' on Figma
+Route::get('/company-register', function () {
+    return Inertia::render('CompanyRegister');
+});
+
+
+// Register
 Route::get('/login', function () {
     return Inertia::render('Login');
 });
@@ -47,19 +60,6 @@ Route::get('/username', function () {
 });
 
 
-Route::get('/register', function () {
-    return Inertia::render('Register');
-});
-
-// This page is 'FORM 1' on Figma
-Route::get('/admin-register', function () {
-    return Inertia::render('AdminRegister');
-});
-
-// This page is 'FORM 2' on Figma
-Route::get('/company-register', function () {
-    return Inertia::render('CompanyRegister');
-});
 
 Route::get('/admin-dashboard', function () {
     return Inertia::render('AdminDashboard');
