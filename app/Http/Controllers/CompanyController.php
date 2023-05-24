@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CompanyRequest;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
-class CompaniesController extends Controller
+class CompanyController extends Controller
 {
     use ValidatesRequests;
 

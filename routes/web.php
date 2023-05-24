@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CompaniesController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KeyController;
 use App\Http\Controllers\TeamController;
@@ -65,4 +65,4 @@ Route::post('/generate-key',  [KeyController::class, 'store']);
 Route::post('/create-team', [TeamController::class, 'store']);
 Route::post('/check-key', [KeyController::class, 'validateKey']);
 Route::post('/create-user', [UserController::class, 'storeUser']);
-Route::post('/create-company', [CompaniesController::class, 'storeCompany']);
+Route::post('/create-company', [CompanyController::class, 'storeCompany']);
