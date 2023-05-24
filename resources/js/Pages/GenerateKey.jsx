@@ -3,9 +3,9 @@ import { Link } from "@inertiajs/react";
 import Header from "@/Components/Header.jsx"
 
 const GenerateKey = () => {
-    
-    return(
-    
+
+    return (
+
         <>
         <Header/>
         <div className="formContainer">

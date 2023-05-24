@@ -27,33 +27,32 @@ const KeyCheck = () => {
     return (
 
         <>
-            <Header />
-            <div className="formContainer">
-                <form onsSubmit={handleSubmit}>
-                    <div className="inputField">
-                        <input type="string"
-                            className="input"
-                            placeholder="Insert Key"
-                            value={values.name}
-                            onChange={handleChange}
-                            name="name"
-                            id="name"
-                            required
-                        />
-                    </div>
+        <form onsSubmit={handleSubmit}>
 
-                    <div className="buttonContainer">
-                        <button type="submit">Add Company
-                        </button>
-                    </div>
-
-                </form>
-                <p>Already have an account?</p>
-                <Link href="/login">Login</Link>
+            <div className="mb-8">
+                <input type="string" 
+                    placeholder="Insert Key"
+                     
+                    value={values.name} 
+                    onChange={handleChange}
+                    name="name" 
+                    id="name" 
+                    required 
+                />
             </div>
 
+            <div className="">
+                <button type="submit">Add Company
+                </button>
+            </div>
 
-            {/* <Nav /> */}
+        </form>
+        <p>Already have an account?</p>
+        <Link href="/login">Login</Link>
+        <br />
+        <br />
+
+        <Nav />
         </>
 
     )
