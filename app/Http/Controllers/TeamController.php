@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\TeamRequest;
 use App\Models\Team;
 
 class TeamController extends Controller
 {
-    function store (Request $request)
+    function store(TeamRequest $request)
     {
         $team = new Team;
-        
+
         $team->name = $request->teamname;
         $team->coins = 0;
         $team->company_id = 0;

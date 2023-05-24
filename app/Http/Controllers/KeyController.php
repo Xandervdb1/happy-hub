@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\KeyRequest;
 use App\Models\Key;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Hash;
 
 class KeyController extends Controller
 {
@@ -14,22 +15,28 @@ class KeyController extends Controller
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $key = new Key;
 
-        for ($i = 0; $i < $length; $i++) {
-            $index = rand(0, strlen($characters) - 1);
-            $key->key .= $characters[$index];
-        }
-
+        // for ($i = 0; $i < $length; $i++) {
+        //     $index = rand(0, strlen($characters) - 1);
+        //     $key->key .= $characters[$index];
+        // }
+        $key->key = Hash::make("azertyuiopmlkjhgfdsq");
+        // $key->key = Hash::make($key->key);
         $key->save();
     }
 
-    function validateKey(Request $request)
+    function validateKey(KeyRequest $request)
     {
         $inputKey = $request->key;
-        $doesExist = Key::where('key', $inputKey)->count();
-        if ($doesExist == 0) {
-            Inertia::render(); //TODO: return generate key page with error
-        } else {
-            Inertia::render(); //TODO: return form 1
+        $allKeys = Key::all();
+
+        foreach ($allKeys as $index => $key) {
+            if (Hash::check($inputKey, $key->key)) {
+                $key->delete();
+                //Inertia::render(); //TODO: return form 1
+            } else {
+                dd("none matched");
+                //Inertia::render(); //TODO: return check key page with error
+            }
         }
     }
 }

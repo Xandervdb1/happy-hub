@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RewardRequest;
 use App\Models\Reward;
-use Illuminate\Http\Request;
 
 class RewardController extends Controller
 {
-    function store(Request $request)
+    function store(RewardRequest $request)
     {
         $reward = new Reward;
 
