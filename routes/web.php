@@ -3,6 +3,7 @@
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KeyController;
+use App\Http\Controllers\QuestController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -66,3 +67,4 @@ Route::post('/create-team', [TeamController::class, 'store']);
 Route::post('/check-key', [KeyController::class, 'validateKey']);
 Route::post('/create-user', [UserController::class, 'storeUser']);
 Route::post('/create-company', [CompanyController::class, 'storeCompany']);
+Route::post('/create-quest', [QuestController::class, 'storeQuest']);
