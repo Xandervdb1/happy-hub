@@ -27,9 +27,9 @@ class KeyController extends Controller
         $inputKey = $request->key;
         $doesExist = Key::where('key', $inputKey)->count();
         if ($doesExist == 0) {
-            Inertia::render(); //return generate key page with error
+            Inertia::render(); //TODO: return generate key page with error
         } else {
-            Inertia::render(); //return form 1
+            Inertia::render(); //TODO: return form 1
         }
     }
 }
