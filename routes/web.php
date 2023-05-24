@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\CompanyController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KeyController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\RewardController;
@@ -72,3 +72,4 @@ Route::post('/create-company', [CompanyController::class, 'storeCompany']);
 Route::post('/create-reward', [RewardController::class, 'store']);
 Route::post('/create-log', [LogController::class, 'store']);
 Route::post('/create-quest', [QuestController::class, 'storeQuest']);
+Route::post('/create-admin', [AdminController::class, 'storeAdmin']);

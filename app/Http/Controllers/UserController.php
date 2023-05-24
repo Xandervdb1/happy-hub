@@ -32,6 +32,7 @@ class UserController extends Controller
         $user->birthday = $request->input('birthday');
         $user->function = $request->input('function');
         $user->department = $request->input('department');
+        $user->is_admin = 0;
 
         $user->save();
     }
