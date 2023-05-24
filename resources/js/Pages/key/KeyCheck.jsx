@@ -29,7 +29,7 @@ const KeyCheck = () => {
             <Header />
             <div className="formContainer">
 
-                <form onsSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
 
                     <input type="string" placeholder="Insert Key" className="input" value={values.name} onChange={handleChange} name="name" id="name" required />
 

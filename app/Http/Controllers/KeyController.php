@@ -15,13 +15,14 @@ class KeyController extends Controller
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $key = new Key;
 
-        // for ($i = 0; $i < $length; $i++) {
-        //     $index = rand(0, strlen($characters) - 1);
-        //     $key->key .= $characters[$index];
-        // }
+        for ($i = 0; $i < $length; $i++) {
+            $index = rand(0, strlen($characters) - 1);
+            $key->key .= $characters[$index];
+        }
         $key->key = Hash::make("azertyuiopmlkjhgfdsq");
-        // $key->key = Hash::make($key->key);
+        $key->key = Hash::make($key->key);
         $key->save();
+        return to_route('keycheck');
     }
 
     function validateKey(KeyRequest $request)
@@ -32,7 +33,7 @@ class KeyController extends Controller
         foreach ($allKeys as $index => $key) {
             if (Hash::check($inputKey, $key->key)) {
                 $key->delete();
-                //Inertia::render(); //TODO: return form 1
+                Inertia::render('/adminRegister/AdminRegister');
             } else {
                 dd("none matched");
                 //Inertia::render(); //TODO: return check key page with error

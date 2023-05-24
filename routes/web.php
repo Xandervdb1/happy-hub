@@ -28,7 +28,6 @@ Route::get('/', function () {
     return Inertia::render('Index');
 });
 
-
 // key
 Route::get('/generate-key', function () {
     return Inertia::render('key/GenerateKey');
@@ -39,10 +38,10 @@ Route::get('/rewards-collection', function () {
     return Inertia::render('RewardsCollection');
 });
 
-Route::post('/key-check', function () {
+Route::post('/generate-key',  [KeyController::class, 'store']);
+Route::get('/key-check', function () {
     return Inertia::render('key/KeyCheck');
-});
-
+})->name('keycheck');
 
 // adminRegister
 // 'FORM 1' on Figma
@@ -93,9 +92,8 @@ Route::get('/wallet', function () {
     return Inertia::render('Wallet');
 });
 
-Route::post('/generate-key',  [KeyController::class, 'store']);
+
 Route::post('/create-team', [TeamController::class, 'store']);
-Route::post('/check-key', [KeyController::class, 'validateKey']);
 Route::post('/create-user', [UserController::class, 'storeUser']);
 Route::post('/create-company', [CompanyController::class, 'storeCompany']);
 Route::post('/create-reward', [RewardController::class, 'store']);
