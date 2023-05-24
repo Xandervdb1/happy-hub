@@ -1,19 +1,23 @@
-.HeaderContainer{
+
+.HeaderContainer {
     display: grid;
-    grid-template-columns: repeat(12,1fr) ;
+    grid-template-columns: repeat(12, 1fr);
 }
-header{
+
+header {
     display: grid;
     background-color: #222831;
     grid-column: 1/13;
     height: 100%;
 }
-.logoHeader{
+
+.logoHeader {
     grid-column: 7;
-    width:100px;
+    width: 100px;
 }
-.hamburgerIcon{
+
+.hamburgerIcon {
     margin-top: 25px;
-    height:40px;
+    height: 40px;
     grid-column: 10;
 }

@@ -1,14 +1,18 @@
 import Nav from "@/Components/NavComponent.jsx"
 import { Link } from "@inertiajs/react";
+import Header from "@/Components/Header.jsx"
 
 const GenerateKey = () => {
     
     return(
     
         <>
-        <Link href="/key-check" method="post" as="button" type="button">Generate Key</Link>
-    
-        <Nav />
+        <Header/>
+        <div className="formContainer">
+        <div className="buttonContainer">
+        <Link href="/key-check" method="post" as="button" type="button" className="generateKeyButton">Generate Key</Link>
+        </div>
+        </div>
         </>
 
     )
