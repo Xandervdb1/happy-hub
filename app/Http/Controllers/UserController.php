@@ -31,7 +31,7 @@ class UserController extends Controller
         $user->password = Hash::make($randomPassword);
         $user->birthday = $request->input('birthday');
         $user->function = $request->input('function');
-        $user->department = $request->input('department');
+        $user->coins = 0;
         $user->is_admin = 0;
 
         $user->save();
