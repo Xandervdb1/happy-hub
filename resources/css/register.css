@@ -1,28 +1,28 @@
 /* GENERATE KEY */
 
-.formContainer {
+.formContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 80vh;
 }
-
-form {
+form{
     margin: auto;
-    text-align: center;
 }
-
-.input {
+.inputField{
+    border: none;
+    margin: 15px;
+}
+.input{
+    display: flex;
+    flex-direction: row;
     border: none;
     border-radius: 5px;
-    margin: 8px;
-    height: 30px;
+    height: 2rem;
     padding-left: 10px;
-    min-width: 200px;
 }
-
-.buttonContainer {
+.buttonContainer{
     text-align: center;
 }
 

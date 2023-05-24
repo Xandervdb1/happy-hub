@@ -39,6 +39,9 @@ Route::post('/key-check', function () {
 Route::get('/login', function () {
     return Inertia::render('Login');
 });
+Route::get('/new-password', function () {
+    return Inertia::render('NewPassword');
+});
 
 Route::get('/register', function () {
     return Inertia::render('Register');
