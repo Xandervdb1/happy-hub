@@ -1,4 +1,3 @@
-import Nav from "@/Components/NavComponent.jsx";
 import Header from "@/Components/Header.jsx";
 import { router } from '@inertiajs/react';
 import { useState } from 'react';

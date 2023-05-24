@@ -3,10 +3,10 @@ import { router } from '@inertiajs/react'
 import { useState } from 'react'
 import { Link } from "@inertiajs/react";
 
-const Login = () => {
+const NewPassword = () => {
     const [values, setValues] = useState({
-        email: '',
         password: '',
+        newpassword: '',
     })
 
     const handleChange = (e) => {
@@ -21,7 +21,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        router.post('/new-password', values)
+        router.post('/user-name', values)
     }
 
     return (
@@ -31,15 +31,16 @@ const Login = () => {
             <form onsSubmit={handleSubmit}>
 
                 <div className="inputField">
-                    <input className="input" type="email" placeholder="Email" value={values.email} onChange={handleChange} name="email" id="email" required />
-                    <input className="input" type="password" placeholder="Password" value={values.password} onChange={handleChange} name="password" id="password" required />
+                    <input className="input" type="password" placeholder="New password" value={values.password} onChange={handleChange} name="password" id="password" required />
+                    <input className="input" type="password" placeholder="Confirm new password" value={values.newpassword} onChange={handleChange} name="newpassword" id="newpassword" required />
                 </div>
 
                 <div className="buttonContainer">
-                    <button type="submit">Submit</button>
+                    <button type="submit">Confirm</button>
                 </div>
 
             </form>
+            <Link href="/user-name">Continue with current password</Link>
             <p>First time registering as Admin?</p>
             <Link href="/generate-key">Click here!</Link>
             </div>
@@ -47,5 +48,5 @@ const Login = () => {
     )
 
 }
-export default Login;
+export default NewPassword;
 
