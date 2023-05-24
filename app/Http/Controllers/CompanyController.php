@@ -20,6 +20,7 @@ class CompanyController extends Controller
         $company->zip = $request->input('zip');
         $company->city = $request->input('city');
         $company->country = $request->input('country');
+        $company->VAT = $request->input('vat');
 
         $company->save();
     }

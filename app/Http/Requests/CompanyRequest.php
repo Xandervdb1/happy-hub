@@ -31,6 +31,7 @@ class CompanyRequest extends FormRequest
             'zip' => 'required|min:1|max:4',
             'city' => 'required|max:255',
             'country' => 'required|max:255',
+            'vat' => 'required|regex:/^[A-Z]{2}/'
         ];
     }
 }

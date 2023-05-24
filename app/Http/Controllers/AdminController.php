@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\AdminRequest;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -15,7 +15,7 @@ class AdminController extends Controller
 {
     use ValidatesRequests;
 
-    public function storeAdmin(UserRequest $request)
+    public function storeAdmin(AdminRequest $request)
     {
         $admin = new User;
         $admin->name = $request->input('name');
@@ -25,7 +25,7 @@ class AdminController extends Controller
         $admin->password = Hash::make($request->input('password'));
         $admin->birthday = $request->input('birthday');
         $admin->function = $request->input('function');
-        $admin->department = $request->input('department');
+        $admin->coin = $request->input('coins');
         $admin->is_admin = 1;
 
         $admin->save();

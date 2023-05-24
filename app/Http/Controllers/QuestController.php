@@ -17,7 +17,7 @@ class QuestController extends Controller
     {
         $quest = new Quest;
 
-        $quest->title = $request->title;
+        $quest->name = $request->title;
         $quest->coins = $request->coins;
         $quest->user_id = 0;
         $quest->team_id = 0;

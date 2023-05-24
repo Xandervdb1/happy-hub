@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('quest_id');
-            $table->foreignId('reward_id');
+            $table->foreignId('team_id');
+            $table->foreignId('quest_id')->nullable();
+            $table->foreignId('reward_id')->nullable();
             $table->timestamps();
         });
     }

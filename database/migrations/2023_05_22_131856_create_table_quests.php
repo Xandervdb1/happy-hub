@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('quests', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('name');
             $table->integer('coins');
-            $table->foreignId('user_id');
-            $table->foreignId('team_id');
+            $table->foreignId('user_id')->nullable();
+            $table->foreignId('team_id')->nullable();
             $table->timestamps();
         });
     }

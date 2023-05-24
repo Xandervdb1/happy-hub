@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('number');
             $table->string('zip');
             $table->string('city');
+            $table->string('VAT');
             $table->string('country');
             $table->timestamps();
         });

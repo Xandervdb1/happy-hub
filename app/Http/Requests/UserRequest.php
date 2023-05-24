@@ -32,7 +32,6 @@ class UserRequest extends FormRequest
             'username' => 'required|min:5|max:255',
             'birthday' => 'required|max:255',
             'function' => 'required|max:255',
-            'department' => 'required|max:255',
             'email' => 'required|email|max:255'
         ];
     }
