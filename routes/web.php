@@ -3,7 +3,7 @@
 use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KeyController;
-
+use App\Http\Controllers\TeamController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -61,7 +61,8 @@ Route::get('/wallet', function () {
     return Inertia::render('Wallet');
 });
 
-Route::post('/generate-key',  [KeyController::class, 'generateKey']);
+Route::post('/generate-key',  [KeyController::class, 'store']);
+Route::post('/create-team', [TeamController::class, 'store']);
 Route::post('/check-key', [KeyController::class, 'validateKey']);
 Route::post('/create-user', [UserController::class, 'storeUser']);
 Route::post('/create-company', [CompaniesController::class, 'storeCompany']);
