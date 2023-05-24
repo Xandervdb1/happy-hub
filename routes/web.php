@@ -62,3 +62,4 @@ Route::get('/wallet', function () {
 
 Route::post('/generate-key',  [KeyController::class, 'generateKey']);
 Route::post('/check-key', [KeyController::class, 'validateKey']);
+Route::post('/create-user', [UserController::class, 'storeUser']);
