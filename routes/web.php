@@ -20,11 +20,17 @@ Route::get('/', function () {
     return Inertia::render('Index');
 });
 
+// for admin: generate key & check key
 Route::get('/generate-key', function () {
     return Inertia::render('GenerateKey');
 });
 Route::post('/key-check', function () {
     return Inertia::render('KeyCheck');
+});
+
+// login
+Route::get('/login', function () {
+    return Inertia::render('Login');
 });
 
 Route::get('/register', function () {
