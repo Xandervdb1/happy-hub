@@ -31,9 +31,14 @@ Route::get('/register', function () {
     return Inertia::render('Register');
 });
 
-// This page is 'FORM 1' on our Figma
+// This page is 'FORM 1' on Figma
 Route::get('/admin-register', function () {
     return Inertia::render('AdminRegister');
+});
+
+// This page is 'FORM 2' on Figma
+Route::get('/company-register', function () {
+    return Inertia::render('CompanyRegister');
 });
 
 Route::get('/admin-dashboard', function () {
