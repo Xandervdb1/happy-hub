@@ -42,6 +42,10 @@ Route::get('/login', function () {
 Route::get('/new-password', function () {
     return Inertia::render('NewPassword');
 });
+Route::get('/username', function () {
+    return Inertia::render('Username');
+});
+
 
 Route::get('/register', function () {
     return Inertia::render('Register');
