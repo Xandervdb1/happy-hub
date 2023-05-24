@@ -1,5 +1,6 @@
 import { Link } from "@inertiajs/react";
-export default function Index() {
+
+const Index = () => {
     return (
         <>
             <div className="Container">
@@ -10,7 +11,7 @@ export default function Index() {
                 <Link href="/" as="button" className="buttonLogin">Log in</Link>
                 <Link href="/generate-key" as="button" className="buttonBuyProduct">Buy Product</Link>
             </div>
-            <Link href="/wallet">Wallet</Link>
         </>
     );
 }
+export default Index
