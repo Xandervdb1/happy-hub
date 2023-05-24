@@ -29,7 +29,7 @@ class AdminRequest extends FormRequest
             'username' => 'required|min:5|max:255',
             'birthday' => 'required|max:255',
             'function' => 'required|max:255',
-            'department' => 'required|max:255',
+            'coins' => 'required',
             'email' => 'required|email|max:255',
             'password' => 'required|min:8|max:16'
         ];
