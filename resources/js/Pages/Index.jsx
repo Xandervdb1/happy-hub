@@ -7,8 +7,8 @@ export default function Index() {
                     <img className="logo" src="../happyhub.png
                     " alt="Happy Hub logo" />
                 </div>
-            <button className="buttonLogin">Log in</button>
-            <button className="buttonBuyProduct"> Buy Product</button>
+                <button className="buttonLogin">Log in</button>
+                <button className="buttonBuyProduct"> Buy Product</button>
             </div>
             <Link href="/wallet">Wallet</Link>
         </>

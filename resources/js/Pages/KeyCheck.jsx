@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Link } from "@inertiajs/react";
 
 const KeyCheck = () => {
-   
+
     const [values, setValues] = useState({
         name: '',
     })
@@ -17,41 +17,41 @@ const KeyCheck = () => {
             [key]: value,
         }))
         console.log(values);
-      }
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
         router.post('/admin-register', values)
     }
-    return(
-    
+    return (
+
         <>
-        <form onsSubmit={handleSubmit}>
+            <form onsSubmit={handleSubmit}>
 
-            <div className="mb-8">
-                <input type="string" 
-                    placeholder="Insert Key"
-                     
-                    value={values.name} 
-                    onChange={handleChange}
-                    name="name" 
-                    id="name" 
-                    required 
-                />
-            </div>
+                <div className="mb-8">
+                    <input type="string"
+                        placeholder="Insert Key"
 
-            <div className="">
-                <button type="submit">Add Company
-                </button>
-            </div>
+                        value={values.name}
+                        onChange={handleChange}
+                        name="name"
+                        id="name"
+                        required
+                    />
+                </div>
 
-        </form>
-        <p>Already have an account?</p>
-        <Link href="/login">Login</Link>
-        <br />
-        <br />
+                <div className="">
+                    <button type="submit">Add Company
+                    </button>
+                </div>
 
-        <Nav />
+            </form>
+            <p>Already have an account?</p>
+            <Link href="/login">Login</Link>
+            <br />
+            <br />
+
+            <Nav />
         </>
 
     )
