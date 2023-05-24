@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KeyController;
 
@@ -63,3 +64,4 @@ Route::get('/wallet', function () {
 Route::post('/generate-key',  [KeyController::class, 'generateKey']);
 Route::post('/check-key', [KeyController::class, 'validateKey']);
 Route::post('/create-user', [UserController::class, 'storeUser']);
+Route::post('/create-company', [CompaniesController::class, 'storeCompany']);
