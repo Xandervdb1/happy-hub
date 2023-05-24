@@ -13,7 +13,7 @@ class RewardController extends Controller
 
         $reward->name = $request->name;
         $reward->price = $request->price;
-        $reward->team_id = 0;
+        $reward->team_id = 0; //TODO: add relevant id's based on input
         $reward->user_id = 5;
 
         $reward->save();
