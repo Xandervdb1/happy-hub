@@ -3,6 +3,7 @@
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KeyController;
+use App\Http\Controllers\LogController;
 use App\Http\Controllers\RewardController;
 use App\Http\Controllers\QuestController;
 use App\Http\Controllers\TeamController;
@@ -69,4 +70,5 @@ Route::post('/check-key', [KeyController::class, 'validateKey']);
 Route::post('/create-user', [UserController::class, 'storeUser']);
 Route::post('/create-company', [CompanyController::class, 'storeCompany']);
 Route::post('/create-reward', [RewardController::class, 'store']);
+Route::post('/create-log', [LogController::class, 'store']);
 Route::post('/create-quest', [QuestController::class, 'storeQuest']);
