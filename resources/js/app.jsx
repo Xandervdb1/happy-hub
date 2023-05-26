@@ -3,6 +3,7 @@ import '../css/app.css';
 import '../css/index.css';
 import '../css/register.css';
 import '../css/dashboard.css';
+import '../css/layoutDashboard.css';
 
 import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/react';

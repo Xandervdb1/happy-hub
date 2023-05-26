@@ -34,35 +34,62 @@
         grid-template-rows: repeat(5, 1fr);
     }
 
-    .title {
-        text-align: center;
-        font-size: 18px;
-        font-weight: 500;
+    .seeAll {
         grid-row: 1/2;
-        grid-column: 1/4;
+        grid-column: 2/5;
+        text-align: end;
+        font-weight: 800;
     }
 
-    .underline {
-        border-color: #222831;
-        width: 50%;
-        margin: 0 auto;
-        grid-row: 2;
-        grid-column: 1/4;
-    }
+    //     .title {
+    //         text-align: center;
+    //         font-size: 18px;
+    //         font-weight: 500;
+    //         grid-row: 1/2;
+    //         grid-column: 1/4;
+    //     }
 
-    .priceContainer {
+    //     .underline {
+    //         border-color: #222831;
+    //         width: 50%;
+    //         margin: 0 auto;
+    //         grid-row: 2;
+    //         grid-column: 1/4;
+    //         margin-top: -8px;
+    //     }
+
+    //     .priceContainer {
+    //         display: grid;
+    //         grid-template-columns: repeat(2, 1fr);
+    //         grid-template-rows: repeat(3, 1fr);
+    //         width: 40px;
+    //         grid-row: 2;
+    //         grid-column: 1;
+    //     }
+
+    //     .coins {
+    //         width: 20px;
+    //         text-align: center;
+    //     }
+
+    //     .price {
+    //         font-size: 12px;
+    //         text-align: center;
+    //     }
+    // }
+
+    .questRewards {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        width: 40px;
+        width: 200px;
+        grid-row: 2;
+        grid-column: 2;
+    }
 
-        .coins {
-            width: 20px
-        }
-
-        .price {
-            font-size: 12px;
-        }
+    .questReward {
+        font-size: 12px;
+        text-align: center;
     }
 
     .teamQuests {
@@ -75,13 +102,30 @@
         grid-template-rows: repeat(4, 1fr);
     }
 
-    .rewards {
-        margin-top: 10px;
-        background-color: #D9D9D9;
-        grid-row: 12/16;
-        grid-column: 1/13;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-    }
+    // .rewards {
+    //     margin-top: 10px;
+    //     grid-row: 12/16;
+    //     grid-column: 1/13;
+    //     display: grid;
+    //     grid-template-columns: repeat(3, 1fr);
+    //     grid-template-rows: repeat(4, 1fr);
+
+    //     .reward {
+    //         background-color: #D9D9D9;
+    //         text-align: center;
+    //         border: 1px solid black;
+    //         height: 45px;
+    //         width: 80px;
+    //         display: grid;
+    //         place-items: center;
+    //         grid-row: 2;
+    //         grid-column: 1;
+    //         margin-top: 5px;
+
+    //         .activity {
+    //             font-size: 14px;
+    //             font-weight: 500;
+    //         }
+    //     }
+    // }
 }
