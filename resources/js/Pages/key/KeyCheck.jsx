@@ -44,3 +44,5 @@ const KeyCheck = () => {
 
     )
 }
+
+export default KeyCheck;

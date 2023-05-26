@@ -37,7 +37,7 @@ Route::post('/generate-key', [KeyController::class, 'store']);
 // Rewards collection page (>> See all rewards)
 Route::get('/rewards-collection', [RewardController::class, 'showAll'])->name('rewardsCollection');
 
-Route::post('/key-check', function () {
+Route::get('/key-check', function () {
     return Inertia::render('key/KeyCheck');
 })->name('keycheck');
 Route::post('/key-check', [KeyController::class, 'validateKey']);
