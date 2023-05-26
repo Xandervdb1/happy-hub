@@ -1,7 +1,19 @@
 import Header from '@/Components/Header'
 import '../../css/RewardsCollection.scss'
 
-const RewardsCollection = () => {
+const RewardsCollection = (props) => {
+    const rewards = props.rewards;
+
+    const rewardList = () => {
+        const rewardList = [];
+
+        for(let i = 0; i < 9; i++){
+            rewardList.push(rewards[i]);
+        }
+
+        return rewardList;
+    }
+
     return (
     <>
         <Header />
@@ -12,6 +24,11 @@ const RewardsCollection = () => {
             <div className='personalRewards'>
                 <p>Personal</p>
                 <div className='rewardList'>
+                    {
+                        rewardList().map(reward => (
+                            <div key={reward.id}>{reward.name}</div>
+                        ))
+                    }
                 </div>
             </div>
             <div className='teamRewards'>
