@@ -22,14 +22,14 @@ const Create = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        router.post('/new-password', values)
+        router.post('/login', values)
     }
 
     return (
         <>
             <Header />
             <div className="formContainer">
-                <form onsSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
 
                     <div className="inputField">
                         <input className="input" type="email" placeholder="Email" value={values.email} onChange={handleChange} name="email" id="email" required />
