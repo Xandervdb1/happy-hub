@@ -55,12 +55,15 @@ Route::post('/admin-register', [AdminController::class, 'storeAdmin']);
 Route::get('/company-register', function () {
     return Inertia::render('adminRegister/CompanyRegister');
 })->name('companyregister');
+Route::post('/company-register', [CompanyController::class, 'storeCompany']);
 
-
+Route::get('/admin-dashboard', function () {
+    return Inertia::render('companyDashboard/AdminDashboard');
+})->name('companydashboard');
 
 // Register
 Route::get('/login', function () {
-    return Inertia::render('Login');
+    return Inertia::render('userRegister/Login');
 });
 Route::get('/new-password', function () {
     return Inertia::render('NewPassword');
