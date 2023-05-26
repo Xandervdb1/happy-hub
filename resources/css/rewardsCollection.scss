@@ -13,7 +13,7 @@ $container-bg: #D9D9D9;
 .personalRewards,
 .teamRewards,
 .futureRewards{
-    p:first-child {
+    p:first-of-type {
         border-bottom: 2px solid black;
     }
     text-align: center;
