@@ -34,8 +34,6 @@ Route::get('/generate-key', function () {
 })->name('generatekey');
 Route::post('/generate-key', [KeyController::class, 'store']);
 
-// Rewards collection page (>> See all rewards)
-Route::get('/rewards-collection', [RewardController::class, 'showAll'])->name('rewardsCollection');
 
 Route::get('/key-check', function () {
     return Inertia::render('key/KeyCheck');
@@ -61,9 +59,8 @@ Route::get('/user-dashboard', function () {
     return Inertia::render('userDashboard/UserDashboard');
 })->name('userdashboard');
 
-Route::get('/rewards-collection', function () {
-    return Inertia::render('RewardsCollection');
-})->name('rewardscollection');
+// Rewards collection page (>> See all rewards)
+Route::get('/rewards-collection', [RewardController::class, 'showAll'])->name('rewardsCollection');
 
 Route::get('/wallet', function () {
     return Inertia::render('Wallet');
