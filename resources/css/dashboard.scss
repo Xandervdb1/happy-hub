@@ -1,0 +1,87 @@
+.dashboardContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    height: 100vh;
+    margin: 8px;
+
+
+    .progressCarrousel {
+        grid-row: 1/4;
+        grid-column: 1/6;
+        margin-right: 10px;
+
+    }
+
+    .profileInfo {
+        background-color: #D9D9D9;
+        grid-row: 1/4;
+        grid-column: 6/13;
+
+        .personalInfo {
+            margin: 2px;
+            font-size: 12px;
+        }
+    }
+
+    .personalQuests {
+        margin-top: 10px;
+        background-color: #D9D9D9;
+        grid-row: 4/8;
+        grid-column: 1/13;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+
+    .title {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+        grid-row: 1/2;
+        grid-column: 1/4;
+    }
+
+    .underline {
+        border-color: #222831;
+        width: 50%;
+        margin: 0 auto;
+        grid-row: 2;
+        grid-column: 1/4;
+    }
+
+    .priceContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        width: 40px;
+
+        .coins {
+            width: 20px
+        }
+
+        .price {
+            font-size: 12px;
+        }
+    }
+
+    .teamQuests {
+        margin-top: 10px;
+        background-color: #D9D9D9;
+        grid-row: 8/12;
+        grid-column: 1/13;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .rewards {
+        margin-top: 10px;
+        background-color: #D9D9D9;
+        grid-row: 12/16;
+        grid-column: 1/13;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+}

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { router } from '@inertiajs/react'
 import Header from '@/Components/Header.jsx'
 
+
 const AdminRegister = () => {
 
     const [values, setValues] = useState({
@@ -57,10 +58,11 @@ const AdminRegister = () => {
                         <input type="password" name="confirmpassword" id="confirmpassword" value={values.confirmpassword} onChange={handleChange} placeholder="Repeat password" className="input" />
                     </div>
                     <div className='buttonContainer'>
-                        <button type="submit">Next</button>
+                        <button type="submit" className='button'>Next</button>
                     </div>
                 </form>
             </div>
+
         </>
     )
 }

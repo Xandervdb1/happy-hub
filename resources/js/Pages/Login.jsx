@@ -3,6 +3,7 @@ import { router } from '@inertiajs/react'
 import { useState } from 'react'
 import { Link } from "@inertiajs/react";
 
+
 const Create = () => {
     const [values, setValues] = useState({
         name: '',
@@ -27,23 +28,23 @@ const Create = () => {
 
     return (
         <>
-        <Header/>
-        <div className="formContainer">
-            <form onsSubmit={handleSubmit}>
+            <Header />
+            <div className="formContainer">
+                <form onsSubmit={handleSubmit}>
 
-                <div className="inputField">
-                    <input className="input" type="email" placeholder="Email" value={values.email} onChange={handleChange} name="email" id="email" required />
-                    
-                    <input className="input" type="password" placeholder="Password" value={values.password} onChange={handleChange} name="password" id="password" required />
-                </div>
+                    <div className="inputField">
+                        <input className="input" type="email" placeholder="Email" value={values.email} onChange={handleChange} name="email" id="email" required />
 
-                <div className="buttonContainer">
-                    <button type="submit">Submit</button>
-                </div>
+                        <input className="input" type="password" placeholder="Password" value={values.password} onChange={handleChange} name="password" id="password" required />
+                    </div>
 
-            </form>
-            <p>First time registering as Admin?</p>
-            <Link href="/key-check">Click here!</Link>
+                    <div className="buttonContainer">
+                        <button type="submit" className="button">Submit</button>
+                    </div>
+
+                </form>
+                <p>First time registering as Admin?</p>
+                <Link href="/key-check">Click here!</Link>
             </div>
         </>
     )

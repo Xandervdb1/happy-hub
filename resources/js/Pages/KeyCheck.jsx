@@ -29,13 +29,12 @@ const KeyCheck = () => {
         <>
             <Header />
             <div className="formContainer">
-
                 <form onsSubmit={handleSubmit}>
 
                     <input type="string" placeholder="Insert Key" className="input" value={values.name} onChange={handleChange} name="name" id="name" required />
 
                     <div className="buttonContainer">
-                        <button type="submit">Add Company
+                        <button type="submit" className="button">Add Company
                         </button>
                         <br />
                         <Link href="/admin-register"> Add Company</Link>
@@ -43,7 +42,7 @@ const KeyCheck = () => {
 
                 </form>
                 <p>Already have an account?</p>
-                <Link href="/login">Login</Link>
+                <Link href="/login" >Login</Link>
             </div>
         </>
 

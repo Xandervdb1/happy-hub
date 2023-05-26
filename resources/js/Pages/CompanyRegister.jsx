@@ -4,7 +4,7 @@ import Header from '@/Components/Header'
 
 const CompanyRegister = () => {
 
-    const [ values, setValues ] = useState({
+    const [values, setValues] = useState({
         companyname: '',
         vatnumber: '',
         country: '',
@@ -22,7 +22,7 @@ const CompanyRegister = () => {
             [key]: value,
         }))
     }
-    
+
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(values);
@@ -41,7 +41,7 @@ const CompanyRegister = () => {
                     <input className='input' type="text" name="zip" id="zip" value={values.zip} onChange={handleChange} placeholder="ZIP" />
                     <input className='input' type="text" name="adress" id="adress" value={values.department} onChange={handleChange} placeholder="Street & nr" />
                     <div className='buttonContainer'>
-                        <button type="submit">Next</button>
+                        <button type="submit" className='button'>Next</button>
                     </div>
                 </form>
             </div>
