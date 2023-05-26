@@ -2,7 +2,8 @@ import Nav from "@/Components/NavComponent.jsx";
 import { Link } from "@inertiajs/react";
 import Header from "@/Components/Header.jsx";
 
-const UserDashboard = (props) => {
+const UserDashboard = () => {
+
     return (
         <>
             <Header />

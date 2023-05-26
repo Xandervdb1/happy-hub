@@ -58,6 +58,8 @@ Route::get('/admin-dashboard', function () {
     return Inertia::render('AdminDashboard');
 });
 Route::get('/user-dashboard', [RewardController::class, 'showAllUserRewards']);
+Route::get('/user-dashboard', [RewardController::class, 'showAllTeamRewards']);
+
 
 
 Route::get('/wallet', function () {
