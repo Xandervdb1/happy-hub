@@ -1,9 +1,11 @@
 import Header from '@/Components/Header'
 import '../../css/RewardsCollection.scss'
 
-const RewardsCollection = () => {
+const RewardsCollection = (props) => {
+
     return (
     <>
+        {console.log(props)}
         <Header />
         <div className='titleContainer'>
             <p>REWARDS</p>
