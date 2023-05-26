@@ -23,90 +23,56 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// index
+//ROUTE TO INDEX
 Route::get('/', function () {
     return Inertia::render('Index');
 })->name('index');
 
-// key
+//ROUTE FROM ADMIN KEYGEN TO ADMIN DASH
 Route::get('/generate-key', function () {
     return Inertia::render('key/GenerateKey');
-});
+})->name('generatekey');
+Route::post('/generate-key', [KeyController::class, 'store']);
 
-// Rewards collection page (>> See all rewards)
-Route::get('/rewards-collection', function () {
-    return Inertia::render('RewardsCollection');
-});
-
-Route::post('/generate-key',  [KeyController::class, 'store']);
 Route::get('/key-check', function () {
     return Inertia::render('key/KeyCheck');
 })->name('keycheck');
 Route::post('/key-check', [KeyController::class, 'validateKey']);
 
-// adminRegister
-// 'FORM 1' on Figma
 Route::get('/admin-register', function () {
     return Inertia::render('adminRegister/AdminRegister');
 })->name('adminregister');
 Route::post('/admin-register', [AdminController::class, 'storeAdmin']);
-// 'FORM 2' on Figma
 
 Route::get('/company-register', function () {
     return Inertia::render('adminRegister/CompanyRegister');
 })->name('companyregister');
 Route::post('/company-register', [CompanyController::class, 'storeCompany']);
 
-Route::get('/admin-dashboard', function () {
+//GETS
+Route::get('/company-dashboard', function () {
     return Inertia::render('companyDashboard/AdminDashboard');
 })->name('companydashboard');
 
-// Register
-Route::get('/login', function () {
-    return Inertia::render('userRegister/Login');
-});
-Route::get('/new-password', function () {
-    return Inertia::render('NewPassword');
-});
-Route::get('/username', function () {
-    return Inertia::render('Username');
-});
-
-
-Route::get('/register', function () {
-    return Inertia::render('Register');
-});
-
-// This page is 'FORM 1' on Figma
-Route::get('/admin-register', function () {
-    return Inertia::render('AdminRegister');
-})->middleware('guest');
-
-// This page is 'FORM 2' on Figma
-Route::get('/company-register', function () {
-    return Inertia::render('CompanyRegister');
-});
-
-Route::get('/admin-dashboard', function () {
-    return Inertia::render('AdminDashboard');
-});
-
 Route::get('/user-dashboard', function () {
-    return Inertia::render('UserDashboard');
-});
+    return Inertia::render('userDashboard/UserDashboard');
+})->name('userdashboard');
+
+Route::get('/rewards-collection', function () {
+    return Inertia::render('RewardsCollection');
+})->name('rewardscollection');
 
 Route::get('/wallet', function () {
     return Inertia::render('Wallet');
-});
+})->name('wallet');
 
+Route::get('/login', function () {
+    return Inertia::render('userRegister/Login');
+})->name('userlogin');
 
-Route::post('/create-team', [TeamController::class, 'store']);
-Route::post('/create-user', [UserController::class, 'storeUser']);
-Route::post('/create-company', [CompanyController::class, 'storeCompany']);
-Route::post('/create-reward', [RewardController::class, 'store']);
-Route::post('/create-log', [LogController::class, 'store']);
-Route::post('/create-quest', [QuestController::class, 'storeQuest']);
-Route::post('/create-admin', [AdminController::class, 'storeAdmin']);
+Route::get('/newpassword', function () {
+    return Inertia::render('userRegister/NewPassword');
+})->name('newpassword');
 
 Route::post('/login', [SessionController::class, 'store']);
 
