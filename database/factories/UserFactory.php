@@ -25,7 +25,6 @@ class UserFactory extends Factory
             'username' => fake()->name(),
             'birthday' => fake()->date(),
             'function' => fake()->word(),
-            'department' => fake()->word(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'company_id' => Company::all()->random()->id,
@@ -34,6 +33,8 @@ class UserFactory extends Factory
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'is_defaultPassword' => fake()->boolean(),
             'remember_token' => Str::random(10),
+            'coins' => fake()->randomNumber(),
+
         ];
     }
 
