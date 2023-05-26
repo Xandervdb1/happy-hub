@@ -2,7 +2,6 @@ import Header from '@/Components/Header'
 import '../../css/RewardsCollection.scss'
 
 const RewardsCollection = () => {
-
     return (
     <>
         <Header />
@@ -13,7 +12,6 @@ const RewardsCollection = () => {
             <div className='personalRewards'>
                 <p>Personal</p>
                 <div className='rewardList'>
-                    {/* TODO: Make a javascript file with an array filled with dummy data. Loop through the dummy data to create all necessary reward boxes */}
                 </div>
             </div>
             <div className='teamRewards'>
