@@ -19,22 +19,24 @@ class KeyController extends Controller
         //     $index = rand(0, strlen($characters) - 1);
         //     $key->key .= $characters[$index];
         // }
-        $key->key = Hash::make("azertyuiopmlkjhgfdsq");
-        // $key->key = Hash::make($key->key);
+        $key->key = "azertyuiopmlkjhgfdsq";
+        $key->key = Hash::make($key->key);
+        //TODO: change default key that gets made back to random generate
         $key->save();
+        return to_route('keycheck');
     }
 
     function validateKey(KeyRequest $request)
     {
-        $inputKey = $request->key;
+        $inputKey = $request->name;
         $allKeys = Key::all();
 
         foreach ($allKeys as $index => $key) {
             if (Hash::check($inputKey, $key->key)) {
                 $key->delete();
-                //Inertia::render(); //TODO: return form 1
+                return to_route('adminregister');
             } else {
-                dd("none matched");
+                return to_route('keycheck');
                 //Inertia::render(); //TODO: return check key page with error
             }
         }

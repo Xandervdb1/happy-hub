@@ -10,7 +10,8 @@ const CompanyRegister = () => {
         country: '',
         city: '',
         zip: '',
-        adress: ''
+        address: '',
+        addressnumber: '',
     })
 
     const handleChange = (e) => {
@@ -25,8 +26,7 @@ const CompanyRegister = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(values);
-        // router.post('', values)
+        router.post('/company-register', values)
     }
 
     return (
@@ -39,7 +39,8 @@ const CompanyRegister = () => {
                     <input className='input' type="text" name="country" id="country" value={values.country} onChange={handleChange} placeholder="Country" />
                     <input className='input' type="text" name="city" id="city" value={values.city} onChange={handleChange} placeholder="City" />
                     <input className='input' type="text" name="zip" id="zip" value={values.zip} onChange={handleChange} placeholder="ZIP" />
-                    <input className='input' type="text" name="adress" id="adress" value={values.department} onChange={handleChange} placeholder="Street & nr" />
+                    <input className='input' type="text" name="address" id="address" value={values.address} onChange={handleChange} placeholder="Street" />
+                    <input className='input' type="text" name="addressnumber" id="addressnumber" value={values.addressnumber} onChange={handleChange} placeholder="Nr" />
                     <div className='buttonContainer'>
                         <button type="submit" className='button'>Next</button>
                     </div>

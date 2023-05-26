@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('price');
-            $table->foreignId('team_id');
-            $table->foreignId('user_id');
+            $table->foreignId('team_id')->nullable();
+            $table->foreignId('user_id')->nullable();
             $table->timestamps();
         });
     }

@@ -14,13 +14,17 @@ class CompanyController extends Controller
     public function storeCompany(CompanyRequest $request)
     {
         $company = new Company;
-        $company->name = $request->input('name');
-        $company->street = $request->input('street');
-        $company->number = $request->input('number');
+        $company->name = $request->input('companyname');
+        $company->street = $request->input('address');
+        $company->number = $request->input('addressnumber');
         $company->zip = $request->input('zip');
         $company->city = $request->input('city');
         $company->country = $request->input('country');
+        $company->VAT = $request->input('vatnumber');
 
         $company->save();
+        //TODO: give saved company id to logged in admin
+
+        return to_route('companydashboard');
     }
 }

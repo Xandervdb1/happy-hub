@@ -1,4 +1,3 @@
-import Nav from "@/Components/NavComponent.jsx";
 import Header from "@/Components/Header.jsx";
 import { router } from '@inertiajs/react';
 import { useState } from 'react';
@@ -17,36 +16,31 @@ const KeyCheck = () => {
             ...values,
             [key]: value,
         }))
-        console.log(values);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        router.post('/admin-register', values)
+        router.post('/key-check', values)
     }
     return (
 
         <>
             <Header />
             <div className="formContainer">
-                <form onsSubmit={handleSubmit}>
+
+                <form onSubmit={handleSubmit}>
 
                     <input type="string" placeholder="Insert Key" className="input" value={values.name} onChange={handleChange} name="name" id="name" required />
 
                     <div className="buttonContainer">
-                        <button type="submit" className="button">Add Company
-                        </button>
-                        <br />
-                        <Link href="/admin-register"> Add Company</Link>
+                        <button>Add Company</button>
                     </div>
 
                 </form>
                 <p>Already have an account?</p>
-                <Link href="/login" >Login</Link>
+                <Link href="/login">Login</Link>
             </div>
         </>
 
     )
 }
-
-export default KeyCheck;

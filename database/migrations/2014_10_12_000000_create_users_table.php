@@ -22,9 +22,9 @@ return new class extends Migration
             $table->boolean('is_defaultPassword');
             $table->date('birthday');
             $table->string('function');
-            $table->string('department');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->integer('coins');
             $table->rememberToken();
             $table->timestamps();
             $table->foreignId('team_id');

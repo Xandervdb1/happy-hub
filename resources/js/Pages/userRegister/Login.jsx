@@ -3,7 +3,6 @@ import { router } from '@inertiajs/react'
 import { useState } from 'react'
 import { Link } from "@inertiajs/react";
 
-
 const Create = () => {
     const [values, setValues] = useState({
         name: '',
@@ -39,7 +38,7 @@ const Create = () => {
                     </div>
 
                     <div className="buttonContainer">
-                        <button type="submit" className="button">Submit</button>
+                        <button type="submit">Submit</button>
                     </div>
 
                 </form>

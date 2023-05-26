@@ -22,7 +22,8 @@ class CompanyFactory extends Factory
             'number' => fake()->randomNumber(),
             'zip' => fake()->randomNumber(),
             'city' => fake()->city(),
-            'country' => fake()->country()
+            'country' => fake()->country(),
+            'VAT' => fake()->word()
         ];
     }
 }
