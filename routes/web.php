@@ -28,7 +28,6 @@ Route::get('/', function () {
     return Inertia::render('Index');
 })->name('index');
 
-
 // key
 Route::get('/generate-key', function () {
     return Inertia::render('key/GenerateKey');
@@ -39,21 +38,28 @@ Route::get('/rewards-collection', function () {
     return Inertia::render('RewardsCollection');
 });
 
-Route::post('/key-check', function () {
+Route::post('/generate-key',  [KeyController::class, 'store']);
+Route::get('/key-check', function () {
     return Inertia::render('key/KeyCheck');
-});
-
+})->name('keycheck');
+Route::post('/key-check', [KeyController::class, 'validateKey']);
 
 // adminRegister
 // 'FORM 1' on Figma
 Route::get('/admin-register', function () {
-    return Inertia::render('AdminRegister');
-});
+    return Inertia::render('adminRegister/AdminRegister');
+})->name('adminregister');
+Route::post('/admin-register', [AdminController::class, 'storeAdmin']);
 // 'FORM 2' on Figma
-Route::get('/company-register', function () {
-    return Inertia::render('CompanyRegister');
-});
 
+Route::get('/company-register', function () {
+    return Inertia::render('adminRegister/CompanyRegister');
+})->name('companyregister');
+Route::post('/company-register', [CompanyController::class, 'storeCompany']);
+
+Route::get('/admin-dashboard', function () {
+    return Inertia::render('companyDashboard/AdminDashboard');
+})->name('companydashboard');
 
 // Register
 Route::get('/login', function () {
@@ -93,9 +99,8 @@ Route::get('/wallet', function () {
     return Inertia::render('Wallet');
 });
 
-Route::post('/generate-key',  [KeyController::class, 'store']);
+
 Route::post('/create-team', [TeamController::class, 'store']);
-Route::post('/check-key', [KeyController::class, 'validateKey']);
 Route::post('/create-user', [UserController::class, 'storeUser']);
 Route::post('/create-company', [CompanyController::class, 'storeCompany']);
 Route::post('/create-reward', [RewardController::class, 'store']);

@@ -16,12 +16,11 @@ const KeyCheck = () => {
             ...values,
             [key]: value,
         }))
-        console.log(values);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        router.post('/admin-register', values)
+        router.post('/key-check', values)
     }
     return (
 
@@ -29,15 +28,12 @@ const KeyCheck = () => {
             <Header />
             <div className="formContainer">
 
-                <form onsSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
 
                     <input type="string" placeholder="Insert Key" className="input" value={values.name} onChange={handleChange} name="name" id="name" required />
 
                     <div className="buttonContainer">
-                        <button type="submit">Add Company
-                        </button>
-                        <br />
-                        <Link href="/admin-register"> Add Company</Link>
+                        <button>Add Company</button>
                     </div>
 
                 </form>

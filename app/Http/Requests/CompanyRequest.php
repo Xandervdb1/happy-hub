@@ -25,13 +25,13 @@ class CompanyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|unique:companies,name|min:1|max:255',
-            'street' => 'required|min:1|max:255',
-            'number' => 'required|min:1|max:4',
+            'companyname' => 'required|unique:companies,name|min:1|max:255',
+            'address' => 'required|min:1|max:255',
+            'addressnumber' => 'required|min:1|max:4',
             'zip' => 'required|min:1|max:4',
             'city' => 'required|max:255',
             'country' => 'required|max:255',
-            'vat' => 'required|regex:/^[A-Z]{2}/'
+            'vatnumber' => 'required|regex:/^[A-Z]{2}/'
         ];
     }
 }
