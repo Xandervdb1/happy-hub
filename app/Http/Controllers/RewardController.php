@@ -18,4 +18,11 @@ class RewardController extends Controller
 
         $reward->save();
     }
+
+    function showAll()
+    {
+        $rewards = Reward::all();
+        return to_route ('rewardsCollection', ['rewards' => $rewards]);
+    }
 }
+
