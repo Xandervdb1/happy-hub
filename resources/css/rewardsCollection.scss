@@ -1,0 +1,23 @@
+$container-bg: #D9D9D9;
+
+.titleContainer {
+    background: $container-bg;
+    text-align: center;
+    margin-top: 1rem;
+
+    p {
+        padding: 0.25rem 0;
+    }
+}
+
+.personalRewards,
+.teamRewards,
+.futureRewards{
+    p:first-child {
+        border-bottom: 2px solid black;
+    }
+    text-align: center;
+    width: 65%;
+    font-weight: bold;
+    margin: 0.5rem auto 3rem;
+}

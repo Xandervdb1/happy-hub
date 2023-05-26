@@ -32,6 +32,12 @@ Route::get('/', function () {
 Route::get('/generate-key', function () {
     return Inertia::render('key/GenerateKey');
 });
+
+// Rewards collection page (>> See all rewards)
+Route::get('/rewards-collection', function () {
+    return Inertia::render('RewardsCollection');
+});
+
 Route::post('/key-check', function () {
     return Inertia::render('key/KeyCheck');
 });
@@ -64,9 +70,11 @@ Route::get('/username', function () {
 Route::get('/admin-dashboard', function () {
     return Inertia::render('AdminDashboard');
 });
+
 Route::get('/user-dashboard', function () {
     return Inertia::render('UserDashboard');
 });
+
 Route::get('/wallet', function () {
     return Inertia::render('Wallet');
 });

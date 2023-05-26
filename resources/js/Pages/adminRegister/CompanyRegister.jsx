@@ -4,7 +4,7 @@ import Header from '@/Components/Header'
 
 const CompanyRegister = () => {
 
-    const [ values, setValues ] = useState({
+    const [values, setValues] = useState({
         companyname: '',
         vatnumber: '',
         country: '',
@@ -22,7 +22,7 @@ const CompanyRegister = () => {
             [key]: value,
         }))
     }
-    
+
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(values);
