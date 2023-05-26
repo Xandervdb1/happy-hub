@@ -23,20 +23,39 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// index
 Route::get('/', function () {
     return Inertia::render('Index');
 });
 
-// for admin: generate key & check key
+
+// key
 Route::get('/generate-key', function () {
-    return Inertia::render('GenerateKey');
-});
-Route::post('/key-check', function () {
-    return Inertia::render('KeyCheck');
+    return Inertia::render('key/GenerateKey');
 });
 
-// login
+// Rewards collection page (>> See all rewards)
+Route::get('/rewards-collection', function () {
+    return Inertia::render('RewardsCollection');
+});
+
+Route::post('/key-check', function () {
+    return Inertia::render('key/KeyCheck');
+});
+
+
+// adminRegister
+// 'FORM 1' on Figma
+Route::get('/admin-register', function () {
+    return Inertia::render('AdminRegister');
+});
+// 'FORM 2' on Figma
+Route::get('/company-register', function () {
+    return Inertia::render('CompanyRegister');
+});
+
+
+// Register
 Route::get('/login', function () {
     return Inertia::render('Login');
 });
@@ -65,9 +84,11 @@ Route::get('/company-register', function () {
 Route::get('/admin-dashboard', function () {
     return Inertia::render('AdminDashboard');
 });
+
 Route::get('/user-dashboard', function () {
     return Inertia::render('UserDashboard');
 });
+
 Route::get('/wallet', function () {
     return Inertia::render('Wallet');
 });
