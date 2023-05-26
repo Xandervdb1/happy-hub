@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RewardRequest;
 use App\Models\Reward;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
+
 
 class RewardController extends Controller
 {
@@ -19,11 +21,12 @@ class RewardController extends Controller
 
         $reward->save();
     }
-    // TODO: specify user/team id
+    // TODO: specify user/team id (company)
 
     function showAllUserRewards()
     {
-        $rewards = Reward::whereNull('team_id')->orderBy('id', 'desc')->take(3)->get();
+        $userId = Auth::id();
+        $rewards = Reward::where('user_id', $userId)->take(3)->get();
         return Inertia::render('UserDashboard', ['userRewards' => $rewards]);
     }
 }
