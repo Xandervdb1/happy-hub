@@ -34,9 +34,7 @@ Route::get('/generate-key', function () {
 });
 
 // Rewards collection page (>> See all rewards)
-Route::get('/rewards-collection', function () {
-    return Inertia::render('RewardsCollection');
-});
+Route::get('/rewards-collection', [RewardController::class, 'showAll']);
 
 Route::post('/key-check', function () {
     return Inertia::render('key/KeyCheck');
