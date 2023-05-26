@@ -37,3 +37,4 @@ class RewardController extends Controller
         return Inertia::render('UserDashboard', ['teamRewards' => $rewards]);
     }
 }
+
