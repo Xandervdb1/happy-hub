@@ -16,7 +16,6 @@ const KeyCheck = () => {
             ...values,
             [key]: value,
         }))
-        console.log(values);
     }
 
     const handleSubmit = (e) => {
@@ -34,10 +33,7 @@ const KeyCheck = () => {
                     <input type="string" placeholder="Insert Key" className="input" value={values.name} onChange={handleChange} name="name" id="name" required />
 
                     <div className="buttonContainer">
-                        <button type="submit">Add Company
-                        </button>
-                        <br />
-                        <Link href="/admin-register"> Add Company</Link>
+                        <button>Add Company</button>
                     </div>
 
                 </form>

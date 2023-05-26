@@ -45,13 +45,16 @@ Route::get('/key-check', function () {
 
 // adminRegister
 // 'FORM 1' on Figma
+Route::post('/admin-register', [KeyController::class, 'validateKey']);
 Route::get('/admin-register', function () {
-    return Inertia::render('AdminRegister');
-});
+    return Inertia::render('adminRegister/AdminRegister');
+})->name('adminregister');
 // 'FORM 2' on Figma
+
 Route::get('/company-register', function () {
-    return Inertia::render('CompanyRegister');
-});
+    return Inertia::render('adminRegister/CompanyRegister');
+})->name('companyregister');
+
 
 
 // Register

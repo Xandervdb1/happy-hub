@@ -24,7 +24,7 @@ class KeyRequest extends FormRequest
     public function rules()
     {
         return [
-            'key' => 'required|size:20'
+            'name' => 'required|size:20'
         ];
     }
 }
