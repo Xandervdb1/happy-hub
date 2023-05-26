@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class AdminRequest extends FormRequest
 {
@@ -29,9 +30,8 @@ class AdminRequest extends FormRequest
             'username' => 'required|min:5|max:255',
             'birthday' => 'required|max:255',
             'function' => 'required|max:255',
-            'coins' => 'required',
             'email' => 'required|email|max:255',
-            'password' => 'required|min:8|max:16'
+            'password' => 'required|min:8|max:16|confirmed',
         ];
     }
 }

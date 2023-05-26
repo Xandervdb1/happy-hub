@@ -20,7 +20,7 @@ const KeyCheck = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        router.post('/admin-register', values)
+        router.post('/key-check', values)
     }
     return (
 

@@ -9,11 +9,10 @@ const AdminRegister = () => {
         lastname: '',
         username: '',
         birthday: '',
-        role: '',
-        department: '',
+        function: '',
         email: '',
         password: '',
-        confirmpassword: '',
+        password_confirmation: '',
     })
 
     const handleChange = (e) => {
@@ -28,8 +27,7 @@ const AdminRegister = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(values);
-        // router.post('', values)
+        router.post('/admin-register', values)
     }
 
     return (
@@ -46,15 +44,13 @@ const AdminRegister = () => {
 
                         <input type="date" name="birthday" id="birthday" value={values.birthday} onChange={handleChange} className="input" />
 
-                        <input type="text" name="role" id="role" value={values.role} onChange={handleChange} placeholder="Role" className="input" />
-
-                        <input type="text" name="department" id="department" value={values.department} onChange={handleChange} placeholder="Department" className="input" />
+                        <input type="text" name="function" id="function" value={values.function} onChange={handleChange} placeholder="Role" className="input" />
 
                         <input type="email" name="email" id="email" value={values.email} onChange={handleChange} placeholder="Email" className="input" />
 
                         <input type="password" name="password" id="password" value={values.password} onChange={handleChange} placeholder="Password" className="input" />
 
-                        <input type="password" name="confirmpassword" id="confirmpassword" value={values.confirmpassword} onChange={handleChange} placeholder="Repeat password" className="input" />
+                        <input type="password" name="password_confirmation" id="password_confirmation" value={values.password_confirmation} onChange={handleChange} placeholder="Repeat password" className="input" />
                     </div>
                     <div className='buttonContainer'>
                         <button type="submit">Next</button>

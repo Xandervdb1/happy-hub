@@ -42,13 +42,14 @@ Route::post('/generate-key',  [KeyController::class, 'store']);
 Route::get('/key-check', function () {
     return Inertia::render('key/KeyCheck');
 })->name('keycheck');
+Route::post('/key-check', [KeyController::class, 'validateKey']);
 
 // adminRegister
 // 'FORM 1' on Figma
-Route::post('/admin-register', [KeyController::class, 'validateKey']);
 Route::get('/admin-register', function () {
     return Inertia::render('adminRegister/AdminRegister');
 })->name('adminregister');
+Route::post('/admin-register', [AdminController::class, 'storeAdmin']);
 // 'FORM 2' on Figma
 
 Route::get('/company-register', function () {
