@@ -10,7 +10,8 @@ const CompanyRegister = () => {
         country: '',
         city: '',
         zip: '',
-        adress: ''
+        adress: '',
+        adressnumber: '',
     })
 
     const handleChange = (e) => {
@@ -39,7 +40,8 @@ const CompanyRegister = () => {
                     <input className='input' type="text" name="country" id="country" value={values.country} onChange={handleChange} placeholder="Country" />
                     <input className='input' type="text" name="city" id="city" value={values.city} onChange={handleChange} placeholder="City" />
                     <input className='input' type="text" name="zip" id="zip" value={values.zip} onChange={handleChange} placeholder="ZIP" />
-                    <input className='input' type="text" name="adress" id="adress" value={values.department} onChange={handleChange} placeholder="Street & nr" />
+                    <input className='input' type="text" name="adress" id="adress" value={values.adress} onChange={handleChange} placeholder="Street" />
+                    <input className='input' type="text" name="adressnumber" id="adressnumber" value={values.adressnumber} onChange={handleChange} placeholder="Nr" />
                     <div className='buttonContainer'>
                         <button type="submit">Next</button>
                     </div>
