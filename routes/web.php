@@ -57,9 +57,9 @@ Route::get('/company-register', function () {
 Route::get('/admin-dashboard', function () {
     return Inertia::render('AdminDashboard');
 });
-Route::get('/user-dashboard', function () {
-    return Inertia::render('UserDashboard');
-});
+Route::get('/user-dashboard', [RewardController::class, 'showAllUserRewards']);
+
+
 Route::get('/wallet', function () {
     return Inertia::render('Wallet');
 });
