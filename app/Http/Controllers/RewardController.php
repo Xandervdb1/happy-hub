@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RewardRequest;
 use App\Models\Reward;
+use Inertia\Inertia;
 
 class RewardController extends Controller
 {
@@ -22,7 +23,7 @@ class RewardController extends Controller
     function showAll()
     {
         $rewards = Reward::all();
-        return to_route ('rewardsCollection', ['rewards' => $rewards]);
+        return Inertia::render('RewardsCollection', ['rewards' => $rewards]);
     }
 }
 

@@ -1,7 +1,8 @@
 import Header from '@/Components/Header'
 import '../../css/RewardsCollection.scss'
 
-const RewardsCollection = () => {
+const RewardsCollection = (props) => {
+    console.log(props.rewards)
     return (
     <>
         <Header />
