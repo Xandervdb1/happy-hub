@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SessionRequest;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\RedirectResponse;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -15,24 +16,16 @@ class SessionController extends Controller
 {
     use ValidatesRequests;
 
-    public function login(SessionRequest $request): RedirectResponse
+    public function create()
     {
-        $credentials = $request->only('email', 'password');
+        return view('AdminRegister');
+    }
 
-        if (Auth::attempt($credentials)) {
-            // Authentication successful
-            $request->session()->regenerate();
-
-            if (Auth::user()->is_admin) {
-                return redirect()->intended('/admin-dahboard');
-            } else {
-                return redirect()->intended('/user-dashboard');
-            }
-        } else {
-            // Authentication failed
-            return redirect()->back()->withErrors([
-                'login' => 'Invalid credentials',
-            ]);
-        }
+    public function store()
+    {
+        request()->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
     }
 }

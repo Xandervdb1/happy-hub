@@ -51,7 +51,7 @@ Route::get('/register', function () {
 // This page is 'FORM 1' on Figma
 Route::get('/admin-register', function () {
     return Inertia::render('AdminRegister');
-});
+})->middleware('guest');
 
 // This page is 'FORM 2' on Figma
 Route::get('/company-register', function () {
@@ -78,4 +78,4 @@ Route::post('/create-log', [LogController::class, 'store']);
 Route::post('/create-quest', [QuestController::class, 'storeQuest']);
 Route::post('/create-admin', [AdminController::class, 'storeAdmin']);
 
-Route::post('/login', [SessionController::class, 'login']);
+Route::post('/login', [SessionController::class, 'store'])->middleware('guest');

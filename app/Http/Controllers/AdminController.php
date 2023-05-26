@@ -25,7 +25,7 @@ class AdminController extends Controller
         $admin->password = Hash::make($request->input('password'));
         $admin->birthday = $request->input('birthday');
         $admin->function = $request->input('function');
-        $admin->coin = $request->input('coins');
+        $admin->coins = $request->input('coins');
         $admin->is_admin = 1;
 
         $admin->save();
