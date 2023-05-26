@@ -26,7 +26,7 @@ use Inertia\Inertia;
 // index
 Route::get('/', function () {
     return Inertia::render('Index');
-});
+})->name('index');
 
 
 // key
@@ -103,4 +103,4 @@ Route::post('/create-log', [LogController::class, 'store']);
 Route::post('/create-quest', [QuestController::class, 'storeQuest']);
 Route::post('/create-admin', [AdminController::class, 'storeAdmin']);
 
-Route::post('/login', [SessionController::class, 'store'])->middleware('guest');
+Route::post('/login', [SessionController::class, 'store']);

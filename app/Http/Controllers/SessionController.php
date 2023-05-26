@@ -11,6 +11,7 @@ use Illuminate\Http\RedirectResponse;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class SessionController extends Controller
 {
@@ -23,9 +24,26 @@ class SessionController extends Controller
 
     public function store()
     {
-        request()->validate([
+
+        $attributes = request()->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
+
+        if (auth()->attempt($attributes)) {
+            session()->regenerate();
+            return to_route('index')->with('Success', 'Logged In!');
+        }
+
+        throw ValidationException::withMessages([
+            'email' => 'Your credentials could not be verified'
+        ]);
+    }
+
+    public function destroy()
+    {
+        auth()->logout();
+
+        return to_route('index')->with('Logged out! See you soon');
     }
 }
