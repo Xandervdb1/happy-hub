@@ -6,6 +6,7 @@ use App\Http\Controllers\KeyController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\RewardController;
 use App\Http\Controllers\QuestController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -54,7 +55,7 @@ Route::get('/register', function () {
 // This page is 'FORM 1' on Figma
 Route::get('/admin-register', function () {
     return Inertia::render('AdminRegister');
-});
+})->middleware('guest');
 
 // This page is 'FORM 2' on Figma
 Route::get('/company-register', function () {
@@ -80,3 +81,5 @@ Route::post('/create-reward', [RewardController::class, 'store']);
 Route::post('/create-log', [LogController::class, 'store']);
 Route::post('/create-quest', [QuestController::class, 'storeQuest']);
 Route::post('/create-admin', [AdminController::class, 'storeAdmin']);
+
+Route::post('/login', [SessionController::class, 'store'])->middleware('guest');
