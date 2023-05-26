@@ -28,7 +28,7 @@ const Login = () => {
         <>
         <Header/>
         <div className="formContainer">
-            <form onsSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
 
                 <div className="inputField">
                     <input className="input" type="email" placeholder="Email" value={values.email} onChange={handleChange} name="email" id="email" required />

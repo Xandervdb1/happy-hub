@@ -57,7 +57,7 @@ Route::get('/company-register', function () {
 
 // Register
 Route::get('/login', function () {
-    return Inertia::render('Login');
+    return Inertia::render('userRegister/Login');
 });
 Route::get('/new-password', function () {
     return Inertia::render('NewPassword');
@@ -104,3 +104,5 @@ Route::post('/create-quest', [QuestController::class, 'storeQuest']);
 Route::post('/create-admin', [AdminController::class, 'storeAdmin']);
 
 Route::post('/login', [SessionController::class, 'store']);
+
+Route::post('/logout', [SessionController::class, 'destroy']);

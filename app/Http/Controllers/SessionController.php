@@ -32,7 +32,7 @@ class SessionController extends Controller
 
         if (auth()->attempt($attributes)) {
             session()->regenerate();
-            return to_route('index')->with('Success', 'Logged In!');
+            return to_route('index');
         }
 
         throw ValidationException::withMessages([
@@ -44,6 +44,6 @@ class SessionController extends Controller
     {
         auth()->logout();
 
-        return to_route('index')->with('Logged out! See you soon');
+        return to_route('index');
     }
 }
