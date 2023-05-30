@@ -6,7 +6,7 @@ import { Link } from "@inertiajs/react";
 const NewPassword = () => {
     const [values, setValues] = useState({
         password: '',
-        newpassword: '',
+        password_confirmation: '',
     })
 
     const handleChange = (e) => {
@@ -21,28 +21,28 @@ const NewPassword = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        router.post('/username', values)
+        router.post('/newpassword', values)
     }
 
     return (
         <>
-        <Header/>
-        <div className="formContainer">
-            <form onsSubmit={handleSubmit}>
+            <Header />
+            <div className="formContainer">
+                <form onSubmit={handleSubmit}>
 
-                <div className="inputField">
-                    <input className="input" type="password" placeholder="New password" value={values.password} onChange={handleChange} name="password" id="password" required />
-                    <input className="input" type="password" placeholder="Confirm new password" value={values.newpassword} onChange={handleChange} name="newpassword" id="newpassword" required />
-                </div>
+                    <div className="inputField">
+                        <input className="input" type="password" placeholder="New password" value={values.password} onChange={handleChange} name="password" id="password" required />
+                        <input className="input" type="password" placeholder="Confirm new password" value={values.password_confirmation} onChange={handleChange} name="newpassword" id="password_confirmation" required />
+                    </div>
 
-                <div className="buttonContainer">
-                    <button type="submit">Confirm</button>
-                </div>
+                    <div className="buttonContainer">
+                        <button type="submit">Confirm</button>
+                    </div>
 
-            </form>
-            <Link href="/user-name">Continue with current password</Link>
-            <p>First time registering as Admin?</p>
-            <Link href="/generate-key">Click here!</Link>
+                </form>
+                <Link href="/defaultpassword" method="post" as="button">Continue with current password</Link>
+                <p>First time registering as Admin?</p>
+                <Link href="/generate-key">Click here!</Link>
             </div>
         </>
     )

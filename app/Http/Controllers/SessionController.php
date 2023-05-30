@@ -36,15 +36,14 @@ class SessionController extends Controller
 
         if (auth()->attempt($attributes)) {
             session()->regenerate();
-            $company = Company::find(1); // Replace '1' with the team ID you want to check
-            if ($company) {
-                // The team exists
-                $teamsInCompany = $company->teams;
-
-                dd($teamsInCompany[0]->name);
+            if (Auth::user()->is_admin) {
+                return to_route('companydashboard');
             } else {
-                // The team does not exist
-                dd("Team does not exist.");
+                if (Auth::user()->is_defaultPassword) {
+                    return to_route('newpassword');
+                } else {
+                    return to_route('userdashboard');
+                }
             }
         }
     }

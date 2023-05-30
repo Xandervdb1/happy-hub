@@ -21,26 +21,26 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        router.post('/new-password', values)
+        router.post('/username', values)
     }
 
     return (
         <>
-        <Header/>
-        <div className="formContainer">
-            <form onsSubmit={handleSubmit}>
+            <Header />
+            <div className="formContainer">
+                <form onSubmit={handleSubmit}>
 
-                <div className="inputField">
-                    <input className="input" type="name" placeholder="Username" value={values.name} onChange={handleChange} name="name" id="name" required />
-                    <input type="date" name="birthday" id="birthday" value={values.birthday} onChange={handleChange} className="input" />
-                </div>
+                    <div className="inputField">
+                        <input className="input" type="name" placeholder="Username" value={values.name} onChange={handleChange} name="name" id="name" required />
+                        <input type="date" name="birthday" id="birthday" value={values.birthday} onChange={handleChange} className="input" />
+                    </div>
 
-                <div className="buttonContainer">
-                    <button type="submit">Confirm</button>
-                </div>
+                    <div className="buttonContainer">
+                        <button type="submit">Confirm</button>
+                    </div>
 
-            </form>
-           
+                </form>
+
             </div>
         </>
     )

@@ -73,6 +73,13 @@ Route::get('/login', function () {
 Route::get('/newpassword', function () {
     return Inertia::render('userRegister/NewPassword');
 })->name('newpassword');
+Route::post('/newpassword', [UserController::class, 'updatePassword']);
+Route::post('/defaultpassword', [UserController::class, 'defaultPassword']);
+
+Route::get('/username', function () {
+    return Inertia::render('userRegister/Username');
+})->name('username');
+Route::post('/username', [UserController::class, 'setUsername']);
 
 Route::post('/login', [SessionController::class, 'store']);
 
