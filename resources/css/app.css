@@ -1,37 +1,31 @@
 .HeaderContainer {
-    display: flex
+  display: flex;
 }
-
-header {
-    width: 100%;
-    display: flex;
-    background-color: #222831;
-    height: 100%;
-    flex-direction: row;
-    justify-content: space-around;
+.HeaderContainer header {
+  width: 100%;
+  display: flex;
+  background-color: #222831;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-around;
 }
-
-.walletContainer {
-    display: flex;
-    flex-direction: row;
+.HeaderContainer header .walletContainer {
+  display: flex;
+  flex-direction: row;
 }
-
-.coinHeader {
-    width: auto;
-    height: 30px;
-    margin-top: 35px;
+.HeaderContainer header .walletContainer .wallet {
+  color: white;
+  margin-top: 38px;
 }
-
-.wallet {
-    color: white;
-    margin-top: 38px;
+.HeaderContainer header .walletContainer .coinHeader {
+  width: auto;
+  height: 30px;
+  margin-top: 35px;
 }
-
-.logoHeader {
-    width: 100px;
+.HeaderContainer header .logoHeader {
+  width: 100px;
 }
-
-.hamburgerIcon {
-    margin-top: 25px;
-    height: 40px;
-}
+.HeaderContainer header .hamburgerIcon {
+  margin-top: 25px;
+  height: 40px;
+}/*# sourceMappingURL=app.css.map */
