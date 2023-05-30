@@ -55,12 +55,11 @@ Route::get('/company-dashboard', function () {
     return Inertia::render('companyDashboard/AdminDashboard');
 })->name('companydashboard');
 
-Route::get('/user-dashboard', function () {
-    return Inertia::render('userDashboard/UserDashboard');
-})->name('userdashboard');
+Route::get('/user-dashboard', [RewardController::class,'showAllUserAndTeamRewards']);
+// Route::get('/user-dashboard', [RewardController::class,'showAllTeamRewards']);
 
 // Rewards collection page (>> See all rewards)
-Route::get('/rewards-collection', [RewardController::class, 'showAll'])->name('rewardsCollection');
+// Route::get('/rewards-collection', [RewardController::class, 'showAll'])->name('rewardsCollection');
 
 Route::get('/wallet', function () {
     return Inertia::render('Wallet');

@@ -27,14 +27,27 @@ class RewardController extends Controller
     {
         $userId = Auth::id();
         $rewards = Reward::where('user_id', $userId)->take(3)->get();
-        return Inertia::render('UserDashboard', ['userRewards' => $rewards]);
+        return Inertia::render('userDashboard/UserDashboard', ['userRewards' => $rewards]);
     }
 
     function showAllTeamRewards()
     {
         $teamId = Auth::id();
         $rewards = Reward::where('team_id', $teamId)->take(3)->get();
-        return Inertia::render('UserDashboard', ['teamRewards' => $rewards]);
+        return Inertia::render('userDashboard/UserDashboard', ['teamRewards' => $rewards]);
     }
+    function showAllUserAndTeamRewards()
+{
+    $userId = Auth::id();
+    $teamId = Auth::user()->team_id;
+    
+    $userRewards = Reward::where('user_id', $userId)->take(3)->get();
+    $teamRewards = Reward::where('team_id', $teamId)->take(3)->get();
+
+    return Inertia::render('userDashboard/UserDashboard', [
+        'userRewards' => $userRewards,
+        'teamRewards' => $teamRewards
+    ]);
+}
 }
 
