@@ -6,8 +6,13 @@ header {
     width: 100%;
     display: flex;
     background-color: #222831;
-    justify-content: center;
     height: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.walletContainer {
+    display: flex;
     flex-direction: row;
 }
 
@@ -15,15 +20,11 @@ header {
     width: auto;
     height: 30px;
     margin-top: 35px;
-    margin: auto;
-
 }
 
 .wallet {
     color: white;
     margin-top: 38px;
-    margin-right: -60px;
-    margin-left: 10px;
 }
 
 .logoHeader {
@@ -33,6 +34,4 @@ header {
 .hamburgerIcon {
     margin-top: 25px;
     height: 40px;
-    align-items: end;
-    margin-left: auto;
 }

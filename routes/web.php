@@ -52,7 +52,7 @@ Route::post('/company-register', [CompanyController::class, 'storeCompany']);
 
 //GETS
 Route::get('/company-dashboard', function () {
-    return Inertia::render('companyDashboard/AdminDashboard');
+    return Inertia::render('companyDashboard/CompanyDashboard');
 })->name('companydashboard');
 
 Route::get('/user-dashboard', function () {

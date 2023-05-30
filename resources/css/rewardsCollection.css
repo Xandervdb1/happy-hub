@@ -1,0 +1,22 @@
+.titleContainer {
+  background: #D9D9D9;
+  text-align: center;
+  margin-top: 1rem;
+}
+.titleContainer p {
+  padding: 0.25rem 0;
+}
+
+.personalRewards,
+.teamRewards,
+.futureRewards {
+  text-align: center;
+  width: 65%;
+  font-weight: bold;
+  margin: 0.5rem auto 3rem;
+}
+.personalRewards p:first-of-type,
+.teamRewards p:first-of-type,
+.futureRewards p:first-of-type {
+  border-bottom: 2px solid black;
+}/*# sourceMappingURL=rewardsCollection.css.map */
