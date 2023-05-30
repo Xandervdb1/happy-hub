@@ -5,7 +5,7 @@ export default function AdminDashboard() {
     return (
         <>
             <Header />
-            <center> <b><h1>Admin Dashboard</h1></b></center>
+
         </>
     )
 }
