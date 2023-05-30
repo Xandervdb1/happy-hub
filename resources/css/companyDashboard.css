@@ -1,1 +1,79 @@
-/*# sourceMappingURL=companyDashboard.css.map */
+.adminDashboard {
+  display: grid;
+  grid-template-rows: 5;
+  margin: 10px;
+  text-align: center;
+}
+.adminDashboard .titlePage {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.adminDashboard .titleDashboard {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+  margin: 15px;
+}
+.adminDashboard .addLink {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: right;
+}
+.adminDashboard .teamContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: auto;
+}
+.adminDashboard .teamContainer .titleTable {
+  border-bottom: 1px solid grey;
+  opacity: 0.6;
+  height: 25px;
+}
+.adminDashboard .teamContainer #name {
+  text-align: left;
+  margin-left: 15px;
+}
+.adminDashboard .teamContainer #member {
+  text-align: right;
+  margin-right: 15px;
+}
+.adminDashboard .quest {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 5vh;
+  text-align: left;
+  margin-top: 20px;
+}
+.adminDashboard .member {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 5vh;
+  text-align: left;
+}
+.adminDashboard .reward {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 5vh;
+  text-align: left;
+}
+.adminDashboard .logContainer {
+  display: grid;
+  text-align: left;
+  margin-left: 15px;
+  margin-top: 40px;
+}
+.adminDashboard .logContainer .logTitle {
+  font-size: 20px;
+  font-weight: 600;
+  border-bottom: 1px solid gray;
+  width: 100%;
+}
+.adminDashboard .logContainer .log {
+  text-align: start;
+}
+.adminDashboard .logContainer .seeAllLogs {
+  place-items: center;
+  border-bottom: 1px solid grey;
+}/*# sourceMappingURL=companyDashboard.css.map */
