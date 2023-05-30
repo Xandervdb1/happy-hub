@@ -33,7 +33,7 @@ const KeyCheck = () => {
                     <input type="string" placeholder="Insert Key" className="input" value={values.name} onChange={handleChange} name="name" id="name" required />
 
                     <div className="buttonContainer">
-                        <button>Add Company</button>
+                        <button className="button">Add Company</button>
                     </div>
 
                 </form>

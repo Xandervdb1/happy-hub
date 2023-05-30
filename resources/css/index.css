@@ -1,68 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #EEEEEE;
-    display: grid;
-    width: 100vw;
-    height: 100vh;
-    font-family: 'Montserrat', sans-serif
-}
-
-.Container {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-}
-
-.LogoContainer {
-    background-color: #222831;
-    grid-row: 1/8;
-    grid-column: 1/13;
-}
-
-.logo {
-    width: 100%;
+  background-color: #EEEEEE;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
 }
 
 .button {
-    background-color: #393E46;
-    border: none;
-    color: #FFCD29;
-    width: 100px;
-    height: 55px;
-    border-radius: 10px;
+  background-color: #393E46;
+  border: none;
+  color: #FFCD29;
+  width: 100px;
+  height: 55px;
+  border-radius: 10px;
 }
 
-.buttonLogin {
-    grid-row: 10/12;
-    grid-column: 4/7;
-    margin: 3px;
-    background-color: #393E46;
-    border: none;
-    color: #FFCD29;
-    width: 100px;
-    height: 55px;
-    border-radius: 10px;
+.Container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
 }
-
-.buttonBuyProduct {
-    grid-row: 10/12;
-    grid-column: 7/10;
-    margin: 3px;
-    background-color: #393E46;
-    border: none;
-    color: #FFCD29;
-    width: 100px;
-    height: 55px;
-    border-radius: 10px;
+.Container .LogoContainer {
+  background-color: #222831;
+  grid-row: 1/8;
+  grid-column: 1/13;
 }
+.Container .LogoContainer .logo {
+  width: 100%;
+}
+.Container .buttonLogin {
+  grid-row: 10/12;
+  grid-column: 4/7;
+  margin: 3px;
+  background-color: #393E46;
+  border: none;
+  color: #FFCD29;
+  width: 100px;
+  height: 55px;
+  border-radius: 10px;
+}
+.Container .buttonBuyProduct {
+  grid-row: 10/12;
+  grid-column: 7/10;
+  margin: 3px;
+  background-color: #393E46;
+  border: none;
+  color: #FFCD29;
+  width: 100px;
+  height: 55px;
+  border-radius: 10px;
+}/*# sourceMappingURL=index.css.map */
