@@ -33,6 +33,7 @@
   grid-column: 2/5;
   text-align: end;
   font-weight: 800;
+  z-index: 99;
 }
 .dashboardContainer .questRewards {
   display: grid;
