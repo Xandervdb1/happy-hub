@@ -10,14 +10,55 @@ $container-bg: #D9D9D9;
     }
 }
 
-.personalRewards,
-.teamRewards,
-.futureRewards{
-    p:first-of-type {
-        border-bottom: 2px solid black;
-    }
+.rewardsContainer {
     text-align: center;
-    width: 65%;
+    width: 90%;
     font-weight: bold;
     margin: 0.5rem auto 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+
+    .title {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid black;
+    }
+}
+
+.priceContainer {
+    width: 100%;
+    display: flex;
+    gap: 0.25rem;
+    margin: auto;
+    
+    p {
+        padding-top: 2px;
+    }
+}
+
+.reward {
+    background-color: #D9D9D9;
+    text-align: center;
+    border: 1px solid black;
+    height: 55px;
+    width: 80px;
+    display: grid;
+    place-items: center;
+    grid-row: 2;
+    grid-column: 1;
+    margin-top: 5px;
+    border-radius: 7px;
+    cursor: pointer;
+
+    .activity {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+.reward:hover {
+    border: 3px outset black;
 }
