@@ -1,22 +1,38 @@
 .HeaderContainer {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    display: flex
 }
 
 header {
-    display: grid;
+    width: 100%;
+    display: flex;
     background-color: #222831;
-    grid-column: 1/13;
+    justify-content: center;
     height: 100%;
+    flex-direction: row;
+}
+
+.coinHeader {
+    width: auto;
+    height: 30px;
+    margin-top: 35px;
+    margin: auto;
+
+}
+
+.wallet {
+    color: white;
+    margin-top: 38px;
+    margin-right: -60px;
+    margin-left: 10px;
 }
 
 .logoHeader {
-    grid-column: 7;
     width: 100px;
 }
 
 .hamburgerIcon {
     margin-top: 25px;
     height: 40px;
-    grid-column: 10;
+    align-items: end;
+    margin-left: auto;
 }

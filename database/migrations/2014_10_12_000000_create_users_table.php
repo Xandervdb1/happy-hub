@@ -17,19 +17,20 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('lastname');
-            $table->string('username');
+            $table->string('username')->nullable();
             $table->string('password');
             $table->boolean('is_defaultPassword');
-            $table->date('birthday');
+            $table->date('birthday')->nullable();
             $table->string('function');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->integer('coins');
             $table->rememberToken();
-            $table->timestamps();
-            $table->foreignId('team_id');
-            $table->foreignId('company_id');
+            $table->foreignId('team_id')->nullable();
+            $table->foreignId('company_id')->nullable();
+            $table->foreignId('role_id')->nullable();
             $table->boolean('is_admin');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->timestamps();
         });
     }
 

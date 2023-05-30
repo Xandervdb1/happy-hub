@@ -22,8 +22,7 @@ const UserDashboard = (props) => {
                     <p className="personalInfo">Team Wallet:</p>
                 </div>
                 <div className="personalQuests">
-                    {/* make the h2 seeAll  link to the rewards page */}
-                    <h2 className="seeAll"> &gt; &gt; see all </h2>
+                    <Link href="/rewards-collection" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Your Quests</h1>
                     <hr className="underline" />
                     <div className="priceContainer">
@@ -35,8 +34,7 @@ const UserDashboard = (props) => {
                     </div>
                 </div>
                 <div className="teamQuests">
-                    {/* make the h2 seeAll  link to the rewards page */}
-                    <h2 className="seeAll"> &gt; &gt; see all </h2>
+                    <Link href="/rewards-collection" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Team Quests</h1>
                     <hr className="underline" />
                     <div className="priceContainer">
@@ -48,8 +46,7 @@ const UserDashboard = (props) => {
                     </div>
                 </div>
                 <div className="rewards">
-                    {/* make the h2 seeAll  link to the rewards page */}
-                    <h2 className="seeAll">&gt; &gt;see all </h2>
+                    <Link href="/rewards-collection" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Rewards</h1>
                     <hr className="underline" />
                     <div className="reward">
