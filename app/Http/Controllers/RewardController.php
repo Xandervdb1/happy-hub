@@ -23,31 +23,46 @@ class RewardController extends Controller
     }
     // TODO: specify user/team id (company)
 
-    function showAllUserRewards()
+    // function showAllUserRewards()
+    // {
+    //     $userId = Auth::id();
+    //     $rewards = Reward::where('user_id', $userId)->get();
+    //     return Inertia::render('userDashboard/UserDashboard', ['userRewards' => $rewards]);
+    // }
+
+    // function showAllTeamRewards()
+    // {
+    //     $teamId = Auth::id();
+    //     $rewards = Reward::where('team_id', $teamId)->get();
+    //     return Inertia::render('userDashboard/UserDashboard', ['teamRewards' => $rewards]);
+    // }
+
+    function showThreeRewards()
     {
         $userId = Auth::id();
-        $rewards = Reward::where('user_id', $userId)->take(3)->get();
-        return Inertia::render('userDashboard/UserDashboard', ['userRewards' => $rewards]);
-    }
+        $teamId = Auth::user()->team_id;
+        
+        $userRewards = Reward::where('user_id', $userId)->take(3)->get();
+        $teamRewards = Reward::where('team_id', $teamId)->take(3)->get();
 
-    function showAllTeamRewards()
+        return Inertia::render('userDashboard/UserDashboard', [
+            'userRewards' => $userRewards,
+            'teamRewards' => $teamRewards
+        ]);
+    }
+        function showAllRewards()
     {
-        $teamId = Auth::id();
-        $rewards = Reward::where('team_id', $teamId)->take(3)->get();
-        return Inertia::render('userDashboard/UserDashboard', ['teamRewards' => $rewards]);
-    }
-    function showAllUserAndTeamRewards()
-{
-    $userId = Auth::id();
-    $teamId = Auth::user()->team_id;
-    
-    $userRewards = Reward::where('user_id', $userId)->take(3)->get();
-    $teamRewards = Reward::where('team_id', $teamId)->take(3)->get();
+        $userId = Auth::id();
+        $teamId = Auth::user()->team_id;
+        
+        $userRewards = Reward::where('user_id', $userId)->get();
+        $teamRewards = Reward::where('team_id', $teamId)->get();
 
-    return Inertia::render('userDashboard/UserDashboard', [
-        'userRewards' => $userRewards,
-        'teamRewards' => $teamRewards
-    ]);
-}
+        return Inertia::render('rewardsCollection', [
+            'userRewards' => $userRewards,
+            'teamRewards' => $teamRewards
+        ]);
+    }
+    
 }
 
