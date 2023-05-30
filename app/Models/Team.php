@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Team extends Model
 {
     use HasFactory;
+
+    function company()
+    {
+        return $this->hasOne(Company::class);
+    }
+
+    function quest()
+    {
+        return $this->hasMany(Quest::class);
+    }
 }

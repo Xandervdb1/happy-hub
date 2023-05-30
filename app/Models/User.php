@@ -17,4 +17,19 @@ class User extends Authenticatable
     {
         return $this->hasOne(Team::class);
     }
+
+    function company()
+    {
+        return $this->hasOne(Company::class);
+    }
+
+    function role()
+    {
+        return $this->hasOne(Role::class);
+    }
+
+    function quest()
+    {
+        return $this->hasMany(Quest::class);
+    }
 }

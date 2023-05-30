@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Reward extends Model
 {
     use HasFactory;
+
+    function team()
+    {
+        return $this->hasOne(Team::class);
+    }
+
+    function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
+    function quest()
+    {
+        return $this->hasMany(Quest::class);
+    }
 }
