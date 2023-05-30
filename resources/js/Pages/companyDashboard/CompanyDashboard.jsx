@@ -1,12 +1,12 @@
-import Header from '@/Components/Header'
+
+import Header from "@/Components/Header.jsx"
+
 
 const AdminDashboard = (props) => {
     console.log(props.teams)
-
     return (
         <>
             <Header />
-            <center> <b><h1>Company Dashboard</h1></b></center>
         </>
     )
 }
