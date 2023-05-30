@@ -39,7 +39,7 @@ class UserController extends Controller
         $user->save();
     }
 
-    function updatePassword(Request $request)
+    public function updatePassword(Request $request)
     {
         $attributes = request()->validate([
             'password' => 'required|min:8|max:16|confirmed',

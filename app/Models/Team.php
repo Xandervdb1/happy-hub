@@ -23,4 +23,9 @@ class Team extends Model
     {
         return $this->hasMany(Quest::class);
     }
+
+    function logs()
+    {
+        return $this->hasMany(Log::class);
+    }
 }

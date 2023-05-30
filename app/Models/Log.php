@@ -11,21 +11,21 @@ class Log extends Model
 
     function user()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
     function team()
     {
-        return $this->hasOne(Team::class);
+        return $this->belongsTo(Team::class);
     }
 
     function quest()
     {
-        return $this->hasMany(Quest::class);
+        return $this->belongsTo(Quest::class);
     }
 
     function reward()
     {
-        return $this->hasMany(Reward::class);
+        return $this->belongsTo(Reward::class);
     }
 }
