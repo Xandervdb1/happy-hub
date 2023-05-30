@@ -18,9 +18,4 @@ class Reward extends Model
     {
         return $this->hasOne(User::class);
     }
-
-    function quest()
-    {
-        return $this->hasMany(Quest::class);
-    }
 }

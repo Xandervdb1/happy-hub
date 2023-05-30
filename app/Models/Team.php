@@ -11,10 +11,15 @@ class Team extends Model
 
     function company()
     {
-        return $this->hasOne(Company::class);
+        return $this->belongsTo(Company::class);
     }
 
-    function quest()
+    function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
+    function quests()
     {
         return $this->hasMany(Quest::class);
     }

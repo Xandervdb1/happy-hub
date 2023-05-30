@@ -15,17 +15,17 @@ class User extends Authenticatable
 
     function team()
     {
-        return $this->hasOne(Team::class);
+        return $this->belongsTo(Team::class);
     }
 
     function company()
     {
-        return $this->hasOne(Company::class);
+        return $this->belongsTo(Company::class);
     }
 
     function role()
     {
-        return $this->hasOne(Role::class);
+        return $this->belongsTo(Role::class);
     }
 
     function quest()
