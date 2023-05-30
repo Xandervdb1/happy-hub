@@ -51,10 +51,14 @@ Route::get('/company-register', function () {
 Route::post('/company-register', [CompanyController::class, 'storeCompany']);
 
 //GETS
-Route::get('/company-dashboard', [RewardController::class, 'showTeam']);
+// companyDashboard 1
+Route::get('/company-dashboard', [TeamController::class, 'showTeams']);
 
+Route::get('/team-members', [TeamController::class, 'showMembers']);
+
+
+// userDashboard 1
 Route::get('/user-dashboard', [RewardController::class,'showThreeRewards']);
-
 // Rewards collection page (>> See all rewards)
 Route::get('/rewards-collection', [RewardController::class, 'showAllRewards']);
 
