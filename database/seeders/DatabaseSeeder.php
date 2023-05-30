@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Reward;
+use App\Models\Team;
 
 class DatabaseSeeder extends Seeder
 {
@@ -35,5 +38,19 @@ class DatabaseSeeder extends Seeder
         \App\Models\Quest::factory(20)->create();
 
         \App\Models\Log::factory(20)->create();
+
+        foreach (User::all() as $user) {
+            $user->rewards()->attach(Reward::all()->random()->id);
+            $user->rewards()->attach(Reward::all()->random()->id);
+            $user->rewards()->attach(Reward::all()->random()->id);
+            $user->rewards()->attach(Reward::all()->random()->id);
+        }
+
+        foreach (Team::all() as $team) {
+            $team->rewards()->attach(Reward::all()->random()->id);
+            $team->rewards()->attach(Reward::all()->random()->id);
+            $team->rewards()->attach(Reward::all()->random()->id);
+            $team->rewards()->attach(Reward::all()->random()->id);
+        }
     }
 }

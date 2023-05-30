@@ -24,6 +24,11 @@ class Team extends Model
         return $this->hasMany(Quest::class);
     }
 
+    function rewards()
+    {
+        return $this->belongsToMany(Reward::class, 'reward_team');
+    }
+
     function logs()
     {
         return $this->hasMany(Log::class);

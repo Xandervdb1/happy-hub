@@ -32,4 +32,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Quest::class);
     }
+
+    function rewards()
+    {
+        return $this->belongsToMany(Reward::class, 'reward_user');
+    }
 }
