@@ -15,7 +15,6 @@ class TeamController extends Controller
         $team->coins = 0;
         $team->company_id = 0;
         //TODO: set company_id to the company_id of the logged in admin
-
         $team->save();
     }
 }

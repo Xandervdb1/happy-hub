@@ -1,9 +1,14 @@
 import Header from "@/Components/Header.jsx"
 import { Link } from "@inertiajs/react"
+import QuestForm from "@/Components/QuestForm.jsx"
+import RewardForm from "@/Components/RewardForm.jsx"
+import MemberForm from "@/Components/MemberForm.jsx"
+import 'reactjs-popup'
+import Popup from "reactjs-popup"
 
 
 const AdminDashboard = (props) => {
-    console.log(props.teams)
+
     return (
         <>
             <Header />
@@ -19,15 +24,21 @@ const AdminDashboard = (props) => {
                 </div>
                 <div className="quest">
                     <h1 className="titleDashboard">Add Quest</h1>
-                    <p className="addLink">+</p>
+                    <Popup trigger={<p className="addLink">+</p>} position='left center'>
+                        <QuestForm />
+                    </Popup>
                 </div>
                 <div className="member">
                     <h1 className="titleDashboard">Add Member</h1>
-                    <p className="addLink">+</p>
+                    <Popup trigger={<p className="addLink">+</p>} position='left center'>
+                        <MemberForm />
+                    </Popup>
                 </div>
                 <div className="reward">
                     <h1 className="titleDashboard">Add Reward</h1>
-                    <p className="addLink">+</p>
+                    <Popup trigger={<p className="addLink">+</p>} position='left center'>
+                        <RewardForm />
+                    </Popup>
                 </div>
                 <div className="logContainer">
                     <h1 className="logTitle">Logs</h1>
@@ -41,5 +52,6 @@ const AdminDashboard = (props) => {
             </div>
         </>
     )
+
 }
 export default AdminDashboard;
