@@ -2,9 +2,10 @@ import Header from '@/Components/Header'
 import '../../css/RewardsCollection.scss'
 
 const RewardsCollection = (props) => {
-    const rewards = props.rewards;
+    const rewards = props.userRewards;
+    const teamRewards = props.teamRewards;
 
-    const rewardList = () => {
+    const userRewardList = () => {
         const rewardList = [];
 
         for(let i = 0; i < 9; i++){
@@ -14,6 +15,16 @@ const RewardsCollection = (props) => {
         return rewardList;
     }
 
+    const teamRewardList = () => {
+        const rewardList = [];
+
+        for(let i = 0; i < 9; i++){
+            rewardList.push(teamRewards[i]);
+        }
+
+        return rewardList;
+    }
+                // TODO: make a component for a reward section
     return (
     <>
         <Header />
@@ -21,28 +32,44 @@ const RewardsCollection = (props) => {
             <p>REWARDS</p>
         </div>
         <div className='rewardsContainer'>
-            <div className='personalRewards'>
-                <p>Personal</p>
-                <div className='rewardList'>
-                    {
-                        rewardList().map(reward => (
-                            <div key={reward.id}>{reward.name}</div>
-                        ))
-                    }
-                </div>
-            </div>
-            <div className='teamRewards'>
-                <p>Team</p>
-                <div className='rewardList'>
-
-                </div>
-            </div>
-            <div className='futureRewards'>
-                <p>Earn more, unlock bigger</p>
-                <div className='rewardList'>
-
-                </div>
-            </div>
+            <p className='title'>Personal</p>
+                {
+                    userRewardList().map(reward => (
+                        <>
+                        <div className="reward" key={reward.id}>
+                            <div className="totalReward">
+                                <p className='activity'> {reward.name}</p>
+                                <div className="priceContainer">
+                                    <img className="coins" src="../coin.png" alt="coin Happy Hub" />
+                                    <p className="price">200</p>
+                                </div>
+                            </div>
+                        </div>
+                        </>
+                    ))
+                }
+        </div>
+        <div className='rewardsContainer'>
+            <p className='title'>Team</p>
+                {
+                    teamRewardList().map(reward => (
+                        <>
+                        <div className="reward" key={reward.id}>
+                            <div className="totalReward">
+                                <p className='activity'> {reward.name}</p>
+                                <div className="priceContainer">
+                                    <img className="coins" src="../coin.png" alt="coin Happy Hub" />
+                                    <p className="price">200</p>
+                                </div>
+                            </div>
+                        </div>
+                        </>
+                    ))
+                }
+        </div>
+        <div className='rewardsContainer'>
+            <p className='title'>Earn more, unlock bigger</p>
+                {/* TODO: Logic to only display rewards which cost more than the current amount of coins */}
         </div>
     </>
     )
