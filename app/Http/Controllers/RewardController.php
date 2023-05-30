@@ -6,6 +6,7 @@ use App\Http\Requests\RewardRequest;
 use App\Models\Reward;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Team;
 
 
 class RewardController extends Controller
@@ -63,6 +64,13 @@ class RewardController extends Controller
             'teamRewards' => $teamRewards
         ]);
     }
-    
+    function showTeam()
+    {
+        $teams = Team::all();
+
+        return Inertia::render('companyDashboard/CompanyDashboard', [
+            "teams"=>$teams
+        ]);
+    }
 }
 

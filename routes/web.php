@@ -51,9 +51,7 @@ Route::get('/company-register', function () {
 Route::post('/company-register', [CompanyController::class, 'storeCompany']);
 
 //GETS
-Route::get('/company-dashboard', function () {
-    return Inertia::render('companyDashboard/AdminDashboard');
-})->name('companydashboard');
+Route::get('/company-dashboard', [RewardController::class, 'showTeam']);
 
 Route::get('/user-dashboard', [RewardController::class,'showThreeRewards']);
 
