@@ -58,7 +58,7 @@ class RewardController extends Controller
         $userRewards = Reward::where('user_id', $userId)->get();
         $teamRewards = Reward::where('team_id', $teamId)->get();
 
-        return Inertia::render('rewardsCollection', [
+        return Inertia::render('RewardsCollection', [
             'userRewards' => $userRewards,
             'teamRewards' => $teamRewards
         ]);
