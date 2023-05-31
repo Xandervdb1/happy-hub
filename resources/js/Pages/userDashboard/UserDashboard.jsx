@@ -22,7 +22,7 @@ const UserDashboard = (props) => {
                     <p className="personalInfo">Team Wallet:</p>
                 </div>
                 <div className="personalQuests">
-                    <Link href="/rewards-collection" className="seeAll">&gt; &gt; see all </Link>
+                    <Link href="/all-quests" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Your Quests</h1>
                     <hr className="underline" />
                     <div className="priceContainer">
@@ -34,7 +34,7 @@ const UserDashboard = (props) => {
                     </div>
                 </div>
                 <div className="teamQuests">
-                    <Link href="/rewards-collection" className="seeAll">&gt; &gt; see all </Link>
+                    <Link href="/all-quests" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Team Quests</h1>
                     <hr className="underline" />
                     <div className="priceContainer">
