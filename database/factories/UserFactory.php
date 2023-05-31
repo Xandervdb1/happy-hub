@@ -25,7 +25,6 @@ class UserFactory extends Factory
             'lastname' => fake()->name(),
             'username' => fake()->name(),
             'birthday' => fake()->date(),
-            'function' => fake()->word(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'company_id' => Company::all()->random()->id,

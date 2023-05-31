@@ -48,7 +48,6 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('rootroot'),
             'is_defaultPassword' => false,
             'birthday' => '1970-1-1',
-            'function' => 'admin',
             'email' => 'root@root.com',
             'coins' => 0,
             'team_id' => 1,
