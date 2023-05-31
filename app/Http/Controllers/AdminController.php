@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AdminRequest;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
@@ -32,6 +33,7 @@ class AdminController extends Controller
                 $admin->company_id = null;
 
                 $admin->save();
+                Auth::login($admin);
                 return to_route('companyregister');
         }
 }
