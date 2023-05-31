@@ -38,7 +38,7 @@ const Create = () => {
                     </div>
 
                     <div className="buttonContainer">
-                        <button type="submit">Submit</button>
+                        <button className="button" type="submit">Submit</button>
                     </div>
 
                 </form>
