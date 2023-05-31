@@ -27,4 +27,20 @@ class KeyRequest extends FormRequest
             'name' => 'required|size:20'
         ];
     }
+
+    public function attributes()
+    {
+        return [
+            'name' => 'key'
+        ];
+    }
+
+    public function messages()
+    {
+
+        return [
+            'required' => 'Please provide a :attribute',
+            'size' => ':attribute must be 20 characters',
+        ];
+    }
 }
