@@ -6,6 +6,8 @@ use App\Http\Requests\KeyRequest;
 use App\Models\Key;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ConfirmationKey;
 
 class KeyController extends Controller
 {
@@ -19,6 +21,7 @@ class KeyController extends Controller
             $index = rand(0, strlen($characters) - 1);
             $key->key .= $characters[$index];
         }
+        Mail::to('xandervandenbossche0@gmail.com')->send(new ConfirmationKey($key));
         $key->key = Hash::make($key->key);
         $key->save();
         return to_route('keycheck');

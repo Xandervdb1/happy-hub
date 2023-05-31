@@ -58,7 +58,7 @@ Route::get('/team-members', [TeamController::class, 'showMembers']);
 
 
 // userDashboard 1
-Route::get('/user-dashboard', [RewardController::class,'showThreeRewardsAndQuests']);
+Route::get('/user-dashboard', [RewardController::class, 'showThreeRewardsAndQuests']);
 // Rewards collection page (>> See all rewards)
 Route::get('/rewards-collection', [RewardController::class, 'showAllRewards']);
 Route::get('/all-quests', [QuestController::class, 'showAllQuests']);
@@ -87,3 +87,8 @@ Route::post('/username', [UserController::class, 'setUsername']);
 Route::post('/login', [SessionController::class, 'store']);
 
 Route::post('/logout', [SessionController::class, 'destroy']);
+
+Route::get('/mailable', function () {
+    $key = App\Models\Key::find(1);
+    return new App\Mail\ConfirmationKey($key);
+});
