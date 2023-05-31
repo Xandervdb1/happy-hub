@@ -2,20 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SessionRequest;
-use App\Models\Team;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Http\RedirectResponse;
-use App\Models\User;
-use App\Models\Quest;
-use App\Models\Log;
-use App\Models\Company;
-use App\Models\Role;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
 class SessionController extends Controller
@@ -27,9 +17,9 @@ class SessionController extends Controller
         return view('AdminRegister');
     }
 
-    public function store()
+    public function store(SessionRequest $request)
     {
-        $attributes = request()->validate([
+        $attributes = $request->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);

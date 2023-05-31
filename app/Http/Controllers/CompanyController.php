@@ -25,7 +25,7 @@ class CompanyController extends Controller
         $company->VAT = $request->input('vatnumber');
 
         $company->save();
-        //TODO: give saved company id to logged in admin
+
         $userId = Auth::user()->id;
         $user = User::find($userId);
         $user->company_id = $company->id;

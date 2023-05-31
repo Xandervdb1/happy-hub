@@ -59,6 +59,10 @@ class DatabaseSeeder extends Seeder
             'is_admin' => true,
         ]);
 
+        DB::table('keys')->insert([
+            'key' => Hash::make('azertyuiopmlkjhgfdsq'),
+        ]);
+
         foreach (User::all() as $user) {
             $user->rewards()->attach(Reward::all()->random()->id);
             $user->rewards()->attach(Reward::all()->random()->id);

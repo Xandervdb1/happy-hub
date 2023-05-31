@@ -15,13 +15,11 @@ class KeyController extends Controller
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $key = new Key;
 
-        // for ($i = 0; $i < $length; $i++) {
-        //     $index = rand(0, strlen($characters) - 1);
-        //     $key->key .= $characters[$index];
-        // }
-        $key->key = "azertyuiopmlkjhgfdsq";
+        for ($i = 0; $i < $length; $i++) {
+            $index = rand(0, strlen($characters) - 1);
+            $key->key .= $characters[$index];
+        }
         $key->key = Hash::make($key->key);
-        //TODO: change default key that gets made back to random generate
         $key->save();
         return to_route('keycheck');
     }
