@@ -45,7 +45,8 @@ class UserController extends Controller
             'password' => 'required|min:8|max:16|confirmed',
         ]);
 
-        $loggedInUser = Auth::user();
+        $userId = Auth::user();
+        $loggedInUser = User::find($userId);
         $loggedInUser->password = Hash::make($request->password);
         $loggedInUser->is_defaultPassword = false;
         $loggedInUser->save();
@@ -55,7 +56,8 @@ class UserController extends Controller
 
     function defaultPassword()
     {
-        $loggedInUser = Auth::user();
+        $userId = Auth::user();
+        $loggedInUser = User::find($userId);
         $loggedInUser->is_defaultPassword = false;
         $loggedInUser->save();
 
@@ -69,7 +71,8 @@ class UserController extends Controller
             'birthday' => 'required|max:255',
         ]);
 
-        $loggedInUser = Auth::user();
+        $userId = Auth::user();
+        $loggedInUser = User::find($userId);
         $loggedInUser->username = $request->name;
         $loggedInUser->birthday = $request->birthday;
         $loggedInUser->save();
