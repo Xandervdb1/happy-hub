@@ -35,4 +35,16 @@ class UserRequest extends FormRequest
             'email' => 'required|email|max:255'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'required' => 'Please provide a :attribute',
+            'min' => ':attribute must be longer',
+            'username.min' => ':attribute must be longer than 5 characters',
+            'max' => ':attribute cannot exceed 255 characters',
+            'email' => ':attribute must be of format email',
+            'confirmed' => ':attribute must be confirmed'
+        ];
+    }
 }

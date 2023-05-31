@@ -34,4 +34,16 @@ class CompanyRequest extends FormRequest
             'vatnumber' => 'required|regex:/^[A-Z]{2}/'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'required' => 'Please provide a :attribute',
+            'min' => ':attribute must be longer',
+            'unique' => ':attribute already exists',
+            'max' => ':attribute cannot exceed 255 characters',
+            'zip.max' => ':attribute cannot be longer than 4 characters',
+            'regex' => ':attribute first two characters must be letters',
+        ];
+    }
 }

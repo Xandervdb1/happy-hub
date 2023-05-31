@@ -28,4 +28,11 @@ class RewardRequest extends FormRequest
             'coins' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'required' => 'Please provide :attribute',
+        ];
+    }
 }
