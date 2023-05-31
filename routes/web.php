@@ -58,9 +58,13 @@ Route::get('/team-members', [TeamController::class, 'showMembers']);
 
 
 // userDashboard 1
-Route::get('/user-dashboard', [RewardController::class,'showThreeRewards']);
+Route::get('/user-dashboard', [RewardController::class,'showThreeRewardsAndQuests']);
 // Rewards collection page (>> See all rewards)
 Route::get('/rewards-collection', [RewardController::class, 'showAllRewards']);
+Route::get('/all-quests', [QuestController::class, 'showAllQuests']);
+
+// personal-quests
+// team-quests
 
 Route::get('/wallet', function () {
     return Inertia::render('Wallet');
