@@ -29,7 +29,7 @@ class RewardController extends Controller
     {
         $userId = Auth::id();
         $teamId = Auth::user()->team_id;
-        
+
         $userRewards = Reward::where('user_id', $userId)->take(3)->get();
         $teamRewards = Reward::where('team_id', $teamId)->take(3)->get();
 
@@ -48,7 +48,7 @@ class RewardController extends Controller
     {
         $userId = Auth::id();
         $teamId = Auth::user()->team_id;
-        
+
         $userRewards = Reward::where('user_id', $userId)->get();
         $teamRewards = Reward::where('team_id', $teamId)->get();
 
@@ -58,4 +58,3 @@ class RewardController extends Controller
         ]);
     }
 }
-

@@ -52,7 +52,7 @@ Route::post('/company-register', [CompanyController::class, 'storeCompany']);
 
 //GETS
 // companyDashboard 1
-Route::get('/company-dashboard', [TeamController::class, 'showTeams']);
+Route::get('/company-dashboard', [TeamController::class, 'showTeams'])->name('companydashboard');
 
 Route::get('/team-members', [TeamController::class, 'showMembers']);
 
