@@ -63,13 +63,12 @@ Route::get('/user-dashboard', [RewardController::class,'showThreeRewardsAndQuest
 Route::get('/rewards-collection', [RewardController::class, 'showAllRewards']);
 Route::get('/all-quests', [QuestController::class, 'showAllQuests']);
 
-// personal-quests
-// team-quests
 
 Route::get('/wallet', function () {
     return Inertia::render('Wallet');
 })->name('wallet');
 
+//LOGIN
 Route::get('/login', function () {
     return Inertia::render('userRegister/Login');
 })->name('userlogin');
