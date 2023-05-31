@@ -30,7 +30,7 @@ class User extends Authenticatable
 
     function quest()
     {
-        return $this->hasMany(Quest::class);
+        return $this->belongsToMany(Quest::class, 'quest_user');
     }
 
     function rewards()

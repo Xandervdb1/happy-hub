@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Quest;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Reward;
@@ -62,6 +64,10 @@ class DatabaseSeeder extends Seeder
             $user->rewards()->attach(Reward::all()->random()->id);
             $user->rewards()->attach(Reward::all()->random()->id);
             $user->rewards()->attach(Reward::all()->random()->id);
+            $user->quest()->attach(Quest::all()->random()->id);
+            $user->quest()->attach(Quest::all()->random()->id);
+            $user->quest()->attach(Quest::all()->random()->id);
+            $user->quest()->attach(Quest::all()->random()->id);
         }
 
         foreach (Team::all() as $team) {
@@ -69,6 +75,10 @@ class DatabaseSeeder extends Seeder
             $team->rewards()->attach(Reward::all()->random()->id);
             $team->rewards()->attach(Reward::all()->random()->id);
             $team->rewards()->attach(Reward::all()->random()->id);
+            $team->quests()->attach(Quest::all()->random()->id);
+            $team->quests()->attach(Quest::all()->random()->id);
+            $team->quests()->attach(Quest::all()->random()->id);
+            $team->quests()->attach(Quest::all()->random()->id);
         }
     }
 }
