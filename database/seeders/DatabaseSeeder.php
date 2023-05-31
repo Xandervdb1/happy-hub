@@ -64,10 +64,10 @@ class DatabaseSeeder extends Seeder
             $user->rewards()->attach(Reward::all()->random()->id);
             $user->rewards()->attach(Reward::all()->random()->id);
             $user->rewards()->attach(Reward::all()->random()->id);
-            $user->quest()->attach(Quest::all()->random()->id);
-            $user->quest()->attach(Quest::all()->random()->id);
-            $user->quest()->attach(Quest::all()->random()->id);
-            $user->quest()->attach(Quest::all()->random()->id);
+            $user->quests()->attach(Quest::all()->random()->id);
+            $user->quests()->attach(Quest::all()->random()->id);
+            $user->quests()->attach(Quest::all()->random()->id);
+            $user->quests()->attach(Quest::all()->random()->id);
         }
 
         foreach (Team::all() as $team) {

@@ -28,7 +28,7 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    function quest()
+    function quests()
     {
         return $this->belongsToMany(Quest::class, 'quest_user');
     }
