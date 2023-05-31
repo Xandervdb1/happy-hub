@@ -15,10 +15,9 @@ const AllQuests = (props) => {
             </div>
             <div className='questContainer'>
                 <p className='title'>Personal Quests</p>
-                <hr className="underline" />
+                
 
                 <div className="personalQuests">
-                    <div className="reward">
                         <table>
                             <tbody>
                                 {
@@ -32,12 +31,11 @@ const AllQuests = (props) => {
                                 }
                             </tbody>
                         </table>
-                    </div>
                 </div>
                 <br />
                 <div className="teamQuests">
                     <h1 className="title">Your team quests</h1>
-                    <hr className="underline" />
+                    
                     <div className="questRewards">
                         <table>
                             <tbody>
