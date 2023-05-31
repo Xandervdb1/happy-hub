@@ -27,8 +27,6 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        \App\Models\Key::factory(3)->create();
-
         \App\Models\Company::factory(3)->create();
 
         \App\Models\Team::factory(15)->create();
@@ -59,6 +57,9 @@ class DatabaseSeeder extends Seeder
             'is_admin' => true,
         ]);
 
+        DB::table('keys')->insert([
+            'key' => Hash::make('12345678912345678912'),
+        ]);
         DB::table('keys')->insert([
             'key' => Hash::make('azertyuiopmlkjhgfdsq'),
         ]);

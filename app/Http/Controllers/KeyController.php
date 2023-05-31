@@ -29,14 +29,14 @@ class KeyController extends Controller
         $inputKey = $request->name;
         $allKeys = Key::all();
 
-        foreach ($allKeys as $index => $key) {
+        foreach ($allKeys as $key) {
             if (Hash::check($inputKey, $key->key)) {
                 $key->delete();
                 return to_route('adminregister');
-            } else {
-                return to_route('keycheck');
-                //Inertia::render(); //TODO: return check key page with error
             }
         }
+
+        return to_route('keycheck')->withErrors(["no-match" => "There's no matching key found"]);
+        //Inertia::render(); //TODO: return check key page with error
     }
 }
