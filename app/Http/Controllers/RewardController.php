@@ -7,6 +7,7 @@ use App\Models\Reward;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Quest;
+use App\Models\User;
 
 
 
@@ -28,13 +29,13 @@ class RewardController extends Controller
     function showThreeRewardsAndQuests()
     {
         $userId = Auth::id();
-        $teamId = Auth::user()->team_id;
+        $user = User::find($userId);
+        $userRewards = $user->rewards->take(3);
+        $userQuests = $user->quests->take(3);
 
-        $userRewards = Reward::where('user_id', $userId)->take(3)->get();
-        $teamRewards = Reward::where('team_id', $teamId)->take(3)->get();
-
-        $userQuests = Quest::where('user_id', $userId)->take(3)->get();
-        $teamQuests = Quest::where('team_id', $teamId)->take(3)->get();
+        $team = $user->team;
+        $teamRewards = $team->rewards->take(3);
+        $teamQuests = $team->quests->take(3);
 
         return Inertia::render('userDashboard/UserDashboard', [
             'userRewards' => $userRewards,
@@ -42,8 +43,8 @@ class RewardController extends Controller
             'userQuests' => $userQuests,
             'teamQuests' => $teamQuests,
         ]);
-        
     }
+
     function showAllRewards()
     {
         $userId = Auth::id();
