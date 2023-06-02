@@ -1,4 +1,5 @@
 import Header from "@/Components/Header";
+import UserDashboard from "./UserDashboard.css";
 
 const AllQuests = (props) => {
     // console.log(props.userQuests.name);
@@ -10,10 +11,9 @@ const AllQuests = (props) => {
     return (
         <>
             <Header />
-            <div className="titleContainer">
-                <p>QUESTS</p>
-            </div>
-            <div className='questContainer'>
+            <div className="QuestContainer">
+            <h1>QUESTS</h1>
+            <div className='personalQuestsContainer'>
                 <p className='title'>Personal Quests</p>
                 
 
@@ -24,8 +24,10 @@ const AllQuests = (props) => {
                                     userQuests.map((userQuest) => (
                                         <tr key={userQuest.id}>
                                             <td>{userQuest.name}</td>
-                                            <td>{userQuest.coins}</td>
-                                            <img className="coins" src="../coin.png" alt="coin Happy Hub" />
+                                            <div className="tableColumn">
+                                                <td>{userQuest.coins}</td>
+                                                <img className="coins" src="../coin.png" alt="coin Happy Hub" />
+                                            </div>
                                         </tr>
                                     ))
                                 }
@@ -33,17 +35,19 @@ const AllQuests = (props) => {
                         </table>
                 </div>
                 <br />
-                <div className="teamQuests">
-                    <h1 className="title">Your team quests</h1>
+                <div className="teamQuestsContainer">
+                    <p className="title">Your team quests</p>
                     
-                    <div className="questRewards">
+                    <div className="teamQuest">
                         <table>
                             <tbody>
                                 {teamQuests.map((teamQuest) => (
                                     <tr key={teamQuest.id}>
                                         <td>{teamQuest.name}</td>
-                                        <td>{teamQuest.coins}</td>
-                                        <img className="coins" src="../coin.png" alt="coin Happy Hub" />
+                                        <div className="tableColumn">
+                                            <td>{teamQuest.coins}</td>
+                                            <img className="coins" src="../coin.png" alt="coin Happy Hub" />
+                                        </div>
                                     </tr>
                                 ))}
                             </tbody>
@@ -51,6 +55,8 @@ const AllQuests = (props) => {
                     </div>
                 </div>
             </div>
+            </div>
+            
         </>
     )
 }

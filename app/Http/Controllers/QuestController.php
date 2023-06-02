@@ -9,6 +9,7 @@ use App\Http\Requests\QuestRequest;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use App\Models\User;
 
 class QuestController extends Controller
 {
@@ -29,10 +30,12 @@ class QuestController extends Controller
     function showAllQuests()
     {
         $userId = Auth::id();
-        $teamId = Auth::user()->team_id;
-        
-        $userQuests = Quest::where('user_id', $userId)->get();
-        $teamQuests = Quest::where('team_id', $teamId)->get();
+        $user = User::find($userId);
+
+        $userQuests = $user->quests;
+        $team = $user->team;
+
+        $teamQuests = $team->quests;
 
         return Inertia::render('userDashboard/AllQuests', [
             'userQuests' => $userQuests,

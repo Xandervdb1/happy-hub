@@ -1,0 +1,29 @@
+.QuestContainer h1 {
+  text-align: center;
+  margin: 20px;
+  font-size: x-large;
+}
+.QuestContainer div.personalQuestsContainer, .QuestContainer .teamQuestsContainer {
+  margin-bottom: 20px;
+}
+.QuestContainer div.personalQuestsContainer .title, .QuestContainer .teamQuestsContainer .title {
+  text-decoration: underline;
+  background-color: #D9D9D9;
+}
+.QuestContainer div.personalQuestsContainer .personalQuests, .QuestContainer div.personalQuestsContainer .teamQuest, .QuestContainer .teamQuestsContainer .personalQuests, .QuestContainer .teamQuestsContainer .teamQuest {
+  background-color: #D9D9D9;
+  display: flex;
+}
+.QuestContainer div.personalQuestsContainer .personalQuests table, .QuestContainer div.personalQuestsContainer .teamQuest table, .QuestContainer .teamQuestsContainer .personalQuests table, .QuestContainer .teamQuestsContainer .teamQuest table {
+  width: 100vw;
+  display: flex;
+}
+.QuestContainer div.personalQuestsContainer .personalQuests table tbody tr, .QuestContainer div.personalQuestsContainer .teamQuest table tbody tr, .QuestContainer .teamQuestsContainer .personalQuests table tbody tr, .QuestContainer .teamQuestsContainer .teamQuest table tbody tr {
+  width: 100vw;
+  padding: 5px 25px;
+  display: flex;
+  justify-content: space-between;
+}
+.QuestContainer div.personalQuestsContainer .personalQuests table tbody tr .tableColumn, .QuestContainer div.personalQuestsContainer .teamQuest table tbody tr .tableColumn, .QuestContainer .teamQuestsContainer .personalQuests table tbody tr .tableColumn, .QuestContainer .teamQuestsContainer .teamQuest table tbody tr .tableColumn {
+  display: flex;
+}/*# sourceMappingURL=userdashboard.css.map */
