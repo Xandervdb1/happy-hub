@@ -5,26 +5,7 @@ const RewardsCollection = (props) => {
     const rewards = props.userRewards;
     const teamRewards = props.teamRewards;
 
-    const userRewardList = () => {
-        const rewardList = [];
-
-        for(let i = 0; i < 9; i++){
-            rewardList.push(rewards[i]);
-        }
-
-        return rewardList;
-    }
-
-    const teamRewardList = () => {
-        const rewardList = [];
-
-        for(let i = 0; i < 9; i++){
-            rewardList.push(teamRewards[i]);
-        }
-
-        return rewardList;
-    }
-                // TODO: make a component for a reward section
+    // TODO: make a component for a reward section
     return (
     <>
         <Header />
@@ -34,9 +15,10 @@ const RewardsCollection = (props) => {
         <div className='rewardsContainer'>
             <p className='title'>Personal</p>
                 {
-                    userRewardList().map(reward => (
+                    rewards.map(reward => (
                         <>
-                        <div className="reward" key={reward.id}>
+                        {console.log(reward.id)}
+                        <div className="reward" key={reward.name + reward.id}>
                             <div className="totalReward">
                                 <p className='activity'> {reward.name}</p>
                                 <div className="priceContainer">
@@ -52,9 +34,9 @@ const RewardsCollection = (props) => {
         <div className='rewardsContainer'>
             <p className='title'>Team</p>
                 {
-                    teamRewardList().map(reward => (
+                    teamRewards.map(reward => (
                         <>
-                        <div className="reward" key={reward.id}>
+                        <div className="reward" key={reward.name + reward.id}>
                             <div className="totalReward">
                                 <p className='activity'> {reward.name}</p>
                                 <div className="priceContainer">
@@ -70,6 +52,21 @@ const RewardsCollection = (props) => {
         <div className='rewardsContainer'>
             <p className='title'>Earn more, unlock bigger</p>
                 {/* TODO: Logic to only display rewards which cost more than the current amount of coins */}
+                {/* {
+                    teamRewards.map(reward => (
+                        <>
+                        <div className="reward" key={reward.name}>
+                            <div className="totalReward">
+                                <p className='activity'> {reward.name}</p>
+                                <div className="priceContainer">
+                                    <img className="coins" src="../coin.png" alt="coin Happy Hub" />
+                                    <p className="price">200</p>
+                                </div>
+                            </div>
+                        </div>
+                        </>
+                    ))
+                } */}
         </div>
     </>
     )
