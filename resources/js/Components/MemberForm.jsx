@@ -1,4 +1,6 @@
 import React from "react"
+import { useState } from 'react'
+import { router } from '@inertiajs/react'
 
 const FormMember = () => {
     const [values, setValues] = useState({
