@@ -52,20 +52,23 @@ Route::post('/company-register', [CompanyController::class, 'storeCompany']);
 
 //GETS
 // companyDashboard 1
-Route::get('/company-dashboard', [TeamController::class, 'showTeams']);
+Route::get('/company-dashboard', [TeamController::class, 'showTeams'])->name('companydashboard');
 
 Route::get('/team-members', [TeamController::class, 'showMembers']);
 
 
 // userDashboard 1
-Route::get('/user-dashboard', [RewardController::class,'showThreeRewards']);
+Route::get('/user-dashboard', [RewardController::class, 'showThreeRewardsAndQuests'])->name('userdashboard');
 // Rewards collection page (>> See all rewards)
 Route::get('/rewards-collection', [RewardController::class, 'showAllRewards']);
+Route::get('/all-quests', [QuestController::class, 'showAllQuests']);
+
 
 Route::get('/wallet', function () {
     return Inertia::render('Wallet');
 })->name('wallet');
 
+//LOGIN
 Route::get('/login', function () {
     return Inertia::render('userRegister/Login');
 })->name('userlogin');
@@ -73,7 +76,19 @@ Route::get('/login', function () {
 Route::get('/newpassword', function () {
     return Inertia::render('userRegister/NewPassword');
 })->name('newpassword');
+Route::post('/newpassword', [UserController::class, 'updatePassword']);
+Route::post('/defaultpassword', [UserController::class, 'defaultPassword']);
+
+Route::get('/username', function () {
+    return Inertia::render('userRegister/Username');
+})->name('username');
+Route::post('/username', [UserController::class, 'setUsername']);
 
 Route::post('/login', [SessionController::class, 'store']);
 
 Route::post('/logout', [SessionController::class, 'destroy']);
+
+Route::get('/mailable', function () {
+    $key = App\Models\Key::find(1);
+    return new App\Mail\ConfirmationKey($key);
+});

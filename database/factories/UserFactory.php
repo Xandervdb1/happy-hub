@@ -25,12 +25,11 @@ class UserFactory extends Factory
             'lastname' => fake()->name(),
             'username' => fake()->name(),
             'birthday' => fake()->date(),
-            'function' => fake()->word(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'company_id' => Company::all()->random()->id,
             'team_id' => Team::all()->random()->id,
-            'function_id' => Role::all()->random()->id,
+            'role_id' => Role::all()->random()->id,
             'is_admin' => fake()->boolean(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'is_defaultPassword' => fake()->boolean(),

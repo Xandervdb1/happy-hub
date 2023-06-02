@@ -2,15 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SessionRequest;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Http\RedirectResponse;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
 class SessionController extends Controller
@@ -22,28 +17,35 @@ class SessionController extends Controller
         return view('AdminRegister');
     }
 
-    public function store()
+    public function store(SessionRequest $request)
     {
-
-        $attributes = request()->validate([
+        $attributes = $request->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
 
         if (auth()->attempt($attributes)) {
             session()->regenerate();
-            return to_route('index');
+            if (Auth::user()->is_admin) {
+                return to_route('companydashboard');
+            } else {
+                if (Auth::user()->is_defaultPassword) {
+                    return to_route('newpassword');
+                } else {
+                    return to_route('userdashboard');
+                }
+            }
+        } else {
+            throw ValidationException::withMessages([
+                'email' => 'Your credentials could not be verified'
+            ]);
         }
-
-        throw ValidationException::withMessages([
-            'email' => 'Your credentials could not be verified'
-        ]);
     }
 
     public function destroy()
     {
-        auth()->logout();
+        Auth::logout();
 
-        return to_route('index');
+        return redirect()->route('index');
     }
 }

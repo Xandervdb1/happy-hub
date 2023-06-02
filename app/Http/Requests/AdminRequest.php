@@ -17,6 +17,7 @@ class AdminRequest extends FormRequest
         return true;
     }
 
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -32,6 +33,18 @@ class AdminRequest extends FormRequest
             'function' => 'required|max:255',
             'email' => 'required|email|max:255',
             'password' => 'required|min:8|max:16|confirmed',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'required' => 'Please provide a :attribute',
+            'min' => ':attribute must be longer',
+            'username.min' => ':attribute must be longer than 5 characters',
+            'max' => ':attribute cannot exceed 255 characters',
+            'email' => ':attribute must be of format email',
+            'confirmed' => ':attribute must be confirmed'
         ];
     }
 }

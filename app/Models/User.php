@@ -15,6 +15,26 @@ class User extends Authenticatable
 
     function team()
     {
-        return $this->hasOne(Team::class);
+        return $this->belongsTo(Team::class);
+    }
+
+    function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+
+    function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    function quests()
+    {
+        return $this->belongsToMany(Quest::class, 'quest_user');
+    }
+
+    function rewards()
+    {
+        return $this->belongsToMany(Reward::class, 'reward_user');
     }
 }

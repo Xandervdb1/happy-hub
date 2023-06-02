@@ -3,7 +3,14 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Quest;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Reward;
+use App\Models\Team;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,8 +27,6 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        \App\Models\Key::factory(3)->create();
-
         \App\Models\Company::factory(3)->create();
 
         \App\Models\Team::factory(15)->create();
@@ -35,5 +40,49 @@ class DatabaseSeeder extends Seeder
         \App\Models\Quest::factory(20)->create();
 
         \App\Models\Log::factory(20)->create();
+
+        DB::table('users')->insert([
+            'name' => 'admin',
+            'lastname' => 'rootings',
+            'username' => 'rootroot',
+            'password' => Hash::make('rootroot'),
+            'is_defaultPassword' => false,
+            'birthday' => '1970-1-1',
+            'email' => 'root@root.com',
+            'coins' => 0,
+            'team_id' => 1,
+            'company_id' => 1,
+            'role_id' => 1,
+            'is_admin' => true,
+        ]);
+
+        DB::table('keys')->insert([
+            'key' => Hash::make('12345678912345678912'),
+        ]);
+        DB::table('keys')->insert([
+            'key' => Hash::make('azertyuiopmlkjhgfdsq'),
+        ]);
+
+        foreach (User::all() as $user) {
+            $user->rewards()->attach(Reward::all()->random()->id);
+            $user->rewards()->attach(Reward::all()->random()->id);
+            $user->rewards()->attach(Reward::all()->random()->id);
+            $user->rewards()->attach(Reward::all()->random()->id);
+            $user->quests()->attach(Quest::all()->random()->id);
+            $user->quests()->attach(Quest::all()->random()->id);
+            $user->quests()->attach(Quest::all()->random()->id);
+            $user->quests()->attach(Quest::all()->random()->id);
+        }
+
+        foreach (Team::all() as $team) {
+            $team->rewards()->attach(Reward::all()->random()->id);
+            $team->rewards()->attach(Reward::all()->random()->id);
+            $team->rewards()->attach(Reward::all()->random()->id);
+            $team->rewards()->attach(Reward::all()->random()->id);
+            $team->quests()->attach(Quest::all()->random()->id);
+            $team->quests()->attach(Quest::all()->random()->id);
+            $team->quests()->attach(Quest::all()->random()->id);
+            $team->quests()->attach(Quest::all()->random()->id);
+        }
     }
 }

@@ -28,4 +28,12 @@ class SessionRequest extends FormRequest
             'password' => 'required|max:255'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'required' => 'Please provide :attribute',
+            'email.email' => ':attribute must be of format email'
+        ];
+    }
 }

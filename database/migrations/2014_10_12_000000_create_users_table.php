@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('password');
             $table->boolean('is_defaultPassword');
             $table->date('birthday')->nullable();
-            $table->string('function');
             $table->string('email')->unique();
             $table->integer('coins');
             $table->rememberToken();
