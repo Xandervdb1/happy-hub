@@ -34,7 +34,6 @@ class KeyController extends Controller
 
         foreach ($allKeys as $key) {
             if (Hash::check($inputKey, $key->key)) {
-                $key->delete();
                 return to_route('adminregister');
             }
         }
