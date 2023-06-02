@@ -40,6 +40,7 @@ Route::post('/generate-key', [KeyController::class, 'store']);
 Route::get('/key-check', function () {
     return Inertia::render('key/KeyCheck');
 })->name('keycheck');
+
 Route::post('/key-check', function (Request $request) {
     return Inertia::render('adminRegister/AdminRegister', ['request' => $request]);
 });
@@ -47,30 +48,31 @@ Route::post('/key-check', function (Request $request) {
 Route::get('/admin-register', function () {
     return Inertia::render('adminRegister/AdminRegister');
 })->name('adminregister')->middleware('key');
+
 Route::post('/admin-register', [AdminController::class, 'storeAdmin']);
 
 Route::get('/company-register', function () {
     return Inertia::render('adminRegister/CompanyRegister');
-})->name('companyregister');
+})->name('companyregister')->middleware('auth');
 Route::post('/company-register', [CompanyController::class, 'storeCompany']);
 
 //GETS
 // companyDashboard 1
-Route::get('/company-dashboard', [TeamController::class, 'showTeams'])->name('companydashboard');
+Route::get('/company-dashboard', [TeamController::class, 'showTeams'])->name('companydashboard')->middleware('auth');
 
-Route::get('/team-members', [TeamController::class, 'showMembers']);
+Route::get('/team-members', [TeamController::class, 'showMembers'])->middleware('auth');
 
 
 // userDashboard 1
-Route::get('/user-dashboard', [RewardController::class, 'showThreeRewardsAndQuests'])->name('userdashboard');
+Route::get('/user-dashboard', [RewardController::class, 'showThreeRewardsAndQuests'])->name('userdashboard')->middleware('auth');
 // Rewards collection page (>> See all rewards)
-Route::get('/rewards-collection', [RewardController::class, 'showAllRewards']);
-Route::get('/all-quests', [QuestController::class, 'showAllQuests']);
+Route::get('/rewards-collection', [RewardController::class, 'showAllRewards'])->middleware('auth');
+Route::get('/all-quests', [QuestController::class, 'showAllQuests'])->middleware('auth');
 
 
 Route::get('/wallet', function () {
     return Inertia::render('Wallet');
-})->name('wallet');
+})->name('wallet')->middleware('auth');
 
 //LOGIN
 Route::get('/login', function () {
@@ -79,18 +81,18 @@ Route::get('/login', function () {
 
 Route::get('/newpassword', function () {
     return Inertia::render('userRegister/NewPassword');
-})->name('newpassword');
+})->name('newpassword')->middleware('auth');
 Route::post('/newpassword', [UserController::class, 'updatePassword']);
 Route::post('/defaultpassword', [UserController::class, 'defaultPassword']);
 
 Route::get('/username', function () {
     return Inertia::render('userRegister/Username');
-})->name('username');
+})->name('username')->middleware('auth');
 Route::post('/username', [UserController::class, 'setUsername']);
 
 Route::post('/login', [SessionController::class, 'store']);
 
-Route::post('/logout', [SessionController::class, 'destroy']);
+Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth');
 
 Route::get('/mailable', function () {
     $key = App\Models\Key::find(1);
