@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KeyController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\TeamController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\KeyMiddleware;
 use Inertia\Inertia;
 
 /*
@@ -38,11 +40,13 @@ Route::post('/generate-key', [KeyController::class, 'store']);
 Route::get('/key-check', function () {
     return Inertia::render('key/KeyCheck');
 })->name('keycheck');
-Route::post('/key-check', [KeyController::class, 'validateKey']);
+Route::post('/key-check', function (Request $request) {
+    return Inertia::render('adminRegister/AdminRegister', ['request' => $request]);
+});
 
 Route::get('/admin-register', function () {
     return Inertia::render('adminRegister/AdminRegister');
-})->name('adminregister');
+})->name('adminregister')->middleware('key');
 Route::post('/admin-register', [AdminController::class, 'storeAdmin']);
 
 Route::get('/company-register', function () {
