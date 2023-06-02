@@ -1,11 +1,8 @@
 import Header from "@/Components/Header.jsx"
 import { Link } from "@inertiajs/react"
-import QuestForm from "@/Components/QuestForm.jsx"
-import RewardForm from "@/Components/RewardForm.jsx"
+import FormQuest from "@/Components/QuestForm.jsx"
+import FormReward from "@/Components/RewardForm.jsx"
 import MemberForm from "@/Components/MemberForm.jsx"
-import 'reactjs-popup'
-import Popup from "reactjs-popup"
-
 
 const AdminDashboard = (props) => {
 
@@ -22,23 +19,25 @@ const AdminDashboard = (props) => {
                     <p>groups</p>
                     <p>#</p>
                 </div>
+
+
                 <div className="quest">
                     <h1 className="titleDashboard">Add Quest</h1>
-                    <Popup trigger={<p className="addLink">+</p>} position='left center'>
-                        <QuestForm />
-                    </Popup>
+                    <FormQuest />
                 </div>
+
+
                 <div className="member">
                     <h1 className="titleDashboard">Add Member</h1>
-                    <Popup trigger={<p className="addLink">+</p>} position='left center'>
-                        <MemberForm />
-                    </Popup>
+                    <MemberForm />
                 </div>
+
+
                 <div className="reward">
                     <h1 className="titleDashboard">Add Reward</h1>
-                    <Popup trigger={<p className="addLink">+</p>} position='left center'>
-                        <RewardForm />
-                    </Popup>
+
+                    <FormReward />
+
                 </div>
                 <div className="logContainer">
                     <h1 className="logTitle">Logs</h1>
@@ -49,7 +48,7 @@ const AdminDashboard = (props) => {
                     </div>
                 </div>
                 <Link href='#' className="seeAllLogs"> see all logs</Link>
-            </div>
+            </div >
         </>
     )
 

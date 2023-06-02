@@ -23,6 +23,8 @@ const UserDashboard = (props) => {
                     <p className="personalInfo">Name: {userName}</p>
                     <p className="personalInfo">Nickname: {nickName}</p>
                     <p className="personalInfo">Birthday: {birthday}</p>
+                    <p className="personalInfo">Team:</p>
+                    <p className="personalInfo">Team members:</p>
                     <br />
                     <p className="personalInfo">Personal Wallet:</p>
                     <p className="personalInfo">Team Wallet:</p>
