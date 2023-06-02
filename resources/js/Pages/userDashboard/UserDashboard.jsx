@@ -1,10 +1,17 @@
-import Nav from "@/Components/NavComponent.jsx";
 import { Link } from "@inertiajs/react";
 import Header from "@/Components/Header.jsx";
 
 const UserDashboard = (props) => {
+    // console.log(props.auth.user)
+    // console.log(props.userRewards)
+    // console.log(props.teamRewards)
+    const userName = props.auth.user.name
+    const nickName = props.auth.user.username
+    const birthday = props.auth.user.birthday
     console.log(props.userRewards)
     console.log(props.teamRewards)
+    const { userRewards, teamRewards } = props;
+
     return (
         <>
             <Header />
@@ -13,6 +20,9 @@ const UserDashboard = (props) => {
                     <p>Next milestone</p>
                 </div>
                 <div className="profileInfo">
+                    <p className="personalInfo">Name: {userName}</p>
+                    <p className="personalInfo">Nickname: {nickName}</p>
+                    <p className="personalInfo">Birthday: {birthday}</p>
                     <p className="personalInfo">Name:</p>
                     <p className="personalInfo">Nickname:</p>
                     <p className="personalInfo">Birthday:</p>
@@ -22,7 +32,7 @@ const UserDashboard = (props) => {
                     <p className="personalInfo">Team Wallet:</p>
                 </div>
                 <div className="personalQuests">
-                    <Link href="/rewards-collection" className="seeAll">&gt; &gt; see all </Link>
+                    <Link href="/all-quests" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Your Quests</h1>
                     <hr className="underline" />
                     <div className="priceContainer">
@@ -34,7 +44,7 @@ const UserDashboard = (props) => {
                     </div>
                 </div>
                 <div className="teamQuests">
-                    <Link href="/rewards-collection" className="seeAll">&gt; &gt; see all </Link>
+                    <Link href="/all-quests" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Team Quests</h1>
                     <hr className="underline" />
                     <div className="priceContainer">
@@ -49,15 +59,33 @@ const UserDashboard = (props) => {
                     <Link href="/rewards-collection" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Rewards</h1>
                     <hr className="underline" />
-                    <div className="reward">
-                        <div className="totalReward">
-                            <p className="activity">Bowling</p>
-                            <div className="priceContainer">
-                                <img className="coins" src="../coin.png" alt="coin Happy Hub" />
-                                <p className="price">200</p>
-                            </div>
-                        </div>
-                    </div>
+                    <table>
+                        <tbody>
+                            {
+                                userRewards.map((userReward) => (
+                                    <tr key={userReward.id}>
+                                        <td> {userReward.name}</td>
+                                    </tr>
+                                ))}
+                        </tbody>
+                    </table>
+                    {/* {
+                        userRewardList().map(reward => (
+                            <>
+                                <div className="reward" key={reward.id}>
+                                    <div className="totalReward">
+                                        <p className="activity">{reward.id}</p>
+                                        <div className="priceContainer">
+                                            <img className="coins" src="../coin.png" alt="coin Happy Hub" />
+                                            <p className="price">200</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </>
+                        ))
+                    } */}
+
+
                 </div>
             </div>
         </>
