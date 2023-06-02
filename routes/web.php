@@ -53,14 +53,14 @@ Route::post('/admin-register', [AdminController::class, 'storeAdmin']);
 
 Route::get('/company-register', function () {
     return Inertia::render('adminRegister/CompanyRegister');
-})->name('companyregister')->middleware('auth');
-Route::post('/company-register', [CompanyController::class, 'storeCompany']);
+})->name('companyregister')->middleware('auth')->middleware('admin');
+Route::post('/company-register', [CompanyController::class, 'storeCompany'])->middleware('auth')->middleware('admin');
 
 //GETS
 // companyDashboard 1
-Route::get('/company-dashboard', [TeamController::class, 'showTeams'])->name('companydashboard')->middleware('auth');
+Route::get('/company-dashboard', [TeamController::class, 'showTeams'])->name('companydashboard')->middleware('auth')->middleware('admin');
 
-Route::get('/team-members', [TeamController::class, 'showMembers'])->middleware('auth');
+Route::get('/team-members', [TeamController::class, 'showMembers'])->middleware('auth')->middleware('admin');
 
 
 // userDashboard 1
@@ -77,7 +77,7 @@ Route::get('/wallet', function () {
 //LOGIN
 Route::get('/login', function () {
     return Inertia::render('userRegister/Login');
-})->name('userlogin');
+})->name('userlogin')->middleware('guest');
 
 Route::get('/newpassword', function () {
     return Inertia::render('userRegister/NewPassword');
