@@ -7,16 +7,52 @@
   padding: 0.25rem 0;
 }
 
-.personalRewards,
-.teamRewards,
-.futureRewards {
+.rewardsContainer {
   text-align: center;
-  width: 65%;
+  width: 90%;
   font-weight: bold;
   margin: 0.5rem auto 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
 }
-.personalRewards p:first-of-type,
-.teamRewards p:first-of-type,
-.futureRewards p:first-of-type {
+.rewardsContainer .title {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
   border-bottom: 2px solid black;
+}
+
+.priceContainer {
+  width: 100%;
+  display: flex;
+  gap: 0.25rem;
+  margin: auto;
+}
+.priceContainer p {
+  padding-top: 2px;
+}
+
+.reward {
+  background-color: #D9D9D9;
+  text-align: center;
+  border: 1px solid black;
+  height: 55px;
+  width: 80px;
+  display: grid;
+  place-items: center;
+  grid-row: 2;
+  grid-column: 1;
+  margin-top: 5px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.reward .activity {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.reward:hover {
+  border: 3px outset black;
 }/*# sourceMappingURL=rewardsCollection.css.map */
