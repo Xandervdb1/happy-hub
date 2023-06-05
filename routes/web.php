@@ -58,7 +58,7 @@ Route::get('/team-members', [TeamController::class, 'showMembers']);
 
 
 // userDashboard 1
-Route::get('/user-dashboard', [RewardController::class, 'showThreeRewardsAndQuests'])->name('userdashboard');
+Route::get('/user-dashboard', [UserController::class, 'showUserDashboard'])->name('userdashboard');
 // Rewards collection page (>> See all rewards)
 Route::get('/rewards-collection', [RewardController::class, 'showAllRewards']);
 Route::get('/all-quests', [QuestController::class, 'showAllQuests']);

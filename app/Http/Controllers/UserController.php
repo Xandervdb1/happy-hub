@@ -9,6 +9,7 @@ use App\Http\Requests\UserRequest;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class UserController extends Controller
 {
@@ -74,5 +75,39 @@ class UserController extends Controller
         $loggedInUser->save();
 
         return to_route('userdashboard');
+    
+    }
+    function showUserDashboard()
+    {
+        $userId = Auth::id();
+        $user = User::find($userId);
+        $team = $user->team;
+
+        $userRewards = $user->rewards->take(3);
+        $teamRewards = $team->rewards->take(3);
+        
+        $userQuests = $user->quests->take(3);
+        $teamQuests = $team->quests->take(3);
+
+
+        $teamName = $team->name;
+        $teamMembers = $team->users;
+        $countTeamMembers = $teamMembers->count();
+
+        $sumTeamCoins = 0;
+        foreach($teamMembers as $teamMember) {
+            $sumTeamCoins += $teamMember->coins;
+        }
+
+        return Inertia::render('userDashboard/UserDashboard', [
+            'userRewards' => $userRewards,
+            'teamRewards' => $teamRewards,
+            'userQuests' => $userQuests,
+            'teamQuests' => $teamQuests,
+            'teamName' => $teamName,
+            'countTeamMembers' => $countTeamMembers,
+            'sumTeamCoins' => $sumTeamCoins,
+        ]);
+        
     }
 }
