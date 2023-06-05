@@ -1,16 +1,14 @@
 import { Link } from "@inertiajs/react";
 import Header from "@/Components/Header.jsx";
 
+
 const UserDashboard = (props) => {
-    // console.log(props.auth.user)
-    // console.log(props.userRewards)
-    // console.log(props.teamRewards)
     const userName = props.auth.user.name
     const nickName = props.auth.user.username
     const birthday = props.auth.user.birthday
-    console.log(props.userRewards)
-    console.log(props.teamRewards)
-    const { userRewards, teamRewards } = props;
+    const rewards = props.userRewards;
+    const quests = props.userQuests;
+    const teamQuests = props.teamQuests;
 
     return (
         <>
@@ -30,62 +28,70 @@ const UserDashboard = (props) => {
                     <p className="personalInfo">Team Wallet:</p>
                 </div>
                 <div className="personalQuests">
+                    {console.log(props.userQuests)}
+
                     <Link href="/all-quests" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Your Quests</h1>
                     <hr className="underline" />
-                    <div className="priceContainer">
-                        <img className="coins" src="../coin.png" alt="coin Happy Hub" />
-                        <p className="price">200</p>
-                    </div>
-                    <div className="questRewards">
-                        <p className="questReward"> sell 10.000 products</p>
-                    </div>
+                    {
+                        quests.map(quest => (
+                            <>
+                                <div className="priceContainer">
+                                    <img className="coins" src="../coin.png" alt="coin Happy Hub" />
+                                    <p className="price">{quest.coins}</p>
+                                </div>
+                                <div className="questRewards" key={quest.id}>
+                                    <p className="questReward">{quest.name}</p>
+                                </div>
+                            </>
+                        ))
+                    }
                 </div>
                 <div className="teamQuests">
                     <Link href="/all-quests" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Team Quests</h1>
                     <hr className="underline" />
-                    <div className="priceContainer">
-                        <img className="coins" src="../coin.png" alt="coin Happy Hub" />
-                        <p className="price">200</p>
-                    </div>
-                    <div className="questRewards">
-                        <p className="questReward"> sell 10.000 products</p>
-                    </div>
-                </div>
+                    {
+                        teamQuests.map(teamQuest => (
+                            <>
+                                <div className="priceContainer">
+                                    <img className="coins" src="../coin.png" alt="coin Happy Hub" />
+                                    <p className="price">{teamQuest.coins}</p>
+                                </div>
+                                <div className="questRewards" key={teamQuest.id}>
+                                    <p className="questReward"> {teamQuest.name}</p>
+                                </div>
+
+                            </>
+                        ))
+                    }
+                </div >
+
+
                 <div className="rewards">
                     <Link href="/rewards-collection" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Rewards</h1>
                     <hr className="underline" />
-                    <table>
-                        <tbody>
-                            {
-                                userRewards.map((userReward) => (
-                                    <tr key={userReward.id}>
-                                        <td> {userReward.name}</td>
-                                    </tr>
-                                ))}
-                        </tbody>
-                    </table>
-                    {/* {
-                        userRewardList().map(reward => (
+                    {
+                        rewards.map(reward => (
                             <>
-                                <div className="reward" key={reward.id}>
+                                {console.log(reward.id)}
+                                <div className="reward"
+                                    key={reward.id}
+                                >
                                     <div className="totalReward">
-                                        <p className="activity">{reward.id}</p>
+                                        <p className="activity">{reward.name}</p>
                                         <div className="priceContainer">
                                             <img className="coins" src="../coin.png" alt="coin Happy Hub" />
-                                            <p className="price">200</p>
+                                            <p className="price">{reward.price}</p>
                                         </div>
                                     </div>
                                 </div>
                             </>
                         ))
-                    } */}
-
-
+                    }
                 </div>
-            </div>
+            </div >
         </>
     )
 }

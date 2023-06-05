@@ -33,7 +33,7 @@ const AdminDashboard = (props) => {
                 </div>
 
 
-                <div className="reward">
+                <div className="rewardCompany">
                     <h1 className="titleDashboard">Add Reward</h1>
 
                     <FormReward />

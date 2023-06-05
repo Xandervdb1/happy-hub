@@ -1,28 +1,36 @@
-.QuestContainer{
-    h1{
+.QuestContainer {
+    h1 {
         text-align: center;
         margin: 20px;
         font-size: x-large;
     }
-    div.personalQuestsContainer, .teamQuestsContainer{
+
+    div.personalQuestsContainer,
+    .teamQuestsContainer {
         margin-bottom: 20px;
-        .title{
+
+        .title {
             text-decoration: underline;
             background-color: #D9D9D9;
-                    }
-        .personalQuests, .teamQuest{
+        }
+
+        .personalQuests,
+        .teamQuest {
             background-color: #D9D9D9;
             display: flex;
-            table{
+
+            table {
                 width: 100vw;
                 display: flex;
-                tbody{
-                    tr{
+
+                tbody {
+                    tr {
                         width: 100vw;
                         padding: 5px 25px;
                         display: flex;
                         justify-content: space-between;
-                        .tableColumn{
+
+                        .tableColumn {
                             display: flex;
                         }
                     }
@@ -30,7 +38,10 @@
             }
         }
     }
-    .teamQuestsContainer{
-        
-    }
+
+    .teamQuestsContainer {}
+}
+
+.questReward {
+    font-size: 20px;
 }
