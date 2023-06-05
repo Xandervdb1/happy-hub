@@ -3,6 +3,13 @@ import Header from "@/Components/Header.jsx";
 
 
 const UserDashboard = (props) => {
+    // console.log(props.userRewards)
+    // console.log(props.teamRewards)
+    console.log(props.auth.user.coins)
+    console.log(props.sumTeamCoins);
+    console.log(props.teamName);
+    console.log(props.countTeamMembers);
+    
     const userName = props.auth.user.name
     const nickName = props.auth.user.username
     const birthday = props.auth.user.birthday
