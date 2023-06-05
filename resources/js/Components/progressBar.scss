@@ -1,0 +1,19 @@
+.progressBar{
+    margin-top: 10px;
+    display: flex;
+    height: 20px;
+    width: 100%;
+    background-color: #e9e9e8;
+    border-radius: 50px;
+    
+    .completedBar{
+        height: 100%;
+        border-radius: inherit;
+        text-align: right;
+        .completedPart{
+            font-size: x-small;
+            padding: 10px;
+            color: #e9e9e8;
+        }
+    }
+}
