@@ -1,11 +1,12 @@
-import Header from '@/Components/Header'
-import '../../css/RewardsCollection.scss'
+import Header from '@/Components/Header';
+import Reward from '@/Components/Reward';
+import '../../css/RewardsCollection.scss';
 
 const RewardsCollection = (props) => {
-    const rewards = props.userRewards;
+    const userRewards = props.userRewards;
     const teamRewards = props.teamRewards;
+    const wallet = 5000;
 
-    // TODO: make a component for a reward section
     return (
     <>
         <Header />
@@ -15,19 +16,10 @@ const RewardsCollection = (props) => {
         <div className='rewardsContainer'>
             <p className='title'>Personal</p>
                 {
-                    rewards.map(reward => (
-                        <>
-                        {console.log(reward.id)}
-                        <div className="reward" key={reward.name + reward.id}>
-                            <div className="totalReward">
-                                <p className='activity'> {reward.name}</p>
-                                <div className="priceContainer">
-                                    <img className="coins" src="../coin.png" alt="coin Happy Hub" />
-                                    <p className="price">200</p>
-                                </div>
-                            </div>
-                        </div>
-                        </>
+                    userRewards.map(reward => (
+                        wallet >= reward.price ? (
+                                <Reward reward={reward} />
+                        ) : null
                     ))
                 }
         </div>
@@ -35,38 +27,30 @@ const RewardsCollection = (props) => {
             <p className='title'>Team</p>
                 {
                     teamRewards.map(reward => (
-                        <>
-                        <div className="reward" key={reward.name + reward.id}>
-                            <div className="totalReward">
-                                <p className='activity'> {reward.name}</p>
-                                <div className="priceContainer">
-                                    <img className="coins" src="../coin.png" alt="coin Happy Hub" />
-                                    <p className="price">200</p>
-                                </div>
-                            </div>
-                        </div>
-                        </>
+                        wallet >= reward.price ? (
+                            <Reward reward={reward} />
+                        ) : null
                     ))
                 }
         </div>
         <div className='rewardsContainer'>
             <p className='title'>Earn more, unlock bigger</p>
-                {/* TODO: Logic to only display rewards which cost more than the current amount of coins */}
-                {/* {
-                    teamRewards.map(reward => (
-                        <>
-                        <div className="reward" key={reward.name}>
-                            <div className="totalReward">
-                                <p className='activity'> {reward.name}</p>
-                                <div className="priceContainer">
-                                    <img className="coins" src="../coin.png" alt="coin Happy Hub" />
-                                    <p className="price">200</p>
-                                </div>
-                            </div>
-                        </div>
-                        </>
+            <p className='subTitle'>Personal</p>
+                {
+                    userRewards.map(reward => (
+                        wallet < reward.price ? (
+                            <Reward reward={reward} class='disabled'/>
+                        ) : null
                     ))
-                } */}
+                }
+            <p className='subTitle'>Team</p>
+                {
+                    teamRewards.map(reward => (
+                        wallet < reward.price ? (
+                            <Reward reward={reward} class='disabled' />
+                        ) : null
+                    ))
+                }
         </div>
     </>
     )
