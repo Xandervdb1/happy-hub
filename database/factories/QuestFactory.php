@@ -21,8 +21,7 @@ class QuestFactory extends Factory
         return [
             'name' => fake()->name(),
             'coins' => fake()->randomNumber(),
-            'user_id' => User::all()->random()->id,
-            'team_id' => Team::all()->random()->id
+            'slug' => fake()->slug(3),
         ];
     }
 }

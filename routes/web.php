@@ -59,6 +59,8 @@ Route::post('/company-register', [CompanyController::class, 'storeCompany'])->mi
 //GETS
 // companyDashboard 1
 Route::get('/company-dashboard', [TeamController::class, 'showTeams'])->name('companydashboard')->middleware('auth')->middleware('admin');
+Route::post('/company-dashboard-user', [UserController::class, 'storeUser']);
+Route::post('/company-dashboard-quest', [QuestController::class, 'storeQuest']);
 
 Route::get('/team-members', [TeamController::class, 'showMembers'])->middleware('auth')->middleware('admin');
 
@@ -93,8 +95,3 @@ Route::post('/username', [UserController::class, 'setUsername']);
 Route::post('/login', [SessionController::class, 'store']);
 
 Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth');
-
-Route::get('/mailable', function () {
-    $key = App\Models\Key::find(1);
-    return new App\Mail\ConfirmationKey($key);
-});

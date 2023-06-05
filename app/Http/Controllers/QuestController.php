@@ -10,6 +10,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 class QuestController extends Controller
 {
@@ -19,14 +20,26 @@ class QuestController extends Controller
     {
         $quest = new Quest;
 
-        $quest->name = $request->title;
-        $quest->coins = $request->coins;
-        $quest->user_id = 0;
-        $quest->team_id = 0;
+        $quest->name = $request->name;
+        $quest->coins = $request->price;
+        $quest->slug = Str::slug($request->slug, '-');
 
         $quest->save();
+
+        $user = Auth::user();
+        if ($request->type === 'Personal') {
+            $companyMembers = $user->company->users;
+            foreach ($companyMembers as $user) {
+                $user->quests()->attach($quest->id);
+            }
+        } else if ($request->type === "Team") {
+            $companyTeams = $user->company->teams;
+            foreach ($companyTeams as $team) {
+                $team->quests()->attach($quest->id);
+            }
+        }
     }
-    
+
     function showAllQuests()
     {
         $userId = Auth::id();

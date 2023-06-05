@@ -5,7 +5,6 @@ import FormReward from "@/Components/RewardForm.jsx"
 import MemberForm from "@/Components/MemberForm.jsx"
 
 const AdminDashboard = (props) => {
-
     return (
         <>
             <Header />
@@ -29,7 +28,7 @@ const AdminDashboard = (props) => {
 
                 <div className="member">
                     <h1 className="titleDashboard">Add Member</h1>
-                    <MemberForm />
+                    <MemberForm teams={props.teams} roles={props.roles} />
                 </div>
 
 

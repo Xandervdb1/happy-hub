@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\Team::factory(15)->create();
 
-        \App\Models\Role::factory(5)->create();
+        \App\Models\Role::factory(20)->create();
 
         \App\Models\User::factory(20)->create();
 
