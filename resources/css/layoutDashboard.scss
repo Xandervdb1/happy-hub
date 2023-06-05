@@ -36,7 +36,7 @@
 
 .rewards {
     margin-top: 10px;
-    grid-row: 12/16;
+    grid-row: auto;
     grid-column: 1/13;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -64,4 +64,35 @@
         font-size: 14px;
         font-weight: 500;
     }
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+
+    .amount {
+        font-size: auto;
+        color: #FFCD29;
+    }
+}
+
+.walletCarousel {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.titleWallet {
+    font-size: 20px;
+    color: #222831;
+}
+
+.coinCarousel {
+    max-width: 45px;
+}
+
+.carouselButton {
+    font-size: 10px;
+    opacity: .6;
 }

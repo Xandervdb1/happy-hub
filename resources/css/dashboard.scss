@@ -15,8 +15,9 @@
 
     .profileInfo {
         background-color: #D9D9D9;
-        grid-row: 1/4;
+        grid-row: auto;
         grid-column: 6/13;
+        height: auto;
 
         .personalInfo {
             margin: 2px;
@@ -27,7 +28,7 @@
     .personalQuests {
         margin-top: 10px;
         background-color: #D9D9D9;
-        grid-row: 4/8;
+        grid-row: auto;
         grid-column: 1/13;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -59,7 +60,7 @@
     .teamQuests {
         margin-top: 10px;
         background-color: #D9D9D9;
-        grid-row: 8/12;
+        grid-row: auto;
         grid-column: 1/13;
         display: grid;
         grid-template-columns: repeat(3, 1fr);

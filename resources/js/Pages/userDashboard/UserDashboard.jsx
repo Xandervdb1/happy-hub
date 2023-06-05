@@ -1,38 +1,34 @@
 import { Link } from "@inertiajs/react";
 import Header from "@/Components/Header.jsx";
+import Carousel from "@/Components/WalletCarousel.jsx";
 
 
 const UserDashboard = (props) => {
-    // console.log(props.userRewards)
-    // console.log(props.teamRewards)
-    console.log(props.auth.user.coins)
-    console.log(props.sumTeamCoins);
-    console.log(props.teamName);
-    console.log(props.countTeamMembers);
-    
     const userName = props.auth.user.name
     const nickName = props.auth.user.username
     const birthday = props.auth.user.birthday
     const rewards = props.userRewards;
     const quests = props.userQuests;
     const teamQuests = props.teamQuests;
+    const teamName = props.teamName
+    const members = props.countTeamMembers
 
     return (
         <>
             <Header />
             <div className="dashboardContainer">
                 <div className="progressCarrousel">
-                    <p>Next milestone</p>
+                    < Carousel personalWallet={props.auth.user.coins} teamWallet={props.sumTeamCoins} />
                 </div>
                 <div className="profileInfo">
                     <p className="personalInfo">Name: {userName}</p>
                     <p className="personalInfo">Nickname: {nickName}</p>
                     <p className="personalInfo">Birthday: {birthday}</p>
-                    <p className="personalInfo">Team:</p>
-                    <p className="personalInfo">Team members:</p>
+                    <p className="personalInfo">Team: {teamName}</p>
+                    <p className="personalInfo">Team members:{members}</p>
                     <br />
-                    <p className="personalInfo">Personal Wallet:</p>
-                    <p className="personalInfo">Team Wallet:</p>
+                    {/* <p className="personalInfo">Personal Wallet:{personalWallet}</p>
+                    <p className="personalInfo">Team Wallet:{teamWallet}</p> */}
                 </div>
                 <div className="personalQuests">
                     {console.log(props.userQuests)}
