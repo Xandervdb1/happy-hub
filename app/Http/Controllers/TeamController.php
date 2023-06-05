@@ -26,13 +26,26 @@ class TeamController extends Controller
         $teams = Team::all();
 
         return Inertia::render('companyDashboard/CompanyDashboard', [
-            "teams"=>$teams
+            "teams" => $teams
         ]);
     }
     function showMembers()
     {
         $teamId = Auth::id();
         $users = User::where('team_id', $teamId)->get();
-        return Inertia::render('companyDashboard/TeamMembers', ["users"=>$users]);
+        return Inertia::render('companyDashboard/TeamMembers', ["users" => $users]);
+    }
+
+    public function show(Team $team)
+    {
+        return response()->json($team);
+    }
+
+    public function updateTeam(TeamRequest $request, Team $team)
+    {
+        $team->name = $request->input('name');
+        $team->coins = $request->input('coins');
+        $team->company_id = Auth::user()->company_id;
+        $team->save();
     }
 }
