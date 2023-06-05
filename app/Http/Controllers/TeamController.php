@@ -23,17 +23,21 @@ class TeamController extends Controller
     }
     function showTeams()
     {
-        $teams = Team::all();
+        $userId = Auth::id();
+        $user = User::find($userId);
+
+        $teams = $user->company->teams;
+        $roles = $user->company->roles;
 
         return Inertia::render('companyDashboard/CompanyDashboard', [
-            "teams"=>$teams
+            "teams" => $teams,
+            "roles" => $roles,
         ]);
     }
     function showMembers()
     {
         $teamId = Auth::id();
         $users = User::where('team_id', $teamId)->get();
-        return Inertia::render('companyDashboard/TeamMembers', ["users"=>$users]);
+        return Inertia::render('companyDashboard/TeamMembers', ["users" => $users]);
     }
-   
 }
