@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Company;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
@@ -10,6 +11,8 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\RandomPassword;
 
 class UserController extends Controller
 {
@@ -27,14 +30,19 @@ class UserController extends Controller
         }
 
         $user = new User;
-        $user->name = $request->input('name');
+        $user->name = $request->input('firstname');
         $user->lastname = $request->input('lastname');
-        $user->username = $request->input('username');
         $user->email = $request->input('email');
+        $user->team_id = $request->input('team');
+        $user->role_id = $request->input('function');
+        $user->company_id = Auth::user()->company_id;
         $user->password = Hash::make($randomPassword);
-        $user->birthday = $request->input('birthday');
+        $user->is_defaultPassword = 1;
         $user->coins = 0;
         $user->is_admin = 0;
+
+        $companyName = Company::find(Auth::user()->company_id)->name;
+        Mail::to($request->email)->send(new RandomPassword($randomPassword, $companyName));
 
         $user->save();
     }
@@ -75,7 +83,6 @@ class UserController extends Controller
         $loggedInUser->save();
 
         return to_route('userdashboard');
-    
     }
     function showUserDashboard()
     {
@@ -85,7 +92,7 @@ class UserController extends Controller
 
         $userRewards = $user->rewards->take(3);
         $teamRewards = $team->rewards->take(3);
-        
+
         $userQuests = $user->quests->take(3);
         $teamQuests = $team->quests->take(3);
 
@@ -95,7 +102,7 @@ class UserController extends Controller
         $countTeamMembers = $teamMembers->count();
 
         $sumTeamCoins = 0;
-        foreach($teamMembers as $teamMember) {
+        foreach ($teamMembers as $teamMember) {
             $sumTeamCoins += $teamMember->coins;
         }
 
@@ -108,6 +115,5 @@ class UserController extends Controller
             'countTeamMembers' => $countTeamMembers,
             'sumTeamCoins' => $sumTeamCoins,
         ]);
-        
     }
 }
