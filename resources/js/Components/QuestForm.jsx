@@ -18,10 +18,11 @@ const FormQuest = () => {
             ...values,
             [key]: value,
         }))
+        console.log(values);
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        router.post('/company-dashboard', values)
+        router.post('/company-dashboard-quest', values)
     }
 
     const showModal = (e) => {
@@ -50,7 +51,7 @@ const FormQuest = () => {
 
                         <input type="text" name="slug" id="slug" value={values.slug} onChange={handleChange} placeholder="Slug" className="input" />
 
-                        <input type="text" name="Price" id="price" value={values.price} onChange={handleChange} placeholder="Price" className="input" />
+                        <input type="text" name="price" id="price" value={values.price} onChange={handleChange} placeholder="Price" className="input" />
 
                         <select name="type" className="input" id='type' value={values.type} onChange={handleChange}>
                             <option> Choose type</option>
