@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
     margin: 0;
     padding: 0;
@@ -17,6 +16,7 @@ body {
     height: 100vh;
     font-family: 'Montserrat', sans-serif
 }
+
 .button {
     background-color: #393E46;
     border: none;
@@ -25,6 +25,7 @@ body {
     height: 55px;
     border-radius: 10px;
 }
+
 .Container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -34,6 +35,7 @@ body {
         background-color: #222831;
         grid-row: 1/8;
         grid-column: 1/13;
+
         .logo {
             width: 100%;
         }
@@ -50,7 +52,7 @@ body {
         height: 55px;
         border-radius: 10px;
     }
-    
+
     .buttonBuyProduct {
         grid-row: 10/12;
         grid-column: 7/10;
@@ -63,10 +65,3 @@ body {
         border-radius: 10px;
     }
 }
-
-
-
-
-
-
-
