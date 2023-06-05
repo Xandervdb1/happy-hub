@@ -71,7 +71,7 @@ Route::get('/all-quests', [QuestController::class, 'showAllQuests'])->middleware
 
 
 Route::get('/wallet', function () {
-    return Inertia::render('Wallet');
+    return Inertia::render('wallet/Wallet');
 })->name('wallet')->middleware('auth');
 
 //LOGIN
