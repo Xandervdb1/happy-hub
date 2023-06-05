@@ -53,6 +53,7 @@ const FormQuest = () => {
                         <input type="text" name="Price" id="price" value={values.price} onChange={handleChange} placeholder="Price" className="input" />
 
                         <select name="type" className="input" id='type' value={values.type} onChange={handleChange}>
+                            <option> Choose type</option>
                             <option value="Personal">Personal</option>
                             <option value="Team">Team</option>
                         </select>
