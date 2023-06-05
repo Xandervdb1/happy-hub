@@ -47,14 +47,25 @@ const FormMember = () => {
                     <form onSubmit={handleSubmit}>
                         <input type="text" name="name" id="name" value={values.name} onChange={handleChange} placeholder="Name" className="input" />
 
-                        <input type="text" name="slug" id="slug" value={values.slug} onChange={handleChange} placeholder="Slug" className="input" />
+                        <input type="email" name="email" id="email" value={values.email} onChange={handleChange} placeholder="Email" className="input" />
 
-                        <input type="text" name="Price" id="price" value={values.price} onChange={handleChange} placeholder="Price" className="input" />
-
+                        <select name="team" className="input" id="team" value={values.team} onChange={handleChange} placeholder="Team">
+                            <option value="Team">Choose Team</option>
+                            <option value="Team">Team 1</option>
+                            <option value="Team">Team 2</option>
+                        </select>
                         <select name="function" className="input" id="function" value={values.function} onChange={handleChange} placeholder="function">
+                            <option value="Team">Choose Function</option>
                             <option value="Personal">Front -end</option>
                             <option value="Team">Back- end</option>
                         </select>
+                        <div>
+                            <input type="checkbox" id="adminCheck" name="adminCheck"
+                                checked />
+                            <label for="adminCheck">Admin?</label>
+                        </div>
+
+
                         <button className="btn">Submit</button>
                     </form>
                 </div>
