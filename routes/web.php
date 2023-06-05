@@ -62,17 +62,8 @@ Route::get('/company-dashboard', [TeamController::class, 'showTeams'])->name('co
 
 Route::get('/team-members', [TeamController::class, 'showMembers'])->middleware('auth')->middleware('admin');
 
-Route::get('/teams/{team}', [TeamController::class, 'show'])->name('showTeam'); // show one user's details based on their id
-
-Route::put('/teams/{team}', [TeamController::class, 'updateTeam'])->name('updateTeam');
-
-Route::delete('/teams/{team}', [TeamController::class, 'deleteTeam'])->name('deleteTeam');
 
 // userDashboard 1
-Route::get('/users/{user}', [UserController::class, 'show'])->name('showUser'); // show one user's details based on their id
-Route::put('/users/{user}', [UserController::class, 'updateUser'])->name('updateUser'); // update a user's details based on their id
-Route::delete('/users/{user}', [UserController::class, 'deleteUser'])->name('deleteUser');
-
 
 Route::get('/user-dashboard', [RewardController::class, 'showThreeRewardsAndQuests'])->name('userdashboard')->middleware('auth');
 // Rewards collection page (>> See all rewards)
