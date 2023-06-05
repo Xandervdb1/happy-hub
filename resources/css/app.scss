@@ -1,3 +1,9 @@
+$yellow: #FFCD29 ;
+$white: #EEEEEE;
+$blue: #222831;
+$darkgrey: #393E46;
+$lightgrey: #D9D9D9;
+
 .HeaderContainer {
     display: flex;
 
@@ -22,23 +28,67 @@
                 margin-top: 35px;
             }
         }
+
         .logoHeader {
             width: 100px;
         }
-        .hamburgerIcon {
-            margin-top: 25px;
-            height: 40px;
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+            width: 30px;
+            height: 35px;
+            margin-top: 2rem;
+        }
+
+        .top-bun,
+        .burger,
+        .bottom-bun {
+            height: 3px;
+            background: #FFCD29;
+            border-radius: 10px;
+        }
+
+        .top-bun.active {
+            z-index: 3;
+            transform-origin: left;
+            transform: rotate(45deg);
+            transition: 0.25s linear;
+        }
+
+        .burger.active {
+            z-index: 3;
+            opacity: 0;
+            transition: 0.1s linear;
+        }
+
+        .bottom-bun.active {
+            z-index: 3;
+            transform-origin: left;
+            transform: rotate(-45deg);
+            transition: 0.25s linear;
         }
     }
 }
 
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: $blue;
+    color: $white;
+    width: 100%;
+    height: 100%;
+    opacity: 0.95;
+    z-index: 2;
+}
 
-
-
-
-
-
-
-
-
-
+nav ul li {
+    text-align: center;
+    margin: 2rem;
+    font-size: 1.2rem;
+}
