@@ -30,10 +30,11 @@ class RewardController extends Controller
     function showAllRewards()
     {
         $userId = Auth::id();
-        $teamId = Auth::user()->team_id;
+        $user = User::find($userId);
+        $userRewards = $user->rewards;
 
-        $userRewards = Reward::where('user_id', $userId)->get();
-        $teamRewards = Reward::where('team_id', $teamId)->get();
+        $team = $user->team;
+        $teamRewards = $team->rewards;
 
         return Inertia::render('RewardsCollection', [
             'userRewards' => $userRewards,
