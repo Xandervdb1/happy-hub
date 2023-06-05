@@ -19,14 +19,33 @@ class QuestController extends Controller
     {
         $quest = new Quest;
 
-        $quest->name = $request->title;
+        $quest->name = $request->name;
         $quest->coins = $request->coins;
         $quest->user_id = 0;
         $quest->team_id = 0;
 
         $quest->save();
     }
-    
+
+    public function show(Quest $quest)
+    {
+        return response()->json($quest);
+    }
+
+    public function updateQuest(QuestRequest $request, Quest $quest)
+    {
+        $quest->name = $request->name;
+        $quest->coins = $request->coins;
+
+        $quest->save();
+    }
+
+    public function deleteQuest($id)
+    {
+        $quest = Quest::find($id);
+        $quest->delete();
+    }
+
     function showAllQuests()
     {
         $userId = Auth::id();
