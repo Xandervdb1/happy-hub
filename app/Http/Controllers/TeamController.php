@@ -48,4 +48,10 @@ class TeamController extends Controller
         $team->company_id = Auth::user()->company_id;
         $team->save();
     }
+
+    public function deleteTeam($id)
+    {
+        $team = Team::find($id);
+        $team->delete();
+    }
 }

@@ -66,6 +66,8 @@ Route::get('/teams/{team}', [TeamController::class, 'show'])->name('showTeam'); 
 
 Route::put('/teams/{team}', [TeamController::class, 'updateTeam'])->name('updateTeam');
 
+Route::delete('/teams/{team}', [TeamController::class, 'deleteTeam'])->name('deleteTeam');
+
 // userDashboard 1
 Route::get('/users/{user}', [UserController::class, 'show'])->name('showUser'); // show one user's details based on their id
 Route::put('/users/{user}', [UserController::class, 'updateUser'])->name('updateUser'); // update a user's details based on their id
