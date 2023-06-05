@@ -35,4 +35,5 @@ class TeamController extends Controller
         $users = User::where('team_id', $teamId)->get();
         return Inertia::render('companyDashboard/TeamMembers', ["users"=>$users]);
     }
+   
 }

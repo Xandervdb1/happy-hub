@@ -8,11 +8,16 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ConfirmationKey;
+use Illuminate\Http\Request;
 
 class KeyController extends Controller
 {
-    function store()
+    function store(Request $request)
     {
+        $attributes = request()->validate([
+            'email' => 'required|email'
+        ]);
+
         $length = 20;
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $key = new Key;
@@ -21,7 +26,7 @@ class KeyController extends Controller
             $index = rand(0, strlen($characters) - 1);
             $key->key .= $characters[$index];
         }
-        Mail::to('xandervandenbossche0@gmail.com')->send(new ConfirmationKey($key));
+        Mail::to($request->email)->send(new ConfirmationKey($key));
         $key->key = Hash::make($key->key);
         $key->save();
         return to_route('keycheck');
@@ -34,7 +39,6 @@ class KeyController extends Controller
 
         foreach ($allKeys as $key) {
             if (Hash::check($inputKey, $key->key)) {
-                $key->delete();
                 return to_route('adminregister');
             }
         }

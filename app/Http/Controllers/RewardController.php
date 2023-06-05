@@ -26,24 +26,7 @@ class RewardController extends Controller
     }
     // TODO: specify user/team id (company)
 
-    function showThreeRewardsAndQuests()
-    {
-        $userId = Auth::id();
-        $teamId = Auth::user()->team_id;
-
-        $userRewards = Reward::where('user_id', $userId)->take(3)->get();
-        $teamRewards = Reward::where('team_id', $teamId)->take(3)->get();
-
-        $userQuests = Quest::where('user_id', $userId)->take(3)->get();
-        $teamQuests = Quest::where('team_id', $teamId)->take(3)->get();
-
-        return Inertia::render('userDashboard/UserDashboard', [
-            'userRewards' => $userRewards,
-            'teamRewards' => $teamRewards,
-            'userQuests' => $userQuests,
-            'teamQuests' => $teamQuests,
-        ]);
-    }
+    
     function showAllRewards()
     {
         $userId = Auth::id();
