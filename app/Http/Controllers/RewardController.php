@@ -58,4 +58,25 @@ class RewardController extends Controller
             'teamRewards' => $teamRewards
         ]);
     }
+
+    public function show(Reward $reward)
+    {
+        return response()->json($reward);
+    }
+
+    public function updateReward(RewardRequest $request, Reward $reward)
+    {
+        $reward->name = $request->name;
+        $reward->price = $request->price;
+        $reward->team_id = Auth::user()->team_id;
+        $reward->user_id = Auth::user()->id;
+
+        $reward->save();
+    }
+
+    public function deleteReward($id)
+    {
+        $reward = Reward::find($id);
+        $reward->delete();
+    }
 }

@@ -99,7 +99,3 @@ Route::get('/mailable', function () {
     $key = App\Models\Key::find(1);
     return new App\Mail\ConfirmationKey($key);
 });
-
-Route::get('/quests/{quest}', [QuestController::class, 'show']);
-Route::put('/quests/{quest}', [QuestController::class, 'updateQuest']);
-Route::delete('/quests/{quest}', [QuestController::class, 'deleteQuest']);
