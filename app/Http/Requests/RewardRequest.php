@@ -25,7 +25,7 @@ class RewardRequest extends FormRequest
     {
         return [
             'name' => 'required|min:5|max:100',
-            'coins' => 'required',
+            'price' => 'required|integer',
         ];
     }
 

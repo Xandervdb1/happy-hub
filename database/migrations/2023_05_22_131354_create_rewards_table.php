@@ -17,8 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('price');
-            $table->foreignId('team_id')->nullable();
-            $table->foreignId('user_id')->nullable();
+            $table->string('slug');
             $table->timestamps();
         });
     }
