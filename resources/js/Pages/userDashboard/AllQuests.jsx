@@ -3,14 +3,24 @@ import quests from "./questcss/quests.css";
 import ProgressBar from "@/Components/ProgressBar";
 
 const AllQuests = (props) => {
-    // console.log(props.userQuests.name);
-    // console.log(props.teamQuests);
     
-    const { userQuests, teamQuests } = props;
+    const { userQuests, teamQuests, userCoins, questCoins } = props;
+    console.log(props.userCoins);
+    console.log(props.questCoins);
 
-    const testData = 
-        { bgcolor: "#393E46", completed: 60 };
+    // const userQuests = props.userQuests;
+    // const teamQuests = props.teamQuests;
+    // const userCoins = props.userCoins;
+    // console.log(props.userCoins);
+    // const questCoins = props.questCoins;
 
+
+    
+    const bgColor = '#393E46';
+    
+    // const testData = 
+    // { bgcolor: "#393E46", completed: 60 };
+    
     return (
         <>
             <Header />
@@ -21,7 +31,8 @@ const AllQuests = (props) => {
                     <p className='title'>Personal Quests</p>
                     <div className="personalQuests">
                         {
-                            userQuests.map((userQuest) => (
+                            userQuests.map((userQuest) => {
+                                const completed = (parseInt(userCoins) / parseInt(questCoins)) *100;
                                 <div className="personalQuest" key={userQuest.id}>
                                     <div className="firstRow">
                                         <p className="name">{userQuest.name}</p>
@@ -31,9 +42,10 @@ const AllQuests = (props) => {
                                             <br />
                                         </div>
                                     </div>
-                                    <ProgressBar bgcolor={testData.bgcolor} completed={testData.completed} />
+                                    <ProgressBar bgcolor={bgColor} completed={completed} />
+                                    { console.log(completed)}
                                 </div>
-                            ))
+                            })
                         }
                     </div>
                 </div>
@@ -52,7 +64,7 @@ const AllQuests = (props) => {
                                             <br />
                                         </div>
                                     </div>
-                                    <ProgressBar bgcolor={testData.bgcolor} completed={testData.completed} />
+                                    <ProgressBar bgcolor={bgColor} completed={completed} />
                                 </div>
                             ))
                         }       

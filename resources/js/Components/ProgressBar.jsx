@@ -2,6 +2,7 @@ import progressBar from "./progresscss/progressBar.css";
 
 const ProgressBar = (props) => {
     const { bgcolor, completed } = props;
+   
 const fillerStyles = {
     width: `${completed}%`,
     backgroundColor: bgcolor,
