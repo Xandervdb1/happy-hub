@@ -1,4 +1,4 @@
-import progressBar from "./progressBar.css";
+import progressBar from "./progresscss/progressBar.css";
 
 const ProgressBar = (props) => {
     const { bgcolor, completed } = props;
