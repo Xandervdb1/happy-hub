@@ -6,10 +6,8 @@ use App\Http\Requests\RewardRequest;
 use App\Models\Reward;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Quest;
 use App\Models\User;
-
-
+use Illuminate\Support\Str;
 
 class RewardController extends Controller
 {
@@ -19,14 +17,24 @@ class RewardController extends Controller
 
         $reward->name = $request->name;
         $reward->price = $request->price;
-        $reward->team_id = 0; //TODO: add relevant id's based on input
-        $reward->user_id = 5;
+        $reward->slug = Str::slug($request->slug, '-');
 
         $reward->save();
-    }
-    // TODO: specify user/team id (company)
 
-    
+        $user = Auth::user();
+        if ($request->type === 'Personal') {
+            $companyMembers = $user->company->users;
+            foreach ($companyMembers as $user) {
+                $user->rewards()->attach($reward->id);
+            }
+        } else if ($request->type === "Team") {
+            $companyTeams = $user->company->teams;
+            foreach ($companyTeams as $team) {
+                $team->rewards()->attach($reward->id);
+            }
+        }
+    }
+
     function showAllRewards()
     {
         $userId = Auth::id();
