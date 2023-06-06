@@ -1,5 +1,5 @@
 import Header from "@/Components/Header";
-import UserDashboard from "./UserDashboard.css";
+import quests from "./questcss/quests.css";
 import ProgressBar from "@/Components/ProgressBar";
 
 
