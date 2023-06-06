@@ -21,6 +21,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "react-router-dom": "^6.11.2",
         "reactjs-popup": "^2.0.5"
     }
 }

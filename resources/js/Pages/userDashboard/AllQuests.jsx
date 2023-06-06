@@ -2,7 +2,6 @@ import Header from "@/Components/Header";
 import quests from "./questcss/quests.css";
 import ProgressBar from "@/Components/ProgressBar";
 
-
 const AllQuests = (props) => {
     // console.log(props.userQuests.name);
     // console.log(props.teamQuests);
@@ -17,9 +16,9 @@ const AllQuests = (props) => {
             <Header />
             <div className="QuestContainer">
                 <h1>QUESTS</h1>
-                <div className='personalQuestsContainer'>
+                
+                <div className="personalQuestsContainer" id='1'>
                     <p className='title'>Personal Quests</p>
-
                     <div className="personalQuests">
                         {
                             userQuests.map((userQuest) => (
@@ -36,9 +35,10 @@ const AllQuests = (props) => {
                                 </div>
                             ))
                         }
+                    </div>
                 </div>
-                <br />
-                <div className="teamQuestsContainer">
+                
+                <div className="teamQuestsContainer" id='2'>
                     <p className="title">Your team quests</p>
                     <div className="teamQuests">
                         {
@@ -58,9 +58,7 @@ const AllQuests = (props) => {
                         }       
                     </div>
                 </div>
-            </div>
-            </div>
-            
+            </div> 
         </>
     )
 }

@@ -33,7 +33,7 @@ const UserDashboard = (props) => {
                 <div className="personalQuests">
                     {console.log(props.userQuests)}
 
-                    <Link preserveScroll href="/all-quests" className="seeAll">&gt; &gt; see all </Link>
+                    <Link href="/all-quests#1" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Your Quests</h1>
                     <hr className="underline" />
                     {
@@ -51,7 +51,7 @@ const UserDashboard = (props) => {
                     }
                 </div>
                 <div className="teamQuests">
-                    <Link preserveScroll href="/all-quests" className="seeAll">&gt; &gt; see all </Link>
+                    <Link href="/all-quests#2" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Team Quests</h1>
                     <hr className="underline" />
                     {
