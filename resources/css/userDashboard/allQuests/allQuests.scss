@@ -31,6 +31,15 @@
                             flex-direction: row;
                         }
                     }
+                    div.secondRow{
+                        justify-content: space-between;
+                        display: flex;
+                        flex-direction: row; 
+                        .checkbox{
+                            margin-top: 10px;
+                            padding-right: 10px;
+                        }
+                    }
                 }
         }
     }

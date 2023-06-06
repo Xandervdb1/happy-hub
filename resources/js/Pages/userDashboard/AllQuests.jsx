@@ -2,11 +2,22 @@ import Header from "@/Components/Header";
 import '../../../css/userDashboard/allQuests/allQuests.css';
 import ProgressBar from "@/Components/ProgressBar";
 import { round } from "lodash";
+import { useState } from "react";
+// import { useState } from "react/cjs/react.production.min";
+// import Checkbox from "@/Components/Checkbox";
+// import * as React from 'react';
 
 const AllQuests = (props) => {
 
     const { userQuests, teamQuests, userCoins, teamCoins } = props;
     const bgColor = '#393E46';
+    // const bgColor = '#DFB444';
+
+    const [ checked, setChecked ] = useState(false);
+
+    const handleChange = () => {
+        setChecked(!checked);
+    };
 
     return (
         <>
@@ -31,7 +42,20 @@ const AllQuests = (props) => {
                                                 <br />
                                             </div>
                                         </div>
-                                        <ProgressBar bgcolor={bgColor} completed={completedRounded} />
+                                        <div className="secondRow">
+                                            <ProgressBar bgcolor={bgColor} completed={completedRounded} />
+                                            <label>
+                                                <input type="checkbox" 
+                                                 checked={checked} onChange={handleChange} 
+                                                />
+                                            </label>
+                                            {/* <Checkbox
+                                                value={checked}
+                                                onChange={handleChange}
+                                            /> */}
+                                            {/* <Checkbox /> */}
+                                            
+                                        </div>
                                     </div>
                                 )
                             })

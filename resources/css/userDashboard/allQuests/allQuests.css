@@ -53,4 +53,27 @@
 .QuestContainer .teamQuestsContainer .teamQuests .teamQuest div.firstRow .column {
   display: flex;
   flex-direction: row;
+}
+.QuestContainer div.personalQuestsContainer .personalQuests .personalQuest div.secondRow,
+.QuestContainer div.personalQuestsContainer .personalQuests .teamQuest div.secondRow,
+.QuestContainer div.personalQuestsContainer .teamQuests .personalQuest div.secondRow,
+.QuestContainer div.personalQuestsContainer .teamQuests .teamQuest div.secondRow,
+.QuestContainer .teamQuestsContainer .personalQuests .personalQuest div.secondRow,
+.QuestContainer .teamQuestsContainer .personalQuests .teamQuest div.secondRow,
+.QuestContainer .teamQuestsContainer .teamQuests .personalQuest div.secondRow,
+.QuestContainer .teamQuestsContainer .teamQuests .teamQuest div.secondRow {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+.QuestContainer div.personalQuestsContainer .personalQuests .personalQuest div.secondRow .checkbox,
+.QuestContainer div.personalQuestsContainer .personalQuests .teamQuest div.secondRow .checkbox,
+.QuestContainer div.personalQuestsContainer .teamQuests .personalQuest div.secondRow .checkbox,
+.QuestContainer div.personalQuestsContainer .teamQuests .teamQuest div.secondRow .checkbox,
+.QuestContainer .teamQuestsContainer .personalQuests .personalQuest div.secondRow .checkbox,
+.QuestContainer .teamQuestsContainer .personalQuests .teamQuest div.secondRow .checkbox,
+.QuestContainer .teamQuestsContainer .teamQuests .personalQuest div.secondRow .checkbox,
+.QuestContainer .teamQuestsContainer .teamQuests .teamQuest div.secondRow .checkbox {
+  margin-top: 10px;
+  padding-right: 10px;
 }/*# sourceMappingURL=allQuests.css.map */
