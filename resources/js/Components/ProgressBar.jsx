@@ -1,4 +1,4 @@
-import progressBar from "./progresscss/progressBar.css";
+import '../../css/userDashboard/progressBar/progressBar.css';
 
 const ProgressBar = (props) => {
     const { bgcolor, completed } = props;
@@ -16,4 +16,5 @@ const fillerStyles = {
 
     );
 };
+
 export default ProgressBar;

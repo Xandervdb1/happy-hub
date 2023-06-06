@@ -1,24 +1,12 @@
 import Header from "@/Components/Header";
-import quests from "./questcss/quests.css";
+import '../../../css/userDashboard/allQuests/allQuests.css';
 import ProgressBar from "@/Components/ProgressBar";
+import { round } from "lodash";
 
 const AllQuests = (props) => {
 
-    const { userQuests, teamQuests, userCoins, questCoins } = props;
-    console.log(props.userCoins);
-
-    // const userQuests = props.userQuests;
-    // const teamQuests = props.teamQuests;
-    // const userCoins = props.userCoins;
-    // console.log(props.userCoins);
-    // const questCoins = props.questCoins;
-
-
-
+    const { userQuests, teamQuests, userCoins, teamCoins } = props;
     const bgColor = '#393E46';
-
-    // const testData = 
-    // { bgcolor: "#393E46", completed: 60 };
 
     return (
         <>
@@ -30,9 +18,9 @@ const AllQuests = (props) => {
                     <p className='title'>Personal Quests</p>
                     <div className="personalQuests">
                         {
-
                             userQuests.map((userQuest) => {
                                 const completed = (parseInt(userCoins) / parseInt(userQuest.coins)) * 100;
+                                const completedRounded = Math.round(completed);
                                 return (
                                     <div className="personalQuest" key={userQuest.id}>
                                         <div className="firstRow">
@@ -43,7 +31,7 @@ const AllQuests = (props) => {
                                                 <br />
                                             </div>
                                         </div>
-                                        <ProgressBar bgcolor={bgColor} completed={completed} />
+                                        <ProgressBar bgcolor={bgColor} completed={completedRounded} />
                                     </div>
                                 )
                             })
@@ -55,7 +43,10 @@ const AllQuests = (props) => {
                     <p className="title">Your team quests</p>
                     <div className="teamQuests">
                         {
-                            teamQuests.map((teamQuest) => (
+                            teamQuests.map((teamQuest) => {
+                            const completed = (parseInt(teamCoins) / parseInt(teamQuest.coins)) * 100;
+                                const completedRounded = Math.round(completed);
+                                return (
                                 <div className="teamQuest" key={teamQuest.id}>
                                     <div className="firstRow">
                                         <p className="name">{teamQuest.name}</p>
@@ -65,9 +56,10 @@ const AllQuests = (props) => {
                                             <br />
                                         </div>
                                     </div>
-                                    {/* <ProgressBar bgcolor={bgColor} completed={completed} /> */}
+                                    <ProgressBar bgcolor={bgColor} completed={completedRounded} />
                                 </div>
-                            ))
+                                )
+                            })
                         }
                     </div>
                 </div>
@@ -75,4 +67,5 @@ const AllQuests = (props) => {
         </>
     )
 }
+
 export default AllQuests;

@@ -49,13 +49,15 @@ class QuestController extends Controller
         $userCoins = $user->coins;
 
         $team = $user->team;
-
+        $teamCoins = $team->coins;
+        
         $teamQuests = $team->quests;
 
         return Inertia::render('userDashboard/AllQuests', [
             'userQuests' => $userQuests,
             'teamQuests' => $teamQuests,
             'userCoins' => $userCoins,
+            'teamCoins' => $teamCoins,
         ]);
     }
 }
