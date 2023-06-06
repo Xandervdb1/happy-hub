@@ -21,8 +21,7 @@ class RewardFactory extends Factory
         return [
             'name' => fake()->name(),
             'price' => fake()->randomNumber(),
-            'team_id' => Team::all()->random()->id,
-            'user_id' => User::all()->random()->id,
+            'slug' => fake()->slug(3),
         ];
     }
 }
