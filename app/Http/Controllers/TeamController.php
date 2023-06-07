@@ -40,9 +40,12 @@ class TeamController extends Controller
             array_push($teamMembers, $team->users);
         }
 
-        return Inertia::render('companyDashboard/TeamMembers', [
+        $roles = $user->company->roles;
+
+        return Inertia::render('companyDashboard/companyMembers', [
             "teams" => $teams,
             "teamMembers" => $teamMembers,
+            "roles" => $roles
         ]);
     }
 
