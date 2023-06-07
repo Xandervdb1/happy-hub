@@ -8,7 +8,11 @@ import FormTeam from "@/Components/TeamForm.jsx"
 const AdminDashboard = (props) => {
     console.log(props.teams);
     console.log(props.teamMembers);
-    console.log(props.roles);
+    // console.log(props.roles);
+    const teams = props.teams
+    const teamMembers = props.teamMembers;
+    console.log(teamMembers)
+
 
     return (
         <>
@@ -20,8 +24,32 @@ const AdminDashboard = (props) => {
                     <FormTeam />
                     <p className="titleTable" id="name">name</p>
                     <p className="titleTable" id="member">members</p>
-                    <p>Team</p>
-                    <p>#</p>
+                    <div className="teams">
+                        {
+
+                            teams.map(team => (
+                                <>
+                                    {console.log(team.id)}
+                                    <div className="team"
+                                        key={teams.id}>
+                                        <p>{team.name}</p>
+                                    </div>
+                                </>
+                            ))
+                        }
+                    </div>
+
+                    <div className="members">
+                        {
+                            teamMembers.map(teamMember => (
+                                <>
+                                    <div className='listItem' key={teamMember.id}>
+                                        <p>{teamMember.length}</p>
+                                    </div>
+                                </>
+                            ))
+                        }
+                    </div>
                 </div>
 
 
