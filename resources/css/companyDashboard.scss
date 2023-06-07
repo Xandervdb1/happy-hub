@@ -144,6 +144,12 @@
 
     }
 
+    .linkAll {
+        text-align: left;
+        margin: 10px;
+        opacity: .6;
+    }
+
     .quest {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -188,6 +194,7 @@
         .seeAllLogs {
             place-items: center;
             border-bottom: 1px solid grey;
+
         }
     }
 

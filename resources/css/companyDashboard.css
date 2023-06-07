@@ -121,6 +121,11 @@
   text-align: right;
   margin-right: 15px;
 }
+.adminDashboard .linkAll {
+  text-align: left;
+  margin: 10px;
+  opacity: 0.6;
+}
 .adminDashboard .quest {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
