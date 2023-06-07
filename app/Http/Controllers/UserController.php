@@ -47,6 +47,11 @@ class UserController extends Controller
         $user->save();
     }
 
+    public function show(User $user)
+    {
+        return response()->json($user);
+    }
+
     public function updatePassword(Request $request)
     {
         $attributes = request()->validate([
@@ -115,5 +120,33 @@ class UserController extends Controller
             'countTeamMembers' => $countTeamMembers,
             'sumTeamCoins' => $sumTeamCoins,
         ]);
+    }
+
+
+    public function editUser(User $user)
+    {
+        return to_route('updateUser', ['user' => $user]);
+    }
+
+    public function updateUser(UserRequest $request, User $user)
+    {
+        $user->name = $request->input('name');
+        $user->lastname = $request->input('lastname');
+        $user->username = $request->input('username');
+        $user->email = $request->input('email');
+        $user->password = Hash::make($request->password);
+        $user->birthday = $request->input('birthday');
+        $user->coins = 0;
+        $user->is_admin = 0;
+
+        $user->save();
+    }
+
+    public function deleteUser($id)
+    {
+        $user = User::find($id);
+        $user->rewards()->detach();
+        $user->quests()->detach();
+        $user->delete();
     }
 }

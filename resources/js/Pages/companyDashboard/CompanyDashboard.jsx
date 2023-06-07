@@ -6,6 +6,10 @@ import MemberForm from "@/Components/MemberForm.jsx"
 import FormTeam from "@/Components/TeamForm.jsx"
 
 const AdminDashboard = (props) => {
+    console.log(props.teams);
+    console.log(props.teamMembers);
+    console.log(props.roles);
+
     return (
         <>
             <Header />

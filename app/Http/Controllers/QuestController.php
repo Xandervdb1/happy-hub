@@ -40,17 +40,47 @@ class QuestController extends Controller
         }
     }
 
+    public function show(Quest $quest)
+    {
+        return response()->json($quest);
+    }
+
+    public function updateQuest(QuestRequest $request, Quest $quest)
+    {
+        $quest->name = $request->name;
+        $quest->coins = $request->coins;
+        $quest->save();
+    }
+
+    public function deleteQuest($id)
+    {
+        $user = Auth::user();
+        $companyUsers = $user->company->users;
+        $teams = $user->company->teams;
+        $quest = Quest::find($id);
+
+        foreach ($companyUsers as $user) {
+            $user->quests()->detach($quest->id);
+        }
+
+        foreach ($teams as $team) {
+            $team->quests()->detach($quest->id);
+        }
+
+        $quest->delete();
+    }
+
     function showAllQuests()
     {
         $userId = Auth::id();
         $user = User::find($userId);
-        
+
         $userQuests = $user->quests;
         $userCoins = $user->coins;
 
         $team = $user->team;
         $teamCoins = $team->coins;
-        
+
         $teamQuests = $team->quests;
 
         return Inertia::render('userDashboard/AllQuests', [

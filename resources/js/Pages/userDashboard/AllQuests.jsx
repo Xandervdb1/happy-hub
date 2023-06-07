@@ -10,14 +10,14 @@ import { useState } from "react";
 const AllQuests = (props) => {
 
     const { userQuests, teamQuests, userCoins, teamCoins } = props;
-    const bgColor = '#393E46';
-    // const bgColor = '#DFB444';
+    // const bgColor = '#393E46';
+    const bgColor = '#DFB444';
 
-    const [ checked, setChecked ] = useState(false);
+    // const [ checked, setChecked ] = useState(false);
 
-    const handleChange = () => {
-        setChecked(!checked);
-    };
+    // const handleChange = () => {
+    //     setChecked(!checked);
+    // };
 
     return (
         <>
@@ -42,20 +42,20 @@ const AllQuests = (props) => {
                                                 <br />
                                             </div>
                                         </div>
-                                        <div className="secondRow">
+                                        {/* <div className="secondRow"> */}
                                             <ProgressBar bgcolor={bgColor} completed={completedRounded} />
-                                            <label>
+                                            {/* <label>
                                                 <input type="checkbox" 
                                                  checked={checked} onChange={handleChange} 
                                                 />
-                                            </label>
+                                            </label> */}
                                             {/* <Checkbox
                                                 value={checked}
                                                 onChange={handleChange}
                                             /> */}
                                             {/* <Checkbox /> */}
                                             
-                                        </div>
+                                        {/* </div> */}
                                     </div>
                                 )
                             })

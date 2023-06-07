@@ -33,4 +33,29 @@ class CompanyController extends Controller
 
         return to_route('companydashboard');
     }
+
+    public function show(Company $company)
+    {
+        return response()->json($company);
+    }
+
+    public function updateCompany(CompanyRequest $request, Company $company)
+    {
+        $company->name = $request->input('companyname');
+        $company->street = $request->input('address');
+        $company->number = $request->input('addressnumber');
+        $company->zip = $request->input('zip');
+        $company->city = $request->input('city');
+        $company->country = $request->input('country');
+        $company->VAT = $request->input('vatnumber');
+
+        $company->save();
+    }
+
+    //TODO: determine if we use this or not
+    public function deleteCompany($id)
+    {
+        $company = Company::find($id);
+        $company->delete();
+    }
 }

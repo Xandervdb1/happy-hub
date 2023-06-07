@@ -7,6 +7,7 @@ use App\Http\Controllers\KeyController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\RewardController;
 use App\Http\Controllers\QuestController;
+use App\Http\Controllers\RouterController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Foundation\Application;
@@ -28,7 +29,7 @@ use Inertia\Inertia;
 //ROUTE TO INDEX
 Route::get('/', function () {
     return Inertia::render('Index');
-})->name('index');
+})->name('index')->middleware('guest');
 
 //ROUTE FROM ADMIN KEYGEN TO ADMIN DASH
 Route::get('/generate-key', function () {
@@ -58,7 +59,7 @@ Route::post('/company-register', [CompanyController::class, 'storeCompany'])->mi
 
 //GETS
 // companyDashboard 1
-Route::get('/company-dashboard', [TeamController::class, 'showTeams'])->name('companydashboard')->middleware('auth')->middleware('admin');
+Route::get('/company-dashboard', [RouterController::class, 'showComapnyDashboard'])->name('companydashboard')->middleware('auth')->middleware('admin');
 Route::post('/company-dashboard-user', [UserController::class, 'storeUser']);
 Route::post('/company-dashboard-quest', [QuestController::class, 'storeQuest']);
 Route::post('/company-dashboard-reward', [RewardController::class, 'store']);

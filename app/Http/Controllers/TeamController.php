@@ -23,21 +23,48 @@ class TeamController extends Controller
     }
     function showTeams()
     {
-        $userId = Auth::id();
-        $user = User::find($userId);
-
-        $teams = $user->company->teams;
-        $roles = $user->company->roles;
+        $teams = Team::all();
 
         return Inertia::render('companyDashboard/CompanyDashboard', [
-            "teams" => $teams,
-            "roles" => $roles,
+            "teams" => $teams
         ]);
     }
     function showMembers()
     {
-        $teamId = Auth::id();
-        $users = User::where('team_id', $teamId)->get();
-        return Inertia::render('companyDashboard/TeamMembers', ["users" => $users]);
+        $user = Auth::user();
+        
+        $teams = $user->company->teams;
+
+        $teamMembers = [];
+        foreach($teams as $team) {
+            array_push($teamMembers, $team->users);
+        }
+
+        return Inertia::render('companyDashboard/TeamMembers', [
+            "teams" => $teams,
+            "teamMembers" => $teamMembers,
+        ]);
+    }
+
+    public function show(Team $team)
+    {
+        return response()->json($team);
+    }
+
+    public function updateTeam(TeamRequest $request, Team $team)
+    {
+        $team->name = $request->input('name');
+        $team->coins = $request->input('coins');
+        $team->save();
+    }
+
+    public function deleteTeam($id)
+    {
+        $team = Team::find($id);
+
+        $team->rewards()->detach();
+        $team->quests()->detach();
+
+        $team->delete();
     }
 }

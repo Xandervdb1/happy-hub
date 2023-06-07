@@ -49,4 +49,34 @@ class RewardController extends Controller
             'teamRewards' => $teamRewards
         ]);
     }
+
+    public function show(Reward $reward)
+    {
+        return response()->json($reward);
+    }
+
+    public function updateReward(RewardRequest $request, Reward $reward)
+    {
+        $reward->name = $request->name;
+        $reward->price = $request->price;
+
+        $reward->save();
+    }
+
+    public function deleteReward($id)
+    {
+        $user = Auth::user();
+        $companyUsers = $user->company->users;
+        $teams = $user->company->teams;
+        $reward = Reward::find($id);
+
+        foreach ($companyUsers as $user) {
+            $user->rewards()->detach($reward->id);
+        }
+        foreach ($teams as $team) {
+            $team->rewards()->detach($reward->id);
+        }
+
+        $reward->delete();
+    }
 }
