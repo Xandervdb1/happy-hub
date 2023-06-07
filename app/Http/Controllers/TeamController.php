@@ -53,6 +53,7 @@ class TeamController extends Controller
         $team = Team::find($id);
 
         $team->rewards()->detach();
+        $team->quests()->detach();
 
         $team->delete();
     }

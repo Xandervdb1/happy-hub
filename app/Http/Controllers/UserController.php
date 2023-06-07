@@ -104,6 +104,8 @@ class UserController extends Controller
     public function deleteUser($id)
     {
         $user = User::find($id);
+        $user->rewards()->detach();
+        $user->quests()->detach();
         $user->delete();
     }
 }
