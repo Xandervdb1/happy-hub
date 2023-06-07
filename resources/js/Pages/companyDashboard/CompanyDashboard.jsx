@@ -9,6 +9,7 @@ const AdminDashboard = (props) => {
     console.log(props.teams);
     console.log(props.teamMembers);
     console.log(props.roles);
+    console.log(props.logs);
 
     return (
         <>
