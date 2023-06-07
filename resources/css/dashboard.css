@@ -32,9 +32,23 @@
 .dashboardContainer .seeAll {
   grid-row: 1/2;
   grid-column: 2/5;
-  text-align: end;
   font-weight: 800;
   z-index: 99;
+  opacity: 0.6;
+  font-size: 12px;
+  padding: 5px;
+  text-align: end;
+}
+.dashboardContainer .seeAllRewards {
+  grid-row: 1/2;
+  grid-column: 3/5;
+  margin-left: auto;
+  font-weight: 800;
+  z-index: 99;
+  opacity: 0.6;
+  font-size: 12px;
+  padding: 5px;
+  text-align: end;
 }
 .dashboardContainer .questRewards {
   display: grid;

@@ -6,9 +6,16 @@ import MemberForm from "@/Components/MemberForm.jsx"
 import FormTeam from "@/Components/TeamForm.jsx"
 
 const AdminDashboard = (props) => {
-    console.log(props.teams);
-    console.log(props.teamMembers);
-    console.log(props.roles);
+    // console.log(props.teams);
+    // console.log(props.teamMembers);
+    // console.log(props.roles);
+    const teams = props.teams
+    const teamMembers = props.teamMembers;
+    // console.log(teamMembers)
+
+    console.log(props.logs);
+    const logs = props.logs;
+
 
     return (
         <>
@@ -20,35 +27,89 @@ const AdminDashboard = (props) => {
                     <FormTeam />
                     <p className="titleTable" id="name">name</p>
                     <p className="titleTable" id="member">members</p>
-                    <p>Team</p>
-                    <p>#</p>
+                    <div className="teams">
+                        {
+
+                            teams.map(team => (
+                                <>
+                                    {/* {console.log(team.id)} */}
+                                    <div className="team"
+                                        key={teams.id}>
+                                        <p>{team.name}</p>
+                                    </div>
+                                </>
+                            ))
+                        }
+                    </div>
+
+                    <div className="members">
+                        {
+                            teamMembers.map(teamMember => (
+                                <>
+                                    <div className='listItem' key={teamMember.id}>
+                                        <p>{teamMember.length}</p>
+                                    </div>
+                                </>
+                            ))
+                        }
+                    </div>
                 </div>
 
 
                 <div className="quest">
                     <h1 className="titleDashboard">Add Quest</h1>
                     <FormQuest />
+
                 </div>
+                <Link className='linkAll' href='/all-quests'> &gt;&gt; See all</Link>
 
 
                 <div className="member">
                     <h1 className="titleDashboard">Add Member</h1>
                     <MemberForm teams={props.teams} roles={props.roles} />
                 </div>
+                <Link className='linkAll' href='#'> &gt;&gt; See all</Link>
 
 
                 <div className="rewardCompany">
                     <h1 className="titleDashboard">Add Reward</h1>
-
                     <FormReward />
-
                 </div>
+                <Link className='linkAll' href='/rewards-collection'> &gt;&gt; See all</Link>
+
+
+
+
                 <div className="logContainer">
                     <h1 className="logTitle">Logs</h1>
                     <hr />
                     <div className="log">
-                        <li>17/05/2023 - 12:51</li>
-                        <p> Person X did this and spent # coins. (# total coins.)</p>
+                        {
+                            logs.map(log => {
+                                if (log.scope === "Reward") {
+                                    return (
+                                        <>
+                                            <div className="scope">
+                                                <i><li className="timestamp">{log.created_at}</li></i>
+                                                <p className="red"> {log.name} spent {log.scopeCoins.toLocaleString()} coins on {log.scopeName}.</p>
+                                                <p className="coinTotal">(Total coins: {log.coins.toLocaleString()} coins)</p>
+                                            </div>
+                                        </>
+                                    )
+                                } else {
+                                    return (
+                                        <>
+                                            <div className="scope">
+                                                <i><li className="timestamp">{log.created_at}</li></i>
+                                                <p className="green"> {log.name} gained {log.scopeCoins.toLocaleString()} coins for {log.scopeName}.</p>
+                                                <p className="coinTotal">(Total coins: {log.coins.toLocaleString()})</p>
+                                            </div>
+                                        </>
+                                    )
+                                }
+                            })
+
+                        }
                     </div>
                 </div>
                 <Link href='#' className="seeAllLogs"> see all logs</Link>

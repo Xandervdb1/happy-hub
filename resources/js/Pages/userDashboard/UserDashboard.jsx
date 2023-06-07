@@ -73,7 +73,7 @@ const UserDashboard = (props) => {
 
 
                 <div className="rewards">
-                    <Link href="/rewards-collection" className="seeAll">&gt; &gt; see all </Link>
+                    <Link href="/rewards-collection" className="seeAllRewards">&gt; &gt; see all </Link>
                     <h1 className="title">Rewards</h1>
                     <hr className="underline" />
                     {

@@ -15,6 +15,7 @@ class LogController extends Controller
         $log->user_id = 5;
         $log->reward_id = 3;
         $log->quest_id = 0;
+        $log->company_id = 1;
 
         $log->save();
     }
