@@ -23,4 +23,9 @@ class Company extends Model
     {
         return $this->hasMany(Role::class);
     }
+
+    function logs()
+    {
+        return $this->hasMany(Log::class);
+    }
 }
