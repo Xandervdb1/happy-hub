@@ -16,6 +16,12 @@
   text-align: left;
   margin: 15px;
 }
+.adminDashboard .team,
+.adminDashboard .listItem {
+  font-size: 12px;
+  padding: 10px;
+  border-bottom: 1px solid rgba(34, 40, 49, 0.5);
+}
 .adminDashboard .addLink {
   font-size: 30px;
   font-weight: 600;
@@ -100,6 +106,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   height: auto;
+  background-color: #D9D9D9;
 }
 .adminDashboard .teamContainer .titleTable {
   border-bottom: 1px solid grey;
@@ -113,6 +120,11 @@
 .adminDashboard .teamContainer #member {
   text-align: right;
   margin-right: 15px;
+}
+.adminDashboard .linkAll {
+  text-align: left;
+  margin: 10px;
+  opacity: 0.6;
 }
 .adminDashboard .quest {
   display: grid;
@@ -134,10 +146,11 @@
   text-align: left;
 }
 .adminDashboard .logContainer {
+  background-color: #D9D9D9;
   display: grid;
   text-align: left;
-  margin-left: 15px;
-  margin-top: 40px;
+  margin-top: 30px;
+  padding: 10px;
 }
 .adminDashboard .logContainer .logTitle {
   font-size: 20px;
@@ -147,6 +160,7 @@
 }
 .adminDashboard .logContainer .log {
   text-align: start;
+  padding: 10px;
 }
 .adminDashboard .logContainer .seeAllLogs {
   place-items: center;
