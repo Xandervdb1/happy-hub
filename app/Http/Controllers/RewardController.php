@@ -68,8 +68,6 @@ class RewardController extends Controller
     {
         $reward->name = $request->name;
         $reward->price = $request->price;
-        $reward->team_id = Auth::user()->team_id;
-        $reward->user_id = Auth::user()->id;
 
         $reward->save();
     }

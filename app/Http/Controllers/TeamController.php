@@ -45,7 +45,6 @@ class TeamController extends Controller
     {
         $team->name = $request->input('name');
         $team->coins = $request->input('coins');
-        $team->company_id = Auth::user()->company_id;
         $team->save();
     }
 

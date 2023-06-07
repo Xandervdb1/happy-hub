@@ -52,6 +52,7 @@ class CompanyController extends Controller
         $company->save();
     }
 
+    //TODO: determine if we use this or not
     public function deleteCompany($id)
     {
         $company = Company::find($id);
