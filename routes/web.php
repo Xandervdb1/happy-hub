@@ -7,6 +7,7 @@ use App\Http\Controllers\KeyController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\RewardController;
 use App\Http\Controllers\QuestController;
+use App\Http\Controllers\RouterController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Foundation\Application;
@@ -58,21 +59,23 @@ Route::post('/company-register', [CompanyController::class, 'storeCompany'])->mi
 
 //GETS
 // companyDashboard 1
-Route::get('/company-dashboard', [TeamController::class, 'showTeams'])->name('companydashboard')->middleware('auth')->middleware('admin');
+Route::get('/company-dashboard', [RouterController::class, 'showComapnyDashboard'])->name('companydashboard')->middleware('auth')->middleware('admin');
+Route::post('/company-dashboard-user', [UserController::class, 'storeUser']);
+Route::post('/company-dashboard-quest', [QuestController::class, 'storeQuest']);
+Route::post('/company-dashboard-reward', [RewardController::class, 'store']);
 
 Route::get('/team-members', [TeamController::class, 'showMembers'])->middleware('auth')->middleware('admin');
 
 
 // userDashboard 1
-
-Route::get('/user-dashboard', [RewardController::class, 'showThreeRewardsAndQuests'])->name('userdashboard')->middleware('auth');
+Route::get('/user-dashboard', [UserController::class, 'showUserDashboard'])->name('userdashboard');
 // Rewards collection page (>> See all rewards)
 Route::get('/rewards-collection', [RewardController::class, 'showAllRewards'])->middleware('auth');
 Route::get('/all-quests', [QuestController::class, 'showAllQuests'])->middleware('auth');
 
 
 Route::get('/wallet', function () {
-    return Inertia::render('Wallet');
+    return Inertia::render('wallet/Wallet');
 })->name('wallet')->middleware('auth');
 
 //LOGIN
@@ -94,12 +97,3 @@ Route::post('/username', [UserController::class, 'setUsername']);
 Route::post('/login', [SessionController::class, 'store']);
 
 Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth');
-
-Route::get('/mailable', function () {
-    $key = App\Models\Key::find(1);
-    return new App\Mail\ConfirmationKey($key);
-});
-
-
-Route::get('/quests/{quest}', [QuestController::class, 'show']);
-Route::delete('/quests/{quest}', [QuestController::class, 'deleteQuest']);

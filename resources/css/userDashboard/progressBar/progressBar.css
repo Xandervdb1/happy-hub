@@ -1,0 +1,18 @@
+.progressBar {
+  margin-top: 10px;
+  display: flex;
+  height: 20px;
+  width: 80%;
+  background-color: #e9e9e8;
+  border-radius: 50px;
+}
+.progressBar .completedBar {
+  height: 100%;
+  border-radius: inherit;
+  text-align: right;
+}
+.progressBar .completedBar .completedPart {
+  font-size: x-small;
+  padding: 10px;
+  color: #e9e9e8;
+}/*# sourceMappingURL=progressBar.css.map */

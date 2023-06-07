@@ -10,53 +10,94 @@
     border-color: #222831;
     width: 50%;
     margin: 0 auto;
-    grid-row: 2;
+    grid-row: 1;
     grid-column: 1/4;
-    margin-top: -8px;
+    margin-top: 25px;
 }
 
 .priceContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    width: 40px;
-    grid-row: 2;
+    width: 80px;
     grid-column: 1;
+    text-align: center;
+
+}
+
+.rewardPriceContainer {
+    display: flex;
+    flex-direction: row;
 }
 
 .coins {
     width: 20px;
-    text-align: center;
+    // justify-self: end;
 }
 
 .price {
     font-size: 12px;
-    text-align: center;
+    // place-self: left;
+
 }
 
 .rewards {
     margin-top: 10px;
-    grid-row: 12/16;
+    grid-row: auto;
     grid-column: 1/13;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 5px;
+}
 
-    .reward {
-        background-color: #D9D9D9;
-        text-align: center;
-        border: 1px solid black;
-        height: 55px;
-        width: 80px;
-        display: grid;
-        place-items: center;
-        grid-row: 2;
-        grid-column: 1;
-        margin-top: 5px;
+.reward {
+    background-color: #D9D9D9;
+    text-align: center;
+    border: 1px solid black;
+    height: 55px;
+    width: 80px;
+    display: grid;
+    place-items: center;
+    grid-row: 2;
+    margin-top: 5px;
+    border-radius: 7px;
+    cursor: pointer;
 
-        .activity {
-            font-size: 14px;
-            font-weight: 500;
-        }
+
+
+    .reward .activity {
+        font-size: 14px;
+        font-weight: 500;
     }
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+
+    .amount {
+        font-size: auto;
+        color: #FFCD29;
+    }
+}
+
+.walletCarousel {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.titleWallet {
+    font-size: 20px;
+    color: #222831;
+}
+
+.coinCarousel {
+    max-width: 45px;
+}
+
+.carouselButton {
+    font-size: 10px;
+    opacity: .6;
 }

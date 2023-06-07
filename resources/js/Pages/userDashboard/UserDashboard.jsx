@@ -1,91 +1,101 @@
 import { Link } from "@inertiajs/react";
 import Header from "@/Components/Header.jsx";
+import Carousel from "@/Components/WalletCarousel.jsx";
+
 
 const UserDashboard = (props) => {
-    // console.log(props.auth.user)
-    // console.log(props.userRewards)
-    // console.log(props.teamRewards)
     const userName = props.auth.user.name
     const nickName = props.auth.user.username
     const birthday = props.auth.user.birthday
-    console.log(props.userRewards)
-    console.log(props.teamRewards)
-    const { userRewards, teamRewards } = props;
+    const rewards = props.userRewards;
+    const quests = props.userQuests;
+    const teamQuests = props.teamQuests;
+    const teamName = props.teamName
+    const members = props.countTeamMembers
+    console.log(rewards)
 
     return (
         <>
             <Header />
             <div className="dashboardContainer">
                 <div className="progressCarrousel">
-                    <p>Next milestone</p>
+                    < Carousel personalWallet={props.auth.user.coins} teamWallet={props.sumTeamCoins} />
                 </div>
                 <div className="profileInfo">
                     <p className="personalInfo">Name: {userName}</p>
                     <p className="personalInfo">Nickname: {nickName}</p>
                     <p className="personalInfo">Birthday: {birthday}</p>
-                    <p className="personalInfo">Team:</p>
-                    <p className="personalInfo">Team members:</p>
+                    <p className="personalInfo">Team: {teamName}</p>
+                    <p className="personalInfo">Team members:{members}</p>
                     <br />
-                    <p className="personalInfo">Personal Wallet:</p>
-                    <p className="personalInfo">Team Wallet:</p>
+                    {/* <p className="personalInfo">Personal Wallet:{personalWallet}</p>
+                    <p className="personalInfo">Team Wallet:{teamWallet}</p> */}
                 </div>
                 <div className="personalQuests">
-                    <Link href="/all-quests" className="seeAll">&gt; &gt; see all </Link>
+                    {console.log(props.userQuests)}
+
+                    <Link href="/all-quests#1" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Your Quests</h1>
                     <hr className="underline" />
-                    <div className="priceContainer">
-                        <img className="coins" src="../coin.png" alt="coin Happy Hub" />
-                        <p className="price">200</p>
-                    </div>
-                    <div className="questRewards">
-                        <p className="questReward"> sell 10.000 products</p>
-                    </div>
+                    {
+                        quests.map(quest => (
+                            <>
+                                <div className="priceContainer">
+                                    <img className="coins" src="../coin.png" alt="coin Happy Hub" />
+                                    <p className="price">{quest.coins}</p>
+                                </div>
+                                <div className="questRewards" key={quest.id}>
+                                    <p className="questReward">{quest.name}</p>
+                                </div>
+                            </>
+                        ))
+                    }
                 </div>
                 <div className="teamQuests">
-                    <Link href="/all-quests" className="seeAll">&gt; &gt; see all </Link>
+                    <Link href="/all-quests#2" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Team Quests</h1>
                     <hr className="underline" />
-                    <div className="priceContainer">
-                        <img className="coins" src="../coin.png" alt="coin Happy Hub" />
-                        <p className="price">200</p>
-                    </div>
-                    <div className="questRewards">
-                        <p className="questReward"> sell 10.000 products</p>
-                    </div>
-                </div>
+                    {
+                        teamQuests.map(teamQuest => (
+                            <>
+                                <div className="priceContainer">
+                                    <img className="coins" src="../coin.png" alt="coin Happy Hub" />
+                                    <p className="price">{teamQuest.coins}</p>
+                                </div>
+                                <div className="questRewards" key={teamQuest.id}>
+                                    <p className="questReward"> {teamQuest.name}</p>
+                                </div>
+
+                            </>
+                        ))
+                    }
+                </div >
+
+
                 <div className="rewards">
                     <Link href="/rewards-collection" className="seeAll">&gt; &gt; see all </Link>
                     <h1 className="title">Rewards</h1>
                     <hr className="underline" />
-                    <table>
-                        <tbody>
-                            {
-                                userRewards.map((userReward) => (
-                                    <tr key={userReward.id}>
-                                        <td> {userReward.name}</td>
-                                    </tr>
-                                ))}
-                        </tbody>
-                    </table>
-                    {/* {
-                        userRewardList().map(reward => (
+                    {
+                        rewards.map(reward => (
                             <>
-                                <div className="reward" key={reward.id}>
+                                {console.log(reward.id)}
+                                <div className="reward"
+                                    key={reward.id}
+                                >
                                     <div className="totalReward">
-                                        <p className="activity">{reward.id}</p>
-                                        <div className="priceContainer">
+                                        <p className="activity">{reward.slug}</p>
+                                        <div className="rewardPriceContainer">
                                             <img className="coins" src="../coin.png" alt="coin Happy Hub" />
-                                            <p className="price">200</p>
+                                            <p className="price">{reward.price}</p>
                                         </div>
                                     </div>
                                 </div>
                             </>
                         ))
-                    } */}
-
-
+                    }
                 </div>
-            </div>
+            </div >
         </>
     )
 }

@@ -23,6 +23,19 @@
   margin-bottom: 1rem;
   border-bottom: 2px solid black;
 }
+.rewardsContainer .subTitle {
+  width: 100%;
+}
+.rewardsContainer .subTitle::after {
+  content: "";
+  position: relative;
+  display: block;
+  margin: auto;
+  left: 0;
+  bottom: 0;
+  width: 40%;
+  border-bottom: 1px solid black;
+}
 
 .priceContainer {
   width: 100%;
@@ -51,6 +64,10 @@
 .reward .activity {
   font-size: 14px;
   font-weight: 500;
+}
+
+.disabled {
+  filter: grayscale(100%);
 }
 
 .reward:hover {

@@ -3,8 +3,12 @@ import { Link } from "@inertiajs/react"
 import FormQuest from "@/Components/QuestForm.jsx"
 import FormReward from "@/Components/RewardForm.jsx"
 import MemberForm from "@/Components/MemberForm.jsx"
+import FormTeam from "@/Components/TeamForm.jsx"
 
 const AdminDashboard = (props) => {
+    console.log(props.teams);
+    console.log(props.teamMembers);
+    console.log(props.roles);
 
     return (
         <>
@@ -12,11 +16,11 @@ const AdminDashboard = (props) => {
             <div className="adminDashboard">
                 <h1 className="titlePage">Company Dashboard</h1>
                 <div className="teamContainer">
-                    <h1 className="titleDashboard">Team</h1>
-                    <p className="addLink">+</p>
+                    <h1 className="titleDashboard"> Add Team</h1>
+                    <FormTeam />
                     <p className="titleTable" id="name">name</p>
                     <p className="titleTable" id="member">members</p>
-                    <p>groups</p>
+                    <p>Team</p>
                     <p>#</p>
                 </div>
 
@@ -29,11 +33,11 @@ const AdminDashboard = (props) => {
 
                 <div className="member">
                     <h1 className="titleDashboard">Add Member</h1>
-                    <MemberForm />
+                    <MemberForm teams={props.teams} roles={props.roles} />
                 </div>
 
 
-                <div className="reward">
+                <div className="rewardCompany">
                     <h1 className="titleDashboard">Add Reward</h1>
 
                     <FormReward />

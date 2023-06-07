@@ -28,26 +28,28 @@
   gap: 0.4rem;
   width: 350px;
   padding: 1.3rem;
-  height: 350px;
+  max-height: 380px;
   position: fixed;
-  top: 20%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 15px;
   z-index: 2;
-  margin-left: 20px;
   box-shadow: 0px 0px 10px 2px #222831;
 }
 .adminDashboard .modal .flex {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: right;
 }
 .adminDashboard .modal input {
   padding: 0.7rem 1rem;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 0.9em;
+  margin: 10px;
 }
 .adminDashboard .input {
   height: auto;
@@ -63,9 +65,8 @@
 .adminDashboard .btn {
   display: inline-block;
   padding: 0.8rem 1.4rem;
-  font-weight: 700;
-  background-color: black;
-  color: white;
+  background-color: #222831;
+  color: #FFCD29;
   border-radius: 5px;
   text-align: center;
   font-size: 1em;
@@ -91,6 +92,9 @@
 }
 .adminDashboard .hidden {
   display: none;
+}
+.adminDashboard .formContainer {
+  text-align: center;
 }
 .adminDashboard .teamContainer {
   display: grid;
@@ -123,7 +127,7 @@
   height: 5vh;
   text-align: left;
 }
-.adminDashboard .reward {
+.adminDashboard .rewardCompany {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   height: 5vh;

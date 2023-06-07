@@ -1,0 +1,79 @@
+.QuestContainer h1 {
+  text-align: center;
+  margin: 20px;
+  font-size: x-large;
+}
+.QuestContainer div.personalQuestsContainer,
+.QuestContainer .teamQuestsContainer {
+  margin-bottom: 20px;
+}
+.QuestContainer div.personalQuestsContainer .title,
+.QuestContainer .teamQuestsContainer .title {
+  text-decoration: underline;
+  background-color: #D9D9D9;
+}
+.QuestContainer div.personalQuestsContainer .personalQuests,
+.QuestContainer div.personalQuestsContainer .teamQuests,
+.QuestContainer .teamQuestsContainer .personalQuests,
+.QuestContainer .teamQuestsContainer .teamQuests {
+  background-color: #D9D9D9;
+}
+.QuestContainer div.personalQuestsContainer .personalQuests .personalQuest,
+.QuestContainer div.personalQuestsContainer .personalQuests .teamQuest,
+.QuestContainer div.personalQuestsContainer .teamQuests .personalQuest,
+.QuestContainer div.personalQuestsContainer .teamQuests .teamQuest,
+.QuestContainer .teamQuestsContainer .personalQuests .personalQuest,
+.QuestContainer .teamQuestsContainer .personalQuests .teamQuest,
+.QuestContainer .teamQuestsContainer .teamQuests .personalQuest,
+.QuestContainer .teamQuestsContainer .teamQuests .teamQuest {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  padding: 15px 25px;
+}
+.QuestContainer div.personalQuestsContainer .personalQuests .personalQuest div.firstRow,
+.QuestContainer div.personalQuestsContainer .personalQuests .teamQuest div.firstRow,
+.QuestContainer div.personalQuestsContainer .teamQuests .personalQuest div.firstRow,
+.QuestContainer div.personalQuestsContainer .teamQuests .teamQuest div.firstRow,
+.QuestContainer .teamQuestsContainer .personalQuests .personalQuest div.firstRow,
+.QuestContainer .teamQuestsContainer .personalQuests .teamQuest div.firstRow,
+.QuestContainer .teamQuestsContainer .teamQuests .personalQuest div.firstRow,
+.QuestContainer .teamQuestsContainer .teamQuests .teamQuest div.firstRow {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+.QuestContainer div.personalQuestsContainer .personalQuests .personalQuest div.firstRow .column,
+.QuestContainer div.personalQuestsContainer .personalQuests .teamQuest div.firstRow .column,
+.QuestContainer div.personalQuestsContainer .teamQuests .personalQuest div.firstRow .column,
+.QuestContainer div.personalQuestsContainer .teamQuests .teamQuest div.firstRow .column,
+.QuestContainer .teamQuestsContainer .personalQuests .personalQuest div.firstRow .column,
+.QuestContainer .teamQuestsContainer .personalQuests .teamQuest div.firstRow .column,
+.QuestContainer .teamQuestsContainer .teamQuests .personalQuest div.firstRow .column,
+.QuestContainer .teamQuestsContainer .teamQuests .teamQuest div.firstRow .column {
+  display: flex;
+  flex-direction: row;
+}
+.QuestContainer div.personalQuestsContainer .personalQuests .personalQuest div.secondRow,
+.QuestContainer div.personalQuestsContainer .personalQuests .teamQuest div.secondRow,
+.QuestContainer div.personalQuestsContainer .teamQuests .personalQuest div.secondRow,
+.QuestContainer div.personalQuestsContainer .teamQuests .teamQuest div.secondRow,
+.QuestContainer .teamQuestsContainer .personalQuests .personalQuest div.secondRow,
+.QuestContainer .teamQuestsContainer .personalQuests .teamQuest div.secondRow,
+.QuestContainer .teamQuestsContainer .teamQuests .personalQuest div.secondRow,
+.QuestContainer .teamQuestsContainer .teamQuests .teamQuest div.secondRow {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+.QuestContainer div.personalQuestsContainer .personalQuests .personalQuest div.secondRow .checkbox,
+.QuestContainer div.personalQuestsContainer .personalQuests .teamQuest div.secondRow .checkbox,
+.QuestContainer div.personalQuestsContainer .teamQuests .personalQuest div.secondRow .checkbox,
+.QuestContainer div.personalQuestsContainer .teamQuests .teamQuest div.secondRow .checkbox,
+.QuestContainer .teamQuestsContainer .personalQuests .personalQuest div.secondRow .checkbox,
+.QuestContainer .teamQuestsContainer .personalQuests .teamQuest div.secondRow .checkbox,
+.QuestContainer .teamQuestsContainer .teamQuests .personalQuest div.secondRow .checkbox,
+.QuestContainer .teamQuestsContainer .teamQuests .teamQuest div.secondRow .checkbox {
+  margin-top: 10px;
+  padding-right: 10px;
+}/*# sourceMappingURL=allQuests.css.map */

@@ -1,24 +1,35 @@
 import React from "react"
+import { useState } from 'react'
+import { router } from '@inertiajs/react'
 
-const FormMember = () => {
+const FormMember = (props) => {
     const [values, setValues] = useState({
-        name: '',
-        slug: '',
-        price: '',
+        firstname: '',
+        lastname: '',
+        email: '',
+        team: '',
         function: '',
-
+        adminCheck: false
     })
     const handleChange = (e) => {
         const key = e.target.id;
-        const value = e.target.value
+        let value;
+        if (key == "adminCheck") {
+            value = e.target.checked;
+        } else {
+            value = e.target.value;
+        }
+        console.log(value);
         setValues(values => ({
             ...values,
             [key]: value,
         }))
+        console.log(values);
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        router.post('/company-dashboard', values)
+        console.log(values);
+        router.post('/company-dashboard-user', values)
     }
 
     const showModal = (e) => {
@@ -43,16 +54,38 @@ const FormMember = () => {
                 <div className="formContainer">
                     <h1>Add new Member</h1>
                     <form onSubmit={handleSubmit}>
-                        <input type="text" name="name" id="name" value={values.name} onChange={handleChange} placeholder="Name" className="input" />
+                        <input type="text" name="firstname" id="firstname" value={values.firstname} onChange={handleChange} placeholder="First name" className="input" />
 
-                        <input type="text" name="slug" id="slug" value={values.slug} onChange={handleChange} placeholder="Slug" className="input" />
+                        <input type="text" name="lastname" id="lastname" value={values.lastname} onChange={handleChange} placeholder="Last name" className="input" />
 
-                        <input type="text" name="Price" id="price" value={values.price} onChange={handleChange} placeholder="Price" className="input" />
+                        <input type="email" name="email" id="email" value={values.email} onChange={handleChange} placeholder="Email" className="input" />
 
-                        <select name="function" className="input" id="function" value={values.function} onChange={handleChange} placeholder="function">
-                            <option value="Personal">Front -end</option>
-                            <option value="Team">Back- end</option>
+                        <select name="team" className="input" id="team" value={values.team} onChange={handleChange} placeholder="Team">
+                            <option value="Team">Choose Team</option>
+                            {
+                                props.teams.map(team => {
+                                    return (
+                                        <option key={team.id} value={team.id}>{team.name}</option>
+                                    )
+                                })
+                            }
                         </select>
+                        <select name="function" className="input" id="function" value={values.function} onChange={handleChange} placeholder="function">
+                            <option value="Team">Choose Function</option>
+                            {
+                                props.roles.map(role => {
+                                    return (
+                                        <option key={role.id} value={role.id}>{role.name}</option>
+                                    )
+                                })
+                            }
+                        </select>
+                        <div>
+                            <input type="checkbox" id="adminCheck" name="adminCheck" onChange={handleChange} />
+                            <label htmlFor="adminCheck">Admin?</label>
+                        </div>
+
+
                         <button className="btn">Submit</button>
                     </form>
                 </div>
