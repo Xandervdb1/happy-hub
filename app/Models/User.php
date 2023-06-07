@@ -37,4 +37,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Reward::class, 'reward_user');
     }
+
+    function logs()
+    {
+        return $this->hasMany(Log::class);
+    }
 }

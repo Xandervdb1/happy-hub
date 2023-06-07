@@ -1,0 +1,16 @@
+.titleWrapper {
+    display: flex;
+    outline: 2px solid green;
+    justify-content: space-around;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-right: 1rem;
+}
+
+.empty {
+    visibility: hidden;
+}
+

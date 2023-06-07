@@ -6,7 +6,7 @@ const Reward = (props) => {
         <>
             <div className={disabled ? 'reward disabled' : 'reward'} key={reward.name + reward.id}>
                 <div className="totalReward">
-                    <p className='activity'> {reward.name}</p>
+                    <p className='activity'> {reward.slug}</p>
                     <div className="priceContainer">
                         <img className="coins" src="../coin.png" alt="coin Happy Hub" />
                         <p className="price">{reward.price}</p>
