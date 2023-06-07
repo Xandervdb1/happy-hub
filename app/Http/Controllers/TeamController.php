@@ -21,19 +21,7 @@ class TeamController extends Controller
         //TODO: set company_id to the company_id of the logged in admin
         $team->save();
     }
-    function showTeams()
-    {
-        $userId = Auth::id();
-        $user = User::find($userId);
-
-        $teams = $user->company->teams;
-        $roles = $user->company->roles;
-
-        return Inertia::render('companyDashboard/CompanyDashboard', [
-            "teams" => $teams,
-            "roles" => $roles,
-        ]);
-    }
+   
     function showMembers()
     {
         $teamId = Auth::id();
