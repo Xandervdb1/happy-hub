@@ -36,7 +36,6 @@ class QuestController extends Controller
     {
         $quest->name = $request->name;
         $quest->coins = $request->coins;
-
         $quest->save();
     }
 
