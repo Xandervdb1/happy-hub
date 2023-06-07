@@ -28,7 +28,7 @@ use Inertia\Inertia;
 //ROUTE TO INDEX
 Route::get('/', function () {
     return Inertia::render('Index');
-})->name('index');
+})->name('index')->middleware('guest');
 
 //ROUTE FROM ADMIN KEYGEN TO ADMIN DASH
 Route::get('/generate-key', function () {
