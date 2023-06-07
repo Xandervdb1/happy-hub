@@ -23,10 +23,6 @@ function showComapnyDashboard()
         
         $roles = $user->company->roles;
 
-        $log = $user->log
-
-        
-
         return Inertia::render('companyDashboard/CompanyDashboard', [
             "teams" => $teams,
             "teamMembers" => $teamMembers,
