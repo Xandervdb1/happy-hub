@@ -7,50 +7,68 @@
 .walletContainer .pricesAndCoin {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 45px;
   margin-left: auto;
   font-weight: 600;
+  place-items: center;
 }
 .walletContainer .pricesAndCoin .coin {
-  margin-top: 5px;
+  width: 20px;
+}
+.walletContainer .priceAndCoin {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: auto;
+  font-weight: 400;
+  font-size: 13px;
+  place-items: center;
+  grid-column: 2;
+  grid-row: 1/3;
+}
+.walletContainer .priceAndCoin .coin {
+  width: 18px;
+  text-align: left;
 }
 .walletContainer .titleWallet {
   font-size: 20px;
   font-weight: 600;
   text-align: left;
   margin: 15px;
+  width: 100%;
 }
 .walletContainer .personalBalance {
   background-color: #D9D9D9;
   justify-content: space-around;
-  height: 43vh;
+  min-height: 43vh;
+  height: auto;
   margin: 5px;
   margin-bottom: 10px;
 }
 .walletContainer .personalWallet {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  width: auto;
 }
 .walletContainer .transactions {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);
+  border-bottom: 1px solid rgba(34, 40, 49, 0.5);
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .walletContainer .transactions .timestamp {
+  font-size: 13px;
   font-weight: 600;
 }
 .walletContainer .teamBalance {
   background-color: #D9D9D9;
   justify-content: space-around;
-  height: 43vh;
+  min-height: 43vh;
+  height: auto;
   margin: 5px;
   margin-bottom: 10px;
 }
 .walletContainer .teamBalance .teamWallet {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-}
-.walletContainer .line {
-  color: black;
-  z-index: 9;
 }/*# sourceMappingURL=wallet.css.map */
