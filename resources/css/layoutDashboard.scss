@@ -18,20 +18,26 @@
 .priceContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    width: 40px;
+    width: 80px;
     grid-column: 1;
     text-align: center;
+
+}
+
+.rewardPriceContainer {
+    display: flex;
+    flex-direction: row;
 }
 
 .coins {
     width: 20px;
-    text-align: center;
+    // justify-self: end;
 }
 
 .price {
     font-size: 12px;
-    text-align: center;
+    // place-self: left;
+
 }
 
 .rewards {
@@ -56,8 +62,7 @@
     margin-top: 5px;
     border-radius: 7px;
     cursor: pointer;
-    // margin-left: auto;
-    // margin-right: auto;
+
 
 
     .reward .activity {

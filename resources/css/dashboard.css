@@ -23,12 +23,11 @@
 .dashboardContainer .personalQuests {
   margin-top: 10px;
   background-color: #D9D9D9;
-  grid-row: auto;
   grid-column: 1/13;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
   gap: 5px;
+  height: 200px;
 }
 .dashboardContainer .seeAll {
   grid-row: 1/2;
@@ -40,7 +39,6 @@
 .dashboardContainer .questRewards {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   width: 200px;
   grid-column: 2;
 }
@@ -51,9 +49,8 @@
 .dashboardContainer .teamQuests {
   margin-top: 10px;
   background-color: #D9D9D9;
-  grid-row: auto;
   grid-column: 1/13;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  height: 200px;
 }/*# sourceMappingURL=dashboard.css.map */

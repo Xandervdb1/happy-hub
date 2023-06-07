@@ -12,6 +12,7 @@ const UserDashboard = (props) => {
     const teamQuests = props.teamQuests;
     const teamName = props.teamName
     const members = props.countTeamMembers
+    console.log(rewards)
 
     return (
         <>
@@ -83,8 +84,8 @@ const UserDashboard = (props) => {
                                     key={reward.id}
                                 >
                                     <div className="totalReward">
-                                        <p className="activity">{reward.name}</p>
-                                        <div className="priceContainer">
+                                        <p className="activity">{reward.slug}</p>
+                                        <div className="rewardPriceContainer">
                                             <img className="coins" src="../coin.png" alt="coin Happy Hub" />
                                             <p className="price">{reward.price}</p>
                                         </div>
