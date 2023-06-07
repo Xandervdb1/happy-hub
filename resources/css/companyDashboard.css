@@ -165,4 +165,25 @@
 .adminDashboard .logContainer .seeAllLogs {
   place-items: center;
   border-bottom: 1px solid grey;
+}
+.adminDashboard .scope {
+  padding: 5px;
+  border-bottom: 1px solid rgba(34, 40, 49, 0.5);
+  font-size: 13px;
+}
+.adminDashboard .timestamp {
+  font-size: 12px;
+  font-weight: 600;
+  list-style-type: circle;
+}
+.adminDashboard .red {
+  color: red;
+}
+.adminDashboard .green {
+  color: green;
+}
+.adminDashboard .coinTotal {
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.6;
 }/*# sourceMappingURL=companyDashboard.css.map */

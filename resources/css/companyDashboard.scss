@@ -198,4 +198,30 @@
         }
     }
 
+    .scope {
+        padding: 5px;
+        border-bottom: 1px solid rgb(34, 40, 49, .5);
+        font-size: 13px;
+    }
+
+    .timestamp {
+        font-size: 12px;
+        font-weight: 600;
+        list-style-type: circle;
+    }
+
+    .red {
+        color: red;
+    }
+
+    .green {
+        color: green;
+    }
+
+    .coinTotal {
+        font-size: 10px;
+        font-weight: 600;
+        opacity: .6;
+    }
+
 }
