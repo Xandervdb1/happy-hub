@@ -2,7 +2,8 @@ import Header from "@/Components/Header.jsx"
 
 
 const TeamMembers = (props) => {
-    console.log(props.users)
+    console.log(props.teams)
+    console.log(props.teamMembers)
     return (
         <>
             <Header />
