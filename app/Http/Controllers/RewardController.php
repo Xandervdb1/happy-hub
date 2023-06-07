@@ -76,7 +76,18 @@ class RewardController extends Controller
 
     public function deleteReward($id)
     {
+        $user = Auth::user();
+        $companyUsers = $user->company->users;
+        $teams = $user->company->teams;
         $reward = Reward::find($id);
+
+        foreach ($companyUsers as $user) {
+            $user->rewards()->detach($reward->id);
+        }
+        foreach ($teams as $team) {
+            $team->rewards()->detach($reward->id);
+        }
+
         $reward->delete();
     }
 }
