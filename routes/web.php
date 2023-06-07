@@ -102,4 +102,4 @@ Route::get('/mailable', function () {
 
 
 Route::get('/quests/{quest}', [QuestController::class, 'show']);
-Route::put('/quests/{quest}', [QuestController::class, 'updateQuest']);
+Route::delete('/quests/{quest}', [QuestController::class, 'deleteQuest']);

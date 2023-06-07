@@ -41,7 +41,19 @@ class QuestController extends Controller
 
     public function deleteQuest($id)
     {
+        $user = Auth::user();
+        $companyUsers = $user->company->users;
+        $teams = $user->company->teams;
         $quest = Quest::find($id);
+
+        foreach ($companyUsers as $user) {
+            $user->quests()->detach($quest->id);
+        }
+
+        foreach ($teams as $team) {
+            $team->quests()->detach($quest->id);
+        }
+
         $quest->delete();
     }
 
