@@ -39,6 +39,13 @@ class CompanyController extends Controller
         return response()->json($company);
     }
 
+    function showMembers()
+    {
+        $companyId = Auth::user()->company_id;
+        $users = Company::find($companyId)->users;
+        return response()->json($users);
+    }
+
     public function updateCompany(CompanyRequest $request, Company $company)
     {
         $company->name = $request->input('companyname');
