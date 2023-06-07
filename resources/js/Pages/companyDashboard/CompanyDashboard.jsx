@@ -5,6 +5,10 @@ import FormReward from "@/Components/RewardForm.jsx"
 import MemberForm from "@/Components/MemberForm.jsx"
 
 const AdminDashboard = (props) => {
+    console.log(props.teams);
+    console.log(props.teamMembers);
+    console.log(props.roles);
+
     return (
         <>
             <Header />
