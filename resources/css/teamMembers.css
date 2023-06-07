@@ -1,6 +1,5 @@
 .titleWrapper {
   display: flex;
-  outline: 2px solid green;
   justify-content: space-around;
 }
 
@@ -12,4 +11,33 @@ h1 {
 
 .empty {
   visibility: hidden;
+}
+
+.membersWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.member {
+  background: #D9D9D9;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.name,
+.function,
+.email,
+.team {
+  width: 40%;
+  text-align: center;
+}
+
+.name > :first-child,
+.function > :first-child,
+.email > :first-child,
+.team > :first-child {
+  font-weight: bolder;
 }/*# sourceMappingURL=teamMembers.css.map */
