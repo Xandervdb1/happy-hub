@@ -73,7 +73,6 @@ Route::get('/user-dashboard', [UserController::class, 'showUserDashboard'])->nam
 Route::get('/rewards-collection', [RewardController::class, 'showAllRewards'])->middleware('auth');
 Route::get('/all-quests', [QuestController::class, 'showAllQuests'])->middleware('auth');
 
-
 Route::get('/wallet', function () {
     return Inertia::render('wallet/Wallet');
 })->name('wallet')->middleware('auth');
