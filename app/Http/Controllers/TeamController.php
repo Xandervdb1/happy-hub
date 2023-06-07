@@ -51,6 +51,9 @@ class TeamController extends Controller
     public function deleteTeam($id)
     {
         $team = Team::find($id);
+
+        $team->rewards()->detach();
+
         $team->delete();
     }
 }
