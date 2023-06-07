@@ -31,9 +31,19 @@ class TeamController extends Controller
     }
     function showMembers()
     {
-        $teamId = Auth::id();
-        $users = User::where('team_id', $teamId)->get();
-        return Inertia::render('companyDashboard/TeamMembers', ["users" => $users]);
+        $user = Auth::user();
+        
+        $teams = $user->company->teams;
+
+        $teamMembers = [];
+        foreach($teams as $team) {
+            array_push($teamMembers, $team->users);
+        }
+
+        return Inertia::render('companyDashboard/TeamMembers', [
+            "teams" => $teams,
+            "teamMembers" => $teamMembers,
+        ]);
     }
 
     public function show(Team $team)

@@ -11,8 +11,8 @@ class RouterController extends Controller
 {
 function showComapnyDashboard()
     {
-        $userId = Auth::id();
-        $user = User::find($userId);
+        $user= Auth::user();
+        // $user = User::find($userId);
 
         $teams = $user->company->teams;
 
