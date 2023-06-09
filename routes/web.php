@@ -66,6 +66,7 @@ Route::post('/company-dashboard-reward', [RewardController::class, 'store']);
 
 Route::get('/company-members', [TeamController::class, 'showMembers'])->middleware('auth')->middleware('admin');
 
+Route::get('/all-logs', [RouterController::class, 'showLogs']);
 
 
 // userDashboard 1

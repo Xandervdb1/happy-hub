@@ -82,7 +82,6 @@ const AdminDashboard = (props) => {
 
                 <div className="logContainer">
                     <h1 className="logTitle">Logs</h1>
-                    <hr />
                     <div className="log">
                         {
                             logs.map(log => {
@@ -112,7 +111,7 @@ const AdminDashboard = (props) => {
                         }
                     </div>
                 </div>
-                <Link href='#' className="seeAllLogs"> see all logs</Link>
+                <Link href='all-logs' className="seeAllLogs"> see all logs</Link>
             </div >
         </>
     )
