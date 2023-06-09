@@ -60,7 +60,7 @@ const TeamMembers = (props) => {
             <div className="membersWrapper">
                 {
                     companyMembers.map(member =>
-                        <div className="member">
+                        <div className="member" key={member.email}>
                             <div className="nameCoins">
                                 <p className="name">{member.name}</p>
                                 <div className="coinsWrap">
