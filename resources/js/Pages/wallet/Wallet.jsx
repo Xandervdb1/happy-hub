@@ -1,7 +1,15 @@
 import Header from "@/Components/Header.jsx";
 
 
-const Wallet = () => {
+const Wallet = (props) => {
+    console.log(props.userCoins);
+    console.log(props.teamCoins);
+    console.log(props.logs);
+    const userCoins = props.userCoins;
+    const teamCoins = props.teamCoins;
+    const userLogs = props.logs;
+
+
     return (
         <>
             <Header />
@@ -14,7 +22,7 @@ const Wallet = () => {
                         <h1 className="titleWallet">Personal Balance</h1>
                         <div className="pricesAndCoin">
                             <img className="coin" src="../coin.png" alt="coin" />
-                            <p >100</p>
+                            <p>{userCoins}</p>
                         </div>
                     </div>
                     <div className="transactions">
@@ -48,7 +56,7 @@ const Wallet = () => {
                         <h1 className="titleWallet">Team Balance</h1>
                         <div className="pricesAndCoin">
                             <img className="coin" src="../coin.png" alt="coin" />
-                            <p >65410</p>
+                            <p>{teamCoins}</p>
                         </div>
 
                     </div>
