@@ -67,6 +67,7 @@ Route::post('/company-dashboard-reward', [RewardController::class, 'store']);
 Route::get('/company-members', [TeamController::class, 'showMembers'])->middleware('auth')->middleware('admin');
 
 
+
 // userDashboard 1
 Route::get('/user-dashboard', [UserController::class, 'showUserDashboard'])->name('userdashboard');
 // Rewards collection page (>> See all rewards)
