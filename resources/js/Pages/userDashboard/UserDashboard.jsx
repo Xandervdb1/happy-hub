@@ -80,7 +80,7 @@ const UserDashboard = (props) => {
                         rewards.map(reward => (
                             <>
                                 {console.log(reward.id)}
-                                <div className="reward"
+                                <Link className="reward" as="button" method="post"
                                     key={reward.id}
                                 >
                                     <div className="totalReward">
@@ -90,7 +90,7 @@ const UserDashboard = (props) => {
                                             <p className="price">{reward.price}</p>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             </>
                         ))
                     }

@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "@/Components/Header.jsx";
+import { Link } from "@inertiajs/react";
 import '../../css/companyDashboard.css'
 
 const logs = (props) => {
@@ -38,6 +39,7 @@ const logs = (props) => {
 
                     }
                 </div>
+                <Link href='/company-dashboard' className="goBackButton">Go back</Link>
             </div>
 
 

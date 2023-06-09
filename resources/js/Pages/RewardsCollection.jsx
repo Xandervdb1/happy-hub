@@ -1,5 +1,6 @@
 import Header from '@/Components/Header';
 import Reward from '@/Components/Reward';
+import { Link } from '@inertiajs/react';
 import '../../css/RewardsCollection.scss';
 
 const RewardsCollection = (props) => {
@@ -8,23 +9,23 @@ const RewardsCollection = (props) => {
     const wallet = 5000;
 
     return (
-    <>
-        <Header />
-        <div className='titleContainer'>
-            <p>REWARDS</p>
-        </div>
-        <div className='rewardsContainer'>
-            <p className='title'>Personal</p>
+        <>
+            <Header />
+            <div className='titleContainer'>
+                <p>REWARDS</p>
+            </div>
+            <div className='rewardsContainer'>
+                <p className='title'>Personal</p>
                 {
                     userRewards.map(reward => (
                         wallet >= reward.price ? (
-                                <Reward reward={reward} />
+                            <Reward reward={reward} />
                         ) : null
                     ))
                 }
-        </div>
-        <div className='rewardsContainer'>
-            <p className='title'>Team</p>
+            </div>
+            <div className='rewardsContainer'>
+                <p className='title'>Team</p>
                 {
                     teamRewards.map(reward => (
                         wallet >= reward.price ? (
@@ -32,18 +33,18 @@ const RewardsCollection = (props) => {
                         ) : null
                     ))
                 }
-        </div>
-        <div className='rewardsContainer'>
-            <p className='title'>Earn more, unlock bigger</p>
-            <p className='subTitle'>Personal</p>
+            </div>
+            <div className='rewardsContainer'>
+                <p className='title'>Earn more, unlock bigger</p>
+                <p className='subTitle'>Personal</p>
                 {
                     userRewards.map(reward => (
                         wallet < reward.price ? (
-                            <Reward reward={reward} class='disabled'/>
+                            <Reward reward={reward} class='disabled' />
                         ) : null
                     ))
                 }
-            <p className='subTitle'>Team</p>
+                <p className='subTitle'>Team</p>
                 {
                     teamRewards.map(reward => (
                         wallet < reward.price ? (
@@ -51,8 +52,10 @@ const RewardsCollection = (props) => {
                         ) : null
                     ))
                 }
-        </div>
-    </>
+                <Link href='/user-dashboard' className="goBackButton">Go back</Link>
+            </div>
+
+        </>
     )
 }
 
