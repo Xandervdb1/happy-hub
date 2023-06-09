@@ -1,11 +1,12 @@
 import { useRef, useState } from "react";
 import Navigation from "./Navigation";
 
-const Header = () => {
+const Header = (props) => {
     const topBun = useRef();
     const burger = useRef();
     const bottomBun = useRef();
     const [isActive, setIsActive] = useState(false);
+    console.log(props.userCoins);
 
     const toggleNavigation = () => {
         topBun.current.classList.toggle('active');
@@ -20,7 +21,7 @@ const Header = () => {
             <div className="HeaderContainer">
                 <header>
                     <div className="walletContainer">
-                        <p className="wallet">50</p>
+                        <p className="wallet">{props.userCoins ? props.userCoins : 0}</p>
                         <img className='coinHeader' src="../coin.png" alt="coin Happy Hub" />
                     </div>
                     <img className='logoHeader' src="../happyhub.png" alt="logo Happy Hub" />

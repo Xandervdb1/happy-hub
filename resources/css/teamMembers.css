@@ -1,6 +1,7 @@
 .titleWrapper {
   display: flex;
   justify-content: space-around;
+  margin-top: 1rem;
 }
 
 h1 {
@@ -23,21 +24,44 @@ h1 {
   background: #D9D9D9;
   width: 90%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  margin: 0.5rem 0;
+}
+.member > :last-child {
+  margin-bottom: 0.5rem;
 }
 
-.name,
-.function,
-.email,
-.team {
-  width: 40%;
+.nameCoins p {
+  font-weight: bold;
+}
+.nameCoins .name {
   text-align: center;
+  margin: 0.5rem 0;
+}
+.nameCoins .coinsWrap {
+  display: flex;
+}
+.nameCoins .coins {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+.nameCoins .coins p {
+  font-weight: 100;
+  align-self: center;
+  font-size: 0.8rem;
+}
+.nameCoins .coins img {
+  width: 20px;
+  object-fit: contain;
 }
 
-.name > :first-child,
-.function > :first-child,
-.email > :first-child,
-.team > :first-child {
+.memberInfo {
+  display: flex;
+  margin: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+}
+.memberInfo > :first-child {
   font-weight: bolder;
 }/*# sourceMappingURL=teamMembers.css.map */
