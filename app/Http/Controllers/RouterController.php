@@ -12,7 +12,6 @@ class RouterController extends Controller
     function showComapnyDashboard()
     {
         $user = Auth::user();
-        // $user = User::find($userId);
 
         $teams = $user->company->teams;
 
@@ -21,7 +20,6 @@ class RouterController extends Controller
             array_push($teamMembers, $team->users);
         }
 
-        //createdat, username, teamname, questname, rewardname, rewardcoins, questcoins, usercoins, logtype, logscope
         $company = $user->company;
         $logs = $company->logs;
 

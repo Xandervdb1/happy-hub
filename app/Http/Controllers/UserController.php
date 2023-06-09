@@ -110,7 +110,6 @@ class UserController extends Controller
         foreach ($teamMembers as $teamMember) {
             $sumTeamCoins += $teamMember->coins;
         }
-
         return Inertia::render('userDashboard/UserDashboard', [
             'userRewards' => $userRewards,
             'teamRewards' => $teamRewards,
@@ -121,7 +120,65 @@ class UserController extends Controller
             'sumTeamCoins' => $sumTeamCoins,
         ]);
     }
+public function showWallet()
+{
+    $user = Auth::user();
+    
+    $userCoins = $user->coins;
+    $teamCoins = $user->team->coins;
 
+    $userLogs = $user->logs;
+    $infoUserLogs = [];
+    foreach ($userLogs as $log) {
+        $infoUserLog = array(
+            'type' => '',
+            'created_at' => '',
+            'name' => '',
+            'coins' => '',
+            'scope' => '',
+            'scopeName' => '',
+            'scopeCoins' => '',
+        );
+        if ($log->user_id != null) {
+            $infoLog['type'] = "Personal";
+            $infoLog['created_at'] = $log->created_at->diffForHumans();
+            $infoLog['name'] = $log->user->name . " " . $log->user->lastname;
+            $infoLog['coins'] = $log->user->coins;
+            if ($log->reward_id != null) {
+                $infoLog['scope'] = "Reward";
+                $infoLog['scopeName'] = $log->reward->name;
+                $infoLog['scopeCoins'] = $log->reward->price;
+            } else {
+                $infoLog['scope'] = "Quest";
+                $infoLog['scopeName'] = $log->quest->name;
+                $infoLog['scopeCoins'] = $log->quest->coins;
+            }
+        } else {
+            $infoLog['type'] = "Team";
+            $infoLog['created_at'] = $log->created_at->diffForHumans();
+            $infoLog['name'] = $log->team->name;
+            $infoLog['coins'] = $log->team->coins;
+            if ($log->reward_id != null) {
+                $infoLog['scope'] = "Reward";
+                $infoLog['scopeName'] = $log->reward->name;
+                $infoLog['scopeCoins'] = $log->reward->price;
+            } else {
+                $infoLog['scope'] = "Quest";
+                $infoLog['scopeName'] = $log->quest->name;
+                $infoLog['scopeCoins'] = $log->quest->coins;
+            }
+        }
+        array_push($infoUserLogs, $infoUserLog);
+    }
+    // dd($infoUserLogs);
+    
+    
+    return Inertia::render('wallet/Wallet', [
+        "userCoins" => $userCoins,
+        "teamCoins" => $teamCoins,
+        "logs" => $infoUserLogs
+    ]);
+}
 
     public function editUser(User $user)
     {

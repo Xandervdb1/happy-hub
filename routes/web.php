@@ -10,6 +10,7 @@ use App\Http\Controllers\QuestController;
 use App\Http\Controllers\RouterController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TeamController;
+
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -73,9 +74,9 @@ Route::get('/user-dashboard', [UserController::class, 'showUserDashboard'])->nam
 Route::get('/rewards-collection', [RewardController::class, 'showAllRewards'])->middleware('auth');
 Route::get('/all-quests', [QuestController::class, 'showAllQuests'])->middleware('auth');
 
-Route::get('/wallet', function () {
-    return Inertia::render('wallet/Wallet');
-})->name('wallet')->middleware('auth');
+
+Route::get('/wallet', [UserController::class, 'showWallet']
+)->name('wallet')->middleware('auth');
 
 //LOGIN
 Route::get('/login', function () {
