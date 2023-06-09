@@ -2,6 +2,7 @@ import Header from "@/Components/Header.jsx";
 import { Head } from '@inertiajs/react';
 import '../../../css/teamMembers.css';
 import coin from '../../../../public/coin.png';
+import { Link } from "@inertiajs/react";
 
 
 const TeamMembers = (props) => {
@@ -53,7 +54,9 @@ const TeamMembers = (props) => {
             </Head>
             <Header />
             <div className="titleWrapper">
-                <span className="material-symbols-outlined" style={{ fontSize: '35px' }}> keyboard_backspace </span>
+                <Link href='/company-dashboard'>
+                    <span className="material-symbols-outlined" style={{ fontSize: '35px' }}> keyboard_backspace </span>
+                </Link>
                 <h1>Members</h1>
                 <div className="empty"></div>
             </div>
