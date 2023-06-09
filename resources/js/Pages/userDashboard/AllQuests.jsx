@@ -1,6 +1,7 @@
 import Header from "@/Components/Header";
 import '../../../css/userDashboard/allQuests/allQuests.css';
 import ProgressBar from "@/Components/ProgressBar";
+import { Link } from "@inertiajs/react";
 import { round } from "lodash";
 import { useState } from "react";
 // import { useState } from "react/cjs/react.production.min";
@@ -43,18 +44,18 @@ const AllQuests = (props) => {
                                             </div>
                                         </div>
                                         {/* <div className="secondRow"> */}
-                                            <ProgressBar bgcolor={bgColor} completed={completedRounded} />
-                                            {/* <label>
+                                        <ProgressBar bgcolor={bgColor} completed={completedRounded} />
+                                        {/* <label>
                                                 <input type="checkbox" 
                                                  checked={checked} onChange={handleChange} 
                                                 />
                                             </label> */}
-                                            {/* <Checkbox
+                                        {/* <Checkbox
                                                 value={checked}
                                                 onChange={handleChange}
                                             /> */}
-                                            {/* <Checkbox /> */}
-                                            
+                                        {/* <Checkbox /> */}
+
                                         {/* </div> */}
                                     </div>
                                 )
@@ -68,26 +69,33 @@ const AllQuests = (props) => {
                     <div className="teamQuests">
                         {
                             teamQuests.map((teamQuest) => {
-                            const completed = (parseInt(teamCoins) / parseInt(teamQuest.coins)) * 100;
+                                const completed = (parseInt(teamCoins) / parseInt(teamQuest.coins)) * 100;
                                 const completedRounded = Math.round(completed);
                                 return (
-                                <div className="teamQuest" key={teamQuest.id}>
-                                    <div className="firstRow">
-                                        <p className="name">{teamQuest.name}</p>
-                                        <div className="column">
-                                            <p className="questCoins">{teamQuest.coins}</p>
-                                            <img className="coins" src="../coin.png" alt="coin Happy Hub" />
-                                            <br />
+                                    <div className="teamQuest" key={teamQuest.id}>
+                                        <div className="firstRow">
+                                            <p className="name">{teamQuest.name}</p>
+                                            <div className="column">
+                                                <p className="questCoins">{teamQuest.coins}</p>
+                                                <img className="coins" src="../coin.png" alt="coin Happy Hub" />
+                                                <br />
+                                            </div>
                                         </div>
+                                        <ProgressBar bgcolor={bgColor} completed={completedRounded} />
+
                                     </div>
-                                    <ProgressBar bgcolor={bgColor} completed={completedRounded} />
-                                </div>
                                 )
+
                             })
+
                         }
+
                     </div>
+
                 </div>
+                <Link href='/user-dashboard' className="goBackButton">Go back</Link>
             </div>
+
         </>
     )
 }

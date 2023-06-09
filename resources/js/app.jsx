@@ -6,6 +6,7 @@ import '../css/dashboard.css';
 import '../css/layoutDashboard.css';
 import '../css/companyDashboard.css';
 import '../css/wallet.css';
+import '../css/logs.css'
 
 import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/react';
