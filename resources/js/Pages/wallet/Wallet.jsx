@@ -27,32 +27,35 @@ const Wallet = (props) => {
                         </div>
                     </div>
                     {
-                        userLogs.map(userLog => {
-                            if (userLog.scope === "Reward") {
-                                return (
-                                    <>
-                                        <div className="scope">
-                                            <i><li className="timestamp">
-                                                {userLog.created_at}</li></i>
-                                            <p className="red">Spent <b> {userLog.scopeCoins} </b>coins on <b>{userLog.scopeName}</b></p>
-                                            <p className="coinTotal">(Total coins: {userCoins.toLocaleString()} coins.)</p>
-                                        </div>
-                                    </>
-                                )
-                            } else {
-                                return (
-                                    <>
-                                        <div className="scope">
-                                            <i><li className="timestamp"> {userLog.created_at}</li></i>
-                                            <p className="green">Gained <b>{userLog.scopeCoins.toLocaleString()} </b> for <b> {userLog.scopeName}.</b></p>
-                                            <p className="coinTotal">(Total coins:{userCoins.toLocaleString()}) </p>
-                                        </div>
 
-                                    </>
-                                )
+                        userLogs.map(userLog => {
+                            if (userLog.type === "Personal") {
+                                if (userLog.scope === "Reward") {
+                                    return (
+                                        <>
+                                            <div className="scope">
+                                                <i><li className="timestamp">
+                                                    {userLog.created_at}</li></i>
+                                                <p className="red">Spent <b> {userLog.scopeCoins} </b>coins on <b>{userLog.scopeName}</b></p>
+                                                <p className="coinTotal">(Total coins: {userCoins.toLocaleString()} coins.)</p>
+                                            </div>
+                                        </>
+                                    )
+                                } else {
+                                    return (
+                                        <>
+                                            <div className="scope">
+                                                <i><li className="timestamp"> {userLog.created_at}</li></i>
+                                                <p className="green">Gained <b>{userLog.scopeCoins.toLocaleString()} </b> for <b> {userLog.scopeName}.</b></p>
+                                                <p className="coinTotal">(Total coins:{userCoins.toLocaleString()}) </p>
+                                            </div>
+
+                                        </>
+                                    )
+
+                                }
                             }
                         })
-
                     }
                 </div>
 

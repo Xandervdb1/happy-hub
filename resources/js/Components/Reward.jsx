@@ -1,10 +1,11 @@
+import { Link } from "@inertiajs/react";
 const Reward = (props) => {
     const disabled = props.class;
     const reward = props.reward;
 
     return (
         <>
-            <div className={disabled ? 'reward disabled' : 'reward'} key={reward.name + reward.id}>
+            <Link as="button" method='post' id='reward' className={disabled ? 'reward disabled' : 'reward'} key={reward.name + reward.id}>
                 <div className="totalReward">
                     <p className='activity'> {reward.slug}</p>
                     <div className="priceContainer">
@@ -12,7 +13,7 @@ const Reward = (props) => {
                         <p className="price">{reward.price}</p>
                     </div>
                 </div>
-            </div>
+            </Link>
         </>
     )
 }
