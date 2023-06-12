@@ -61,6 +61,7 @@ const FormQuest = () => {
                             <option value="Personal">Personal</option>
                             <option value="Team">Team</option>
                         </select>
+                        <span className="error-message">{errors.type}</span> 
 
                         <button className="button">Submit</button>
                     </form>
