@@ -33,6 +33,8 @@ class RewardController extends Controller
                 $team->rewards()->attach($reward->id);
             }
         }
+
+        return to_route('companydashboard');
     }
 
     function showAllRewards()
@@ -40,13 +42,16 @@ class RewardController extends Controller
         $userId = Auth::id();
         $user = User::find($userId);
         $userRewards = $user->rewards;
+        $userCoins = $user->coins;
 
         $team = $user->team;
         $teamRewards = $team->rewards;
 
         return Inertia::render('RewardsCollection', [
             'userRewards' => $userRewards,
-            'teamRewards' => $teamRewards
+            'teamRewards' => $teamRewards,
+            'userCoins' => $userCoins
+
         ]);
     }
 

@@ -6,7 +6,6 @@ const Header = (props) => {
     const burger = useRef();
     const bottomBun = useRef();
     const [isActive, setIsActive] = useState(false);
-    console.log(props.userCoins);
 
     const toggleNavigation = () => {
         topBun.current.classList.toggle('active');
