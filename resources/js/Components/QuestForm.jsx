@@ -6,7 +6,7 @@ import { router, usePage } from '@inertiajs/react'
 const FormQuest = () => {
 
     const { errors } = usePage().props
-    
+
     const [values, setValues] = useState({
         name: '',
         slug: '',
@@ -53,9 +53,9 @@ const FormQuest = () => {
                         <input type="text" name="name" id="name" value={values.name} onChange={handleChange} placeholder="Name" className="input" />
                             <span className="error-message">{errors.name}</span> 
                         <input type="text" name="slug" id="slug" value={values.slug} onChange={handleChange} placeholder="Slug" className="input" />
-                            <span className="error-message">{errors.name}</span> 
+                            <span className="error-message">{errors.slug}</span> 
                         <input type="text" name="price" id="price" value={values.price} onChange={handleChange} placeholder="Price" className="input" />
-                            <span className="error-message">{errors.name}</span> 
+                            <span className="error-message">{errors.price}</span> 
                         <select name="type" className="input" id='type' value={values.type} onChange={handleChange}>
                             <option> Choose type</option>
                             <option value="Personal">Personal</option>

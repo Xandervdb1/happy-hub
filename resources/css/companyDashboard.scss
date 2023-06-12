@@ -37,8 +37,7 @@
         flex-direction: column;
         justify-content: center;
         width: 350px;
-        // padding: 0 10px;
-        max-height: 380px;
+        max-height: 480px;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -50,22 +49,12 @@
         box-shadow: 0px 0px 10px 2px #222831;
     }
 
-
     .modal .flex {
         display: flex;
         align-items: center;
         justify-content: right;
         margin-right: 10px;
     }
-
-    // .modal input {
-    //     padding: 0.7rem 1rem;
-    //     border: 1px solid #ddd;
-    //     border-radius: 5px;
-    //     font-size: 0.9em;
-    //     margin: 150px;
-    //     height: auto;
-    // }
     select.input{
         height: auto;
     }
@@ -101,23 +90,25 @@
 
     .formContainer {
         margin: 20px;
-        .title{
-            margin-bottom: 10px;
-        }
         form{
             display: flex;
             flex-direction: column;
             justify-self: center;
-            input{
+            .input{
                 margin: auto;
                 margin-bottom: 10px;
                 padding: 10px;
                 width: 244px;
                 border: 1px solid #ddd;
                 padding: 0.5rem 1rem;
-                // border-radius: 5px;
                 font-size: 0.9em;
                 height: auto;
+            }
+            input.checkbox{
+                width: 20px;
+                height: 20px;
+                margin-left: 10px;
+                margin-right: 10px;
             }
             .error-message{
                 padding-left: 5px;
@@ -134,7 +125,7 @@
                 cursor: pointer;
                 border: none;
                 margin: auto;
-                margin-top: 10px;
+                margin-top: 30px;
             }
             select.input{
                 border: 1px solid #ddd;
