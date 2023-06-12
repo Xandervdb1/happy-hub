@@ -1,8 +1,11 @@
 import React from "react"
 import { useState } from 'react'
-import { router } from '@inertiajs/react'
+import { router, usePage } from '@inertiajs/react'
 
 const FormTeam = (props) => {
+
+    const { errors } = usePage().props
+
     const [values, setValues] = useState({
         teamname: '',
         adminCheck: false
@@ -50,9 +53,10 @@ const FormTeam = (props) => {
                 <div className="formContainer">
                     <h1>Add new Team</h1>
                     <form onSubmit={handleSubmit}>
-                        <input type="text" name="teamname" id="teamname" value={values.teamname} onChange={handleChange} placeholder="Teamname" className="input" />
+                        <input type="text" name="name" id="name" value={values.name} onChange={handleChange} placeholder="Team name" className="input" />
+                        <span className="error-message">{errors.name}</span> 
 
-                        <button className="btn">Submit</button>
+                        <button className="button">Submit</button>
                     </form>
                 </div>
             </section>

@@ -16,6 +16,32 @@ body {
     height: 100vh;
     font-family: 'Montserrat', sans-serif
 }
+.form{
+    .inputField{
+        .input{
+        margin: auto;
+        width: 244px;
+     }
+    .error-message{
+        padding-left: 5px;
+        font-size: 12px;
+        color:red
+        }
+    }
+}
+p.click-here{
+font-size: 12px;
+opacity: 0.6;
+}
+.link-click-here{
+    font-style: italic;
+    font-size: 12px;
+    opacity: 0.6;
+}
+.link-click-here:hover{
+    text-decoration: underline;
+    opacity: 1;
+}
 
 .button {
     background-color: #393E46;
@@ -24,6 +50,8 @@ body {
     width: 100px;
     height: 55px;
     border-radius: 10px;
+    cursor: pointer;
+    border: none;
 }
 
 .Container {

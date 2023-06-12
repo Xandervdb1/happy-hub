@@ -31,10 +31,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.4rem;
   width: 350px;
-  padding: 1.3rem;
-  max-height: 380px;
+  max-height: 480px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -49,39 +47,21 @@
   display: flex;
   align-items: center;
   justify-content: right;
+  margin-right: 10px;
 }
-.adminDashboard .modal input {
-  padding: 0.7rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 0.9em;
-  margin: 10px;
-}
-.adminDashboard .input {
+.adminDashboard select.input {
   height: auto;
-}
-.adminDashboard button {
-  cursor: pointer;
-  border: none;
 }
 .adminDashboard .btn-open {
   position: absolute;
   bottom: 150px;
-}
-.adminDashboard .btn {
-  display: inline-block;
-  padding: 0.8rem 1.4rem;
-  background-color: #222831;
-  color: #FFCD29;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 1em;
 }
 .adminDashboard .btn-close {
   transform: translate(10px, -20px);
   padding: 0.5rem 0.7rem;
   background: #eee;
   border-radius: 50%;
+  width: 40px;
 }
 .adminDashboard .overlay {
   position: fixed;
@@ -99,7 +79,49 @@
   display: none;
 }
 .adminDashboard .formContainer {
-  text-align: center;
+  margin: 20px;
+}
+.adminDashboard .formContainer form {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+.adminDashboard .formContainer form .input {
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 244px;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  font-size: 0.9em;
+  height: auto;
+}
+.adminDashboard .formContainer form input.checkbox {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.adminDashboard .formContainer form .error-message {
+  padding-left: 5px;
+  font-size: 12px;
+  color: red;
+}
+.adminDashboard .formContainer form .button {
+  background-color: #393E46;
+  border: none;
+  color: #FFCD29;
+  width: 100px;
+  height: 55px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  margin: auto;
+  margin-top: 30px;
+}
+.adminDashboard .formContainer form select.input {
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
 }
 .adminDashboard .teamContainer {
   display: grid;

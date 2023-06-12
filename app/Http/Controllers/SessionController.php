@@ -37,7 +37,7 @@ class SessionController extends Controller
             }
         } else {
             throw ValidationException::withMessages([
-                'email' => 'Your credentials could not be verified'
+                'email' => 'Email or password are incorrect'
             ]);
         }
     }

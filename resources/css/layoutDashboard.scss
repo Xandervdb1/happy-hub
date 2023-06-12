@@ -21,7 +21,6 @@
     width: 80px;
     grid-column: 1;
     text-align: center;
-
 }
 
 .rewardPriceContainer {
@@ -31,13 +30,10 @@
 
 .coins {
     width: 20px;
-    // justify-self: end;
 }
 
 .price {
     font-size: 12px;
-    // place-self: left;
-
 }
 
 .rewards {
@@ -63,8 +59,6 @@
     margin-top: 5px;
     border-radius: 7px;
     cursor: pointer;
-
-
 
     .reward .activity {
         font-size: 14px;

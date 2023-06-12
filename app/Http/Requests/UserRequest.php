@@ -43,6 +43,7 @@ class UserRequest extends FormRequest
             'username.min' => ':attribute must be longer than 5 characters',
             'max' => ':attribute cannot exceed 255 characters',
             'email' => ':attribute must be of format email',
+            'email.required' => 'Please provide an :attribute',
             'confirmed' => ':attribute must be confirmed'
         ];
     }
