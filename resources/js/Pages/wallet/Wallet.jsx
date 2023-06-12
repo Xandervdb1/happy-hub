@@ -4,7 +4,7 @@ import Header from "@/Components/Header.jsx";
 const Wallet = (props) => {
     // console.log(props.userCoins);
     // console.log(props.teamCoins);
-    // console.log(props.logs);
+    console.log(props.logs);
     const userCoins = props.userCoins;
     const teamCoins = props.teamCoins;
     const userLogs = props.logs;
@@ -34,7 +34,7 @@ const Wallet = (props) => {
                                         <div className="scope">
                                             <i><li className="timestamp">
                                                 {userLog.created_at}</li></i>
-                                            <p className="red">{userLog.name} spent coins on {userLog.scopeName}</p>
+                                            <p className="red">Spent <b> {userLog.scopeCoins} </b>coins on <b>{userLog.scopeName}</b></p>
                                             <p className="coinTotal">(Total coins: {userCoins.toLocaleString()} coins.)</p>
                                         </div>
                                     </>
@@ -44,7 +44,7 @@ const Wallet = (props) => {
                                     <>
                                         <div className="scope">
                                             <i><li className="timestamp"> {userLog.created_at}</li></i>
-                                            <p className="green"> {userLog.name} gained {userLog.scopeCoins.toLocaleString()} for {userLog.scopeName}.</p>
+                                            <p className="green">Gained <b>{userLog.scopeCoins.toLocaleString()} </b> for <b> {userLog.scopeName}.</b></p>
                                             <p className="coinTotal">(Total coins:{userCoins.toLocaleString()}) </p>
                                         </div>
 

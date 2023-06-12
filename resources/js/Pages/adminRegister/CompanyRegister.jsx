@@ -8,6 +8,7 @@ const CompanyRegister = () => {
         companyname: '',
         vatnumber: '',
         country: '',
+        function: '',
         city: '',
         zip: '',
         address: '',
@@ -36,6 +37,7 @@ const CompanyRegister = () => {
                 <form onSubmit={handleSubmit}>
                     <input className='input' type="text" name="companyname" id="companyname" value={values.companyname} onChange={handleChange} placeholder="Company name" />
                     <input className='input' type="text" name="vatnumber" id="vatnumber" value={values.vatnumber} onChange={handleChange} placeholder="VAT number" />
+                    <input type="text" name="function" id="function" value={values.function} onChange={handleChange} placeholder="Role" className="input" />
                     <input className='input' type="text" name="country" id="country" value={values.country} onChange={handleChange} placeholder="Country" />
                     <input className='input' type="text" name="city" id="city" value={values.city} onChange={handleChange} placeholder="City" />
                     <input className='input' type="text" name="zip" id="zip" value={values.zip} onChange={handleChange} placeholder="ZIP" />

@@ -77,7 +77,9 @@ Route::get('/rewards-collection', [RewardController::class, 'showAllRewards'])->
 Route::get('/all-quests', [QuestController::class, 'showAllQuests'])->middleware('auth');
 
 
-Route::get('/wallet', [UserController::class, 'showWallet']
+Route::get(
+    '/wallet',
+    [UserController::class, 'showWallet']
 )->name('wallet')->middleware('auth');
 
 //LOGIN

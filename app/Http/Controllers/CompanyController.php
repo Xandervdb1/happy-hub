@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Role;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CompanyRequest;
 use Illuminate\Support\Facades\Auth;
@@ -15,6 +16,13 @@ class CompanyController extends Controller
 
     public function storeCompany(CompanyRequest $request)
     {
+        $role = new Role;
+        $role->name = $request->input('function');
+        $role->save();
+
+        $user = Auth::user();
+        $user->role_id = $role->id;
+
         $company = new Company;
         $company->name = $request->input('companyname');
         $company->street = $request->input('address');

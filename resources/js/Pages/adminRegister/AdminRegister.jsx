@@ -10,7 +10,6 @@ const AdminRegister = () => {
         lastname: '',
         username: '',
         birthday: '',
-        function: '',
         email: '',
         password: '',
         password_confirmation: '',
@@ -44,8 +43,6 @@ const AdminRegister = () => {
                         <input type="text" name="username" id="username" value={values.username} onChange={handleChange} placeholder="Username" className="input" />
 
                         <input type="date" name="birthday" id="birthday" value={values.birthday} onChange={handleChange} className="input" />
-
-                        <input type="text" name="function" id="function" value={values.function} onChange={handleChange} placeholder="Role" className="input" />
 
                         <input type="email" name="email" id="email" value={values.email} onChange={handleChange} placeholder="Email" className="input" />
 

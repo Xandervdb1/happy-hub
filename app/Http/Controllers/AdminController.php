@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AdminRequest;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -25,7 +26,6 @@ class AdminController extends Controller
                 $admin->email = $request->input('email');
                 $admin->password = Hash::make($request->input('password'));
                 $admin->birthday = $request->input('birthday');
-                $admin->function = $request->input('function');
                 $admin->coins = 0;
                 $admin->is_admin = 1;
                 $admin->is_defaultPassword = false;
