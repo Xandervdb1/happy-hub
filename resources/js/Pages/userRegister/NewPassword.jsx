@@ -1,9 +1,11 @@
 import Header from "@/Components/Header.jsx"
-import { router } from '@inertiajs/react'
+import { router, usePage } from '@inertiajs/react'
 import { useState } from 'react'
 import { Link } from "@inertiajs/react";
 
 const NewPassword = () => {
+    const { errors } = usePage().props
+
     const [values, setValues] = useState({
         password: '',
         password_confirmation: '',
@@ -28,21 +30,23 @@ const NewPassword = () => {
         <>
             <Header />
             <div className="formContainer">
-                <form onSubmit={handleSubmit}>
+                <form className="form" onSubmit={handleSubmit}>
 
                     <div className="inputField">
                         <input className="input" type="password" placeholder="New password" value={values.password} onChange={handleChange} name="password" id="password" required />
-                        <input className="input" type="password" placeholder="Confirm new password" value={values.password_confirmation} onChange={handleChange} name="newpassword" id="password_confirmation" required />
+                            <span className="error-message">{errors.password}</span> 
+                        <input className="input" type="password" placeholder="Confirm new password" value={values.password_confirmation} onChange={handleChange} name="newpassword" id="password_confirmation" required /> 
+                            <span className="error-message">{errors.password}</span>
                     </div>
-
                     <div className="buttonContainer">
-                        <button type="submit">Confirm</button>
+                        <button className="button" type="submit">Confirm</button>
                     </div>
 
                 </form>
-                <Link href="/defaultpassword" method="post" as="button">Continue with current password</Link>
-                <p>First time registering as Admin?</p>
-                <Link href="/generate-key">Click here!</Link>
+                <Link href="/defaultpassword" method="post" as="button" className="link-click-here">Continue with current password</Link>
+                <p className="click-here">-</p>
+                <p className="click-here">First time registering as Admin?</p>
+                <Link href="/generate-key" className="link-click-here">Click here!</Link>
             </div>
         </>
     )
