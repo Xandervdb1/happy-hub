@@ -16,6 +16,28 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.error-message {
+  padding-left: 5px;
+  font-size: 12px;
+  color: red;
+}
+
+p.click-here {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.link-click-here {
+  font-style: italic;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.link-click-here:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
 .button {
   background-color: #393E46;
   border: none;
