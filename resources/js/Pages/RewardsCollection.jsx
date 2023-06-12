@@ -7,10 +7,11 @@ const RewardsCollection = (props) => {
     const userRewards = props.userRewards;
     const teamRewards = props.teamRewards;
     const wallet = props.auth.user.coins;
+    const userCoins = props.userCoins;
 
     return (
         <>
-            <Header userCoins = {wallet} />
+            <Header userCoins = {userCoins} />
             <div className='titleContainer'>
                 <p>REWARDS</p>
             </div>

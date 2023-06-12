@@ -10,6 +10,7 @@ const Wallet = (props) => {
     const userLogs = props.logs;
 
 
+
     return (
         <>
             <Header userCoins = {userCoins} />
