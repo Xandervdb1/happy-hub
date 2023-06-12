@@ -5,10 +5,6 @@ import FormReward from "@/Components/RewardForm.jsx"
 import MemberForm from "@/Components/MemberForm.jsx"
 import FormTeam from "@/Components/TeamForm.jsx"
 
-const show5 = () => {
-
-}
-
 const AdminDashboard = (props) => {
     // console.log(props.teams);
     // console.log(props.teamMembers);

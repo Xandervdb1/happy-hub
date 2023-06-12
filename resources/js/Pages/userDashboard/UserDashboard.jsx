@@ -24,11 +24,11 @@ const UserDashboard = (props) => {
                     < Carousel personalWallet={props.auth.user.coins} teamWallet={teamCoins} />
                 </div>
                 <div className="profileInfo">
-                    <p className="personalInfo">Name: {userName}</p>
-                    <p className="personalInfo">Nickname: {nickName}</p>
-                    <p className="personalInfo">Birthday: {birthday}</p>
-                    <p className="personalInfo">Team: {teamName}</p>
-                    <p className="personalInfo">Team members:{members}</p>
+                    <p className="personalInfo"><b>Name:</b> <i>{userName}</i></p>
+                    <p className="personalInfo"><b>Nickname:</b> <i>{nickName}</i></p>
+                    <p className="personalInfo"><b>Birthday:</b><i> {birthday}</i></p>
+                    <p className="personalInfo"><b>Team:</b><i> {teamName}</i></p>
+                    <p className="personalInfo"><b>Team members: </b><i>{members}</i></p>
                     <br />
                     {/* <p className="personalInfo">Personal Wallet:{personalWallet}</p>
                     <p className="personalInfo">Team Wallet:{teamWallet}</p> */}

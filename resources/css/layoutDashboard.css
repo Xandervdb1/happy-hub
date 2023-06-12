@@ -93,4 +93,74 @@
 .carouselButton {
   font-size: 10px;
   opacity: 0.6;
+}
+
+@media only screen and (min-width: 600px) {
+  .dashboardContainer {
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .dashboardContainer .progressCarrousel {
+    grid-row: 1/6;
+    grid-column: 1/8;
+  }
+  .dashboardContainer .progressCarrousel .titleWallet {
+    font-size: 30px;
+  }
+  .dashboardContainer .progressCarrousel .coinCarousel {
+    max-width: 80px;
+  }
+  .dashboardContainer .progressCarrousel .amount {
+    font-size: 30px;
+  }
+  .dashboardContainer .progressCarrousel .carouselButton {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .dashboardContainer .profileInfo {
+    grid-row: 1/5;
+    grid-column: 7/12;
+    margin: 5px;
+    border-radius: 10px;
+  }
+  .dashboardContainer .profileInfo .personalInfo {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .dashboardContainer .personalQuests {
+    grid-row: 5/9;
+    grid-column: 2/7;
+    margin: 5px;
+    border-radius: 10px;
+  }
+  .dashboardContainer .questReward {
+    font-size: 18px;
+  }
+  .dashboardContainer .priceContainer {
+    width: 120px;
+  }
+  .dashboardContainer .priceContainer .coins {
+    width: 40px;
+  }
+  .dashboardContainer .priceContainer .price {
+    font-size: 18px;
+  }
+  .dashboardContainer .seeAll {
+    font-size: 15px;
+  }
+  .dashboardContainer .teamQuests {
+    grid-row: 5/9;
+    grid-column: 7/12;
+    margin: 5px;
+    border-radius: 10px;
+  }
+  .dashboardContainer .rewards {
+    grid-column: 5/9;
+    grid-row: 9/10;
+  }
+  .dashboardContainer .reward {
+    width: 130px;
+    height: 70px;
+  }
 }/*# sourceMappingURL=layoutDashboard.css.map */
