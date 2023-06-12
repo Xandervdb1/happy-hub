@@ -7,11 +7,13 @@
   background-color: #222831;
   height: 100%;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .HeaderContainer header .walletContainer {
   display: flex;
   flex-direction: row;
+  width: 30px;
+  margin-left: 15px;
 }
 .HeaderContainer header .walletContainer .wallet {
   color: white;
@@ -24,6 +26,7 @@
 }
 .HeaderContainer header .logoHeader {
   width: 100px;
+  justify-self: center;
 }
 .HeaderContainer header .hamburger {
   display: flex;
@@ -33,6 +36,7 @@
   width: 30px;
   height: 35px;
   margin-top: 2rem;
+  margin-right: 15px;
 }
 .HeaderContainer header .top-bun,
 .HeaderContainer header .burger,
