@@ -37,7 +37,7 @@ const Create = () => {
                         <input className="input" type="email" placeholder="Email" value={values.email} onChange={handleChange} name="email" id="email" required />
                         <span className="error-message">{errors.email}</span> 
                         <input className="input" type="password" placeholder="Password" value={values.password} onChange={handleChange} name="password" id="password" required />
-                        {errors.password}
+                        <span className="error-message">{errors.password}</span>
                     </div>
 
                     <div className="buttonContainer">

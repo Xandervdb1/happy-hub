@@ -16,7 +16,11 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.error-message {
+.form .inputField .input {
+  margin: auto;
+  width: 244px;
+}
+.form .inputField .error-message {
   padding-left: 5px;
   font-size: 12px;
   color: red;
@@ -45,6 +49,8 @@ p.click-here {
   width: 100px;
   height: 55px;
   border-radius: 10px;
+  cursor: pointer;
+  border: none;
 }
 
 .Container {
