@@ -94,6 +94,7 @@ class UserController extends Controller
         $userId = Auth::id();
         $user = User::find($userId);
         $team = $user->team;
+        $userCoins = $user->coins;
 
         $userRewards = $user->rewards->take(3);
         $teamRewards = $team->rewards->take(3);
@@ -118,6 +119,8 @@ class UserController extends Controller
             'teamName' => $teamName,
             'countTeamMembers' => $countTeamMembers,
             'sumTeamCoins' => $sumTeamCoins,
+            "userCoins" => $userCoins
+
         ]);
     }
     public function showWallet()

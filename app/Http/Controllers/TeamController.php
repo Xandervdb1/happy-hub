@@ -24,19 +24,26 @@ class TeamController extends Controller
     function showTeams()
     {
         $teams = Team::all();
+        $userId = Auth::id();
+        $user = User::find($userId);
+        $userCoins = $user->coins;
+
 
         return Inertia::render('companyDashboard/CompanyDashboard', [
-            "teams" => $teams
+            "teams" => $teams,
+            "userCoins" => $userCoins
         ]);
     }
     function showMembers()
     {
         $user = Auth::user();
-        
+        $userCoins = $user->coins;
+
+
         $teams = $user->company->teams;
 
         $teamMembers = [];
-        foreach($teams as $team) {
+        foreach ($teams as $team) {
             array_push($teamMembers, $team->users);
         }
 
@@ -45,7 +52,8 @@ class TeamController extends Controller
         return Inertia::render('companyDashboard/companyMembers', [
             "teams" => $teams,
             "teamMembers" => $teamMembers,
-            "roles" => $roles
+            "roles" => $roles,
+            "userCoins" => $userCoins
         ]);
     }
 

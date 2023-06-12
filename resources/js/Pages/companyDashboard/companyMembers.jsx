@@ -8,6 +8,8 @@ const TeamMembers = (props) => {
     const teams = props.teams;
     const members = props.teamMembers;
     const roles = props.roles;
+    const userCoins = props.userCoins;
+
 
     const linkRole = (member, roles) => {
         for (let role of roles) {
@@ -51,7 +53,7 @@ const TeamMembers = (props) => {
             <Head>
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
             </Head>
-            <Header />
+            <Header userCoins = {userCoins}/>
             <div className="titleWrapper">
                 <span className="material-symbols-outlined" style={{ fontSize: '35px' }}> keyboard_backspace </span>
                 <h1>Members</h1>
