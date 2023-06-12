@@ -40,7 +40,8 @@ class HandleInertiaRequests extends Middleware
                     'birthday',
                     'username',
                     'coins',
-                    'is_admin'
+                    'is_admin',
+                    'team_id'
                 ) : null,
             ],
             'ziggy' => function () use ($request) {

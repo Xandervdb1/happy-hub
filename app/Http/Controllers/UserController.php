@@ -94,6 +94,8 @@ class UserController extends Controller
         $userId = Auth::id();
         $user = User::find($userId);
         $team = $user->team;
+        $userCoins = $user->coins;
+        $teamCoins = $user->team->coins;
 
         $userRewards = $user->rewards->take(3);
         $teamRewards = $team->rewards->take(3);
@@ -106,10 +108,10 @@ class UserController extends Controller
         $teamMembers = $team->users;
         $countTeamMembers = $teamMembers->count();
 
-        $sumTeamCoins = 0;
-        foreach ($teamMembers as $teamMember) {
-            $sumTeamCoins += $teamMember->coins;
-        }
+        // $sumTeamCoins = 0;
+        // foreach ($teamMembers as $teamMember) {
+        //     $sumTeamCoins += $teamMember->coins;
+        // }
         return Inertia::render('userDashboard/UserDashboard', [
             'userRewards' => $userRewards,
             'teamRewards' => $teamRewards,
@@ -117,7 +119,9 @@ class UserController extends Controller
             'teamQuests' => $teamQuests,
             'teamName' => $teamName,
             'countTeamMembers' => $countTeamMembers,
-            'sumTeamCoins' => $sumTeamCoins,
+            'teamCoins' => $teamCoins,
+            'userCoins' => $userCoins
+            // 'sumTeamCoins' => $sumTeamCoins,
         ]);
     }
     public function showWallet()

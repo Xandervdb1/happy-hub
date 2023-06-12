@@ -6,7 +6,14 @@ import '../../css/RewardsCollection.scss';
 const RewardsCollection = (props) => {
     const userRewards = props.userRewards;
     const teamRewards = props.teamRewards;
-    const wallet = 5000;
+    // const wallet = props.auth.user.coins;
+    const personalWallet = props.auth.user.coins;
+    const teamWallet = 5000;
+    const walletTeam = props.teamCoins
+    console.log(walletTeam)
+
+    console.log(props);
+    console.log(props.auth.user.team)
 
     return (
         <>
@@ -18,7 +25,7 @@ const RewardsCollection = (props) => {
                 <p className='title'>Personal</p>
                 {
                     userRewards.map(reward => (
-                        wallet >= reward.price ? (
+                        personalWallet >= reward.price ? (
                             <Reward reward={reward} />
                         ) : null
                     ))
@@ -28,7 +35,7 @@ const RewardsCollection = (props) => {
                 <p className='title'>Team</p>
                 {
                     teamRewards.map(reward => (
-                        wallet >= reward.price ? (
+                        teamWallet >= reward.price ? (
                             <Reward reward={reward} />
                         ) : null
                     ))
@@ -39,7 +46,7 @@ const RewardsCollection = (props) => {
                 <p className='subTitle'>Personal</p>
                 {
                     userRewards.map(reward => (
-                        wallet < reward.price ? (
+                        personalWallet < reward.price ? (
                             <Reward reward={reward} class='disabled' />
                         ) : null
                     ))
@@ -47,7 +54,7 @@ const RewardsCollection = (props) => {
                 <p className='subTitle'>Team</p>
                 {
                     teamRewards.map(reward => (
-                        wallet < reward.price ? (
+                        teamWallet < reward.price ? (
                             <Reward reward={reward} class='disabled' />
                         ) : null
                     ))
