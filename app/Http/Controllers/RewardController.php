@@ -40,13 +40,15 @@ class RewardController extends Controller
         $userId = Auth::id();
         $user = User::find($userId);
         $userRewards = $user->rewards;
+        $teamCoins = $user->team->coins;
 
         $team = $user->team;
         $teamRewards = $team->rewards;
 
         return Inertia::render('RewardsCollection', [
             'userRewards' => $userRewards,
-            'teamRewards' => $teamRewards
+            'teamRewards' => $teamRewards,
+            'teamCoins' => $teamCoins
         ]);
     }
 

@@ -8,9 +8,8 @@ const RewardsCollection = (props) => {
     const teamRewards = props.teamRewards;
     // const wallet = props.auth.user.coins;
     const personalWallet = props.auth.user.coins;
-    const teamWallet = 5000;
-    const walletTeam = props.teamCoins
-    console.log(walletTeam)
+    const teamWallet = props.teamCoins
+
 
     console.log(props);
     console.log(props.auth.user.team)
