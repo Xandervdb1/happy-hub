@@ -5,21 +5,11 @@ import FormReward from "@/Components/RewardForm.jsx"
 import MemberForm from "@/Components/MemberForm.jsx"
 import FormTeam from "@/Components/TeamForm.jsx"
 
-const show5 = () => {
-
-}
-
 const AdminDashboard = (props) => {
-    // console.log(props.teams);
-    // console.log(props.teamMembers);
-    // console.log(props.roles);
+
     const teams = props.teams
     const teamMembers = props.teamMembers;
-    // console.log(teamMembers)
-
-    console.log(props.logs);
     const logs = props.logs;
-
 
     return (
         <>
@@ -33,10 +23,8 @@ const AdminDashboard = (props) => {
                     <p className="titleTable" id="member">members</p>
                     <div className="teams">
                         {
-
                             teams.map(team => (
                                 <>
-                                    {/* {console.log(team.id)} */}
                                     <div className="team"
                                         key={teams.id}>
                                         <p>{team.name}</p>
@@ -59,7 +47,6 @@ const AdminDashboard = (props) => {
                     </div>
                 </div>
 
-
                 <div className="quest">
                     <h1 className="titleDashboard">Add Quest</h1>
                     <FormQuest />
@@ -67,22 +54,17 @@ const AdminDashboard = (props) => {
                 </div>
                 <Link className='linkAll' href='/all-quests'> &gt;&gt; See all</Link>
 
-
                 <div className="member">
                     <h1 className="titleDashboard">Add Member</h1>
                     <MemberForm teams={props.teams} roles={props.roles} />
                 </div>
                 <Link className='linkAll' href='#'> &gt;&gt; See all</Link>
 
-
                 <div className="rewardCompany">
                     <h1 className="titleDashboard">Add Reward</h1>
                     <FormReward />
                 </div>
                 <Link className='linkAll' href='/rewards-collection'> &gt;&gt; See all</Link>
-
-
-
 
                 <div className="logContainer">
                     <h1 className="logTitle">Logs</h1>
@@ -111,11 +93,10 @@ const AdminDashboard = (props) => {
                                     )
                                 }
                             })
-
                         }
                     </div>
                 </div>
-                <Link href='all-logs' className="seeAllLogs"> see all logs</Link>
+                <Link href='all-logs' className="linkAll"> &gt;&gt; See all logs</Link>
             </div >
         </>
     )
