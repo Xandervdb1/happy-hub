@@ -13,34 +13,52 @@
             text-decoration: underline;
             background-color: #D9D9D9;
         }
+
         .personalQuests,
-            .teamQuests {
-                background-color: #D9D9D9;
-                .personalQuest,
-                    .teamQuest {
+        .teamQuests {
+            background-color: #D9D9D9;
+
+            .personalQuest,
+            .teamQuest {
+                display: flex;
+                flex-direction: column;
+                width: 100vw;
+                padding: 15px 25px;
+
+                div.firstRow {
+                    justify-content: space-between;
                     display: flex;
-                    flex-direction: column;
-                    width: 100vw;
-                    padding: 15px 25px;
-                    div.firstRow{
-                        justify-content: space-between;
+                    flex-direction: row;
+
+                    .column {
                         display: flex;
-                        flex-direction: row; 
-                        .column{
-                            display: flex;
-                            flex-direction: row;
-                        }
-                    }
-                    div.secondRow{
-                        justify-content: space-between;
-                        display: flex;
-                        flex-direction: row; 
-                        .checkbox{
-                            margin-top: 10px;
-                            padding-right: 10px;
-                        }
+                        flex-direction: row;
                     }
                 }
+
+                div.secondRow {
+                    justify-content: space-between;
+                    display: flex;
+                    flex-direction: row;
+
+                    .checkbox {
+                        margin-top: 10px;
+                        padding-right: 10px;
+                    }
+                }
+            }
         }
     }
+}
+
+.goBackButton {
+    font-size: 20px;
+    border: 1px solid #222831;
+    border-radius: 10px;
+    background-color: #222831;
+    color: #FFCD29;
+    width: 120px;
+    padding: 5px;
+    text-align: center;
+    justify-self: center;
 }

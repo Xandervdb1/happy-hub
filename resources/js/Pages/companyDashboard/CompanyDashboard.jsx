@@ -5,6 +5,10 @@ import FormReward from "@/Components/RewardForm.jsx"
 import MemberForm from "@/Components/MemberForm.jsx"
 import FormTeam from "@/Components/TeamForm.jsx"
 
+const show5 = () => {
+
+}
+
 const AdminDashboard = (props) => {
     // console.log(props.teams);
     // console.log(props.teamMembers);
@@ -82,10 +86,9 @@ const AdminDashboard = (props) => {
 
                 <div className="logContainer">
                     <h1 className="logTitle">Logs</h1>
-                    <hr />
                     <div className="log">
                         {
-                            logs.map(log => {
+                            logs.slice(0, 3).map(log => {
                                 if (log.scope === "Reward") {
                                     return (
                                         <>
@@ -112,7 +115,7 @@ const AdminDashboard = (props) => {
                         }
                     </div>
                 </div>
-                <Link href='#' className="seeAllLogs"> see all logs</Link>
+                <Link href='all-logs' className="seeAllLogs"> see all logs</Link>
             </div >
         </>
     )

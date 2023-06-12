@@ -120,65 +120,64 @@ class UserController extends Controller
             'sumTeamCoins' => $sumTeamCoins,
         ]);
     }
-public function showWallet()
-{
-    $user = Auth::user();
-    
-    $userCoins = $user->coins;
-    $teamCoins = $user->team->coins;
+    public function showWallet()
+    {
+        $user = Auth::user();
 
-    $userLogs = $user->logs;
-    $infoUserLogs = [];
-    foreach ($userLogs as $log) {
-        $infoUserLog = array(
-            'type' => '',
-            'created_at' => '',
-            'name' => '',
-            'coins' => '',
-            'scope' => '',
-            'scopeName' => '',
-            'scopeCoins' => '',
-        );
-        if ($log->user_id != null) {
-            $infoLog['type'] = "Personal";
-            $infoLog['created_at'] = $log->created_at->diffForHumans();
-            $infoLog['name'] = $log->user->name . " " . $log->user->lastname;
-            $infoLog['coins'] = $log->user->coins;
-            if ($log->reward_id != null) {
-                $infoLog['scope'] = "Reward";
-                $infoLog['scopeName'] = $log->reward->name;
-                $infoLog['scopeCoins'] = $log->reward->price;
+        $userCoins = $user->coins;
+        $teamCoins = $user->team->coins;
+        $userLogs = $user->logs;
+        $infoUserLogs = [];
+        foreach ($userLogs as $log) {
+            $infoUserLog = array(
+                'type' => '',
+                'created_at' => '',
+                'name' => '',
+                'coins' => '',
+                'scope' => '',
+                'scopeName' => '',
+                'scopeCoins' => '',
+            );
+            if ($log->user_id != null) {
+                $infoUserLog['type'] = "Personal";
+                $infoUserLog['created_at'] = $log->created_at->diffForHumans();
+                $infoUserLog['name'] = $log->user->name . " " . $log->user->lastname;
+                $infoUserLog['coins'] = $log->user->coins;
+                if ($log->reward_id != null) {
+                    $infoUserLog['scope'] = "Reward";
+                    $infoUserLog['scopeName'] = $log->reward->name;
+                    $infoUserLog['scopeCoins'] = $log->reward->price;
+                } else {
+                    $infoUserLog['scope'] = "Quest";
+                    $infoUserLog['scopeName'] = $log->quest->name;
+                    $infoUserLog['scopeCoins'] = $log->quest->coins;
+                }
             } else {
-                $infoLog['scope'] = "Quest";
-                $infoLog['scopeName'] = $log->quest->name;
-                $infoLog['scopeCoins'] = $log->quest->coins;
+                $infoUserLog['type'] = "Team";
+                $infoUserLog['created_at'] = $log->created_at->diffForHumans();
+                $infoUserLog['name'] = $log->team->name;
+                $infoUserLog['coins'] = $log->team->coins;
+                if ($log->reward_id != null) {
+                    $infoUserLog['scope'] = "Reward";
+                    $infoUserLog['scopeName'] = $log->reward->name;
+                    $infoUserLog['scopeCoins'] = $log->reward->price;
+                } else {
+                    $infoUserLog['scope'] = "Quest";
+                    $infoUserLog['scopeName'] = $log->quest->name;
+                    $infoUserLog['scopeCoins'] = $log->quest->coins;
+                }
             }
-        } else {
-            $infoLog['type'] = "Team";
-            $infoLog['created_at'] = $log->created_at->diffForHumans();
-            $infoLog['name'] = $log->team->name;
-            $infoLog['coins'] = $log->team->coins;
-            if ($log->reward_id != null) {
-                $infoLog['scope'] = "Reward";
-                $infoLog['scopeName'] = $log->reward->name;
-                $infoLog['scopeCoins'] = $log->reward->price;
-            } else {
-                $infoLog['scope'] = "Quest";
-                $infoLog['scopeName'] = $log->quest->name;
-                $infoLog['scopeCoins'] = $log->quest->coins;
-            }
+            array_push($infoUserLogs, $infoUserLog);
         }
-        array_push($infoUserLogs, $infoUserLog);
+        // dd($infoUserLogs);
+
+
+        return Inertia::render('wallet/Wallet', [
+            "userCoins" => $userCoins,
+            "teamCoins" => $teamCoins,
+            "logs" => $infoUserLogs
+        ]);
     }
-    // dd($infoUserLogs);
-    
-    
-    return Inertia::render('wallet/Wallet', [
-        "userCoins" => $userCoins,
-        "teamCoins" => $teamCoins,
-        "logs" => $infoUserLogs
-    ]);
-}
 
     public function editUser(User $user)
     {

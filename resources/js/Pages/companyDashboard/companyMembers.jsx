@@ -1,7 +1,8 @@
-import Header from "@/Components/Header.jsx" ;
+import Header from "@/Components/Header.jsx";
 import { Head } from '@inertiajs/react';
-import backIcon from '../../../../public/backspace.svg';
 import '../../../css/teamMembers.css';
+import coin from '../../../../public/coin.png';
+import { Link } from "@inertiajs/react";
 
 
 const TeamMembers = (props) => {
@@ -10,17 +11,17 @@ const TeamMembers = (props) => {
     const roles = props.roles;
 
     const linkRole = (member, roles) => {
-        for(let role of roles){
-            if(member.role_id === role.id){
-                return role.name;  
+        for (let role of roles) {
+            if (member.role_id === role.id) {
+                return role.name;
             }
         }
     }
 
     const linkTeam = (member, teams) => {
-        for(let team of teams){
-            if(member.team_id === team.id){
-                return team.name;  
+        for (let team of teams) {
+            if (member.team_id === team.id) {
+                return team.name;
             }
         }
     }
@@ -28,11 +29,12 @@ const TeamMembers = (props) => {
     const filterArray = (teams, members, roles) => {
         const membersList = [];
 
-        for (let i = 0; i < members.length ; i++){
-            if(members[i].length > 0){
-                for(let member of members[i]) {
+        for (let i = 0; i < members.length; i++) {
+            if (members[i].length > 0) {
+                for (let member of members[i]) {
                     membersList.push({
                         name: member.name,
+                        coins: member.coins,
                         function: linkRole(member, roles),
                         email: member.email,
                         team: linkTeam(member, teams)
@@ -40,9 +42,10 @@ const TeamMembers = (props) => {
                 }
             }
         }
+        return membersList;
     }
 
-    filterArray(teams, members, roles);
+    const companyMembers = filterArray(teams, members, roles);
 
     return (
         <>
@@ -51,30 +54,40 @@ const TeamMembers = (props) => {
             </Head>
             <Header />
             <div className="titleWrapper">
-                <span className="material-symbols-outlined" style={{fontSize:'35px'}}> keyboard_backspace </span>
+                <Link href='/company-dashboard'>
+                    <span className="material-symbols-outlined" style={{ fontSize: '35px' }}> keyboard_backspace </span>
+                </Link>
                 <h1>Members</h1>
                 <div className="empty"></div>
             </div>
             <div className="membersWrapper">
-                {}
-                <div className="member">
-                    <div className="name">
-                        <p>Name</p>
-                        <p>XXX</p>
-                    </div>
-                    <div className="function">
-                        <p>Function</p>
-                        <p>XXX</p>
-                    </div>
-                    <div className="email">
-                        <p>Email</p>
-                        <p>XXX</p>
-                    </div>
-                    <div className="team">
-                        <p>Team</p>
-                        <p>XXX</p>
-                    </div>
-                </div>
+                {
+                    companyMembers.map(member =>
+                        <div className="member" key={member.email}>
+                            <div className="nameCoins">
+                                <p className="name">{member.name}</p>
+                                <div className="coinsWrap">
+                                    <div className="coins">
+                                        <img src={coin} alt="coin" />
+                                        <p>{member.coins}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="memberInfo">
+                                <p>Function: &nbsp;</p>
+                                {member.function === undefined ? <p>Unknown function</p> : <p>{member.team}</p>}
+                            </div>
+                            <div className="memberInfo">
+                                <p>Email: &nbsp;</p>
+                                <p>{member.email}</p>
+                            </div>
+                            <div className="memberInfo">
+                                <p>Team: &nbsp; </p>
+                                {member.team}
+                            </div>
+                        </div>
+                    )
+                }
             </div>
         </>
     )

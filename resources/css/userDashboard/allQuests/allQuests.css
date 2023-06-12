@@ -76,4 +76,16 @@
 .QuestContainer .teamQuestsContainer .teamQuests .teamQuest div.secondRow .checkbox {
   margin-top: 10px;
   padding-right: 10px;
+}
+
+.goBackButton {
+  font-size: 20px;
+  border: 1px solid #222831;
+  border-radius: 10px;
+  background-color: #222831;
+  color: #FFCD29;
+  width: 120px;
+  padding: 5px;
+  text-align: center;
+  justify-self: center;
 }/*# sourceMappingURL=allQuests.css.map */

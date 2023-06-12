@@ -32,5 +32,7 @@ class LogController extends Controller
 
         // Return the logs to the view or perform any other actions
         return Inertia::render('logs', ['logs' => $logs]);
+
+        $logs->take(3);
     }
 }
