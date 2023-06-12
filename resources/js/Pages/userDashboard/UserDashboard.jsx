@@ -10,10 +10,11 @@ const UserDashboard = (props) => {
     const rewards = props.userRewards;
     const quests = props.userQuests;
     const teamQuests = props.teamQuests;
-    const teamName = props.teamName
-    const members = props.countTeamMembers
-    const userCoins = props.userCoins
-    const teamCoins = props.teamCoins
+    const teamName = props.teamName;
+    const members = props.countTeamMembers;
+    const userCoins = props.userCoins;
+    const teamCoins = props.teamCoins;
+
     console.log(rewards)
 
     return (
@@ -21,7 +22,7 @@ const UserDashboard = (props) => {
             <Header userCoins={userCoins} />
             <div className="dashboardContainer">
                 <div className="progressCarrousel">
-                    < Carousel personalWallet={props.auth.user.coins} teamWallet={teamCoins} />
+                    < Carousel personalWallet={userCoins} teamWallet={teamCoins} />
                 </div>
                 <div className="profileInfo">
                     <p className="personalInfo"><b>Name:</b> <i>{userName}</i></p>

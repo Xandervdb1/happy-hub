@@ -11,6 +11,8 @@ const AdminDashboard = (props) => {
     // console.log(props.roles);
     const teams = props.teams
     const teamMembers = props.teamMembers;
+    const userCoins = props.userCoins;
+
     // console.log(teamMembers)
 
     console.log(props.logs);
@@ -19,7 +21,7 @@ const AdminDashboard = (props) => {
 
     return (
         <>
-            <Header />
+            <Header userCoins = {userCoins}/>
             <div className="adminDashboard">
                 <h1 className="titlePage">Company Dashboard</h1>
                 <div className="teamContainer">

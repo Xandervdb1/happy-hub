@@ -12,7 +12,7 @@ class RouterController extends Controller
     function showComapnyDashboard()
     {
         $user = Auth::user();
-
+        $userCoins = $user->coins;
         $teams = $user->company->teams;
 
         $teamMembers = [];
@@ -72,6 +72,7 @@ class RouterController extends Controller
             "teamMembers" => $teamMembers,
             "roles" => $roles,
             "logs" => $infoLogs,
+            "userCoins" => $userCoins
         ]);
     }
     function showLogs()

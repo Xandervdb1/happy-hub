@@ -6,17 +6,12 @@ import '../../css/RewardsCollection.scss';
 const RewardsCollection = (props) => {
     const userRewards = props.userRewards;
     const teamRewards = props.teamRewards;
-    // const wallet = props.auth.user.coins;
-    const personalWallet = props.auth.user.coins;
-    const teamWallet = props.teamCoins
-
-
-    console.log(props);
-    console.log(props.auth.user.team)
+    const wallet = props.auth.user.coins;
+    const userCoins = props.userCoins;
 
     return (
         <>
-            <Header />
+            <Header userCoins={userCoins} />
             <div className='titleContainer'>
                 <p>REWARDS</p>
             </div>
