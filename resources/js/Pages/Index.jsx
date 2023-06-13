@@ -9,7 +9,7 @@ const Index = () => {
                 </div>
                 <Link href="/login" as="button" className="buttonLogin">Log in</Link>
                 <Link href="/generate-key" as="button" className="buttonBuyProduct">Buy Product</Link>
-                <Link href="/quests/2" method="delete">Log out</Link>
+                <Link href="/logout" method="post">Log out</Link>
             </div>
         </>
     );
