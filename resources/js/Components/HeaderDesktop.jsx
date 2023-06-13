@@ -1,4 +1,5 @@
 import { Link } from "@inertiajs/react"
+import HeaderDesktop from "@/Components/HeaderDesktop.jsx"
 
 const HeaderDesktop = (props) => {
     return (

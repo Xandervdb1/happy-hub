@@ -1,4 +1,5 @@
 import Header from "@/Components/HeaderMobile.jsx"
+import HeaderDesktop from "@/Components/HeaderDesktop.jsx"
 import { router, usePage } from '@inertiajs/react'
 import { useState } from 'react'
 import { Link } from "@inertiajs/react";

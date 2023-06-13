@@ -1,4 +1,5 @@
 import Header from '@/Components/HeaderMobile';
+import HeaderDesktop from "@/Components/HeaderDesktop.jsx"
 import Reward from '@/Components/Reward';
 import { Link } from '@inertiajs/react';
 import '../../css/RewardsCollection.scss';

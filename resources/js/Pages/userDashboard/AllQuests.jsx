@@ -1,4 +1,5 @@
 import Header from "@/Components/HeaderMobile";
+import HeaderDesktop from "@/Components/HeaderDesktop.jsx"
 import '../../../css/userDashboard/allQuests/allQuests.css';
 import ProgressBar from "@/Components/ProgressBar";
 import { Link } from "@inertiajs/react";
