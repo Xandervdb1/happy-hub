@@ -9,7 +9,7 @@ const HeaderDesktop = (props) => {
                     <img className='logoHeader' src="../happyhub.png" alt="logo Happy Hub" />
                     <div className="navigation">
                         <Link href='/company-dashboard' className="navLink">Company Dashboard</Link>
-                        <Link href='/user-dashboards' className="navLink">User Dashboard</Link>
+                        <Link href='/user-dashboard' className="navLink">User Dashboard</Link>
                         <Link href='/wallet' className="navLink"> Wallet</Link>
                         <Link href='/logout' method="post" as="button" className="navLink"> Log out</Link>
                     </div>
