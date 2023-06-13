@@ -29,7 +29,7 @@ class UserRequest extends FormRequest
 
             'firstname' => 'required|min:1|max:255',
             'lastname' => 'required|min:1|max:255',
-            'email' => 'required|email|max:255',
+            'email' => 'required|email|unique|max:255',
             'team' => 'required',
             'function' => 'required',
         ];
