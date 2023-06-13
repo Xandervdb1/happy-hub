@@ -11,19 +11,20 @@ const AdminDashboard = (props) => {
     const teamMembers = props.teamMembers;
     const userCoins = props.userCoins;
 
-    // console.log(teamMembers)
-
-    console.log(props.logs);
     const logs = props.logs;
 
     return (
         <>
             <Header userCoins = {userCoins}/>
+
             <div className="adminDashboard">
                 <h1 className="titlePage">Company Dashboard</h1>
+
                 <div className="teamContainer">
                     <h1 className="titleDashboard"> Add Team</h1>
+
                     <FormTeam />
+
                     <p className="titleTable" id="name">name</p>
                     <p className="titleTable" id="member">members</p>
                     <div className="teams">
@@ -43,7 +44,7 @@ const AdminDashboard = (props) => {
                         {
                             teamMembers.map(teamMember => (
                                 <>
-                                    <div className='listItem' key={teamMember.id}>
+                                    <div className="listItem" key={teamMember.id}>
                                         <p>{teamMember.length}</p>
                                     </div>
                                 </>
@@ -57,19 +58,24 @@ const AdminDashboard = (props) => {
                     <FormQuest />
 
                 </div>
-                <Link className='linkAll' href='/all-quests'> &gt;&gt; See all</Link>
+                <Link className="linkAll" href="/all-quests"> &gt;&gt; See all</Link>
 
                 <div className="member">
                     <h1 className="titleDashboard">Add Member</h1>
+
                     <MemberForm teams={props.teams} roles={props.roles} />
                 </div>
-                <Link className='linkAll' href='#'> &gt;&gt; See all</Link>
+
+                <Link className="linkAll" href="#"> &gt;&gt; See all</Link>
 
                 <div className="rewardCompany">
                     <h1 className="titleDashboard">Add Reward</h1>
+
                     <FormReward />
+
                 </div>
-                <Link className='linkAll' href='/rewards-collection'> &gt;&gt; See all</Link>
+
+                <Link className="linkAll" href="/rewards-collection"> &gt;&gt; See all</Link>
 
                 <div className="logContainer">
                     <h1 className="logTitle">Logs</h1>
@@ -101,7 +107,7 @@ const AdminDashboard = (props) => {
                         }
                     </div>
                 </div>
-                <Link href='all-logs' className="linkAll"> &gt;&gt; See all logs</Link>
+                <Link href="all-logs" className="linkAll"> &gt;&gt; See all logs</Link>
             </div >
         </>
     )

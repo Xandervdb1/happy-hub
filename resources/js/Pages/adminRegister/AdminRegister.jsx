@@ -7,7 +7,6 @@ const AdminRegister = () => {
 
     const { errors } = usePage().props
 
-
     const [values, setValues] = useState({
         name: '',
         lastname: '',

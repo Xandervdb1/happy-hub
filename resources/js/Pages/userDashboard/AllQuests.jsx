@@ -53,7 +53,7 @@ const AllQuests = (props) => {
                     <div className="teamQuests">
                         {
                             teamQuests.map((teamQuest) => {
-                                const completed = (parseInt(teamCoins) / parseInt(teamQuest.coins)) * 100;
+                                const completed = Math.min((parseInt(teamCoins) / parseInt(teamQuest.coins)) * 100, 100);
                                 const completedRounded = Math.round(completed);
                                 return (
                                     <div className="teamQuest" key={teamQuest.id}>

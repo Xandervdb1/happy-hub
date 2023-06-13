@@ -56,7 +56,7 @@ const TeamMembers = (props) => {
             </Head>
             <Header userCoins = {userCoins}/>
             <div className="titleWrapper">
-                <Link href='/company-dashboard'>
+                <Link href="/company-dashboard">
                     <span className="material-symbols-outlined" style={{ fontSize: '35px' }}> keyboard_backspace </span>
                 </Link>
                 <h1>Members</h1>

@@ -1,9 +1,12 @@
 import Header from "@/Components/Header.jsx"
-import { router } from '@inertiajs/react'
+import { router, usePage } from '@inertiajs/react'
 import { useState } from 'react'
 import { Link } from "@inertiajs/react";
 
 const Login = () => {
+
+    const { errors } = usePage().props
+
     const [values, setValues] = useState({
         name: '',
         birthday: '',
@@ -32,15 +35,16 @@ const Login = () => {
 
                     <div className="inputField">
                         <input className="input" type="name" placeholder="Username" value={values.name} onChange={handleChange} name="name" id="name" required />
+                        <span className="error-message">{errors.name}</span> 
+                        
                         <input type="date" name="birthday" id="birthday" value={values.birthday} onChange={handleChange} className="input" />
+                        <span className="error-message">{errors.birthday}</span> 
                     </div>
 
                     <div className="buttonContainer">
                         <button type="submit">Confirm</button>
                     </div>
-
                 </form>
-
             </div>
         </>
     )

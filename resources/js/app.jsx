@@ -1,7 +1,7 @@
 import './bootstrap';
 import '../css/app.css';
 import '../css/index.css';
-import '../css/registerAdmin/generateKey/register.css';
+// import '../css/registerAdmin/generateKey/register.css';
 import '../css/dashboard.css';
 import '../css/layoutDashboard.css';
 import '../css/companyDashboard.css';

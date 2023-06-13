@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Link } from "@inertiajs/react";
 
 const NewPassword = () => {
+
     const { errors } = usePage().props
 
     const [values, setValues] = useState({
@@ -35,6 +36,7 @@ const NewPassword = () => {
                     <div className="inputField">
                         <input className="input" type="password" placeholder="New password" value={values.password} onChange={handleChange} name="password" id="password" required />
                             <span className="error-message">{errors.password}</span> 
+                        
                         <input className="input" type="password" placeholder="Confirm new password" value={values.password_confirmation} onChange={handleChange} name="newpassword" id="password_confirmation" required /> 
                             <span className="error-message">{errors.password}</span>
                     </div>

@@ -15,9 +15,11 @@ const Wallet = (props) => {
         <>
             <Header userCoins={userCoins} />
             <div className="walletContainer">
+
                 <div className="titleBalance">
                     <h1 className="titlePage"> Your Wallet</h1>
                 </div>
+
                 <div className="personalBalance">
                     <div className="personalWallet">
                         <h1 className="titleWallet">Personal Balance</h1>
@@ -26,8 +28,8 @@ const Wallet = (props) => {
                             <p>{userCoins}</p>
                         </div>
                     </div>
-                    {
 
+                    {
                         userLogs.map(userLog => {
                             if (userLog.type === "Personal") {
                                 if (userLog.scope === "Reward") {
@@ -49,10 +51,8 @@ const Wallet = (props) => {
                                                 <p className="green">Gained <b>{userLog.scopeCoins.toLocaleString()} </b> for <b> {userLog.scopeName}.</b></p>
                                                 <p className="coinTotal">(Total coins:{userCoins.toLocaleString()}) </p>
                                             </div>
-
                                         </>
                                     )
-
                                 }
                             }
                         })
@@ -66,8 +66,8 @@ const Wallet = (props) => {
                             <img className="coin" src="../coin.png" alt="coin" />
                             <p>{teamCoins}</p>
                         </div>
-
                     </div>
+
                     <div className="transactions">
                         <p className="timestamp">17/05/2023 - 12:56</p>
                         <div className="priceAndCoin">
@@ -76,26 +76,8 @@ const Wallet = (props) => {
                         </div>
                         <p className="activity">Help a colleague</p>
                     </div>
-
-
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
-
         </>
     )
 }
