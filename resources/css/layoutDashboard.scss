@@ -101,7 +101,7 @@
     .dashboardContainer {
         grid-template-rows: repeat(12, 1fr);
         grid-template-columns: repeat(12, 1fr);
-        height: 80vh;
+        height: calc(100vh - 100px);
 
         .progressCarrousel {
             grid-row: 1/6;
@@ -159,6 +159,7 @@
 
             .price {
                 font-size: 18px;
+                margin-top: 10px;
             }
         }
 

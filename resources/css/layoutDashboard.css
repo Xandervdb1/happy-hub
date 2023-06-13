@@ -99,7 +99,7 @@
   .dashboardContainer {
     grid-template-rows: repeat(12, 1fr);
     grid-template-columns: repeat(12, 1fr);
-    height: 80vh;
+    height: calc(100vh - 100px);
   }
   .dashboardContainer .progressCarrousel {
     grid-row: 1/6;
@@ -146,6 +146,7 @@
   }
   .dashboardContainer .priceContainer .price {
     font-size: 18px;
+    margin-top: 10px;
   }
   .dashboardContainer .seeAll {
     font-size: 15px;

@@ -24,8 +24,7 @@ class TeamRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:1|max:255',
-            'coins' => 'required',
+            'teamname' => 'required|min:1|max:255',
         ];
     }
 

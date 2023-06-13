@@ -31,7 +31,7 @@ const FormMember = (props) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(values);
+        closeModal(e);
         router.post('/company-dashboard-user', values)
     }
 
@@ -58,11 +58,11 @@ const FormMember = (props) => {
                     <h1 className="title">Add new Member</h1>
                     <form onSubmit={handleSubmit}>
                         <input type="text" name="firstname" id="firstname" value={values.firstname} onChange={handleChange} placeholder="First name" className="input" />
-                        <span className="error-message">{errors.firstname}</span> 
+                        <span className="error-message">{errors.firstname}</span>
                         <input type="text" name="lastname" id="lastname" value={values.lastname} onChange={handleChange} placeholder="Last name" className="input" />
-                        <span className="error-message">{errors.lastname}</span> 
+                        <span className="error-message">{errors.lastname}</span>
                         <input type="email" name="email" id="email" value={values.email} onChange={handleChange} placeholder="Email" className="input" />
-                        <span className="error-message">{errors.email}</span> 
+                        <span className="error-message">{errors.email}</span>
                         <select name="team" className="input" id="team" value={values.team} onChange={handleChange} placeholder="Team">
                             <option value="Team">Choose Team</option>
                             {
@@ -73,7 +73,7 @@ const FormMember = (props) => {
                                 })
                             }
                         </select>
-                        <span className="error-message">{errors.team}</span> 
+                        <span className="error-message">{errors.team}</span>
 
                         <select name="function" className="input" id="function" value={values.function} onChange={handleChange} placeholder="function">
                             <option value="Team">Choose Function</option>
@@ -85,7 +85,7 @@ const FormMember = (props) => {
                                 })
                             }
                         </select>
-                        <span className="error-message">{errors.function}</span> 
+                        <span className="error-message">{errors.function}</span>
 
                         <div>
                             <input className="checkbox" type="checkbox" id="adminCheck" name="adminCheck" onChange={handleChange} />
