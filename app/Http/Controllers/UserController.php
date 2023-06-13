@@ -108,10 +108,6 @@ class UserController extends Controller
         $teamMembers = $team->users;
         $countTeamMembers = $teamMembers->count();
 
-        // $sumTeamCoins = 0;
-        // foreach ($teamMembers as $teamMember) {
-        //     $sumTeamCoins += $teamMember->coins;
-        // }
         return Inertia::render('userDashboard/UserDashboard', [
             'userRewards' => $userRewards,
             'teamRewards' => $teamRewards,

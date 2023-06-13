@@ -6,7 +6,8 @@ import '../../css/RewardsCollection.scss';
 const RewardsCollection = (props) => {
     const userRewards = props.userRewards;
     const teamRewards = props.teamRewards;
-    const wallet = props.auth.user.coins;
+    const personalWallet = props.auth.user.coins;
+    const teamWallet = props.teamCoins;
     const userCoins = props.userCoins;
 
     return (
