@@ -28,11 +28,11 @@ class AdminRequest extends FormRequest
         return [
             'name' => 'required|min:1|max:255',
             'lastname' => 'required|min:1|max:255',
-            'username' => 'required|min:5|max:255',
+            'username' => 'required|max:255',
             'birthday' => 'required|max:255',
             'function' => 'required|max:255',
-            'email' => 'required|email|max:255',
-            'password' => 'required|min:8|max:16|confirmed',
+            'email' => 'required|email|unique|max:255',
+            'password' => 'required|min:8|confirmed',
         ];
     }
 

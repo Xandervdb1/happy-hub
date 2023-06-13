@@ -24,7 +24,7 @@ class QuestRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|min:5|max:100',
+            'name' => 'required|min:3|max:100',
             'slug' => 'required|max:10',
             'price' => 'required|integer',
             'type' => 'required',

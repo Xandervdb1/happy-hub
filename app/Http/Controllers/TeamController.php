@@ -17,8 +17,7 @@ class TeamController extends Controller
 
         $team->name = $request->teamname;
         $team->coins = 0;
-        $team->company_id = 0;
-        //TODO: set company_id to the company_id of the logged in admin
+        $team->company_id = Auth::user()->company->id;
         $team->save();
     }
     function showTeams()
