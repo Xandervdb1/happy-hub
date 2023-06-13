@@ -29,7 +29,7 @@ class UserRequest extends FormRequest
 
             'firstname' => 'required|min:1|max:255',
             'lastname' => 'required|min:1|max:255',
-            'email' => 'required|email|unique|max:255',
+            'email' => 'required|email|unique:users,email|max:255',
             'team' => 'required',
             'function' => 'required',
         ];
@@ -44,6 +44,7 @@ class UserRequest extends FormRequest
             'max' => ':attribute cannot exceed 255 characters',
             'email' => ':attribute must be of format email',
             'email.required' => 'Please provide an :attribute',
+            'email.unique' => 'Email already exists',
             'confirmed' => ':attribute must be confirmed'
         ];
     }
