@@ -24,6 +24,7 @@ const FormReward = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
+        closeModal(e);
         router.post('/company-dashboard-reward', values)
     }
     const showModal = (e) => {
@@ -49,20 +50,20 @@ const FormReward = () => {
                     <h1>Add new Reward</h1>
                     <form onSubmit={handleSubmit}>
                         <input type="text" name="name" id="name" value={values.name} onChange={handleChange} placeholder="Name" className="input" />
-                        <span className="error-message">{errors.name}</span> 
+                        <span className="error-message">{errors.name}</span>
 
                         <input type="text" name="slug" id="slug" value={values.slug} onChange={handleChange} placeholder="Slug" className="input" />
-                        <span className="error-message">{errors.slug}</span> 
+                        <span className="error-message">{errors.slug}</span>
 
                         <input type="text" name="Price" id="price" value={values.price} onChange={handleChange} placeholder="Price" className="input" />
-                        <span className="error-message">{errors.price}</span> 
+                        <span className="error-message">{errors.price}</span>
 
                         <select name="type" className="input" id="type" value={values.type} onChange={handleChange} placeholder="type">
                             <option>Choose type</option>
                             <option value="Personal">Personal</option>
                             <option value="Team">Team</option>
                         </select>
-                        <span className="error-message">{errors.type}</span> 
+                        <span className="error-message">{errors.type}</span>
 
                         <button className="button">Submit</button>
                     </form>

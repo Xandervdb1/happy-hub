@@ -28,7 +28,7 @@ const FormTeam = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(values);
-        router.post('/company-dashboard-user', values)
+        router.post('/company-dashboard-team', values)
     }
 
     const showModal = (e) => {
@@ -54,7 +54,7 @@ const FormTeam = (props) => {
                     <h1>Add new Team</h1>
                     <form onSubmit={handleSubmit}>
                         <input type="text" name="name" id="name" value={values.name} onChange={handleChange} placeholder="Team name" className="input" />
-                        <span className="error-message">{errors.name}</span> 
+                        <span className="error-message">{errors.name}</span>
 
                         <button className="button">Submit</button>
                     </form>
