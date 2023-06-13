@@ -39,7 +39,6 @@
   background-color: #D9D9D9;
   justify-content: space-around;
   min-height: 43vh;
-  height: auto;
   margin: 5px;
   margin-bottom: 10px;
 }
@@ -64,11 +63,37 @@
   background-color: #D9D9D9;
   justify-content: space-around;
   min-height: 43vh;
-  height: auto;
   margin: 5px;
   margin-bottom: 10px;
 }
 .walletContainer .teamBalance .teamWallet {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+
+@media only screen and (min-width: 600px) {
+  .walletContainer {
+    height: calc(100vh - 100px);
+  }
+  .walletContainer .balances {
+    justify-content: center;
+    margin: 10px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+  }
+  .walletContainer .titlePage {
+    width: 100%;
+    height: 20px;
+  }
+  .walletContainer .personalBalance,
+  .walletContainer .teamBalance {
+    width: 40%;
+    min-height: 50vh;
+    border-radius: 10px;
+  }
+  .pricesAndCoin {
+    margin-right: 15px;
+    margin-left: 0;
+  }
 }/*# sourceMappingURL=wallet.css.map */

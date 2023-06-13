@@ -55,9 +55,11 @@
         justify-content: right;
         margin-right: 10px;
     }
-    select.input{
+
+    select.input {
         height: auto;
     }
+
     .btn-open {
         position: absolute;
         bottom: 150px;
@@ -90,11 +92,13 @@
 
     .formContainer {
         margin: 20px;
-        form{
+
+        form {
             display: flex;
             flex-direction: column;
             justify-self: center;
-            .input{
+
+            .input {
                 margin: auto;
                 margin-bottom: 10px;
                 padding: 10px;
@@ -104,17 +108,20 @@
                 font-size: 0.9em;
                 height: auto;
             }
-            input.checkbox{
+
+            input.checkbox {
                 width: 20px;
                 height: 20px;
                 margin-left: 10px;
                 margin-right: 10px;
             }
-            .error-message{
+
+            .error-message {
                 padding-left: 5px;
                 font-size: 12px;
-                color:red
+                color: red
             }
+
             .button {
                 background-color: #393E46;
                 border: none;
@@ -127,18 +134,19 @@
                 margin: auto;
                 margin-top: 30px;
             }
-            select.input{
+
+            select.input {
                 border: 1px solid #ddd;
                 padding: 0.5rem 1rem;
             }
-                
+
         }
     }
 
     .teamContainer {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        height: auto;
+        min-height: 50px;
         background-color: #D9D9D9;
 
         .titleTable {
@@ -192,8 +200,8 @@
         background-color: #D9D9D9;
         display: grid;
         text-align: left;
-        margin-top: 30px;
         padding: 10px;
+        margin-top: 0;
 
         .logTitle {
             font-size: 20px;
@@ -239,6 +247,101 @@
         font-weight: 600;
         opacity: .6;
     }
+}
+
+@media only screen and (min-width: 600px) {
+    .adminDashboard {
+        height: calc(100vh - 100px);
+        display: grid;
+        grid-template-rows: repeat(12, 1fr);
+        grid-template-columns: repeat(12, 1fr);
+
+        .titlePage {
+            grid-row: 1/2;
+            grid-column: 5/10;
+        }
 
 
+
+        .teamContainer {
+            width: 350px;
+            height: 350px;
+            grid-row: 6/10;
+            grid-column: 4/7;
+            border-radius: 10px;
+            margin: 5px;
+
+        }
+
+        .logContainer {
+            width: 350px;
+            height: 350px;
+            grid-row: 6/10; // opwaarts
+            grid-column: 7/12; //zijwaarts
+            border-radius: 10px;
+            margin: 5px;
+
+        }
+
+        .titleDashboard {
+            width: 100px;
+            font-size: 16px;
+        }
+
+        .quest {
+            grid-row: 2;
+            grid-column: 5;
+            justify-content: center;
+            align-self: flex-end;
+            width: 100px;
+            margin-left: -15px;
+        }
+
+        .rewardCompany {
+            grid-row: 2;
+            grid-column: 7;
+            justify-content: center;
+            align-self: flex-end;
+            width: 100px;
+            margin-left: -35px;
+        }
+
+        .member {
+            grid-row: 2;
+            grid-column: 9;
+            justify-content: center;
+            align-self: flex-end;
+            width: 100px;
+            margin-left: -15px;
+        }
+
+        #questLink {
+            grid-row: 3;
+            grid-column: 4/6;
+            text-align: center;
+        }
+
+        #rewardLink {
+            grid-row: 3;
+            grid-column: 6/8;
+            text-align: center;
+            margin-left: -5px;
+        }
+
+        #memberLink {
+            grid-row: 3;
+            grid-column: 8/10;
+            text-align: center;
+        }
+
+        #logLink {
+            grid-column: 7/10;
+            grid-row: 10/11;
+        }
+
+        .linkAll {
+            font-size: 12px;
+        }
+
+    }
 }
