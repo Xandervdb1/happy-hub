@@ -99,6 +99,7 @@
   .dashboardContainer {
     grid-template-rows: repeat(12, 1fr);
     grid-template-columns: repeat(12, 1fr);
+    height: 80vh;
   }
   .dashboardContainer .progressCarrousel {
     grid-row: 1/6;
@@ -118,7 +119,7 @@
     margin-top: 20px;
   }
   .dashboardContainer .profileInfo {
-    grid-row: 1/5;
+    grid-row: 1/6;
     grid-column: 7/12;
     margin: 5px;
     border-radius: 10px;
@@ -129,7 +130,7 @@
     margin-top: 10px;
   }
   .dashboardContainer .personalQuests {
-    grid-row: 5/9;
+    grid-row: 6/10;
     grid-column: 2/7;
     margin: 5px;
     border-radius: 10px;
@@ -150,14 +151,14 @@
     font-size: 15px;
   }
   .dashboardContainer .teamQuests {
-    grid-row: 5/9;
+    grid-row: 6/10;
     grid-column: 7/12;
     margin: 5px;
     border-radius: 10px;
   }
   .dashboardContainer .rewards {
     grid-column: 5/9;
-    grid-row: 9/10;
+    grid-row: 10/12;
   }
   .dashboardContainer .reward {
     width: 130px;
