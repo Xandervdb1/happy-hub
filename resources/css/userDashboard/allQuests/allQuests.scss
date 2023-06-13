@@ -1,31 +1,34 @@
-.QuestContainer {
-    h1 {
-        text-align: center;
-        margin: 20px;
-        font-size: x-large;
-    }
+h1 {
+    text-align: center;
+    margin: 20px;
+    font-size: x-large;
+}
 
-    div.personalQuestsContainer,
+.QuestContainer {
+
+    .personalQuestsContainer,
     .teamQuestsContainer {
         margin-bottom: 20px;
+        width: 100%;
 
         .title {
             text-decoration: underline;
             background-color: #D9D9D9;
+            margin: 0 15px;
         }
 
         .personalQuests,
         .teamQuests {
             background-color: #D9D9D9;
+            margin: 0 15px;
 
             .personalQuest,
             .teamQuest {
                 display: flex;
                 flex-direction: column;
-                width: 100vw;
                 padding: 15px 25px;
 
-                div.firstRow {
+                .firstRow {
                     justify-content: space-between;
                     display: flex;
                     flex-direction: row;
@@ -36,14 +39,13 @@
                     }
                 }
 
-                div.secondRow {
+                .secondRow {
                     justify-content: space-between;
                     display: flex;
                     flex-direction: row;
 
-                    .checkbox {
-                        margin-top: 10px;
-                        padding-right: 10px;
+                    input {
+                        align-self: center;
                     }
                 }
             }
@@ -52,13 +54,29 @@
 }
 
 .goBackButton {
-    font-size: 20px;
-    border: 1px solid #222831;
+    display: block;
+    font-size: 1.3rem;
     border-radius: 10px;
     background-color: #222831;
     color: #FFCD29;
     width: 120px;
     padding: 5px;
     text-align: center;
-    justify-self: center;
+    margin: 20px auto;
+}
+
+@media screen and (min-width: 1024px) {
+    .QuestContainer {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .personalQuestsContainer {
+        margin-left: 30px;
+    }
+
+    .teamQuestsContainer {
+        margin-right: 30px;
+    }
 }

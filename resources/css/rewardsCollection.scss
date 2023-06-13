@@ -43,17 +43,6 @@ $container-bg: #D9D9D9;
     }
 }
 
-.priceContainer {
-    width: 100%;
-    display: flex;
-    gap: 0.25rem;
-    margin: auto;
-
-    p {
-        padding-top: 2px;
-    }
-}
-
 .reward {
     background-color: #D9D9D9;
     text-align: center;
@@ -72,10 +61,21 @@ $container-bg: #D9D9D9;
         font-size: 14px;
         font-weight: 500;
     }
+
+    .priceContainer {
+        width: 100%;
+        display: flex;
+        gap: 0.25rem;
+        margin: auto;
+
+        p {
+            padding-top: 2px;
+        }
+    }
 }
 
 .disabled {
-    filter:grayscale(100%);
+    filter: grayscale(100%);
 }
 
 .reward:hover {

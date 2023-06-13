@@ -37,16 +37,6 @@
   border-bottom: 1px solid black;
 }
 
-.priceContainer {
-  width: 100%;
-  display: flex;
-  gap: 0.25rem;
-  margin: auto;
-}
-.priceContainer p {
-  padding-top: 2px;
-}
-
 .reward {
   background-color: #D9D9D9;
   text-align: center;
@@ -64,6 +54,15 @@
 .reward .activity {
   font-size: 14px;
   font-weight: 500;
+}
+.reward .priceContainer {
+  width: 100%;
+  display: flex;
+  gap: 0.25rem;
+  margin: auto;
+}
+.reward .priceContainer p {
+  padding-top: 2px;
 }
 
 .disabled {
