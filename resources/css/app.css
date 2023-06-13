@@ -37,6 +37,7 @@
   height: 35px;
   margin-top: 2rem;
   margin-right: 15px;
+  cursor: pointer;
 }
 .HeaderContainer header .top-bun,
 .HeaderContainer header .burger,

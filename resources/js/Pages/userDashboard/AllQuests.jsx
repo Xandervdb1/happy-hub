@@ -13,10 +13,10 @@ const AllQuests = (props) => {
     function handleChange(e) {
         setChecked(e.target.checked);
     }
-   
+
     return (
         <>
-            <Header userCoins = {userCoins} />
+            <Header userCoins={userCoins} />
             <div className="QuestContainer">
                 <h1>QUESTS</h1>
 
@@ -32,14 +32,14 @@ const AllQuests = (props) => {
                                         <div className="firstRow">
                                             <p className="name">{userQuest.name}</p>
                                             <div className="column">
-                                                <p className="questCoins">{userQuest.coins}</p>
+                                                <p className="questCoins">{userQuest.coins.toLocaleString()}</p>
                                                 <img className="coins" src="../coin.png" alt="coin Happy Hub" />
                                                 <br />
                                             </div>
                                         </div>
                                         <div className="secondRow">
                                             <ProgressBar bgcolor={bgColor} completed={completedRounded} />
-                                            <input value="test" type="checkbox" onChange={handleChange} />                                               
+                                            <input value="test" type="checkbox" onChange={handleChange} />
                                         </div>
                                     </div>
                                 )

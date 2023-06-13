@@ -1,16 +1,17 @@
-.progressBar{
+.progressBar {
     margin-top: 10px;
     display: flex;
     height: 20px;
     width: 80%;
     background-color: #e9e8e8;
     border-radius: 50px;
-    
-    .completedBar{
+
+    .completedBar {
         height: 100%;
         border-radius: inherit;
         text-align: right;
-        .completedPart{
+
+        .completedPart {
             font-size: x-small;
             padding: 10px;
             color: #222831;
