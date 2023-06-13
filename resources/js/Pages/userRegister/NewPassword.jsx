@@ -28,6 +28,7 @@ const NewPassword = () => {
 
     return (
         <>
+            <HeaderDesktop />
             <Header />
             <div className="formContainer">
                 <form className="form" onSubmit={handleSubmit}>

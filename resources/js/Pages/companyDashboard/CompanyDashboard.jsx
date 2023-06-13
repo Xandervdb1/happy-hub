@@ -18,6 +18,7 @@ const AdminDashboard = (props) => {
 
     return (
         <>
+            <HeaderDesktop userCoins={userCoins} />
             <Header userCoins={userCoins} />
             <div className="adminDashboard">
                 <h1 className="titlePage">Company Dashboard</h1>

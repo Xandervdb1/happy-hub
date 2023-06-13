@@ -16,6 +16,7 @@ const AllQuests = (props) => {
 
     return (
         <>
+            <HeaderDesktop userCoins={userCoins} />
             <Header userCoins={userCoins} />
             <div className="QuestContainer">
                 <h1>QUESTS</h1>

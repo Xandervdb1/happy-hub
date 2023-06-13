@@ -54,6 +54,7 @@ const TeamMembers = (props) => {
             <Head>
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
             </Head>
+            <HeaderDesktop userCoins={userCoins} />
             <Header userCoins={userCoins} />
             <div className="titleWrapper">
                 <Link href='/company-dashboard'>

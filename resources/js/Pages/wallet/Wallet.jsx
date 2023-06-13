@@ -8,6 +8,7 @@ const Wallet = (props) => {
 
     return (
         <>
+            <HeaderDesktop userCoins={userCoins} />
             <Header userCoins={userCoins} />
             <div className="walletContainer">
                 <div className="titleBalance">

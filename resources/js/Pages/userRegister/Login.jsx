@@ -29,6 +29,7 @@ const Create = () => {
 
     return (
         <>
+            <HeaderDesktop />
             <Header />
             <div className="formContainer">
                 <form onSubmit={handleSubmit}>

@@ -8,7 +8,8 @@ const logs = (props) => {
     const logs = props.logs;
     return (
         <>
-            <Header />
+            <HeaderDesktop userCoins={userCoins} />
+            <Header userCoins={userCoins} />
             <h1 className="logTitle">Logs</h1>
             <div className="logContainer">
                 <div className="log">

@@ -12,6 +12,7 @@ const RewardsCollection = (props) => {
 
     return (
         <>
+            <HeaderDesktop userCoins={userCoins} />
             <Header userCoins={userCoins} />
             <div className='titleContainer'>
                 <p>REWARDS</p>

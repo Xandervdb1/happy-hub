@@ -23,6 +23,7 @@ const GenerateKey = () => {
     }
     return (
         <>
+            <HeaderDesktop />
             <Header />
             <div className="formContainer">
                 <div className="buttonContainer">
