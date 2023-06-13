@@ -1,6 +1,7 @@
 import { Link } from "@inertiajs/react";
-import Header from "@/Components/Header.jsx";
+import Header from "@/Components/HeaderMobile.jsx";
 import Carousel from "@/Components/WalletCarousel.jsx";
+import HeaderDesktop from "@/Components/HeaderDesktop.jsx";
 
 
 const UserDashboard = (props) => {
@@ -19,6 +20,7 @@ const UserDashboard = (props) => {
 
     return (
         <>
+            <HeaderDesktop userCoins={userCoins} />
             <Header userCoins={userCoins} />
             <div className="dashboardContainer">
                 <div className="progressCarrousel">

@@ -1,4 +1,4 @@
-import Header from "@/Components/Header.jsx"
+import Header from "@/Components/HeaderMobile.jsx"
 import { router, usePage } from '@inertiajs/react'
 import { useState } from 'react'
 import { Link } from "@inertiajs/react";
@@ -34,9 +34,9 @@ const NewPassword = () => {
 
                     <div className="inputField">
                         <input className="input" type="password" placeholder="New password" value={values.password} onChange={handleChange} name="password" id="password" required />
-                            <span className="error-message">{errors.password}</span> 
-                        <input className="input" type="password" placeholder="Confirm new password" value={values.password_confirmation} onChange={handleChange} name="newpassword" id="password_confirmation" required /> 
-                            <span className="error-message">{errors.password}</span>
+                        <span className="error-message">{errors.password}</span>
+                        <input className="input" type="password" placeholder="Confirm new password" value={values.password_confirmation} onChange={handleChange} name="newpassword" id="password_confirmation" required />
+                        <span className="error-message">{errors.password}</span>
                     </div>
                     <div className="buttonContainer">
                         <button className="button" type="submit">Confirm</button>

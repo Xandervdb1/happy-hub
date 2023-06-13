@@ -1,4 +1,4 @@
-import Header from "@/Components/Header";
+import Header from "@/Components/HeaderMobile";
 import '../../../css/userDashboard/allQuests/allQuests.css';
 import ProgressBar from "@/Components/ProgressBar";
 import { Link } from "@inertiajs/react";

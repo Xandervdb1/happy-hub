@@ -1,4 +1,4 @@
-import Header from "@/Components/Header.jsx";
+import Header from "@/Components/HeaderMobile.jsx";
 import { Head } from '@inertiajs/react';
 import '../../../css/teamMembers.css';
 import coin from '../../../../public/coin.png';
@@ -54,7 +54,7 @@ const TeamMembers = (props) => {
             <Head>
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
             </Head>
-            <Header userCoins = {userCoins}/>
+            <Header userCoins={userCoins} />
             <div className="titleWrapper">
                 <Link href='/company-dashboard'>
                     <span className="material-symbols-outlined" style={{ fontSize: '35px' }}> keyboard_backspace </span>

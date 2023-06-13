@@ -1,4 +1,4 @@
-import Header from "@/Components/Header.jsx"
+import Header from "@/Components/HeaderMobile.jsx"
 import { router, usePage } from '@inertiajs/react'
 import { useState } from 'react'
 import { Link } from "@inertiajs/react";
@@ -35,7 +35,7 @@ const Create = () => {
 
                     <div className="inputField">
                         <input className="input" type="email" placeholder="Email" value={values.email} onChange={handleChange} name="email" id="email" required />
-                        <span className="error-message">{errors.email}</span> 
+                        <span className="error-message">{errors.email}</span>
                         <input className="input" type="password" placeholder="Password" value={values.password} onChange={handleChange} name="password" id="password" required />
                         <span className="error-message">{errors.password}</span>
                     </div>

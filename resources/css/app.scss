@@ -99,3 +99,36 @@ nav ul li {
     margin: 2rem;
     font-size: 1.2rem;
 }
+
+// STYLING FOR SWITCH OF HEADERS
+#mobile {
+    display: block;
+
+    @media only screen and (min-width:796px) {
+        display: none;
+    }
+}
+
+#Desktop {
+    display: none;
+
+    @media only screen and (min-width:796px) {
+        display: block;
+    }
+
+    .navigation {
+        display: flex;
+        align-items: end;
+    }
+
+    .walletContainer {
+        margin-right: 20px;
+    }
+
+
+    .navLink {
+        color: #EEEEEE;
+        margin: 15px;
+        font-size: 20px;
+    }
+}

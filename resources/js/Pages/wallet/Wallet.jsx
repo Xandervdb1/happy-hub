@@ -1,4 +1,4 @@
-import Header from "@/Components/Header.jsx";
+import Header from "@/Components/HeaderMobile.jsx";
 
 const Wallet = (props) => {
     console.log(props.logs);

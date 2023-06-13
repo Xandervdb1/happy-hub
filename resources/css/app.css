@@ -82,4 +82,34 @@ nav ul li {
   text-align: center;
   margin: 2rem;
   font-size: 1.2rem;
+}
+
+#mobile {
+  display: block;
+}
+@media only screen and (min-width: 796px) {
+  #mobile {
+    display: none;
+  }
+}
+
+#Desktop {
+  display: none;
+}
+@media only screen and (min-width: 796px) {
+  #Desktop {
+    display: block;
+  }
+}
+#Desktop .navigation {
+  display: flex;
+  align-items: end;
+}
+#Desktop .walletContainer {
+  margin-right: 20px;
+}
+#Desktop .navLink {
+  color: #EEEEEE;
+  margin: 15px;
+  font-size: 20px;
 }/*# sourceMappingURL=app.css.map */

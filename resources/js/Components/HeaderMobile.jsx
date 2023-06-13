@@ -16,8 +16,8 @@ const Header = (props) => {
 
     return (
         <>
-            { isActive ? <Navigation /> : null }
-            <div className="HeaderContainer">
+            {isActive ? <Navigation /> : null}
+            <div className="HeaderContainer" id="mobile">
                 <header>
                     <div className="walletContainer">
                         <p className="wallet">{props.userCoins ? props.userCoins : 0}</p>
@@ -28,10 +28,12 @@ const Header = (props) => {
                         <div className="top-bun" ref={topBun} ></div>
                         <div className="burger" ref={burger} ></div>
                         <div className="bottom-bun" ref={bottomBun} ></div>
-                    </div>  
+                    </div>
                 </header>
             </div>
+
         </>
     )
+
 }
 export default Header;

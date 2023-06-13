@@ -1,4 +1,4 @@
-import Header from "@/Components/Header.jsx"
+import Header from "@/Components/HeaderMobile.jsx"
 import { Link } from "@inertiajs/react"
 import FormQuest from "@/Components/QuestForm.jsx"
 import FormReward from "@/Components/RewardForm.jsx"

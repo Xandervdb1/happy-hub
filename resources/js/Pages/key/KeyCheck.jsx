@@ -1,4 +1,4 @@
-import Header from "@/Components/Header.jsx";
+import Header from "@/Components/HeaderMobile.jsx";
 import { router } from '@inertiajs/react';
 import { useState } from 'react';
 import { Link } from "@inertiajs/react";
@@ -30,7 +30,7 @@ const KeyCheck = () => {
 
                 <form onSubmit={handleSubmit}>
 
-                    <input type="string" placeholder="Insert Key" className="input" value={values.name} onChange={handleChange} name="name" id="name"  />
+                    <input type="string" placeholder="Insert Key" className="input" value={values.name} onChange={handleChange} name="name" id="name" />
 
                     <div className="buttonContainer">
                         <button className="button">Add Company</button>

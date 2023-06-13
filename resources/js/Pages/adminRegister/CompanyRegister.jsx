@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { router } from '@inertiajs/react'
-import Header from '@/Components/Header'
+import Header from '@/Components/HeaderMobile'
 
 const CompanyRegister = () => {
 

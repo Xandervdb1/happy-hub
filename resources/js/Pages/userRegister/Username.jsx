@@ -1,4 +1,4 @@
-import Header from "@/Components/Header.jsx"
+import Header from "@/Components/HeaderMobile.jsx"
 import { router } from '@inertiajs/react'
 import { useState } from 'react'
 import { Link } from "@inertiajs/react";
