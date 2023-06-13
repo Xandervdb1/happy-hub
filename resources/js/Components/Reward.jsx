@@ -1,8 +1,9 @@
 import { Link } from "@inertiajs/react";
+
 const Reward = (props) => {
     const disabled = props.class;
     const reward = props.reward;
-    // console.log(props.auth);
+
     return (
         <>
             <Link as="button" method='post' id='reward' className={disabled ? 'reward disabled' : 'reward'} key={reward.name + reward.id}>
@@ -17,4 +18,5 @@ const Reward = (props) => {
         </>
     )
 }
+
 export default Reward;
