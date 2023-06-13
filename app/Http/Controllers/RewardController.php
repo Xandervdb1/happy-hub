@@ -19,15 +19,17 @@ class RewardController extends Controller
         $reward->price = $request->price;
         $reward->slug = Str::slug($request->slug, '-');
 
-        $reward->save();
-
         $user = Auth::user();
         if ($request->type === 'Personal') {
+            $reward->type = 'personal';
+            $reward->save();
             $companyMembers = $user->company->users;
             foreach ($companyMembers as $user) {
                 $user->rewards()->attach($reward->id);
             }
         } else if ($request->type === "Team") {
+            $reward->type = 'team';
+            $reward->save();
             $companyTeams = $user->company->teams;
             foreach ($companyTeams as $team) {
                 $team->rewards()->attach($reward->id);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Log;
+use App\Models\Reward;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
@@ -22,6 +23,27 @@ class LogController extends Controller
         $log->save();
     }
 
+    function claimReward(Request $request)
+    {
+        $reward = Reward::find($request->rewardId);
+        $user = Auth::user();
+        $team = $user->team;
+        if ($reward->type === 'personal') {
+            if ($user->coins > $reward->price) {
+                $user->coins = $user->coins - $reward->price;
+                $user->save();
+            }
+        } else if ($reward->type === 'team') {
+            if ($team->coins > $reward->price) {
+                $team->coins = $team->coins - $reward->price;
+                $team->save();
+            }
+        }
+
+        // $log = new Log;
+    }
+
+    //NOT USED???????????????
     function showAll()
     {
         // Get the currently logged-in user
