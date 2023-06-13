@@ -16,14 +16,51 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.form .inputField .input {
-  margin: auto;
-  width: 244px;
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
 }
-.form .inputField .error-message {
+.formContainer form {
+  margin: auto;
+}
+.formContainer form .inputField {
+  display: flex;
+  flex-direction: column;
+}
+.formContainer form .inputField .input {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  border-radius: 5px;
+  height: auto;
+  margin-bottom: 10px;
+  width: 244px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9em;
+}
+.formContainer form .inputField span.error-message {
   padding-left: 5px;
   font-size: 12px;
   color: red;
+  text-align: center;
+}
+.formContainer form .buttonContainer {
+  text-align: center;
+}
+.formContainer form .buttonContainer .button {
+  background-color: #393E46;
+  border: none;
+  color: #FFCD29;
+  width: 130px;
+  height: 55px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  margin: auto;
+  margin-top: 30px;
 }
 
 p.click-here {

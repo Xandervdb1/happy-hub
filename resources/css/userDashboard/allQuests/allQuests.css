@@ -65,6 +65,7 @@
   justify-content: space-between;
   display: flex;
   flex-direction: row;
+  align-content: center;
 }
 .QuestContainer div.personalQuestsContainer .personalQuests .personalQuest div.secondRow .checkbox,
 .QuestContainer div.personalQuestsContainer .personalQuests .teamQuest div.secondRow .checkbox,

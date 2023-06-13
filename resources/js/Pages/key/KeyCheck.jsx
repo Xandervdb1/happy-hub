@@ -1,9 +1,11 @@
 import Header from "@/Components/Header.jsx";
-import { router } from '@inertiajs/react';
+import { router, usePage } from '@inertiajs/react';
 import { useState } from 'react';
 import { Link } from "@inertiajs/react";
 
 const KeyCheck = () => {
+
+    const { errors } = usePage().props
 
     const [values, setValues] = useState({
         name: '',
@@ -27,18 +29,18 @@ const KeyCheck = () => {
         <>
             <Header />
             <div className="formContainer">
-
                 <form onSubmit={handleSubmit}>
-
-                    <input type="string" placeholder="Insert Key" className="input" value={values.name} onChange={handleChange} name="name" id="name"  />
-
+                    <div className="inputField"> 
+                        <input type="string" placeholder="Insert Key" className="input" value={values.name} onChange={handleChange} name="name" id="name"  />
+                        <span className="error-message">{errors.name}</span> 
+                    </div>
                     <div className="buttonContainer">
                         <button className="button">Add Company</button>
                     </div>
-
                 </form>
-                <p>Already have an account?</p>
-                <Link href="/login">Login</Link>
+
+                <p className="click-here">Already have an account?</p>
+                <Link href="/login" className="link-click-here">Login</Link>
             </div>
         </>
 
