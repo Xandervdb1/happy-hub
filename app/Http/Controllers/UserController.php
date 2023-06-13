@@ -78,8 +78,8 @@ class UserController extends Controller
     function setUsername(Request $request)
     {
         $attributes = request()->validate([
-            'name' => 'required|min:5|max:255',
-            'birthday' => 'required|max:255',
+            'name' => 'required|min:3|max:255',
+            'birthday' => 'required|date_format:Y-m-d|before:today',
         ]);
 
         $loggedInUser = Auth::user();

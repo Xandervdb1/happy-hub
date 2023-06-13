@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CompanyRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Team;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class CompanyController extends Controller
@@ -16,12 +17,8 @@ class CompanyController extends Controller
 
     public function storeCompany(CompanyRequest $request)
     {
-        $role = new Role;
-        $role->name = $request->input('function');
-        $role->save();
 
         $user = Auth::user();
-        $user->role_id = $role->id;
 
         $company = new Company;
         $company->name = $request->input('companyname');
@@ -34,9 +31,20 @@ class CompanyController extends Controller
 
         $company->save();
 
-        $userId = Auth::user()->id;
-        $user = User::find($userId);
+        $role = new Role;
+        $role->name = $request->input('function');
+        $role->company_id = $company->id;
+        $role->save();
+
+        $team = new Team;
+        $team->name = "Admins";
+        $team->coins = 0;
+        $team->company_id = $company->id;
+        $team->save();
+
+        $user->role_id = $role->id;
         $user->company_id = $company->id;
+        $user->team_id = $team->id;
         $user->save();
 
         return to_route('companydashboard');

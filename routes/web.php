@@ -101,3 +101,5 @@ Route::post('/username', [UserController::class, 'setUsername']);
 Route::post('/login', [SessionController::class, 'store']);
 
 Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth');
+
+Route::post('/claim-reward', [LogController::class, 'claimReward']);
