@@ -127,6 +127,8 @@ class UserController extends Controller
         $userCoins = $user->coins;
         $teamCoins = $user->team->coins;
         $userLogs = $user->logs;
+        $teamLogs = $user->team->logs;
+        $userLogs = $userLogs->toBase()->merge($teamLogs);
         $infoUserLogs = [];
         foreach ($userLogs as $log) {
             $infoUserLog = array(
