@@ -1,91 +1,107 @@
-.QuestContainer h1 {
+h1 {
   text-align: center;
   margin: 20px;
   font-size: x-large;
 }
-.QuestContainer div.personalQuestsContainer,
+
+.QuestContainer .personalQuestsContainer,
 .QuestContainer .teamQuestsContainer {
   margin-bottom: 20px;
+  width: 100%;
 }
-.QuestContainer div.personalQuestsContainer .title,
+.QuestContainer .personalQuestsContainer .title,
 .QuestContainer .teamQuestsContainer .title {
   text-decoration: underline;
   background-color: #D9D9D9;
+  margin: 0 15px;
 }
-.QuestContainer div.personalQuestsContainer .personalQuests,
-.QuestContainer div.personalQuestsContainer .teamQuests,
+.QuestContainer .personalQuestsContainer .personalQuests,
+.QuestContainer .personalQuestsContainer .teamQuests,
 .QuestContainer .teamQuestsContainer .personalQuests,
 .QuestContainer .teamQuestsContainer .teamQuests {
   background-color: #D9D9D9;
+  margin: 0 15px;
 }
-.QuestContainer div.personalQuestsContainer .personalQuests .personalQuest,
-.QuestContainer div.personalQuestsContainer .personalQuests .teamQuest,
-.QuestContainer div.personalQuestsContainer .teamQuests .personalQuest,
-.QuestContainer div.personalQuestsContainer .teamQuests .teamQuest,
+.QuestContainer .personalQuestsContainer .personalQuests .personalQuest,
+.QuestContainer .personalQuestsContainer .personalQuests .teamQuest,
+.QuestContainer .personalQuestsContainer .teamQuests .personalQuest,
+.QuestContainer .personalQuestsContainer .teamQuests .teamQuest,
 .QuestContainer .teamQuestsContainer .personalQuests .personalQuest,
 .QuestContainer .teamQuestsContainer .personalQuests .teamQuest,
 .QuestContainer .teamQuestsContainer .teamQuests .personalQuest,
 .QuestContainer .teamQuestsContainer .teamQuests .teamQuest {
   display: flex;
   flex-direction: column;
-  width: 100vw;
   padding: 15px 25px;
 }
-.QuestContainer div.personalQuestsContainer .personalQuests .personalQuest div.firstRow,
-.QuestContainer div.personalQuestsContainer .personalQuests .teamQuest div.firstRow,
-.QuestContainer div.personalQuestsContainer .teamQuests .personalQuest div.firstRow,
-.QuestContainer div.personalQuestsContainer .teamQuests .teamQuest div.firstRow,
-.QuestContainer .teamQuestsContainer .personalQuests .personalQuest div.firstRow,
-.QuestContainer .teamQuestsContainer .personalQuests .teamQuest div.firstRow,
-.QuestContainer .teamQuestsContainer .teamQuests .personalQuest div.firstRow,
-.QuestContainer .teamQuestsContainer .teamQuests .teamQuest div.firstRow {
+.QuestContainer .personalQuestsContainer .personalQuests .personalQuest .firstRow,
+.QuestContainer .personalQuestsContainer .personalQuests .teamQuest .firstRow,
+.QuestContainer .personalQuestsContainer .teamQuests .personalQuest .firstRow,
+.QuestContainer .personalQuestsContainer .teamQuests .teamQuest .firstRow,
+.QuestContainer .teamQuestsContainer .personalQuests .personalQuest .firstRow,
+.QuestContainer .teamQuestsContainer .personalQuests .teamQuest .firstRow,
+.QuestContainer .teamQuestsContainer .teamQuests .personalQuest .firstRow,
+.QuestContainer .teamQuestsContainer .teamQuests .teamQuest .firstRow {
   justify-content: space-between;
   display: flex;
   flex-direction: row;
 }
-.QuestContainer div.personalQuestsContainer .personalQuests .personalQuest div.firstRow .column,
-.QuestContainer div.personalQuestsContainer .personalQuests .teamQuest div.firstRow .column,
-.QuestContainer div.personalQuestsContainer .teamQuests .personalQuest div.firstRow .column,
-.QuestContainer div.personalQuestsContainer .teamQuests .teamQuest div.firstRow .column,
-.QuestContainer .teamQuestsContainer .personalQuests .personalQuest div.firstRow .column,
-.QuestContainer .teamQuestsContainer .personalQuests .teamQuest div.firstRow .column,
-.QuestContainer .teamQuestsContainer .teamQuests .personalQuest div.firstRow .column,
-.QuestContainer .teamQuestsContainer .teamQuests .teamQuest div.firstRow .column {
+.QuestContainer .personalQuestsContainer .personalQuests .personalQuest .firstRow .column,
+.QuestContainer .personalQuestsContainer .personalQuests .teamQuest .firstRow .column,
+.QuestContainer .personalQuestsContainer .teamQuests .personalQuest .firstRow .column,
+.QuestContainer .personalQuestsContainer .teamQuests .teamQuest .firstRow .column,
+.QuestContainer .teamQuestsContainer .personalQuests .personalQuest .firstRow .column,
+.QuestContainer .teamQuestsContainer .personalQuests .teamQuest .firstRow .column,
+.QuestContainer .teamQuestsContainer .teamQuests .personalQuest .firstRow .column,
+.QuestContainer .teamQuestsContainer .teamQuests .teamQuest .firstRow .column {
   display: flex;
   flex-direction: row;
 }
-.QuestContainer div.personalQuestsContainer .personalQuests .personalQuest div.secondRow,
-.QuestContainer div.personalQuestsContainer .personalQuests .teamQuest div.secondRow,
-.QuestContainer div.personalQuestsContainer .teamQuests .personalQuest div.secondRow,
-.QuestContainer div.personalQuestsContainer .teamQuests .teamQuest div.secondRow,
-.QuestContainer .teamQuestsContainer .personalQuests .personalQuest div.secondRow,
-.QuestContainer .teamQuestsContainer .personalQuests .teamQuest div.secondRow,
-.QuestContainer .teamQuestsContainer .teamQuests .personalQuest div.secondRow,
-.QuestContainer .teamQuestsContainer .teamQuests .teamQuest div.secondRow {
+.QuestContainer .personalQuestsContainer .personalQuests .personalQuest .secondRow,
+.QuestContainer .personalQuestsContainer .personalQuests .teamQuest .secondRow,
+.QuestContainer .personalQuestsContainer .teamQuests .personalQuest .secondRow,
+.QuestContainer .personalQuestsContainer .teamQuests .teamQuest .secondRow,
+.QuestContainer .teamQuestsContainer .personalQuests .personalQuest .secondRow,
+.QuestContainer .teamQuestsContainer .personalQuests .teamQuest .secondRow,
+.QuestContainer .teamQuestsContainer .teamQuests .personalQuest .secondRow,
+.QuestContainer .teamQuestsContainer .teamQuests .teamQuest .secondRow {
   justify-content: space-between;
   display: flex;
   flex-direction: row;
 }
-.QuestContainer div.personalQuestsContainer .personalQuests .personalQuest div.secondRow .checkbox,
-.QuestContainer div.personalQuestsContainer .personalQuests .teamQuest div.secondRow .checkbox,
-.QuestContainer div.personalQuestsContainer .teamQuests .personalQuest div.secondRow .checkbox,
-.QuestContainer div.personalQuestsContainer .teamQuests .teamQuest div.secondRow .checkbox,
-.QuestContainer .teamQuestsContainer .personalQuests .personalQuest div.secondRow .checkbox,
-.QuestContainer .teamQuestsContainer .personalQuests .teamQuest div.secondRow .checkbox,
-.QuestContainer .teamQuestsContainer .teamQuests .personalQuest div.secondRow .checkbox,
-.QuestContainer .teamQuestsContainer .teamQuests .teamQuest div.secondRow .checkbox {
-  margin-top: 10px;
-  padding-right: 10px;
+.QuestContainer .personalQuestsContainer .personalQuests .personalQuest .secondRow input,
+.QuestContainer .personalQuestsContainer .personalQuests .teamQuest .secondRow input,
+.QuestContainer .personalQuestsContainer .teamQuests .personalQuest .secondRow input,
+.QuestContainer .personalQuestsContainer .teamQuests .teamQuest .secondRow input,
+.QuestContainer .teamQuestsContainer .personalQuests .personalQuest .secondRow input,
+.QuestContainer .teamQuestsContainer .personalQuests .teamQuest .secondRow input,
+.QuestContainer .teamQuestsContainer .teamQuests .personalQuest .secondRow input,
+.QuestContainer .teamQuestsContainer .teamQuests .teamQuest .secondRow input {
+  align-self: center;
 }
 
 .goBackButton {
-  font-size: 20px;
-  border: 1px solid #222831;
+  display: block;
+  font-size: 1.3rem;
   border-radius: 10px;
   background-color: #222831;
   color: #FFCD29;
   width: 120px;
   padding: 5px;
   text-align: center;
-  justify-self: center;
+  margin: 20px auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .QuestContainer {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .personalQuestsContainer {
+    margin-left: 30px;
+  }
+  .teamQuestsContainer {
+    margin-right: 30px;
+  }
 }/*# sourceMappingURL=allQuests.css.map */
