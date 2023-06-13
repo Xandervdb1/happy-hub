@@ -91,8 +91,7 @@ class UserController extends Controller
     }
     function showUserDashboard()
     {
-        $userId = Auth::id();
-        $user = User::find($userId);
+        $user = Auth::user();
         $team = $user->team;
         $userCoins = $user->coins;
         $teamCoins = $user->team->coins;

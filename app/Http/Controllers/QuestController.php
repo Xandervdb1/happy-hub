@@ -72,8 +72,7 @@ class QuestController extends Controller
 
     function showAllQuests()
     {
-        $userId = Auth::id();
-        $user = User::find($userId);
+        $user = Auth::user();
 
         $userQuests = $user->quests;
         $userCoins = $user->coins;

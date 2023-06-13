@@ -39,8 +39,7 @@ class RewardController extends Controller
 
     function showAllRewards()
     {
-        $userId = Auth::id();
-        $user = User::find($userId);
+        $user = Auth::user();
         $userRewards = $user->rewards;
         $userCoins = $user->coins;
         $teamCoins = $user->team->coins;
