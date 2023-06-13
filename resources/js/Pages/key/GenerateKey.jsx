@@ -1,5 +1,6 @@
 import Nav from "@/Components/NavComponent.jsx"
 import Header from "@/Components/HeaderMobile.jsx"
+import HeaderDesktop from "@/Components/HeaderDesktop.jsx"
 import { useState } from "react";
 import { router } from "@inertiajs/react";
 

@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "@/Components/HeaderMobile.jsx";
+import HeaderDesktop from "@/Components/HeaderDesktop.jsx"
 import { Link } from "@inertiajs/react";
 import '../../css/companyDashboard.css'
 

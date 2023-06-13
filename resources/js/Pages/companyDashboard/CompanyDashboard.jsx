@@ -1,4 +1,5 @@
 import Header from "@/Components/HeaderMobile.jsx"
+import HeaderDesktop from "@/Components/HeaderDesktop.jsx"
 import { Link } from "@inertiajs/react"
 import FormQuest from "@/Components/QuestForm.jsx"
 import FormReward from "@/Components/RewardForm.jsx"
