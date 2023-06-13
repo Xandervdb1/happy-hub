@@ -3,11 +3,8 @@ import HeaderDesktop from "@/Components/HeaderDesktop.jsx"
 import '../../../css/userDashboard/allQuests/allQuests.css';
 import ProgressBar from "@/Components/ProgressBar";
 import { Link } from "@inertiajs/react";
-import { round } from "lodash";
-import { useState } from "react";
 
 const AllQuests = (props) => {
-
     const { userQuests, teamQuests, userCoins, teamCoins } = props;
     const bgColor = '#DFB444';
 
@@ -19,9 +16,8 @@ const AllQuests = (props) => {
         <>
             <HeaderDesktop userCoins={userCoins} />
             <Header userCoins={userCoins} />
+            <h1>QUESTS</h1>
             <div className="QuestContainer">
-                <h1>QUESTS</h1>
-
                 <div className="personalQuestsContainer" id='1'>
                     <p className='title'>Personal Quests</p>
                     <div className="personalQuests">
@@ -49,13 +45,12 @@ const AllQuests = (props) => {
                         }
                     </div>
                 </div>
-
                 <div className="teamQuestsContainer" id='2'>
                     <p className="title">Your team quests</p>
                     <div className="teamQuests">
                         {
                             teamQuests.map((teamQuest) => {
-                                const completed = (parseInt(teamCoins) / parseInt(teamQuest.coins)) * 100;
+                                const completed = Math.min((parseInt(teamCoins) / parseInt(teamQuest.coins)) * 100, 100);
                                 const completedRounded = Math.round(completed);
                                 return (
                                     <div className="teamQuest" key={teamQuest.id}>
@@ -71,17 +66,12 @@ const AllQuests = (props) => {
 
                                     </div>
                                 )
-
                             })
-
                         }
-
                     </div>
-
                 </div>
-                <Link href='/user-dashboard' className="goBackButton">Go back</Link>
             </div>
-
+            <Link href='/user-dashboard' className="goBackButton">Go back</Link>
         </>
     )
 }

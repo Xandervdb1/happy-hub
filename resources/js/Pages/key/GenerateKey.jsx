@@ -2,9 +2,12 @@ import Nav from "@/Components/NavComponent.jsx"
 import Header from "@/Components/HeaderMobile.jsx"
 import HeaderDesktop from "@/Components/HeaderDesktop.jsx"
 import { useState } from "react";
-import { router } from "@inertiajs/react";
+import { router, usePage } from "@inertiajs/react";
 
 const GenerateKey = () => {
+
+    const { errors } = usePage().props
+ 
     const [values, setValues] = useState({
         email: '',
     })
@@ -27,12 +30,15 @@ const GenerateKey = () => {
             <HeaderDesktop />
             <Header />
             <div className="formContainer">
-                <div className="buttonContainer">
                     <form onSubmit={handleSubmit}>
-                        <input type="text" name="email" id="email" placeholder="Email" onChange={handleChange} />
-                        <button type="submit" className="button">Generate Key</button>
+                        <div className="inputField">    
+                            <input className="input" type="email" name="email" id="email" placeholder="Email" onChange={handleChange} />
+                            <span className="error-message">{errors.email}</span> 
+                        </div>
+                        <div className="buttonContainer">
+                                <button type="submit" className="button">Generate Key</button>
+                        </div>
                     </form>
-                </div>
             </div>
         </>
     )

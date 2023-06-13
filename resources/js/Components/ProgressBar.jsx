@@ -2,11 +2,11 @@ import '../../css/userDashboard/progressBar/progressBar.css';
 
 const ProgressBar = (props) => {
     const { bgcolor, completed } = props;
-   
-const fillerStyles = {
-    width: `${completed}%`,
-    backgroundColor: bgcolor,
-}
+
+    const fillerStyles = {
+        width: `${completed}%`,
+        backgroundColor: bgcolor,
+    }
     return (
         <div className="progressBar">
             <div style={fillerStyles} className="completedBar">

@@ -20,4 +20,5 @@ const Reward = (localProps) => {
         </>
     )
 }
+
 export default Reward;

@@ -10,11 +10,13 @@
         height: 100%;
         border-radius: inherit;
         text-align: right;
+        display: flex;
+        justify-content: center;
 
         .completedPart {
-            font-size: x-small;
-            padding: 10px;
-            color: #222831;
+            font-size: 0.8rem;
+            padding-left: 15px;
+            align-self: center;
         }
     }
 }
