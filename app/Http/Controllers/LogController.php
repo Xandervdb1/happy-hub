@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Log;
+use App\Models\Quest;
 use App\Models\Reward;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -43,6 +44,11 @@ class LogController extends Controller
             if ($team->coins > $reward->price) {
                 $team->coins = $team->coins - $reward->price;
                 $team->save();
+
+                $log->team_id = $team->id;
+                $log->reward_id = $reward->id;
+                $log->company_id = $user->company->id;
+                $log->save();
             }
         }
     }
@@ -64,6 +70,26 @@ class LogController extends Controller
 
     function finishQuest(Request $request)
     {
-        dd($request);
+        $quest = Quest::find($request->questId);
+        $user = Auth::user();
+        $log = new Log;
+        $team = $user->team;
+        if ($quest->type === 'personal') {
+            $user->coins = $user->coins + $quest->coins;
+            $user->save();
+
+            $log->user_id = $user->id;
+            $log->quest_id = $quest->id;
+            $log->company_id = $user->company->id;
+            $log->save();
+        } else if ($quest->type === 'team') {
+            $team->coins = $team->coins + $quest->coins;
+            $team->save();
+
+            $log->team_id = $team->id;
+            $log->quest_id = $quest->id;
+            $log->company_id = $user->company->id;
+            $log->save();
+        }
     }
 }

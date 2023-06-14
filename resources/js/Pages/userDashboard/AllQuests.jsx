@@ -37,7 +37,7 @@ const AllQuests = (props) => {
                                         </div>
                                         <div className="secondRow">
                                             <ProgressBar bgcolor={bgColor} completed={completedRounded} />
-                                            <Link as="button" method="post" href="/finish-quest">Complete quest</Link>
+                                            <Link as="button" method="post" href="/finish-quest" data={{ userId: props.auth.user.id, questId: userQuest.id }}>Complete quest</Link>
                                         </div>
                                     </div>
                                 )
@@ -63,7 +63,7 @@ const AllQuests = (props) => {
                                             </div>
                                         </div>
                                         <ProgressBar bgcolor={bgColor} completed={completedRounded} />
-
+                                        <Link as="button" method="post" href="/finish-quest" data={{ userId: props.auth.user.id, questId: teamQuest.id }}>Complete quest</Link>
                                     </div>
                                 )
                             })

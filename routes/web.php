@@ -103,3 +103,4 @@ Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth');
 
 Route::post('/claim-reward', [LogController::class, 'claimReward']);
+Route::post('/finish-quest', [LogController::class, 'finishQuest']);
