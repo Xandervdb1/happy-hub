@@ -11,16 +11,17 @@ $container-bg: #D9D9D9;
 }
 
 .rewardsContainerWrap {
-
-    .rewardsContainer {
-    text-align: center;
-    width: 90%;
-    font-weight: bold;
-    margin: 0.5rem auto 3rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1rem;
+
+    .rewardsContainer {
+        text-align: center;
+        width: 90%;
+        font-weight: bold;
+        margin: 0.5rem auto 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
 
         .title {
             display: block;
@@ -31,6 +32,7 @@ $container-bg: #D9D9D9;
         .subTitle {
             width: 100%;
             margin-top: 1rem;
+            margin-bottom: 1rem;
         }
 
         .subTitle::after {
@@ -43,54 +45,89 @@ $container-bg: #D9D9D9;
             width: 40%;
             border-bottom: 1px solid black;
         }
-    }
-}
 
-.reward {
-    background-color: #D9D9D9;
-    text-align: center;
-    border: 1px solid black;
-    height: 55px;
-    width: 80px;
-    display: grid;
-    place-items: center;
-    grid-row: 2;
-    grid-column: 1;
-    margin-top: 5px;
-    border-radius: 7px;
-    cursor: pointer;
+        .personalRewards,
+        .teamRewards,
+        .disabledPersonalRewards,
+        .disabledTeamRewards {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
 
-    .activity {
-        font-size: 14px;
-        font-weight: 500;
-    }
+        .disabledRewards {
+            margin: auto;
 
-    .priceContainer {
-        width: 100%;
-        display: flex;
-        gap: 0.25rem;
-        margin: auto;
+            >:nth-child(2) {
+                margin-top: 16px;
+            }
+        }
 
-        p {
-            padding-top: 2px;
+        .reward {
+            background-color: #D9D9D9;
+            text-align: center;
+            border: 1px solid black;
+            height: 55px;
+            width: 80px;
+            display: grid;
+            place-items: center;
+            grid-row: 2;
+            grid-column: 1;
+            margin-top: 5px;
+            border-radius: 7px;
+            cursor: pointer;
+
+            .activity {
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            .priceContainer {
+                width: 100%;
+                display: flex;
+                gap: 0.25rem;
+                margin: auto;
+
+                p {
+                    padding-top: 2px;
+                }
+            }
+        }
+
+        .disabled {
+            filter: grayscale(100%);
+        }
+
+        .reward:hover {
+            border: 3px outset black;
+        }
+
+        .disabled:hover {
+            border: 1px solid black;
         }
     }
 }
 
-.disabled {
-    filter: grayscale(100%);
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-.reward:hover {
-    border: 3px outset black;
-}
-
-.disabled:hover {
-    border: 1px solid black;
-}
-
 @media screen and (min-width: 768px) {
-    
+    .rewardsContainerWrap {
+        .rewardsContainer {
+            max-width: 40%;
+
+            .disabledRewards {
+                width: 100%;
+                display: flex;
+
+                >:nth-child(2) {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        >:nth-child(3) {
+            min-width: 90%;
+            margin-top: 100px;
+            flex-direction: row;
+        }
+    }
 }
