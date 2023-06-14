@@ -1,7 +1,7 @@
 import Header from "@/Components/HeaderMobile.jsx";
 import HeaderDesktop from "@/Components/HeaderDesktop.jsx"
 import { Head } from '@inertiajs/react';
-import '../../../css/teamMembers.css';
+// import '../../../css/companyMembers/companyMembers.css';
 import coin from '../../../../public/coin.png';
 import { Link } from "@inertiajs/react";
 

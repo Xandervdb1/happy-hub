@@ -5,6 +5,7 @@ import FormQuest from "@/Components/QuestForm.jsx"
 import FormReward from "@/Components/RewardForm.jsx"
 import MemberForm from "@/Components/MemberForm.jsx"
 import FormTeam from "@/Components/TeamForm.jsx"
+import TeamForm from "@/Components/TeamForm.jsx"
 
 const AdminDashboard = (props) => {
 
@@ -26,53 +27,49 @@ const AdminDashboard = (props) => {
                 <div className="adminDashboard">
                     <h1 className="titlePage">Company Dashboard</h1>
 
-                    <div className="teamContainer">
-                        <h1 className="titleDashboard"> Add Team</h1>
-
-                        <FormTeam />
-
-                        <p className="titleTable" id="name">name</p>
-                        <p className="titleTable" id="member">members</p>
-                        <div className="teams">
-                            {
-                                teams.map(team => (
-                                    <>
-                                        <div className="team"
-                                            key={teams.id}>
-                                            <p>{team.name}</p>
-                                        </div>
-                                    </>
-                                ))
-                            }
-                        </div>
-
-                        <div className="members">
-                            {
-                                teamMembers.map(teamMember => (
-                                    <>
-                                        <div className="listItem" key={teamMember.id}>
-                                            <p>{teamMember.length}</p>
-                                        </div>
-                                    </>
-                                ))
-                            }
-                        </div>
+                <div className="teamContainer">
+                    <h1 className="titleDashboard"> Add Team</h1>
+                    <TeamForm />
+                    <p className="titleTable" id="name">name</p>
+                    <p className="titleTable" id="member">members</p>
+                    
+                    <div className="teams">
+                        {
+                            teams.map(team => (
+                                <>
+                                    <div className="team"
+                                        key={teams.id}>
+                                        <p>{team.name}</p>
+                                    </div>
+                                </>
+                            ))
+                        }
                     </div>
 
-                    <div className="quest">
-                        <h1 className="titleDashboard">Add Quest</h1>
-                        <FormQuest />
-
+                    <div className="members">
+                        {
+                            teamMembers.map(teamMember => (
+                                <>
+                                    <div className="listItem" key={teamMember.id}>
+                                        <p>{teamMember.length}</p>
+                                    </div>
+                                </>
+                            ))
+                        }
                     </div>
-                    <Link className="linkAll" href="/all-quests"> &gt;&gt; See all</Link>
+                </div>
 
-                    <div className="member">
-                        <h1 className="titleDashboard">Add Member</h1>
-
-                        <MemberForm teams={props.teams} roles={props.roles} />
-                    </div>
-
-                    <Link className="linkAll" href="#"> &gt;&gt; See all</Link>
+                <div className="memberCompany">
+                    <h1 className="titleDashboard">Add Member</h1>
+                    <MemberForm teams={props.teams} roles={props.roles} />
+                </div>
+                <Link className="linkAll" href="#"> &gt;&gt; See all</Link>
+                
+                <div className="quest">
+                    <h1 className="titleDashboard">Add Quest</h1>
+                    <FormQuest />
+                </div>
+                <Link className="linkAll" href="/all-quests"> &gt;&gt; See all</Link>
 
                     <div className="rewardCompany">
                         <h1 className="titleDashboard">Add Reward</h1>
