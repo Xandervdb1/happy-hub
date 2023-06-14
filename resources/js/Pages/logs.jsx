@@ -8,7 +8,6 @@ const logs = (props) => {
     const userCoins = props.auth.user.coins;
     console.log(props.logs)
     const logs = props.logs;
-    const userCoins = props.auth.user.coins
     return (
         <>
             <HeaderDesktop userCoins={userCoins} />
