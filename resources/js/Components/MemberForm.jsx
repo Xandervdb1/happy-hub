@@ -6,6 +6,7 @@ const FormMember = (props) => {
 
     const { errors } = usePage().props
 
+
     const [values, setValues] = useState({
         firstname: '',
         lastname: '',
@@ -14,6 +15,7 @@ const FormMember = (props) => {
         function: '',
         adminCheck: false
     })
+
     const handleChange = (e) => {
         const key = e.target.id;
         let value;
@@ -29,9 +31,17 @@ const FormMember = (props) => {
         }))
         console.log(values);
     }
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        closeModal(e);
+        setValues({
+            firstname: '',
+            lastname: '',
+            email: '',
+            team: '',
+            function: '',
+            adminCheck: false
+        });
         router.post('/company-dashboard-user', values)
     }
 

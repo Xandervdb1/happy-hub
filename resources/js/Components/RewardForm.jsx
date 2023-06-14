@@ -24,7 +24,12 @@ const FormReward = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        closeModal(e);
+        setValues({
+            name: '',
+            slug: '',
+            price: '',
+            type: '',
+        })
         router.post('/company-dashboard-reward', values)
     }
     const showModal = (e) => {
