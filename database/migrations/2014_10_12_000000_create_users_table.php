@@ -28,6 +28,7 @@ return new class extends Migration
             $table->foreignId('company_id')->nullable();
             $table->foreignId('role_id')->nullable();
             $table->boolean('is_admin');
+            $table->boolean('key_check')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });
