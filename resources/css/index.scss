@@ -30,12 +30,39 @@ body {
 //         }
 //     }
 // }
+.backgroundImage {
+    position: relative;
+    height: calc(100vh - 100px);
+    width: 100vw;
+    overflow: hidden;
+}
+
+.backgroundImage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../teamwork2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.backgroundImage .contentContainer {
+    position: relative;
+    z-index: 1;
+}
+
 .formContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
 
     form {
         margin: auto;
@@ -54,6 +81,7 @@ body {
                 width: 244px;
                 padding: 0.5rem 1rem;
                 font-size: 0.9em;
+                border: 2px solid #222831;
             }
 
             span.error-message {
@@ -115,37 +143,98 @@ p.click-here {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
 
-    .LogoContainer {
-        background-color: #222831;
-        grid-row: 1/8;
-        grid-column: 1/13;
+}
 
-        .logo {
-            width: 100%;
+.LogoContainer {
+    background-color: #222831;
+    grid-row: 1/8;
+    grid-column: 1/8;
+
+
+    .logo {
+        width: 100%;
+    }
+}
+
+.buttonLogin {
+    grid-row: 10/12;
+    grid-column: 4/7;
+    margin: 3px;
+    background-color: #393E46;
+    border: none;
+    color: #FFCD29;
+    width: 100px;
+    height: 55px;
+    border-radius: 10px;
+}
+
+.buttonBuyProduct {
+    grid-row: 10/12;
+    grid-column: 7/10;
+    margin: 3px;
+    background-color: #393E46;
+    border: none;
+    color: #FFCD29;
+    width: 100px;
+    height: 55px;
+    border-radius: 10px;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .Container {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        height: 100vh;
+        width: 100vw;
+
+        .LogoContainer {
+            grid-row: 1/8;
+            grid-column: 1/5;
+            width: 40vw;
+            height: 100vh;
+
+            .logo {
+                width: 100%;
+                height: 100vh;
+            }
         }
+
+        .buttonLogin {
+            grid-column: 8/9;
+            grid-row: 4/5;
+            width: 150px;
+            height: 80px;
+            font-size: 20px;
+            z-index: 1;
+            margin: 10px;
+        }
+
+        .buttonBuyProduct {
+            grid-column: 9/11;
+            grid-row: 4/5;
+            width: 150px;
+            height: 80px;
+            font-size: 20px;
+            z-index: 1;
+            margin: 10px;
+        }
+
     }
 
-    .buttonLogin {
-        grid-row: 10/12;
-        grid-column: 4/7;
-        margin: 3px;
-        background-color: #393E46;
-        border: none;
-        color: #FFCD29;
-        width: 100px;
-        height: 55px;
-        border-radius: 10px;
-    }
-
-    .buttonBuyProduct {
-        grid-row: 10/12;
-        grid-column: 7/10;
-        margin: 3px;
-        background-color: #393E46;
-        border: none;
-        color: #FFCD29;
-        width: 100px;
-        height: 55px;
-        border-radius: 10px;
+    .imageIndex {
+        width: 70vw;
+        height: 100vh;
+        grid-row: 1/8;
+        grid-column: 5/13;
+        opacity: .6;
+        z-index: 0;
+        // filter: blur(5px);
     }
 }

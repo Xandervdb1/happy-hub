@@ -30,19 +30,24 @@ const KeyCheck = () => {
         <>
             <HeaderDesktop />
             <Header />
-            <div className="formContainer">
-                <form onSubmit={handleSubmit}>
-                    <div className="inputField"> 
-                        <input type="string" placeholder="Insert Key" className="input" value={values.name} onChange={handleChange} name="name" id="name"  />
-                        <span className="error-message">{errors.name}</span> 
-                    </div>
-                    <div className="buttonContainer">
-                        <button className="button">Add Company</button>
-                    </div>
-                </form>
+            <div
+                className="backgroundImage"
+                style={{ backgroundImage: "url('../teamwork3.jpg')" }}
+            >
+                <div className="formContainer">
+                    <form onSubmit={handleSubmit}>
+                        <div className="inputField">
+                            <input type="string" placeholder="Insert Key" className="input" value={values.name} onChange={handleChange} name="name" id="name" />
+                            <span className="error-message">{errors.name}</span>
+                        </div>
+                        <div className="buttonContainer">
+                            <button className="button">Add Company</button>
+                        </div>
+                    </form>
 
-                <p className="click-here">Already have an account?</p>
-                <Link href="/login" className="link-click-here">Login</Link>
+                    <p className="click-here">Already have an account?</p>
+                    <Link href="/login" className="link-click-here">Login</Link>
+                </div>
             </div>
         </>
 

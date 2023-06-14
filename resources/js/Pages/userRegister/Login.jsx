@@ -32,23 +32,29 @@ const Create = () => {
         <>
             <HeaderDesktop />
             <Header />
-            <div className="formContainer">
-                <form onSubmit={handleSubmit}>
+            <div
+                className="backgroundImage"
+                style={{ backgroundImage: "url('../teamwork3.jpg')" }}
+            >
 
-                    <div className="inputField">
-                        <input className="input" type="email" placeholder="Email" value={values.email} onChange={handleChange} name="email" id="email" required />
-                        <span className="error-message">{errors.email}</span>
-                        <input className="input" type="password" placeholder="Password" value={values.password} onChange={handleChange} name="password" id="password" required />
-                        <span className="error-message">{errors.password}</span>
-                    </div>
+                <div className="formContainer">
+                    <form onSubmit={handleSubmit}>
 
-                    <div className="buttonContainer">
-                        <button className="button" type="submit">Submit</button>
-                    </div>
+                        <div className="inputField">
+                            <input className="input" type="email" placeholder="Email" value={values.email} onChange={handleChange} name="email" id="email" required />
+                            <span className="error-message">{errors.email}</span>
+                            <input className="input" type="password" placeholder="Password" value={values.password} onChange={handleChange} name="password" id="password" required />
+                            <span className="error-message">{errors.password}</span>
+                        </div>
 
-                </form>
-                <p className="click-here">First time registering as Admin?</p>
-                <Link href="/key-check" className="link-click-here">Click here!</Link>
+                        <div className="buttonContainer">
+                            <button className="button" type="submit">Submit</button>
+                        </div>
+
+                    </form>
+                    <p className="click-here">First time registering as Admin?</p>
+                    <Link href="/key-check" className="link-click-here">Click here!</Link>
+                </div>
             </div>
         </>
     )

@@ -7,7 +7,7 @@ import { router, usePage } from "@inertiajs/react";
 const GenerateKey = () => {
 
     const { errors } = usePage().props
- 
+
     const [values, setValues] = useState({
         email: '',
     })
@@ -29,16 +29,21 @@ const GenerateKey = () => {
         <>
             <HeaderDesktop />
             <Header />
-            <div className="formContainer">
+            <div
+                className="backgroundImage"
+                style={{ backgroundImage: "url('../teamwork3.jpg')" }}
+            >
+                <div className="formContainer">
                     <form onSubmit={handleSubmit}>
-                        <div className="inputField">    
+                        <div className="inputField">
                             <input className="input" type="email" name="email" id="email" placeholder="Email" onChange={handleChange} />
-                            <span className="error-message">{errors.email}</span> 
+                            <span className="error-message">{errors.email}</span>
                         </div>
                         <div className="buttonContainer">
-                                <button type="submit" className="button">Generate Key</button>
+                            <button type="submit" className="button">Generate Key</button>
                         </div>
                     </form>
+                </div>
             </div>
         </>
     )
