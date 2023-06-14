@@ -21,23 +21,27 @@ class QuestController extends Controller
         $quest = new Quest;
 
         $quest->name = $request->name;
-        $quest->coins = $request->price;
+        $quest->coins = $request->prize;
         $quest->slug = Str::slug($request->slug, '-');
-
-        $quest->save();
 
         $user = Auth::user();
         if ($request->type === 'Personal') {
+            $quest->type = 'personal';
+            $quest->save();
             $companyMembers = $user->company->users;
             foreach ($companyMembers as $user) {
                 $user->quests()->attach($quest->id);
             }
         } else if ($request->type === "Team") {
+            $quest->type = 'team';
+            $quest->save();
             $companyTeams = $user->company->teams;
             foreach ($companyTeams as $team) {
                 $team->quests()->attach($quest->id);
             }
         }
+
+        return to_route('companydashboard');
     }
 
     public function show(Quest $quest)

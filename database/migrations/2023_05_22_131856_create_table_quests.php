@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('coins');
             $table->string('slug');
+            $table->string('type')->nullable();
             $table->timestamps();
         });
     }
