@@ -17,7 +17,6 @@ class CompanyController extends Controller
 
     public function storeCompany(CompanyRequest $request)
     {
-
         $user = Auth::user();
 
         $company = new Company;
@@ -31,18 +30,12 @@ class CompanyController extends Controller
 
         $company->save();
 
-        $role = new Role;
-        $role->name = $request->input('function');
-        $role->company_id = $company->id;
-        $role->save();
-
         $team = new Team;
         $team->name = "Admins";
         $team->coins = 0;
         $team->company_id = $company->id;
         $team->save();
-
-        $user->role_id = $role->id;
+        $user->role_id = Role::where('name', '=', 'Admin')->get()->first()->id;
         $user->company_id = $company->id;
         $user->team_id = $team->id;
         $user->save();

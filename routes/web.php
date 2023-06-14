@@ -71,7 +71,7 @@ Route::get('/all-logs', [RouterController::class, 'showLogs']);
 
 
 // userDashboard 1
-Route::get('/user-dashboard', [UserController::class, 'showUserDashboard'])->name('userdashboard');
+Route::get('/user-dashboard', [UserController::class, 'showUserDashboard'])->name('userdashboard')->middleware('auth');
 // Rewards collection page (>> See all rewards)
 Route::get('/rewards-collection', [RewardController::class, 'showAllRewards'])->middleware('auth');
 Route::get('/all-quests', [QuestController::class, 'showAllQuests'])->middleware('auth');

@@ -31,7 +31,7 @@ class CompanyRequest extends FormRequest
             'zip' => 'required|min:1|max:8',
             'city' => 'required|max:255',
             'country' => 'required|max:255',
-            'vatnumber' => 'required|regex:/^[A-Z]{2}/'
+            'vatnumber' => 'required|regex:/^[A-Za-z]{2}/'
         ];
     }
 

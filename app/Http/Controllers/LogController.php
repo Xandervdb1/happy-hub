@@ -27,11 +27,17 @@ class LogController extends Controller
     {
         $reward = Reward::find($request->rewardId);
         $user = Auth::user();
+        $log = new Log;
         $team = $user->team;
         if ($reward->type === 'personal') {
             if ($user->coins > $reward->price) {
                 $user->coins = $user->coins - $reward->price;
                 $user->save();
+
+                $log->user_id = $user->id;
+                $log->reward_id = $reward->id;
+                $log->company_id = $user->company->id;
+                $log->save();
             }
         } else if ($reward->type === 'team') {
             if ($team->coins > $reward->price) {
@@ -39,8 +45,6 @@ class LogController extends Controller
                 $team->save();
             }
         }
-
-        // $log = new Log;
     }
 
     //NOT USED???????????????
