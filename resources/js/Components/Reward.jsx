@@ -2,12 +2,14 @@ import { Link, usePage } from "@inertiajs/react";
 
 const Reward = (localProps) => {
     const props = usePage().props;
-    const disabled = localProps.class;
+    const disabledClass = localProps.class;
     const reward = localProps.reward;
+    const disabledButton = localProps.disabled;
+
     return (
         <>
-            <Link href="/claim-reward" as="button" method="post" data={{ userId: props.auth.user.id, rewardId: reward.id }}>
-                <div className={disabled ? 'reward disabled' : 'reward'} key={reward.name + reward.id}>
+            <Link href="/claim-reward" as="button" method="post" data={{ userId: props.auth.user.id, rewardId: reward.id }} disabled={disabledButton === true ? true : null}>
+                <div className={disabledClass ? 'reward disabled' : 'reward'} key={reward.name + reward.id} style={disabledButton === true ? { cursor: 'not-allowed' } : null}>
                     <div className="totalReward">
                         <p className='activity'> {reward.slug}</p>
                         <div className="priceContainer">
