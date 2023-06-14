@@ -55,28 +55,22 @@ const AdminDashboard = (props) => {
                     </div>
                 </div>
 
+                <div className="memberCompany">
+                    <h1 className="titleDashboard">Add Member</h1>
+                    <MemberForm teams={props.teams} roles={props.roles} />
+                </div>
+                <Link className="linkAll" href="#"> &gt;&gt; See all</Link>
+                
                 <div className="quest">
                     <h1 className="titleDashboard">Add Quest</h1>
                     <FormQuest />
-
                 </div>
                 <Link className="linkAll" href="/all-quests"> &gt;&gt; See all</Link>
 
-                <div className="member">
-                    <h1 className="titleDashboard">Add Member</h1>
-
-                    <MemberForm teams={props.teams} roles={props.roles} />
-                </div>
-
-                <Link className="linkAll" href="#"> &gt;&gt; See all</Link>
-
                 <div className="rewardCompany">
                     <h1 className="titleDashboard">Add Reward</h1>
-
                     <FormReward />
-
                 </div>
-
                 <Link className="linkAll" href="/rewards-collection"> &gt;&gt; See all</Link>
 
                 <div className="logContainer">
