@@ -16,6 +16,7 @@ body {
     height: 100vh;
     font-family: 'Montserrat', sans-serif
 }
+
 // .form{
 //     .inputField{
 //         .input{
@@ -29,18 +30,21 @@ body {
 //         }
 //     }
 // }
-.formContainer{
+.formContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 80vh;
-    form{
+
+    form {
         margin: auto;
-        .inputField{
+
+        .inputField {
             display: flex;
             flex-direction: column;
-            .input{
+
+            .input {
                 display: flex;
                 flex-direction: row;
                 border: none;
@@ -51,15 +55,18 @@ body {
                 padding: 0.5rem 1rem;
                 font-size: 0.9em;
             }
-            span.error-message{
+
+            span.error-message {
                 padding-left: 5px;
                 font-size: 12px;
-                color:red;
+                color: red;
                 text-align: center;
             }
         }
-        .buttonContainer{
+
+        .buttonContainer {
             text-align: center;
+
             .button {
                 background-color: #393E46;
                 border: none;
@@ -75,16 +82,19 @@ body {
         }
     }
 }
-p.click-here{
-font-size: 12px;
-opacity: 0.6;
+
+p.click-here {
+    font-size: 12px;
+    opacity: 0.6;
 }
-.link-click-here{
+
+.link-click-here {
     font-style: italic;
     font-size: 12px;
     opacity: 0.6;
 }
-.link-click-here:hover{
+
+.link-click-here:hover {
     text-decoration: underline;
     opacity: 1;
 }
