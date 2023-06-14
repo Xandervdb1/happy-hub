@@ -25,7 +25,12 @@ const FormQuest = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        closeModal(e);
+        setValues({
+            name: '',
+            slug: '',
+            prize: '',
+            type: '',
+        })
         router.post('/company-dashboard-quest', values)
     }
 

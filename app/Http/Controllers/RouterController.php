@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Team;
 use App\Models\User;
+use App\Models\Role;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
 
@@ -65,7 +66,7 @@ class RouterController extends Controller
             }
             array_push($infoLogs, $infoLog);
         }
-        $roles = $user->company->roles;
+        $roles = Role::all();
 
         return Inertia::render('companyDashboard/CompanyDashboard', [
             "teams" => $teams,
@@ -133,7 +134,7 @@ class RouterController extends Controller
             }
             array_push($infoLogs, $infoLog);
         }
-        $roles = $user->company->roles;
+        $roles = Role::all();
 
         return Inertia::render('logs', [
             "teams" => $teams,

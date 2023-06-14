@@ -28,17 +28,17 @@ class CompanyRequest extends FormRequest
             'companyname' => 'required|unique:companies,name|min:1|max:255',
             'address' => 'required|min:1|max:255',
             'addressnumber' => 'required|min:1|max:4',
-            'zip' => 'required|min:1|max:4',
+            'zip' => 'required|min:1|max:8',
             'city' => 'required|max:255',
             'country' => 'required|max:255',
-            'vatnumber' => 'required|regex:/^[A-Z]{2}/'
+            'vatnumber' => 'required|regex:/^[A-Za-z]{2}/'
         ];
     }
 
     public function messages()
     {
         return [
-            'required' => 'Please provide a :attribute',
+            'required' => 'Please provide :attribute',
             'min' => ':attribute must be longer',
             'unique' => ':attribute already exists',
             'max' => ':attribute cannot exceed 255 characters',

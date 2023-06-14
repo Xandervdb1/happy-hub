@@ -5,6 +5,7 @@ import { Link } from "@inertiajs/react";
 import '../../css/companyDashboard.css';
 
 const logs = (props) => {
+    const userCoins = props.auth.user.coins;
     console.log(props.logs)
     const logs = props.logs;
     const userCoins = props.auth.user.coins

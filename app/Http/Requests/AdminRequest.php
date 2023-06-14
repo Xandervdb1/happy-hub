@@ -38,7 +38,7 @@ class AdminRequest extends FormRequest
     public function messages()
     {
         return [
-            'required' => 'Please provide a :attribute',
+            'required' => 'Please provide :attribute',
             'min' => ':attribute must be longer',
             'username.min' => ':attribute must be longer than 5 characters',
             'max' => ':attribute cannot exceed 255 characters',
