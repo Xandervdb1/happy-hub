@@ -1,7 +1,7 @@
-import { Link } from "@inertiajs/react";
 import Header from "@/Components/HeaderMobile.jsx";
-import Carousel from "@/Components/WalletCarousel.jsx";
 import HeaderDesktop from "@/Components/HeaderDesktop.jsx";
+import Carousel from "@/Components/WalletCarousel.jsx";
+import { Link } from "@inertiajs/react";
 
 
 const UserDashboard = (props) => {

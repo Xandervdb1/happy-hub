@@ -2,7 +2,7 @@ import React from "react";
 import HeaderDesktop from "@/Components/HeaderDesktop.jsx";
 import Header from "@/Components/HeaderMobile.jsx";
 import { Link } from "@inertiajs/react";
-import '../../css/companyDashboard.css';
+// import '../../css/companyDashboard/companyDashboard.css'
 
 const logs = (props) => {
     const userCoins = props.auth.user.coins;
