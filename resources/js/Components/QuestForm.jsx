@@ -10,7 +10,7 @@ const FormQuest = () => {
     const [values, setValues] = useState({
         name: '',
         slug: '',
-        price: '',
+        prize: '',
         type: '',
 
     })
@@ -55,8 +55,8 @@ const FormQuest = () => {
                         <span className="error-message">{errors.name}</span>
                         <input type="text" name="slug" id="slug" value={values.slug} onChange={handleChange} placeholder="Slug" className="input" />
                         <span className="error-message">{errors.slug}</span>
-                        <input type="text" name="price" id="price" value={values.price} onChange={handleChange} placeholder="Price" className="input" />
-                        <span className="error-message">{errors.price}</span>
+                        <input type="text" name="prize" id="prize" value={values.prize} onChange={handleChange} placeholder="Prize" className="input" />
+                        <span className="error-message">{errors.prize}</span>
                         <select name="type" className="input" id='type' value={values.type} onChange={handleChange}>
                             <option> Choose type</option>
                             <option value="Personal">Personal</option>

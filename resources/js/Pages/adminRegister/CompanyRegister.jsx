@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
 import Header from '@/Components/HeaderMobile'
+import HeaderDesktop from "@/Components/HeaderDesktop.jsx"
 
 const CompanyRegister = () => {
 
