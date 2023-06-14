@@ -107,6 +107,8 @@
         grid-template-rows: repeat(12, 1fr);
         grid-template-columns: repeat(12, 1fr);
         height: calc(100vh - 100px);
+        background-image: url('../teamwork3.jpg');
+        margin: 0;
 
         .progressCarrousel {
             grid-row: 1/6;

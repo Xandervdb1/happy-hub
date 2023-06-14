@@ -16,32 +16,6 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.backgroundImage {
-  position: relative;
-  height: calc(100vh - 100px);
-  width: 100vw;
-  overflow: hidden;
-}
-
-.backgroundImage::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("../teamwork2.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.6;
-  z-index: -1;
-}
-
-.backgroundImage .contentContainer {
-  position: relative;
-  z-index: 1;
-}
-
 .formContainer {
   display: flex;
   flex-direction: column;
@@ -122,39 +96,51 @@ p.click-here {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
+  height: 100vh;
+  width: 100vw;
 }
 
 .LogoContainer {
   background-color: #222831;
-  grid-row: 1/8;
-  grid-column: 1/8;
+  grid-row: 1/7;
+  grid-column: 1/13;
 }
 .LogoContainer .logo {
   width: 100%;
 }
 
+.imageIndex {
+  width: 100vw;
+  grid-row: 7/13;
+  grid-column: 1/13;
+  opacity: 0.6;
+  z-index: 0;
+}
+
 .buttonLogin {
-  grid-row: 10/12;
+  grid-row: 9;
   grid-column: 4/7;
   margin: 3px;
   background-color: #393E46;
   border: none;
   color: #FFCD29;
-  width: 100px;
-  height: 55px;
+  width: 120px;
+  height: 60px;
   border-radius: 10px;
+  z-index: 1;
 }
 
 .buttonBuyProduct {
-  grid-row: 10/12;
+  grid-row: 9;
   grid-column: 7/10;
   margin: 3px;
   background-color: #393E46;
   border: none;
   color: #FFCD29;
-  width: 100px;
-  height: 55px;
+  width: 120px;
+  height: 60px;
   border-radius: 10px;
+  z-index: 1;
 }
 
 @media only screen and (min-width: 600px) {

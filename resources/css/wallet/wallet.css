@@ -71,9 +71,11 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 796px) {
   .walletContainer {
     height: calc(100vh - 100px);
+    background-image: url("../teamwork3.jpg");
+    margin: 0;
   }
   .walletContainer .balances {
     justify-content: center;

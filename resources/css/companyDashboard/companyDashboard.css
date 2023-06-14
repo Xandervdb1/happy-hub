@@ -1,7 +1,6 @@
 .adminDashboard {
   display: grid;
   grid-template-rows: 5;
-  margin: 10px;
 }
 .adminDashboard .titlePage {
   font-size: 30px;
@@ -15,6 +14,8 @@
   grid-template-columns: repeat(2, 1fr);
   min-height: 50px;
   background-color: #D9D9D9;
+  border-radius: 10px;
+  margin: 5px;
 }
 .adminDashboard .teamContainer .titleDashboard {
   font-size: 20px;
@@ -182,6 +183,8 @@
   display: grid;
   text-align: left;
   padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
   margin-top: 20px;
 }
 .adminDashboard .logContainer .logTitle {
@@ -227,6 +230,7 @@
     grid-template-rows: repeat(12, 1fr);
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
+    background-image: url("../teamwork3.jpg");
   }
   .adminDashboard .addLink {
     margin-top: -11px;
