@@ -13,14 +13,14 @@ $container-bg: #D9D9D9;
 .rewardsContainerWrap {
 
     .rewardsContainer {
-    text-align: center;
-    width: 90%;
-    font-weight: bold;
-    margin: 0.5rem auto 3rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1rem;
+        text-align: center;
+        width: 90%;
+        font-weight: bold;
+        margin: 0.5rem auto 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 1rem;
 
         .title {
             display: block;
@@ -79,8 +79,7 @@ $container-bg: #D9D9D9;
 
 .disabled {
     filter: grayscale(100%);
-    cursor: not-allowed;
-    pointer-events: none;
+
 }
 
 .reward:hover {
@@ -91,6 +90,4 @@ $container-bg: #D9D9D9;
     border: 1px solid black;
 }
 
-@media screen and (min-width: 768px) {
-    
-}
+@media screen and (min-width: 768px) {}
