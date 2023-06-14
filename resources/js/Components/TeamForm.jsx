@@ -2,7 +2,7 @@ import React from "react"
 import { useState } from 'react'
 import { router, usePage } from '@inertiajs/react'
 
-const FormTeam = (props) => {
+const TeamForm = (props) => {
 
     const { errors } = usePage().props
 
@@ -63,4 +63,4 @@ const FormTeam = (props) => {
         </>
     )
 }
-export default FormTeam;
+export default TeamForm;

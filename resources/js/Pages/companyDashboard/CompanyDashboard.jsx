@@ -5,6 +5,7 @@ import FormQuest from "@/Components/QuestForm.jsx"
 import FormReward from "@/Components/RewardForm.jsx"
 import MemberForm from "@/Components/MemberForm.jsx"
 import FormTeam from "@/Components/TeamForm.jsx"
+import TeamForm from "@/Components/TeamForm.jsx"
 
 const AdminDashboard = (props) => {
 
@@ -24,11 +25,10 @@ const AdminDashboard = (props) => {
 
                 <div className="teamContainer">
                     <h1 className="titleDashboard"> Add Team</h1>
-
-                    <FormTeam />
-
+                    <TeamForm />
                     <p className="titleTable" id="name">name</p>
                     <p className="titleTable" id="member">members</p>
+                    
                     <div className="teams">
                         {
                             teams.map(team => (

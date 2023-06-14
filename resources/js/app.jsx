@@ -1,12 +1,14 @@
-import './bootstrap';
-import '../css/app.css';
-import '../css/index.css';
+// import './bootstrap';
+import '../css/app/app.css';
+import '../css/index/index.css';
 // import '../css/registerAdmin/generateKey/register.css';
-import '../css/dashboard.css';
-import '../css/layoutDashboard.css';
-import '../css/companyDashboard.css';
-import '../css/wallet.css';
-import '../css/logs.css'
+import '../css/companyDashboard/companyDashboard.css';
+import '../css/companyMembers/companyMembers.css'
+import '../css/userDashboard/dashboard/dashboard.css';
+import '../css/layoutDashboard/layoutDashboard.css';
+import '../css/wallet/wallet.css';
+import '../css/logs/logs.css';
+import '../css/rewardsCollection/rewardsCollection.css';
 
 import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/react';

@@ -49,7 +49,7 @@ class RewardController extends Controller
         $team = $user->team;
         $teamRewards = $team->rewards;
 
-        return Inertia::render('RewardsCollection', [
+        return Inertia::render('userDashboard/RewardsCollection', [
             'userRewards' => $userRewards,
             'teamRewards' => $teamRewards,
             'userCoins' => $userCoins,

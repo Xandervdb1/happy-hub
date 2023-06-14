@@ -1,8 +1,8 @@
-import React from "react";
 import Header from "@/Components/HeaderMobile.jsx";
 import HeaderDesktop from "@/Components/HeaderDesktop.jsx"
+import React from "react";
 import { Link } from "@inertiajs/react";
-import '../../css/companyDashboard.css'
+// import '../../css/companyDashboard/companyDashboard.css'
 
 const logs = (props) => {
     console.log(props.logs)
