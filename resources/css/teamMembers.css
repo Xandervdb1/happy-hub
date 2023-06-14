@@ -54,7 +54,8 @@ h1 {
 }
 .nameCoins .coins img {
   width: 20px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .memberInfo {
