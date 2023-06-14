@@ -61,4 +61,9 @@ class LogController extends Controller
 
         $logs->take(3);
     }
+
+    function finishQuest(Request $request)
+    {
+        dd($request);
+    }
 }

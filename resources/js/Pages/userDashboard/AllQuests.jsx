@@ -37,7 +37,7 @@ const AllQuests = (props) => {
                                         </div>
                                         <div className="secondRow">
                                             <ProgressBar bgcolor={bgColor} completed={completedRounded} />
-                                            <input value="test" type="checkbox" onChange={handleChange} />
+                                            <Link as="button" method="post" href="/finish-quest">Complete quest</Link>
                                         </div>
                                     </div>
                                 )
