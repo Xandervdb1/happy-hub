@@ -22,9 +22,9 @@ const RewardsCollection = (props) => {
                 <div className='rewardsContainer'>
                     <p className='title'>Personal</p>
                     {
-                        userRewards.map(reward => (
+                        userRewards.map((reward, index) => (
                             personalWallet >= reward.price ? (
-                                <Reward reward={reward} disabled={false}/>
+                                <Reward reward={reward} disabled={false} key={reward+index}/>
                             ) : null
                         ))
                     }
@@ -32,9 +32,9 @@ const RewardsCollection = (props) => {
                 <div className='rewardsContainer'>
                     <p className='title'>Team</p>
                     {
-                        teamRewards.map(reward => (
+                        teamRewards.map((reward, index) => (
                             teamWallet >= reward.price ? (
-                                <Reward reward={reward} disabled={false}/>
+                                <Reward reward={reward} disabled={false} key={reward+index}/>
                             ) : null
                         ))
                     }
@@ -43,17 +43,17 @@ const RewardsCollection = (props) => {
                     <p className='title'>Earn more, unlock bigger</p>
                     <p className='subTitle'>Personal</p>
                     {
-                        userRewards.map(reward => (
+                        userRewards.map((reward, index) => (
                             personalWallet < reward.price ? (
-                                <Reward reward={reward} class='disabled' disabled={true} />
+                                <Reward reward={reward} class='disabled' disabled={true} key={reward+index}/>
                             ) : null
                         ))
                     }
                     <p className='subTitle'>Team</p>
                     {
-                        teamRewards.map(reward => (
+                        teamRewards.map((reward, index) => (
                             teamWallet < reward.price ? (
-                                <Reward reward={reward} class='disabled' disabled={true} />
+                                <Reward reward={reward} class='disabled' disabled={true} key={reward+index}/>
                             ) : null
                         ))
                     }
