@@ -18,47 +18,57 @@ const RewardsCollection = (props) => {
             <div className='titleContainer'>
                 <p>REWARDS</p>
             </div>
-            <div className='rewardsContainerWrap'> 
+            <div className='rewardsContainerWrap'>
                 <div className='rewardsContainer'>
                     <p className='title'>Personal</p>
-                    {
-                        userRewards.map((reward, index) => (
-                            personalWallet >= reward.price ? (
-                                <Reward reward={reward} disabled={false} key={reward+index}/>
-                            ) : null
-                        ))
-                    }
+                    <div className='personalRewards'>
+                        {
+                            userRewards.map((reward, index) => (
+                                personalWallet >= reward.price ? (
+                                    <Reward reward={reward} disabled={false} key={reward + index} />
+                                ) : null
+                            ))
+                        }
+                    </div>
                 </div>
                 <div className='rewardsContainer'>
                     <p className='title'>Team</p>
-                    {
-                        teamRewards.map((reward, index) => (
-                            teamWallet >= reward.price ? (
-                                <Reward reward={reward} disabled={false} key={reward+index}/>
-                            ) : null
-                        ))
-                    }
+                    <div className="teamRewards">
+                        {
+                            teamRewards.map((reward, index) => (
+                                teamWallet >= reward.price ? (
+                                    <Reward reward={reward} disabled={false} key={reward + index} />
+                                ) : null
+                            ))
+                        }
+                    </div>
                 </div>
                 <div className='rewardsContainer'>
                     <p className='title'>Earn more, unlock bigger</p>
-                    <p className='subTitle'>Personal</p>
-                    {
-                        userRewards.map((reward, index) => (
-                            personalWallet < reward.price ? (
-                                <Reward reward={reward} class='disabled' disabled={true} key={reward+index}/>
-                            ) : null
-                        ))
-                    }
-                    <p className='subTitle'>Team</p>
-                    {
-                        teamRewards.map((reward, index) => (
-                            teamWallet < reward.price ? (
-                                <Reward reward={reward} class='disabled' disabled={true} key={reward+index}/>
-                            ) : null
-                        ))
-                    }
+                    <div className="disabledRewards">
+                        <div className='disabledPersonalRewards'>
+                            <p className='subTitle'>Personal</p>
+                            {
+                                userRewards.map((reward, index) => (
+                                    personalWallet < reward.price ? (
+                                        <Reward reward={reward} class='disabled' disabled={true} key={reward + index} />
+                                    ) : null
+                                ))
+                            }
+                        </div>
+                        <div className='disabledTeamRewards'>
+                            <p className='subTitle'>Team</p>
+                            {
+                                teamRewards.map((reward, index) => (
+                                    teamWallet < reward.price ? (
+                                        <Reward reward={reward} class='disabled' disabled={true} key={reward + index} />
+                                    ) : null
+                                ))
+                            }
+                        </div>
+                    </div>
                 </div>
-            </div>   
+            </div>
             <Link href='/user-dashboard' className="goBackButton">Go back</Link>
         </>
     )
