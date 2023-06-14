@@ -64,4 +64,17 @@ h1 {
 }
 .memberInfo > :first-child {
   font-weight: bolder;
+}
+
+@media only screen and (min-width: 600px) {
+  .membersWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .membersWrapper .member {
+    max-width: 45%;
+  }
 }/*# sourceMappingURL=companyMembers.css.map */
