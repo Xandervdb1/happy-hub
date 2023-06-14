@@ -101,6 +101,11 @@ nav ul li {
     display: block;
   }
 }
+#Desktop .logoHeader {
+  width: 100px;
+  justify-self: center;
+  margin-left: 20px;
+}
 #Desktop .navigation {
   display: flex;
   align-items: end;
