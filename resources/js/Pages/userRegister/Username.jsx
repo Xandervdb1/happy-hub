@@ -1,10 +1,8 @@
 import Header from "@/Components/HeaderMobile.jsx"
 import HeaderDesktop from "@/Components/HeaderDesktop.jsx"
-import { router } from '@inertiajs/react'
-import Header from "@/Components/Header.jsx"
 import { router, usePage } from '@inertiajs/react'
 import { useState } from 'react'
-import { Link } from "@inertiajs/react";
+// import { Link } from "@inertiajs/react";
 
 const Login = () => {
 
@@ -39,10 +37,10 @@ const Login = () => {
 
                     <div className="inputField">
                         <input className="input" type="name" placeholder="Username" value={values.name} onChange={handleChange} name="name" id="name" required />
-                        <span className="error-message">{errors.name}</span> 
-                        
+                        <span className="error-message">{errors.name}</span>
+
                         <input type="date" name="birthday" id="birthday" value={values.birthday} onChange={handleChange} className="input" />
-                        <span className="error-message">{errors.birthday}</span> 
+                        <span className="error-message">{errors.birthday}</span>
                     </div>
 
                     <div className="buttonContainer">
