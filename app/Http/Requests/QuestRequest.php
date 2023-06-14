@@ -26,7 +26,7 @@ class QuestRequest extends FormRequest
         return [
             'name' => 'required|min:3|max:100',
             'slug' => 'required|max:10',
-            'price' => 'required|integer',
+            'prize' => 'required|integer',
             'type' => 'required',
         ];
     }
