@@ -4,6 +4,8 @@ import Reward from '@/Components/Reward';
 import { Link } from '@inertiajs/react';
 import '../../css/RewardsCollection.scss';
 
+//TODO: change .personalRewards,.teamRewards,.disabledPersonalRewards,.disabledTeamRewards to 1 general class (rewardsWrap?)
+
 const RewardsCollection = (props) => {
     const userRewards = props.userRewards;
     const teamRewards = props.teamRewards;
