@@ -24,7 +24,7 @@ const RewardsCollection = (props) => {
                     {
                         userRewards.map(reward => (
                             personalWallet >= reward.price ? (
-                                <Reward reward={reward} />
+                                <Reward reward={reward} disabled={false}/>
                             ) : null
                         ))
                     }
@@ -34,7 +34,7 @@ const RewardsCollection = (props) => {
                     {
                         teamRewards.map(reward => (
                             teamWallet >= reward.price ? (
-                                <Reward reward={reward} />
+                                <Reward reward={reward} disabled={false}/>
                             ) : null
                         ))
                     }
@@ -45,7 +45,7 @@ const RewardsCollection = (props) => {
                     {
                         userRewards.map(reward => (
                             personalWallet < reward.price ? (
-                                <Reward reward={reward} class='disabled' />
+                                <Reward reward={reward} class='disabled' disabled={true} />
                             ) : null
                         ))
                     }
@@ -53,7 +53,7 @@ const RewardsCollection = (props) => {
                     {
                         teamRewards.map(reward => (
                             teamWallet < reward.price ? (
-                                <Reward reward={reward} class='disabled' />
+                                <Reward reward={reward} class='disabled' disabled={true} />
                             ) : null
                         ))
                     }
