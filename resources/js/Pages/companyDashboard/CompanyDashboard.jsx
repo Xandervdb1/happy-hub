@@ -27,49 +27,49 @@ const AdminDashboard = (props) => {
                 <div className="adminDashboard">
                     <h1 className="titlePage">Company Dashboard</h1>
 
-                <div className="teamContainer">
-                    <h1 className="titleDashboard"> Add Team</h1>
-                    <TeamForm />
-                    <p className="titleTable" id="name">name</p>
-                    <p className="titleTable" id="member">members</p>
-                    
-                    <div className="teams">
-                        {
-                            teams.map(team => (
-                                <>
-                                    <div className="team"
-                                        key={teams.id}>
-                                        <p>{team.name}</p>
-                                    </div>
-                                </>
-                            ))
-                        }
+                    <div className="teamContainer">
+                        <h1 className="titleDashboard"> Add Team</h1>
+                        <TeamForm />
+                        <p className="titleTable" id="name">name</p>
+                        <p className="titleTable" id="member">members</p>
+
+                        <div className="teams">
+                            {
+                                teams.map(team => (
+                                    <>
+                                        <div className="team"
+                                            key={teams.id}>
+                                            <p>{team.name}</p>
+                                        </div>
+                                    </>
+                                ))
+                            }
+                        </div>
+
+                        <div className="members">
+                            {
+                                teamMembers.map(teamMember => (
+                                    <>
+                                        <div className="listItem" key={teamMember.id}>
+                                            <p>{teamMember.length}</p>
+                                        </div>
+                                    </>
+                                ))
+                            }
+                        </div>
                     </div>
 
-                    <div className="members">
-                        {
-                            teamMembers.map(teamMember => (
-                                <>
-                                    <div className="listItem" key={teamMember.id}>
-                                        <p>{teamMember.length}</p>
-                                    </div>
-                                </>
-                            ))
-                        }
+                    <div className="memberCompany">
+                        <h1 className="titleDashboard">Add Member</h1>
+                        <MemberForm teams={props.teams} roles={props.roles} />
                     </div>
-                </div>
+                    <Link className="linkAll" href="/company-members" id="memberLink"> &gt;&gt; See all</Link>
 
-                <div className="memberCompany">
-                    <h1 className="titleDashboard">Add Member</h1>
-                    <MemberForm teams={props.teams} roles={props.roles} />
-                </div>
-                <Link className="linkAll" href="#"> &gt;&gt; See all</Link>
-                
-                <div className="quest">
-                    <h1 className="titleDashboard">Add Quest</h1>
-                    <FormQuest />
-                </div>
-                <Link className="linkAll" href="/all-quests"> &gt;&gt; See all</Link>
+                    <div className="quest">
+                        <h1 className="titleDashboard">Add Quest</h1>
+                        <FormQuest />
+                    </div>
+                    <Link className="linkAll" href="/all-quests" id="questLink"> &gt;&gt; See all</Link>
 
                     <div className="rewardCompany">
                         <h1 className="titleDashboard">Add Reward</h1>
@@ -78,7 +78,7 @@ const AdminDashboard = (props) => {
 
                     </div>
 
-                    <Link className="linkAll" href="/rewards-collection"> &gt;&gt; See all</Link>
+                    <Link className="linkAll" href="/rewards-collection" id="rewardLink"> &gt;&gt; See all</Link>
 
                     <div className="logContainer">
                         <h1 className="logTitle">Logs</h1>
@@ -110,7 +110,7 @@ const AdminDashboard = (props) => {
                             }
                         </div>
                     </div>
-                    <Link href="all-logs" className="linkAll"> &gt;&gt; See all logs</Link>
+                    <Link href="all-logs" className="linkAll" id="logLink"> &gt;&gt; See all logs</Link>
                 </div >
             </div>
         </>
