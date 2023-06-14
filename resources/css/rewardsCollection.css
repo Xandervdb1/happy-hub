@@ -7,7 +7,7 @@
   padding: 0.25rem 0;
 }
 
-.rewardsContainer {
+.rewardsContainerWrap .rewardsContainer {
   text-align: center;
   width: 90%;
   font-weight: bold;
@@ -17,16 +17,16 @@
   justify-content: space-evenly;
   gap: 1rem;
 }
-.rewardsContainer .title {
+.rewardsContainerWrap .rewardsContainer .title {
   display: block;
   width: 100%;
-  margin-bottom: 1rem;
   border-bottom: 2px solid black;
 }
-.rewardsContainer .subTitle {
+.rewardsContainerWrap .rewardsContainer .subTitle {
   width: 100%;
+  margin-top: 1rem;
 }
-.rewardsContainer .subTitle::after {
+.rewardsContainerWrap .rewardsContainer .subTitle::after {
   content: "";
   position: relative;
   display: block;
@@ -67,8 +67,14 @@
 
 .disabled {
   filter: grayscale(100%);
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .reward:hover {
   border: 3px outset black;
+}
+
+.disabled:hover {
+  border: 1px solid black;
 }/*# sourceMappingURL=rewardsCollection.css.map */

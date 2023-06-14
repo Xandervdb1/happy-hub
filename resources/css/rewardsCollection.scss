@@ -10,7 +10,9 @@ $container-bg: #D9D9D9;
     }
 }
 
-.rewardsContainer {
+.rewardsContainerWrap {
+
+    .rewardsContainer {
     text-align: center;
     width: 90%;
     font-weight: bold;
@@ -20,26 +22,27 @@ $container-bg: #D9D9D9;
     justify-content: space-evenly;
     gap: 1rem;
 
-    .title {
-        display: block;
-        width: 100%;
-        margin-bottom: 1rem;
-        border-bottom: 2px solid black;
-    }
+        .title {
+            display: block;
+            width: 100%;
+            border-bottom: 2px solid black;
+        }
 
-    .subTitle {
-        width: 100%;
-    }
+        .subTitle {
+            width: 100%;
+            margin-top: 1rem;
+        }
 
-    .subTitle::after {
-        content: '';
-        position: relative;
-        display: block;
-        margin: auto;
-        left: 0;
-        bottom: 0;
-        width: 40%;
-        border-bottom: 1px solid black;
+        .subTitle::after {
+            content: '';
+            position: relative;
+            display: block;
+            margin: auto;
+            left: 0;
+            bottom: 0;
+            width: 40%;
+            border-bottom: 1px solid black;
+        }
     }
 }
 
@@ -76,8 +79,18 @@ $container-bg: #D9D9D9;
 
 .disabled {
     filter: grayscale(100%);
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 .reward:hover {
     border: 3px outset black;
+}
+
+.disabled:hover {
+    border: 1px solid black;
+}
+
+@media screen and (min-width: 768px) {
+    
 }

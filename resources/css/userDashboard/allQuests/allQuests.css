@@ -68,7 +68,6 @@ h1 {
   justify-content: space-between;
   display: flex;
   flex-direction: row;
-  align-content: center;
 }
 .QuestContainer .personalQuestsContainer .personalQuests .personalQuest .secondRow input,
 .QuestContainer .personalQuestsContainer .personalQuests .teamQuest .secondRow input,
@@ -79,18 +78,6 @@ h1 {
 .QuestContainer .teamQuestsContainer .teamQuests .personalQuest .secondRow input,
 .QuestContainer .teamQuestsContainer .teamQuests .teamQuest .secondRow input {
   align-self: center;
-}
-
-.goBackButton {
-  display: block;
-  font-size: 1.3rem;
-  border-radius: 10px;
-  background-color: #222831;
-  color: #FFCD29;
-  width: 120px;
-  padding: 5px;
-  text-align: center;
-  margin: 20px auto;
 }
 
 @media screen and (min-width: 1024px) {

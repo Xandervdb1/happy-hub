@@ -124,4 +124,16 @@ p.click-here {
   width: 100px;
   height: 55px;
   border-radius: 10px;
+}
+
+.goBackButton {
+  display: block;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  background-color: #222831;
+  color: #FFCD29;
+  width: 120px;
+  padding: 5px;
+  text-align: center;
+  margin: 20px auto;
 }/*# sourceMappingURL=index.css.map */

@@ -18,47 +18,48 @@ const RewardsCollection = (props) => {
             <div className='titleContainer'>
                 <p>REWARDS</p>
             </div>
-            <div className='rewardsContainer'>
-                <p className='title'>Personal</p>
-                {
-                    userRewards.map(reward => (
-                        personalWallet >= reward.price ? (
-                            <Reward reward={reward} />
-                        ) : null
-                    ))
-                }
-            </div>
-            <div className='rewardsContainer'>
-                <p className='title'>Team</p>
-                {
-                    teamRewards.map(reward => (
-                        teamWallet >= reward.price ? (
-                            <Reward reward={reward} />
-                        ) : null
-                    ))
-                }
-            </div>
-            <div className='rewardsContainer'>
-                <p className='title'>Earn more, unlock bigger</p>
-                <p className='subTitle'>Personal</p>
-                {
-                    userRewards.map(reward => (
-                        personalWallet < reward.price ? (
-                            <Reward reward={reward} class='disabled' />
-                        ) : null
-                    ))
-                }
-                <p className='subTitle'>Team</p>
-                {
-                    teamRewards.map(reward => (
-                        teamWallet < reward.price ? (
-                            <Reward reward={reward} class='disabled' />
-                        ) : null
-                    ))
-                }
-                <Link href='/user-dashboard' className="goBackButton">Go back</Link>
-            </div>
-
+            <div className='rewardsContainerWrap'> 
+                <div className='rewardsContainer'>
+                    <p className='title'>Personal</p>
+                    {
+                        userRewards.map(reward => (
+                            personalWallet >= reward.price ? (
+                                <Reward reward={reward} />
+                            ) : null
+                        ))
+                    }
+                </div>
+                <div className='rewardsContainer'>
+                    <p className='title'>Team</p>
+                    {
+                        teamRewards.map(reward => (
+                            teamWallet >= reward.price ? (
+                                <Reward reward={reward} />
+                            ) : null
+                        ))
+                    }
+                </div>
+                <div className='rewardsContainer'>
+                    <p className='title'>Earn more, unlock bigger</p>
+                    <p className='subTitle'>Personal</p>
+                    {
+                        userRewards.map(reward => (
+                            personalWallet < reward.price ? (
+                                <Reward reward={reward} class='disabled' />
+                            ) : null
+                        ))
+                    }
+                    <p className='subTitle'>Team</p>
+                    {
+                        teamRewards.map(reward => (
+                            teamWallet < reward.price ? (
+                                <Reward reward={reward} class='disabled' />
+                            ) : null
+                        ))
+                    }
+                </div>
+            </div>   
+            <Link href='/user-dashboard' className="goBackButton">Go back</Link>
         </>
     )
 }
