@@ -53,7 +53,7 @@ const Create = () => {
 
                     </form>
                     <p className="click-here">First time registering as Admin?</p>
-                    <Link href="/key-check" className="link-click-here">Click here!</Link>
+                    <Link href="/admin-register" className="link-click-here">Click here!</Link>
                 </div>
             </div>
         </>

@@ -16,12 +16,44 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.Container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+.Container div {
+  height: 50%;
+}
+.Container .btncontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.Container .btncontainer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(2px);
+  background-image: url("../teamwork1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: -1%;
+  left: -1%;
+  right: -1%;
+  bottom: -1%;
+  transform: scale(1.05);
+}
+
 .formContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: calc(100vh - 100px);
   background-color: rgba(255, 255, 255, 0.6);
 }
 .formContainer form {
@@ -74,6 +106,7 @@ p.click-here {
   font-style: italic;
   font-size: 12px;
   opacity: 0.6;
+  padding-bottom: 2rem;
 }
 
 .link-click-here:hover {
@@ -92,21 +125,14 @@ p.click-here {
   border: none;
 }
 
-.Container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  height: 100vh;
-  width: 100vw;
-}
-
 .LogoContainer {
   background-color: #222831;
-  grid-row: 1/7;
-  grid-column: 1/13;
+  display: flex;
+  z-index: 999;
 }
 .LogoContainer .logo {
-  width: 100%;
+  height: 100%;
+  margin: auto;
 }
 
 .imageIndex {
@@ -149,20 +175,17 @@ p.click-here {
     padding: 0;
   }
   .Container {
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-    height: 100vh;
-    width: 100vw;
+    flex-direction: row;
   }
-  .Container .LogoContainer {
-    grid-row: 1/8;
-    grid-column: 1/5;
-    width: 40vw;
-    height: 100vh;
+  .Container div {
+    height: 100%;
+    width: 50%;
   }
   .Container .LogoContainer .logo {
-    width: 100%;
-    height: 100vh;
+    height: -moz-max-content;
+    height: max-content;
+    width: -moz-max-content;
+    width: max-content;
   }
   .Container .buttonLogin {
     grid-column: 8/9;

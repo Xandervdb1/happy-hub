@@ -13,7 +13,7 @@ const HeaderDesktop = () => {
                 <header>
                     <img className='logoHeader' src="../happyhub.png" alt="logo Happy Hub" />
                     <div className="navigation">
-                        {props.auth.user ? (
+                        {props.auth.user && props.auth.user.company_id ? (
                             <>
                                 <Link href='/user-dashboard' className="navLink">User Dashboard</Link>
                                 {props.auth.user.is_admin ? <Link className="navLink" href="/company-dashboard">Company Dashboard</Link> : ""}
@@ -24,18 +24,21 @@ const HeaderDesktop = () => {
                             <>
                                 <Link className="navLink" href="/">Home</Link>
                                 <Link className="navLink" href="/login">Log in</Link>
-                                <Link className="navLink" href="/generate-key">Buy key</Link>
+                                <Link className="navLink" href="/admin-register">Buy key</Link>
                             </>
                         )}
                     </div>
                     <div className="walletContainer">
-                        {props.auth.user ? (
+                        {props.auth.user && props.auth.user.company_id ? (
                             <>
                                 <p className="wallet">{userCoins ? userCoins : 0}</p>
                                 <img className='coinHeader' src="../coin.png" ahref='' lt="coin Happy Hub" />
                             </>
                         ) : (
-                            <div></div>
+                            <>
+                                <div></div>
+                                <div></div>
+                            </>
                         )}
                     </div>
 

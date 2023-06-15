@@ -26,90 +26,93 @@ const AdminDashboard = (props) => {
             <div className="adminDashboard">
                 <h1 className="titlePage">Company Dashboard</h1>
 
-                <div className="teamContainer">
-                    <h1 className="titleDashboard"> Add Team</h1>
-                    <TeamForm />
-                    <p className="titleTable" id="name">name</p>
-                    <p className="titleTable" id="member">members</p>
-
-                    <div className="teams">
-                        {
-                            teams.map(team => (
-                                <>
-                                    <div className="team"
-                                        key={teams.id}>
-                                        <p>{team.name}</p>
-                                    </div>
-                                </>
-                            ))
-                        }
-                    </div>
-
-                    <div className="members">
-                        {
-                            teamMembers.map(teamMember => (
-                                <>
-                                    <div className="listItem" key={teamMember.id}>
-                                        <p>{teamMember.length}</p>
-                                    </div>
-                                </>
-                            ))
-                        }
-                    </div>
-                </div>
-
-                <div className="memberCompany">
-                    <h1 className="titleDashboard">Add Member</h1>
-                    <MemberForm teams={props.teams} roles={props.roles} />
-                </div>
-                <Link className="linkAll" href="/company-members" id="memberLink"> &gt;&gt; See all</Link>
-
-                <div className="quest">
-                    <h1 className="titleDashboard">Add Quest</h1>
-                    <FormQuest />
-                </div>
-                <Link className="linkAll" href="/all-quests" id="questLink"> &gt;&gt; See all</Link>
-
-                <div className="rewardCompany">
-                    <h1 className="titleDashboard">Add Reward</h1>
-
-                    <FormReward />
-
-                </div>
-
-                <Link className="linkAll" href="/rewards-collection" id="rewardLink"> &gt;&gt; See all</Link>
-
-                <div className="logContainer">
-                    <h1 className="logTitle">Logs</h1>
-                    <div className="log">
-                        {
-                            logs.slice(0, 3).map(log => {
-                                if (log.scope === "Reward") {
-                                    return (
-                                        <>
-                                            <div className="scope">
-                                                <i><li className="timestamp">{log.created_at}</li></i>
-                                                <p className="red"> {log.name} spent {log.scopeCoins.toLocaleString()} coins on {log.scopeName}.</p>
-                                                <p className="coinTotal">(Total coins: {log.coins.toLocaleString()} coins)</p>
-                                            </div>
-                                        </>
-                                    )
-                                } else {
-                                    return (
-                                        <>
-                                            <div className="scope">
-                                                <i><li className="timestamp">{log.created_at}</li></i>
-                                                <p className="green"> {log.name} gained {log.scopeCoins.toLocaleString()} coins for {log.scopeName}.</p>
-                                                <p className="coinTotal">(Total coins: {log.coins.toLocaleString()})</p>
-                                            </div>
-                                        </>
-                                    )
+                <div className="reverseDesktop">
+                    <div>
+                        <div className="teamContainer">
+                            <TeamForm />
+                            <div className="titletableflex">
+                                <p className="titleTable" id="name">name</p>
+                                <p className="titleTable" id="member">members</p>
+                            </div>
+                            <hr />
+                            <div className="teammembersflex">
+                                <div className="teams">
+                                    {
+                                        teams.map(team => (
+                                            <>
+                                                <div className="team"
+                                                    key={teams.id}>
+                                                    <p>{team.name}</p>
+                                                </div>
+                                            </>
+                                        ))
+                                    }
+                                </div>
+                                <div className="members">
+                                    {
+                                        teamMembers.map(teamMember => (
+                                            <>
+                                                <div className="listItem" key={teamMember.id}>
+                                                    <p>{teamMember.length}</p>
+                                                </div>
+                                            </>
+                                        ))
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div className="logContainer">
+                            <div>
+                                <h1 className="logTitle">Logs</h1>
+                                <hr />
+                            </div>
+                            <div className="log">
+                                {
+                                    logs.slice(0, 3).map(log => {
+                                        if (log.scope === "Reward") {
+                                            return (
+                                                <>
+                                                    <div className="scope">
+                                                        <i><li className="timestamp">{log.created_at}</li></i>
+                                                        <p className="red"> {log.name} spent {log.scopeCoins.toLocaleString()} coins on {log.scopeName}.</p>
+                                                        <p className="coinTotal">(Total coins: {log.coins.toLocaleString()} coins)</p>
+                                                    </div>
+                                                </>
+                                            )
+                                        } else {
+                                            return (
+                                                <>
+                                                    <div className="scope">
+                                                        <i><li className="timestamp">{log.created_at}</li></i>
+                                                        <p className="green"> {log.name} gained {log.scopeCoins.toLocaleString()} coins for {log.scopeName}.</p>
+                                                        <p className="coinTotal">(Total coins: {log.coins.toLocaleString()})</p>
+                                                    </div>
+                                                </>
+                                            )
+                                        }
+                                    })
                                 }
-                            })
-                        }
+                            </div>
+                            <Link href="all-logs" className="linkAll" id="logLink"> &gt;&gt; See all logs</Link>
+                        </div>
+                    </div>
+                    <div className="seeAllLinks">
+                        <div className="memberCompany">
+                            <MemberForm teams={props.teams} roles={props.roles} />
+                            <Link className="linkAll" href="/company-members" id="memberLink"> &gt;&gt; See all</Link>
+                        </div>
+                        <div className="quest">
+                            <FormQuest />
+                            <Link className="linkAll" href="/all-quests" id="questLink"> &gt;&gt; See all</Link>
+                        </div>
+                        <div className="rewardCompany">
+                            <FormReward />
+                            <Link className="linkAll" href="/rewards-collection" id="rewardLink"> &gt;&gt; See all</Link>
+                        </div>
                     </div>
                 </div>
-                <Link href="all-logs" className="linkAll" id="logLink"> &gt;&gt; See all logs</Link>
+
+
             </div >
             {/* </div> */}
         </>

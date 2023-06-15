@@ -8,21 +8,19 @@
   height: 100px;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 .HeaderContainer header .walletContainer {
   display: flex;
   flex-direction: row;
-  width: 30px;
   margin-left: 15px;
 }
 .HeaderContainer header .walletContainer .wallet {
   color: white;
-  margin-top: 38px;
 }
 .HeaderContainer header .walletContainer .coinHeader {
   width: auto;
   height: 30px;
-  margin-top: 35px;
 }
 .HeaderContainer header .logoHeader {
   width: 100px;
@@ -102,7 +100,9 @@ nav ul li {
   }
 }
 #Desktop .logoHeader {
-  width: 100px;
+  width: 75px;
+  height: 75px;
+  align-self: center;
   justify-self: center;
   margin-left: 20px;
 }
@@ -111,7 +111,11 @@ nav ul li {
   align-items: end;
 }
 #Desktop .walletContainer {
-  margin-right: 100px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 80px;
 }
 #Desktop .navLink {
   color: #EEEEEE;
