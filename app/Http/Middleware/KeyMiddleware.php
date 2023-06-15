@@ -6,6 +6,7 @@ use App\Http\Requests\KeyRequest;
 use Closure;
 use Illuminate\Http\Request;
 use App\Models\Key;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class KeyMiddleware
@@ -18,18 +19,12 @@ class KeyMiddleware
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
 
-    public function handle($request)
+    public function handle(Request $request, Closure $next)
     {
-        $inputKey = $request->name;
-        $allKeys = Key::all();
-
-        foreach ($allKeys as $key) {
-            if (Hash::check($inputKey, $key->key)) {
-                $key->delete();
-                return to_route('adminregister');
-            }
+        $user = Auth::user();
+        if ($user->key_check == 0) {
+            return to_route('keycheck');
         }
-
-        return to_route('keycheck')->withErrors(["no-match" => "There's no matching key found"]);
+        return $next($request);
     }
 }

@@ -6,6 +6,7 @@ import '../../css/companyDashboard.css'
 
 const logs = (props) => {
     console.log(props.logs)
+    const userCoins = props.auth.user.coins;
     const logs = props.logs;
     return (
         <>

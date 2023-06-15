@@ -8,7 +8,7 @@ const Index = () => {
                     <img className="logo" src="../happyhub.png" alt="Happy Hub logo" />
                 </div>
                 <Link href="/login" as="button" className="buttonLogin">Log in</Link>
-                <Link href="/generate-key" as="button" className="buttonBuyProduct">Buy Product</Link>
+                <Link href="/admin-register" as="button" className="buttonBuyProduct">Buy Product</Link>
                 <Link href="/logout" method="post">Log out</Link>
             </div>
         </>
