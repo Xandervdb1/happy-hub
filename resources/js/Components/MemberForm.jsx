@@ -98,7 +98,7 @@ const FormMember = (props) => {
                         <span className="error-message">{errors.function}</span>
 
                         <div>
-                            <input className="checkbox" type="checkbox" id="adminCheck" name="adminCheck" onChange={handleChange} />
+                            <input className="checkbox" type="checkbox" id="adminCheck" name="adminCheck" onChange={handleChange} checked={values.adminCheck} />
                             <label htmlFor="adminCheck">Admin?</label>
                         </div>
 
