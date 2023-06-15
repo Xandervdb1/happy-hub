@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\KeyRequest;
 use App\Models\Key;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -37,9 +38,13 @@ class KeyController extends Controller
         $inputKey = $request->name;
         $allKeys = Key::all();
 
+
         foreach ($allKeys as $key) {
             if (Hash::check($inputKey, $key->key)) {
-                return to_route('adminregister');
+                $user = Auth::user();
+                $user->key_check = 1;
+                $user->save();
+                return to_route('companyregister');
             }
         }
 

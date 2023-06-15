@@ -7,6 +7,7 @@ import { Link } from "@inertiajs/react";
 const logs = (props) => {
     const userCoins = props.auth.user.coins;
     console.log(props.logs)
+    const userCoins = props.auth.user.coins;
     const logs = props.logs;
     return (
         <>
