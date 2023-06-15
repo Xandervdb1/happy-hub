@@ -86,8 +86,8 @@
   #bgWallet {
     background-image: url("../teamwork3.jpg");
   }
+
   .walletContainer {
-    height: calc(100vh - 100px);
     margin: 0;
   }
 
