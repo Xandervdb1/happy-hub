@@ -72,9 +72,11 @@
 }
 
 @media only screen and (min-width: 796px) {
+  #bgWallet {
+    background-image: url("../teamwork3.jpg");
+  }
   .walletContainer {
     height: calc(100vh - 100px);
-    background-image: url("../teamwork3.jpg");
     margin: 0;
   }
   .walletContainer .balances {

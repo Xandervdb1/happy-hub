@@ -311,13 +311,13 @@
             font-size: 16px;
         }
 
-        .quest {
+        .memberCompany {
             grid-row: 3;
             grid-column: 5;
             justify-content: center;
             align-self: flex-end;
             width: 100px;
-            margin-left: -15px;
+            margin-left: -35px;
         }
 
         .rewardCompany {
@@ -329,15 +329,15 @@
             margin-left: -35px;
         }
 
-        .memberCompany {
+        .quest {
             grid-row: 3;
             grid-column: 9/11;
             align-self: flex-end;
             width: 100px;
-            margin-left: -15px;
+            margin-left: -35px;
         }
 
-        #questLink {
+        #memberLink {
             grid-row: 4;
             grid-column: 4/6;
             text-align: center;
@@ -351,7 +351,7 @@
             margin-left: -30px;
         }
 
-        #memberLink {
+        #questLink {
             grid-row: 4;
             grid-column: 8/10;
             text-align: center;

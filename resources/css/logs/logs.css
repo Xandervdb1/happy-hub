@@ -45,4 +45,19 @@
   font-size: 10px;
   font-weight: 600;
   opacity: 0.6;
+}
+
+@media only screen and (min-width: 796px) {
+  .logPage {
+    margin-top: -10px;
+    padding: 0;
+    background-image: url("../teamwork3.jpg");
+    text-align: center;
+  }
+  .logContainer {
+    border-radius: 10px;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }/*# sourceMappingURL=logs.css.map */

@@ -12,10 +12,7 @@ const logs = (props) => {
         <>
             <HeaderDesktop userCoins={userCoins} />
             <Header userCoins={userCoins} />
-            <div
-                className="backgroundImage"
-                style={{ backgroundImage: "url('../teamwork3.jpg')" }}
-            >
+            <div className="logPage">
                 <h1 className="logTitle">Logs</h1>
                 <div className="logContainer">
                     <div className="log">
@@ -49,6 +46,7 @@ const logs = (props) => {
                     <Link href='/company-dashboard' className="goBackButton">Go back</Link>
                 </div>
             </div>
+
         </>
     )
 }

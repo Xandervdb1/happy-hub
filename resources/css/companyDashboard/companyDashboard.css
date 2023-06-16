@@ -263,13 +263,13 @@
     width: 100px;
     font-size: 16px;
   }
-  .adminDashboard .quest {
+  .adminDashboard .memberCompany {
     grid-row: 3;
     grid-column: 5;
     justify-content: center;
     align-self: flex-end;
     width: 100px;
-    margin-left: -15px;
+    margin-left: -35px;
   }
   .adminDashboard .rewardCompany {
     grid-row: 3;
@@ -279,14 +279,14 @@
     width: 100px;
     margin-left: -35px;
   }
-  .adminDashboard .memberCompany {
+  .adminDashboard .quest {
     grid-row: 3;
     grid-column: 9/11;
     align-self: flex-end;
     width: 100px;
-    margin-left: -15px;
+    margin-left: -35px;
   }
-  .adminDashboard #questLink {
+  .adminDashboard #memberLink {
     grid-row: 4;
     grid-column: 4/6;
     text-align: center;
@@ -298,7 +298,7 @@
     text-align: center;
     margin-left: -30px;
   }
-  .adminDashboard #memberLink {
+  .adminDashboard #questLink {
     grid-row: 4;
     grid-column: 8/10;
     text-align: center;
