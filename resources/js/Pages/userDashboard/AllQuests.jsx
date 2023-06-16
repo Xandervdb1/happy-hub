@@ -76,7 +76,9 @@ const AllQuests = (props) => {
                         </div>
                     </div>
                 </div>
+                <div className="buttonContainer">
                 <Link href='/user-dashboard' className="goBackButton">Go back</Link>
+                </div>
             </div>
         </>
     )

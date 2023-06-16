@@ -1,6 +1,7 @@
 h1 {
   text-align: center;
-  margin: 20px;
+  margin: 0;
+  padding: 20px;
   font-size: x-large;
 }
 
@@ -80,16 +81,37 @@ h1 {
   align-self: center;
 }
 
+.buttonContainer {
+  padding-top: 2rem;
+  text-align: center;
+}
+.buttonContainer .goBackButton {
+  margin: auto;
+  background-color: #393E46;
+  border: none;
+  color: #FFCD29;
+  width: 130px;
+  height: 55px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  margin: auto;
+  margin-top: 30px;
+}
+
 @media screen and (min-width: 1024px) {
   .background-wrapper {
     background-image: url("../teamwork3.jpg");
     min-height: 100vh;
+    margin: 0;
+    padding: 0rem;
   }
   .background-wrapper h1 {
     margin: 0;
     padding: 20px;
   }
   .background-wrapper .QuestContainer {
+    padding: 1rem;
     display: flex;
     width: 100vw;
     gap: 1rem;
