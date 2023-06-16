@@ -85,15 +85,14 @@ const UserDashboard = (props) => {
                     {
                         rewards.map(reward => (
                             <>
-                                {console.log(reward.id)}
-                                <Link className="reward" as="button" method="post"
-                                    key={reward.id}
-                                >
-                                    <div className="totalReward">
-                                        <p className="activity">{reward.slug}</p>
-                                        <div className="rewardPriceContainer">
-                                            <img className="coins" src="../coin.png" alt="coin Happy Hub" />
-                                            <p className="price">{reward.price}</p>
+                                <Link href="/claim-reward" as="button" method="post" data={{ userId: props.auth.user.id, rewardId: reward.id }}>
+                                    <div className="reward">
+                                        <div className="totalReward">
+                                            <p className="activity">{reward.slug}</p>
+                                            <div className="rewardPriceContainer">
+                                                <img className="coins" src="../coin.png" alt="coin Happy Hub" />
+                                                <p className="price">{reward.price.toLocaleString()}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </Link>
