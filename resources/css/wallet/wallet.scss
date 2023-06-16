@@ -92,6 +92,8 @@
 
    @media only screen and (min-width: 796px) {
        #bgWallet {
+           height: calc(100vh - 100px);
+           width: 100vw;
            background-image: url('../teamwork3.jpg');
        }
 
@@ -109,8 +111,9 @@
            }
 
            .titlePage {
-               width: 100%;
+               width: 100vw;
                height: 20px;
+               margin-top: 0;
            }
 
            .personalBalance,

@@ -73,9 +73,10 @@
 
 @media only screen and (min-width: 796px) {
   #bgWallet {
+    height: calc(100vh - 100px);
+    width: 100vw;
     background-image: url("../teamwork3.jpg");
   }
-
   .walletContainer {
     margin: 0;
   }
@@ -87,8 +88,9 @@
     flex-direction: row;
   }
   .walletContainer .titlePage {
-    width: 100%;
+    width: 100vw;
     height: 20px;
+    margin-top: 0;
   }
   .walletContainer .personalBalance,
   .walletContainer .teamBalance {
