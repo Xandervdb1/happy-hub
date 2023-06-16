@@ -33,7 +33,7 @@ const TeamForm = (props) => {
     }
 
     const showModal = (e) => {
-        const modal = e.target.nextElementSibling
+        const modal = e.target.parentElement.nextElementSibling
         const overlay = modal.nextElementSibling
         modal.classList.remove("hidden")
         overlay.classList.remove("hidden")
@@ -46,7 +46,10 @@ const TeamForm = (props) => {
     }
     return (
         <>
-            <button className="addLink" onClick={showModal}>+</button>
+            <div className="titleflex">
+                <h1 className="titleDashboard"> Add Team</h1>
+                <button className="addLink" onClick={showModal}>+</button>
+            </div>
             <section className="modal hidden" >
                 <div className="flex">
                     <button className="btn-close" id="btn" onClick={closeModal}>X</button>

@@ -22,7 +22,7 @@ const Navigation = () => {
                     <ul>
                         <li><Link href="/">Home</Link></li>
                         <li><Link href="/login">Log in</Link></li>
-                        <li><Link href="/generate-key">Buy key</Link></li>
+                        <li><Link href="/admin-register">Buy key</Link></li>
                     </ul>
                 </nav>
             </>

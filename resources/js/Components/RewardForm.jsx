@@ -46,7 +46,10 @@ const FormReward = () => {
     }
     return (
         <>
-            <button className="addLink" onClick={showModal} >+</button>
+            <div>
+                <h1 className="titleDashboard">Add Reward</h1>
+                <button className="addLink" onClick={showModal} >+</button>
+            </div>
             <section className="modal hidden" >
                 <div className="flex">
                     <button className="btn-close" id="btn" onClick={closeModal}> X</button>
