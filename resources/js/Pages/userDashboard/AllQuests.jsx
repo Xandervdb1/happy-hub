@@ -12,6 +12,10 @@ const AllQuests = (props) => {
         setChecked(e.target.checked);
     }
 
+    const goBackHandler = () => {
+        window.history.back();
+    }
+
     return (
         <>
             <HeaderDesktop userCoins={userCoins} />
@@ -72,7 +76,7 @@ const AllQuests = (props) => {
                     </div>
                 </div>
             </div>
-            <Link href='/user-dashboard' className="goBackButton">Go back</Link>
+            <Link onClick={goBackHandler} className="goBackButton">Go back</Link>
         </>
     )
 }
