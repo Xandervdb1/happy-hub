@@ -103,7 +103,7 @@
   .dashboardContainer {
     padding-top: 2rem;
     padding-bottom: 0;
-    height: 100vh;
+    height: calc(100vh - 100px);
     grid-template-rows: repeat(12, 1fr);
     grid-template-columns: repeat(12, 1fr);
     min-height: calc(100vh - 100px);

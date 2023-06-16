@@ -111,7 +111,7 @@
 @media screen and (min-width: 768px) {
   .rewardsContainerParent {
     padding-top: 2rem;
-    height: 100vh;
+    height: calc(100vh - 100px);
   }
   .rewardsContainerWrap .rewardsContainer {
     max-width: 40%;

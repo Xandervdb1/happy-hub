@@ -32,7 +32,7 @@ const Login = () => {
         <>
             <HeaderDesktop />
             <Header />
-            <div className="formContainer">
+            <div className="formContainer loginContainer">
                 <form onSubmit={handleSubmit}>
 
                     <div className="inputField">
@@ -44,7 +44,7 @@ const Login = () => {
                     </div>
 
                     <div className="buttonContainer">
-                        <button type="submit">Confirm</button>
+                        <button className="button" type="submit">Confirm</button>
                     </div>
                 </form>
             </div>

@@ -42,7 +42,7 @@ const AllQuests = (props) => {
                                             </div>
                                             <div className="secondRow">
                                                 <ProgressBar bgcolor={bgColor} completed={completedRounded} />
-                                                <Link as="button" method="post" href="/finish-quest" data={{ userId: props.auth.user.id, questId: userQuest.id }}>Complete quest</Link>
+                                                <Link className="progressButton" as="button" method="post" href="/finish-quest" data={{ userId: props.auth.user.id, questId: userQuest.id }}>Complete quest</Link>
                                             </div>
                                         </div>
                                     )
@@ -67,8 +67,10 @@ const AllQuests = (props) => {
                                                     <br />
                                                 </div>
                                             </div>
-                                            <ProgressBar bgcolor={bgColor} completed={completedRounded} />
-                                            <Link as="button" method="post" href="/finish-quest" data={{ userId: props.auth.user.id, questId: teamQuest.id }}>Complete quest</Link>
+                                            <div className="secondRow">
+                                                <ProgressBar bgcolor={bgColor} completed={completedRounded} />
+                                                <Link className="progressButton" as="button" method="post" href="/finish-quest" data={{ userId: props.auth.user.id, questId: teamQuest.id }}>Complete quest</Link>
+                                            </div>
                                         </div>
                                     )
                                 })
@@ -77,7 +79,7 @@ const AllQuests = (props) => {
                     </div>
                 </div>
                 <div className="buttonContainer">
-                <Link href='/user-dashboard' className="goBackButton">Go back</Link>
+                    <Link href='/user-dashboard' className="goBackButton">Go back</Link>
                 </div>
             </div>
         </>

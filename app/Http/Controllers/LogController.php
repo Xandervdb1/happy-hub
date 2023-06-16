@@ -31,7 +31,7 @@ class LogController extends Controller
         $log = new Log;
         $team = $user->team;
         if ($reward->type === 'personal') {
-            if ($user->coins > $reward->price) {
+            if ($user->coins >= $reward->price) {
                 $user->coins = $user->coins - $reward->price;
                 $user->save();
 
@@ -41,7 +41,7 @@ class LogController extends Controller
                 $log->save();
             }
         } else if ($reward->type === 'team') {
-            if ($team->coins > $reward->price) {
+            if ($team->coins >= $reward->price) {
                 $team->coins = $team->coins - $reward->price;
                 $team->save();
 

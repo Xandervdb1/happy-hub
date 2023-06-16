@@ -32,15 +32,15 @@ const NewPassword = () => {
         <>
             <HeaderDesktop />
             <Header />
-            <div className="formContainer">
+            <div className="formContainer loginContainer">
                 <form className="form" onSubmit={handleSubmit}>
 
                     <div className="inputField">
                         <input className="input" type="password" placeholder="New password" value={values.password} onChange={handleChange} name="password" id="password" required />
-                            <span className="error-message">{errors.password}</span> 
-                        
-                        <input className="input" type="password" placeholder="Confirm new password" value={values.password_confirmation} onChange={handleChange} name="newpassword" id="password_confirmation" required /> 
-                            <span className="error-message">{errors.password}</span>
+                        <span className="error-message">{errors.password}</span>
+
+                        <input className="input" type="password" placeholder="Confirm new password" value={values.password_confirmation} onChange={handleChange} name="newpassword" id="password_confirmation" required />
+                        <span className="error-message">{errors.password}</span>
                     </div>
                     <div className="buttonContainer">
                         <button className="button" type="submit">Confirm</button>

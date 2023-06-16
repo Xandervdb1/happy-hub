@@ -33,7 +33,7 @@ const Create = () => {
             <HeaderDesktop />
             <Header />
 
-            <div className="formContainer">
+            <div className="formContainer loginContainer">
                 <form onSubmit={handleSubmit}>
 
                     <div className="inputField">

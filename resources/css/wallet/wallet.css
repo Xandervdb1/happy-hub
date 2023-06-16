@@ -92,6 +92,7 @@
   .walletContainer .titlePage {
     width: 100vw;
     height: 20px;
+    padding: 2rem 0;
     margin-top: 0;
   }
   .walletContainer .personalBalance,
