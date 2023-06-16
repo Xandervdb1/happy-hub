@@ -104,6 +104,8 @@
 @media only screen and (min-width: 760px) {
 
     .dashboardContainer {
+        padding-top: 2rem;
+        height: 100vh;
         grid-template-rows: repeat(12, 1fr);
         grid-template-columns: repeat(12, 1fr);
         min-height: calc(100vh - 100px);

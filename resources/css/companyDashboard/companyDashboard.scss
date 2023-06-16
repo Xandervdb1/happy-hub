@@ -290,7 +290,8 @@
     }
 
     .adminDashboard {
-        height: calc(100vh - 100px);
+        padding-top: 1rem;
+        height: 100vh;
         grid-template-rows: repeat(12, 1fr);
         grid-template-columns: repeat(12, 1fr);
         align-items: center;
@@ -369,11 +370,5 @@
             font-size: 12px;
             text-align: left;
         }
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .reverseDesktop {
-        
     }
 }
