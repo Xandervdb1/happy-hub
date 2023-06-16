@@ -81,9 +81,34 @@ h1 {
 }
 
 @media screen and (min-width: 1024px) {
-  .QuestContainer {
+  .background-wrapper {
+    background-image: url("../teamwork3.jpg");
+    min-height: 100vh;
+  }
+  .background-wrapper h1 {
+    margin: 0;
+    padding: 20px;
+  }
+  .background-wrapper .QuestContainer {
     display: flex;
     width: 100vw;
+    gap: 1rem;
+  }
+  .background-wrapper .QuestContainer .personalQuestsContainer,
+  .background-wrapper .QuestContainer .teamQuestsContainer {
+    background-color: #EEEEEE;
+    box-shadow: 0px 0px 18px 1px #9499a1;
+    border-radius: 10px;
+  }
+  .background-wrapper .QuestContainer .personalQuestsContainer .title,
+  .background-wrapper .QuestContainer .teamQuestsContainer .title {
+    background-color: #EEEEEE;
+  }
+  .background-wrapper .QuestContainer .personalQuestsContainer .personalQuests,
+  .background-wrapper .QuestContainer .personalQuestsContainer .teamQuests,
+  .background-wrapper .QuestContainer .teamQuestsContainer .personalQuests,
+  .background-wrapper .QuestContainer .teamQuestsContainer .teamQuests {
+    background-color: #EEEEEE;
   }
 }
 @media screen and (min-width: 1500px) {
