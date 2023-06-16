@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TeamRequest;
 use App\Models\Team;
 use App\Models\User;
-use App\Models\Users;
+// use App\Models\Users;
+use App\Models\Role;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
 
@@ -46,7 +47,7 @@ class TeamController extends Controller
             array_push($teamMembers, $team->users);
         }
 
-        $roles = $user->company->roles;
+        $roles = Role::all();
 
         return Inertia::render('companyDashboard/companyMembers', [
             "teams" => $teams,
