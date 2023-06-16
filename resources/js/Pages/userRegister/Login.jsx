@@ -51,7 +51,6 @@ const Create = () => {
                 <p className="click-here">First time registering as Admin?</p>
                 <Link href="/admin-register" className="link-click-here">Click here!</Link>
             </div>
-        </div >
         </>
     )
 
