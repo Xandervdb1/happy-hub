@@ -4,7 +4,6 @@ import { Link } from "@inertiajs/react"
 import FormQuest from "@/Components/QuestForm.jsx"
 import FormReward from "@/Components/RewardForm.jsx"
 import MemberForm from "@/Components/MemberForm.jsx"
-import FormTeam from "@/Components/TeamForm.jsx"
 import TeamForm from "@/Components/TeamForm.jsx"
 
 const AdminDashboard = (props) => {
@@ -19,13 +18,8 @@ const AdminDashboard = (props) => {
         <>
             <HeaderDesktop userCoins={userCoins} />
             <Header userCoins={userCoins} />
-            {/* <div
-                className="backgroundImage desktop"
-                style={{ backgroundImage: "url('../teamwork3.jpg')" }}
-            > */}
             <div className="adminDashboard">
                 <h1 className="titlePage">Company Dashboard</h1>
-
                 <div className="reverseDesktop">
                     <div>
                         <div className="teamContainer">
