@@ -182,9 +182,7 @@ p.click-here {
     width: 50%;
   }
   .Container .LogoContainer .logo {
-    height: -moz-max-content;
     height: max-content;
-    width: -moz-max-content;
     width: max-content;
   }
   .Container .buttonLogin {
