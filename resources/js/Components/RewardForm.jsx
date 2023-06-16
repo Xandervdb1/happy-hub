@@ -33,7 +33,7 @@ const FormReward = () => {
         router.post('/company-dashboard-reward', values)
     }
     const showModal = (e) => {
-        const modal = e.target.nextElementSibling
+        const modal = e.target.parentElement.nextElementSibling
         const overlay = modal.nextElementSibling
         modal.classList.remove("hidden")
         overlay.classList.remove("hidden")
