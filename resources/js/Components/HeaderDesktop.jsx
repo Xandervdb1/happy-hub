@@ -11,7 +11,8 @@ const HeaderDesktop = () => {
         <>
             <div className="HeaderContainer" id='Desktop'>
                 <header>
-                    <img className='logoHeader' src="../happyhub.png" alt="logo Happy Hub" />
+                    <a href='/'>
+                        <img className='logoHeader' src="../happyhub.png" alt="logo Happy Hub" /></a>
                     <div className="navigation">
                         {props.auth.user ? (
                             <>
@@ -28,17 +29,18 @@ const HeaderDesktop = () => {
                             </>
                         )}
                     </div>
-                    <div className="walletContainer">
-                        {props.auth.user ? (
-                            <>
-                                <p className="wallet">{userCoins ? userCoins : 0}</p>
-                                <img className='coinHeader' src="../coin.png" ahref='' lt="coin Happy Hub" />
-                            </>
-                        ) : (
-                            <div></div>
-                        )}
-                    </div>
-
+                    <a href="/wallet">
+                        <div className="walletContainer">
+                            {props.auth.user ? (
+                                <>
+                                    <p className="wallet">{userCoins ? userCoins : 0}</p>
+                                    <img className='coinHeader' src="../coin.png" ahref='' lt="coin Happy Hub" />
+                                </>
+                            ) : (
+                                <div></div>
+                            )}
+                        </div>
+                    </a>
                 </header >
             </div>
         </>

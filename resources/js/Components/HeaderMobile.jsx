@@ -19,11 +19,13 @@ const Header = (props) => {
             {isActive ? <Navigation /> : null}
             <div className="HeaderContainer" id="mobile">
                 <header>
-                    <div className="walletContainer">
-                        <p className="wallet">{props.userCoins ? props.userCoins : 0}</p>
-                        <img className='coinHeader' src="../coin.png" alt="coin Happy Hub" />
-                    </div>
-                    <img className='logoHeader' src="../happyhub.png" alt="logo Happy Hub" />
+                    <a href="/wallet">
+                        <div className="walletContainer">
+                            <p className="wallet">{props.userCoins ? props.userCoins : 0}</p>
+                            <img className='coinHeader' src="../coin.png" alt="coin Happy Hub" />
+                        </div></a>
+                    <a href="/">
+                        <img className='logoHeader' src="../happyhub.png" alt="logo Happy Hub" /></a>
                     <div className="hamburger" onClick={toggleNavigation}>
                         <div className="top-bun" ref={topBun} ></div>
                         <div className="burger" ref={burger} ></div>
