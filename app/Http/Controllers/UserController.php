@@ -39,7 +39,12 @@ class UserController extends Controller
         $user->password = Hash::make($randomPassword);
         $user->is_defaultPassword = 1;
         $user->coins = 0;
-        $user->is_admin = 0;
+        if ($request->adminCheck) {
+            $user->is_admin = 1;
+        } else {
+            $user->is_admin = 0;
+        }
+        $user->key_check = 1;
 
         $companyName = Company::find(Auth::user()->company_id)->name;
         Mail::to($request->email)->send(new RandomPassword($randomPassword, $companyName));

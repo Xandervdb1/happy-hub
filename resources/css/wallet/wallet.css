@@ -4,6 +4,7 @@
   text-align: center;
   margin-bottom: 10px;
 }
+
 .walletContainer .pricesAndCoin {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -11,9 +12,11 @@
   font-weight: 600;
   place-items: center;
 }
+
 .walletContainer .pricesAndCoin .coin {
   width: 20px;
 }
+
 .walletContainer .priceAndCoin {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -24,10 +27,12 @@
   grid-column: 2;
   grid-row: 1/3;
 }
+
 .walletContainer .priceAndCoin .coin {
   width: 18px;
   text-align: left;
 }
+
 .walletContainer .titleWallet {
   font-size: 20px;
   font-weight: 600;
@@ -35,6 +40,7 @@
   margin: 15px;
   width: 100%;
 }
+
 .walletContainer .personalBalance {
   background-color: #D9D9D9;
   justify-content: space-around;
@@ -42,11 +48,13 @@
   margin: 5px;
   margin-bottom: 10px;
 }
+
 .walletContainer .personalWallet {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: auto;
 }
+
 .walletContainer .transactions {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
@@ -55,10 +63,12 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
 .walletContainer .transactions .timestamp {
   font-size: 13px;
   font-weight: 600;
 }
+
 .walletContainer .teamBalance {
   background-color: #D9D9D9;
   justify-content: space-around;
@@ -66,6 +76,7 @@
   margin: 5px;
   margin-bottom: 10px;
 }
+
 .walletContainer .teamBalance .teamWallet {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -79,6 +90,7 @@
     height: calc(100vh - 100px);
     margin: 0;
   }
+
   .walletContainer .balances {
     justify-content: center;
     margin: 10px;
@@ -86,18 +98,23 @@
     display: flex;
     flex-direction: row;
   }
+
   .walletContainer .titlePage {
     width: 100%;
     height: 20px;
   }
+
   .walletContainer .personalBalance,
   .walletContainer .teamBalance {
     width: 40%;
     min-height: 50vh;
     border-radius: 10px;
   }
+
   .pricesAndCoin {
     margin-right: 15px;
     margin-left: 0;
   }
-}/*# sourceMappingURL=wallet.css.map */
+}
+
+/*# sourceMappingURL=wallet.css.map */

@@ -87,7 +87,7 @@ nav ul li {
 #mobile {
   display: block;
 }
-@media only screen and (min-width: 796px) {
+@media only screen and (min-width: 855px) {
   #mobile {
     display: none;
   }
@@ -96,7 +96,7 @@ nav ul li {
 #Desktop {
   display: none;
 }
-@media only screen and (min-width: 796px) {
+@media only screen and (min-width: 855px) {
   #Desktop {
     display: block;
   }
