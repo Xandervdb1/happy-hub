@@ -27,31 +27,37 @@ h1 {
   flex-direction: column;
   margin: 0.5rem 0;
 }
-.member > :last-child {
+
+.member> :last-child {
   margin-bottom: 0.5rem;
 }
 
 .nameCoins p {
   font-weight: bold;
 }
+
 .nameCoins .name {
   text-align: center;
   margin: 0.5rem 0;
 }
+
 .nameCoins .coinsWrap {
   display: flex;
 }
+
 .nameCoins .coins {
   display: flex;
   justify-content: center;
   width: 100%;
   margin: 0.5rem 0;
 }
+
 .nameCoins .coins p {
   font-weight: 100;
   align-self: center;
   font-size: 0.8rem;
 }
+
 .nameCoins .coins img {
   width: 20px;
   object-fit: contain;
@@ -62,7 +68,8 @@ h1 {
   margin: 0.25rem 0.5rem;
   font-size: 0.9rem;
 }
-.memberInfo > :first-child {
+
+.memberInfo> :first-child {
   font-weight: bolder;
 }
 
@@ -71,10 +78,12 @@ h1 {
     min-height: 100vh;
     background-image: url("../teamwork3.jpg");
   }
+
   .titleWrapper {
     margin-top: 0;
     padding-top: 1rem;
   }
+
   .membersWrapper {
     display: flex;
     flex-direction: row;
@@ -82,10 +91,13 @@ h1 {
     gap: 20px;
     justify-content: center;
   }
+
   .membersWrapper .member {
     max-width: 45%;
     background-color: #ffffff;
     box-shadow: 0px 0px 18px 1px #9499a1;
     border-radius: 10px;
   }
-}/*# sourceMappingURL=companyMembers.css.map */
+}
+
+/*# sourceMappingURL=companyMembers.css.map */
