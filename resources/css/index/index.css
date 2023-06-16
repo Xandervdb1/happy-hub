@@ -54,7 +54,7 @@ body {
   justify-content: center;
   align-items: center;
   height: calc(100vh - 100px);
-  background-color: rgba(255, 255, 255, 0.6);
+  background-image: url("../teamwork3.jpg");
 }
 .formContainer form {
   margin: auto;

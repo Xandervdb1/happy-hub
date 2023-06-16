@@ -118,19 +118,19 @@ h1 {
   }
   .background-wrapper .QuestContainer .personalQuestsContainer,
   .background-wrapper .QuestContainer .teamQuestsContainer {
-    background-color: #EEEEEE;
+    background-color: #ffffff;
     box-shadow: 0px 0px 18px 1px #9499a1;
     border-radius: 10px;
   }
   .background-wrapper .QuestContainer .personalQuestsContainer .title,
   .background-wrapper .QuestContainer .teamQuestsContainer .title {
-    background-color: #EEEEEE;
+    background-color: #ffffff;
   }
   .background-wrapper .QuestContainer .personalQuestsContainer .personalQuests,
   .background-wrapper .QuestContainer .personalQuestsContainer .teamQuests,
   .background-wrapper .QuestContainer .teamQuestsContainer .personalQuests,
   .background-wrapper .QuestContainer .teamQuestsContainer .teamQuests {
-    background-color: #EEEEEE;
+    background-color: #ffffff;
   }
 }
 @media screen and (min-width: 1500px) {

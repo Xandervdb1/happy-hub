@@ -108,7 +108,7 @@ nav ul li {
 }
 #Desktop .navigation {
   display: flex;
-  align-items: flex-end;
+  align-items: end;
 }
 #Desktop .walletContainer {
   padding: 1rem;
