@@ -77,14 +77,27 @@ h1 {
 }
 
 @media only screen and (min-width: 600px) {
+    .background-wrapper{
+        // min-height: calc(100vh - 100px);
+        min-height: 100vh;
+        background-image: url('../teamwork3.jpg');
+    }
+    .titleWrapper{
+        margin-top: 0;
+        padding-top: 1rem;
+    }
     .membersWrapper {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
+      
       .member {
         max-width: 45%;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 18px 1px #9499a1;
+        border-radius: 10px;
     }
   }
 }

@@ -106,7 +106,7 @@
     .dashboardContainer {
         grid-template-rows: repeat(12, 1fr);
         grid-template-columns: repeat(12, 1fr);
-        height: calc(100vh - 100px);
+        min-height: calc(100vh - 100px);
         background-image: url('../teamwork3.jpg');
         margin: 0;
 
@@ -137,6 +137,9 @@
             grid-column: 7/12;
             margin: 5px;
             border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 18px 1px #9499a1;
+            border-radius: 10px;
 
 
             .personalInfo {
@@ -150,6 +153,9 @@
             grid-row: 6/10;
             grid-column: 2/7;
             margin: 5px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 18px 1px #9499a1;
             border-radius: 10px;
         }
 
@@ -179,7 +185,9 @@
             grid-column: 7/12;
             margin: 5px;
             border-radius: 10px;
-
+            background-color: #ffffff;
+            box-shadow: 0px 0px 18px 1px #9499a1;
+            border-radius: 10px;
 
         }
 

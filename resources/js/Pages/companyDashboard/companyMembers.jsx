@@ -57,42 +57,45 @@ const TeamMembers = (props) => {
             </Head>
             <HeaderDesktop userCoins={userCoins} />
             <Header userCoins={userCoins} />
-            <div className="titleWrapper">
-                <Link href="/company-dashboard">
-                    <span className="material-symbols-outlined" style={{ fontSize: '35px' }}> keyboard_backspace </span>
-                </Link>
-                <h1>Members</h1>
-                <div className="empty"></div>
-            </div>
-            <div className="membersWrapper">
-                {
-                    companyMembers.map(member =>
-                        <div className="member" key={member.email}>
-                            <div className="nameCoins">
-                                <p className="name">{member.name}</p>
-                                <div className="coinsWrap">
-                                    <div className="coins">
-                                        <img src={coin} alt="coin" />
-                                        <p>{member.coins}</p>
+            <div className="background-wrapper">
+                <div className="titleWrapper">
+                    <Link href="/company-dashboard">
+                        <span className="material-symbols-outlined" style={{ fontSize: '35px' }}> keyboard_backspace </span>
+                    </Link>
+                    <h1>Members</h1>
+                    <div className="empty"></div>
+                </div>
+                <div className="membersWrapper">
+                    {
+                        companyMembers.map(member =>
+                            <div className="member" key={member.email}>
+                                <div className="nameCoins">
+                                    <p className="name">{member.name}</p>
+                                    <div className="coinsWrap">
+                                        <div className="coins">
+                                            <img src={coin} alt="coin" />
+                                            <p>{member.coins}</p>
+                                        </div>
                                     </div>
                                 </div>
+                                <div className="memberInfo">
+                                    <p>Function: &nbsp;</p>
+                                    {member.function === undefined ? <p>Unknown function</p> : <p>{member.team}</p>}
+                                </div>
+                                <div className="memberInfo">
+                                    <p>Email: &nbsp;</p>
+                                    <p>{member.email}</p>
+                                </div>
+                                <div className="memberInfo">
+                                    <p>Team: &nbsp; </p>
+                                    {member.team}
+                                </div>
                             </div>
-                            <div className="memberInfo">
-                                <p>Function: &nbsp;</p>
-                                {member.function === undefined ? <p>Unknown function</p> : <p>{member.team}</p>}
-                            </div>
-                            <div className="memberInfo">
-                                <p>Email: &nbsp;</p>
-                                <p>{member.email}</p>
-                            </div>
-                            <div className="memberInfo">
-                                <p>Team: &nbsp; </p>
-                                {member.team}
-                            </div>
-                        </div>
-                    )
-                }
+                        )
+                    }
+                </div>
             </div>
+            
         </>
     )
 }
