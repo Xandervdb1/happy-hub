@@ -245,7 +245,7 @@
     margin: 2.5rem;
   }
   .adminDashboard {
-    min-height: calc(100vh - 100px);
+    height: calc(100vh - 100px);
     grid-template-rows: repeat(12, 1fr);
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
